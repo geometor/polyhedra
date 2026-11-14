@@ -1,0 +1,97 @@
+:layout: book
+:title: Polyhedra
+:book_title: Polyhedra: Platonic Solids & Divine Proportion
+:book_subtitle: Exact Symbolic 3D Geometry · Rational Trigonometry · Leonardo da Vinci Plates (1509)
+
+=========
+polyhedra
+=========
+
+*Exact Symbolic Platonic Solids, 3D Rational Trigonometry, and Leonardo da Vinci's Polyhedral Woodcuts*
+
+.. epigraph::
+
+   *Quinque corpora regularia sunt: tetraedron, exaedron sive cubus, octaedron, icosaedron, et dodecaedron. Quorum quodlibet intra sphaeram comprehendi potest.*
+
+   *There are five regular solids: the tetrahedron, hexahedron or cube, octahedron, icosahedron, and dodecahedron. Every one of them can be comprehended within a sphere.*
+
+   — :person:`Luca Pacioli`, *De Divina Proportione* (Venice, 1509)
+
+Overview
+--------
+
+**GEOMETOR Polyhedra** (``geometor-polyhedra``) models three-dimensional constructive geometry and regular solids in **100% exact symbolic algebra** (zero floating-point approximations) using `SymPy <https://www.sympy.org/>`_ and `geometor.model`.
+
+Grounding its algebraic foundations in Euclid's *Elements* Book XIII, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509), and Norman Wildberger's Rational Trigonometry, this codex unites classical geometric scholarship with symbolic computation over :math:`\mathbb{Z}` and :math:`\mathbb{Q}(\phi)` (:math:`\phi = \frac{1 + \sqrt{5}}{2}`).
+
+The Five Platonic Solids
+------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 16 10 10 8 8 8 12 14 14
+
+   * - Solid
+     - Greek
+     - Element
+     - $\{p, q\}$
+     - $V$
+     - $E$
+     - $F$
+     - Spread
+     - $Q_{\text{in}} / Q_{\text{out}}$
+   * - **Tetrahedron**
+     - Τετράεδρον
+     - Fire
+     - $\{3, 3\}$
+     - 4
+     - 6
+     - 4
+     - $8/9$
+     - $1/9$
+   * - **Hexahedron**
+     - Ἑξάεδρον
+     - Earth
+     - $\{4, 3\}$
+     - 8
+     - 12
+     - 6
+     - $1$
+     - $1/3$
+   * - **Octahedron**
+     - Ὀκτάεδρον
+     - Air
+     - $\{3, 4\}$
+     - 6
+     - 12
+     - 8
+     - $8/9$
+     - $1/3$
+   * - **Icosahedron**
+     - Εἰκοσάεδρον
+     - Water
+     - $\{3, 5\}$
+     - 12
+     - 30
+     - 20
+     - $4/9$
+     - $\frac{4\phi+3}{15}$
+   * - **Dodecahedron**
+     - Δωδεκάεδρον
+     - Aether
+     - $\{5, 3\}$
+     - 20
+     - 30
+     - 12
+     - $4/5$
+     - $\frac{4\phi+3}{15}$
+
+Codex Contents
+--------------
+
+.. toctree::
+   :maxdepth: 2
+
+   platonic/index
+   leonardo/index
+

@@ -1,0 +1,40 @@
+/* =========================================================================
+   GEOMETOR • Polyhedra Custom Styling
+   Complements foundation theme's _geometor.scss & book codex layout
+   ========================================================================= */
+
+:root {
+  --polyhedra-fire: #ef4444;
+  --polyhedra-earth: #10b981;
+  --polyhedra-air: #38bdf8;
+  --polyhedra-water: #3b82f6;
+  --polyhedra-aether: #8b5cf6;
+  --polyhedra-gold: #f59e0b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --polyhedra-fire: #f87171;
+    --polyhedra-earth: #34d399;
+    --polyhedra-air: #7dd3fc;
+    --polyhedra-water: #60a5fa;
+    --polyhedra-aether: #a78bfa;
+    --polyhedra-gold: #fbbf24;
+  }
+}
+
+html[data-theme="dark"] {
+  --polyhedra-fire: #f87171;
+  --polyhedra-earth: #34d399;
+  --polyhedra-air: #7dd3fc;
+  --polyhedra-water: #60a5fa;
+  --polyhedra-aether: #a78bfa;
+  --polyhedra-gold: #fbbf24;
+}
+
+.polyhedra-card {
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+}

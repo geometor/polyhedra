@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geometor-polyhedra"
+dynamic = ["version"]
+authors = [
+  { name = "geometor", email = "github@geometor.com" },
+]
+description = "Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry in SymPy and the GEOMETOR Digital Scriptorium."
+readme = "README.rst"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "sympy",
+    "rich",
+    "geometor-model",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[project.scripts]
+polyhedra = "geometor.polyhedra.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["geometor*"]
+namespaces = true
+
+[tool.setuptools.dynamic]
+version = {attr = "geometor.polyhedra.__version__"}
+
+[project.urls]
+"Website" = "https://geometor.github.io/polyhedra"
+"Repository" = "https://github.com/geometor/polyhedra"
+"Issues" = "https://github.com/geometor/polyhedra/issues"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["src", "demos", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "ANN", "D"]
+ignore = ["E501"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,5 +1,6 @@
-:navigation: footer
-:order: 10
+:navigation: header
+:order: 40
+:nav_title: Modules
 
 Modules
 =======

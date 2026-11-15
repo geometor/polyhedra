@@ -1,7 +1,5 @@
 :layout: book
 :title: Leonardo Plates: Tetrahedron, Hexahedron & Octahedron (Tabulae I–XX)
-:book_title: Polyhedra: Platonic Solids & Divine Proportion
-:book_subtitle: Dedicated Gallery & Exact Symbolic Reconstruction of Folios 0187–0229
 
 ====================================================================
 Leonardo Plates: Tetrahedron, Hexahedron & Octahedron (Tabulae I–XX)

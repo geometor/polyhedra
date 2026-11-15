@@ -1,3 +1,8 @@
+0.2.1 (2026-11-15)
+------------------
+
+- Configured top-level header navigation menus (``Platonic Solids``, ``Golden Proportions``, ``Leonardo Plates``, ``3D Pipeline``, ``Log``, ``Modules``) with active section highlighting and clean Book Codex breadcrumb inheritance across all child chapters.
+
 0.2.0 (2026-11-15)
 ------------------
 

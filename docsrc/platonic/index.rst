@@ -1,5 +1,10 @@
+:navigation: header
+:order: 1
+:nav_title: Platonic Solids
 :layout: book
 :title: The Five Platonic Solids
+:book_title: The Five Platonic Solids
+:book_subtitle: Euclidean Book XIII Constructions · Golden Ratio Coordinates · 3D Rational Trigonometry
 
 ========================
 The Five Platonic Solids

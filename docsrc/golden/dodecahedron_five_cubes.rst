@@ -1,7 +1,5 @@
 :layout: book
 :title: Five Inscribed Cubes in the Dodecahedron
-:book_title: Five Inscribed Cubes in the Dodecahedron
-:book_subtitle: Euclid Elements XIII.17 · Hipped Roof Construction · Orbit of the Alternating Group A5
 
 =========================================
 Five Inscribed Cubes in the Dodecahedron

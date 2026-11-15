@@ -10,6 +10,72 @@
   --polyhedra-water: #3b82f6;
   --polyhedra-aether: #8b5cf6;
   --polyhedra-gold: #f59e0b;
+
+  /* 3D Mount Theme Variables (Default / Dark) */
+  --poly-mount-bg: #0d1117;
+  --poly-mount-panel: #161b22;
+  --poly-mount-border: #30363d;
+  --poly-mount-text: #e6edf3;
+  --poly-mount-subtext: #8b949e;
+  --poly-mount-canvas-bg: #090d13;
+  --poly-btn-bg: #21262d;
+  --poly-btn-border: #363b42;
+  --poly-btn-text: #c9d1d9;
+  --poly-btn-hover: #30363d;
+  --poly-btn-active-bg: #f59e0b;
+  --poly-btn-active-text: #0d1117;
+  --poly-pill-bg: #1c2128;
+  --poly-pill-border: #444c56;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --polyhedra-fire: #dc2626;
+    --polyhedra-earth: #059669;
+    --polyhedra-air: #0284c7;
+    --polyhedra-water: #2563eb;
+    --polyhedra-aether: #7c3aed;
+    --polyhedra-gold: #d97706;
+
+    --poly-mount-bg: #f8fafc;
+    --poly-mount-panel: #ffffff;
+    --poly-mount-border: #d0d7de;
+    --poly-mount-text: #1f2328;
+    --poly-mount-subtext: #656d76;
+    --poly-mount-canvas-bg: #f3f4f6;
+    --poly-btn-bg: #eaeef2;
+    --poly-btn-border: #d0d7de;
+    --poly-btn-text: #24292f;
+    --poly-btn-hover: #e2e8f0;
+    --poly-btn-active-bg: #d97706;
+    --poly-btn-active-text: #ffffff;
+    --poly-pill-bg: #f1f5f9;
+    --poly-pill-border: #cbd5e1;
+  }
+}
+
+html[data-theme="light"] {
+  --polyhedra-fire: #dc2626;
+  --polyhedra-earth: #059669;
+  --polyhedra-air: #0284c7;
+  --polyhedra-water: #2563eb;
+  --polyhedra-aether: #7c3aed;
+  --polyhedra-gold: #d97706;
+
+  --poly-mount-bg: #f8fafc;
+  --poly-mount-panel: #ffffff;
+  --poly-mount-border: #d0d7de;
+  --poly-mount-text: #1f2328;
+  --poly-mount-subtext: #656d76;
+  --poly-mount-canvas-bg: #f3f4f6;
+  --poly-btn-bg: #eaeef2;
+  --poly-btn-border: #d0d7de;
+  --poly-btn-text: #24292f;
+  --poly-btn-hover: #e2e8f0;
+  --poly-btn-active-bg: #d97706;
+  --poly-btn-active-text: #ffffff;
+  --poly-pill-bg: #f1f5f9;
+  --poly-pill-border: #cbd5e1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,4 +103,278 @@ html[data-theme="dark"] {
   padding: 1.25rem;
   margin-bottom: 1.5rem;
   border: 1px solid var(--border-color, #e2e8f0);
+}
+
+/* =========================================================================
+   Interactive 3D Codex Mount (.polyhedra-3d-mount)
+   ========================================================================= */
+
+.polyhedra-3d-mount {
+  background: var(--poly-mount-bg);
+  border: 1.5px solid var(--poly-mount-border);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 28px 0;
+  color: var(--poly-mount-text);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.polyhedra-3d-mount:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
+}
+
+/* Header & Presets */
+.polyhedra-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--poly-mount-border);
+}
+
+.polyhedra-title {
+  color: var(--polyhedra-gold);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.polyhedra-subtitle {
+  color: var(--poly-mount-subtext);
+  font-size: 0.80rem;
+  margin-top: 3px;
+  line-height: 1.35;
+}
+
+.polyhedra-presets {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.polyhedra-presets .polyhedra-btn {
+  font-size: 0.75rem;
+  padding: 4px 9px;
+}
+
+/* Control Bar */
+.polyhedra-ctrl-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.polyhedra-btn-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.polyhedra-btn {
+  background: var(--poly-btn-bg);
+  border: 1px solid var(--poly-btn-border);
+  color: var(--poly-btn-text);
+  font-size: 0.80rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  user-select: none;
+}
+
+.polyhedra-btn:hover {
+  background: var(--poly-btn-hover);
+  border-color: rgba(245, 158, 11, 0.5);
+  color: var(--polyhedra-gold);
+}
+
+.polyhedra-btn.active {
+  background: var(--poly-btn-active-bg);
+  color: var(--poly-btn-active-text);
+  border-color: var(--polyhedra-gold);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
+}
+
+/* Sliders */
+.polyhedra-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.polyhedra-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--poly-mount-text);
+}
+
+.polyhedra-label {
+  font-weight: 600;
+  color: var(--poly-mount-subtext);
+}
+
+.polyhedra-slider {
+  width: 130px;
+  accent-color: var(--polyhedra-gold);
+  cursor: pointer;
+}
+
+.polyhedra-val {
+  font-weight: 700;
+  color: var(--polyhedra-gold);
+  min-width: 44px;
+}
+
+/* Canvas Area */
+.polyhedra-canvas-container {
+  width: 100%;
+  border-radius: 8px;
+  background: var(--poly-mount-canvas-bg);
+  overflow: hidden;
+  border: 1px solid var(--poly-mount-border);
+}
+
+.polyhedra-canvas {
+  width: 100%;
+  height: 460px;
+  display: block;
+  cursor: grab;
+  touch-action: none;
+}
+
+.polyhedra-canvas:active {
+  cursor: grabbing;
+}
+
+/* Footer Status Bar */
+.polyhedra-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--poly-mount-border);
+  font-size: 0.80rem;
+}
+
+.polyhedra-status {
+  color: var(--poly-mount-subtext);
+  font-style: italic;
+  flex: 1 1 auto;
+}
+
+.polyhedra-pill {
+  background: var(--poly-pill-bg);
+  border: 1px solid var(--poly-pill-border);
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--polyhedra-gold);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* =========================================================================
+   Side-by-Side Leonardo Plate Comparison Grid (.leonardo-comparison-grid)
+   ========================================================================= */
+
+.leonardo-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 24px;
+  align-items: stretch;
+  margin: 32px 0;
+}
+
+@media (max-width: 960px) {
+  .leonardo-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.leonardo-plate-card {
+  background: var(--poly-mount-panel);
+  border: 1px solid var(--poly-mount-border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.leonardo-plate-card img {
+  max-width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 6px;
+  filter: contrast(1.05) sepia(0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin-bottom: 12px;
+}
+
+.leonardo-plate-caption {
+  font-size: 0.85rem;
+  color: var(--poly-mount-subtext);
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.leonardo-plate-caption strong {
+  color: var(--polyhedra-gold);
+  font-weight: 700;
+}
+
+/* =========================================================================
+   Golden Theorem & Proposition Cards (.golden-theorem-card)
+   ========================================================================= */
+
+.golden-theorem-card {
+  background: rgba(245, 158, 11, 0.05);
+  border-left: 4px solid var(--polyhedra-gold);
+  border-top: 1px solid rgba(245, 158, 11, 0.25);
+  border-right: 1px solid rgba(245, 158, 11, 0.25);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 0 10px 10px 0;
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+
+.golden-theorem-card h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--polyhedra-gold);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.golden-theorem-card p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.golden-theorem-card p:last-child {
+  margin-bottom: 0;
 }

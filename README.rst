@@ -2,23 +2,19 @@
 geometor-polyhedra
 ==================
 
-**Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry in SymPy, Rational Trigonometry, and the GEOMETOR Digital Scriptorium.**
-
-.. image:: docsrc/_static/splash.png
-   :alt: GEOMETOR Polyhedra
-   :align: center
+**Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden Ratio proportions, Leonardo da Vinci Corpora Vacua, and multi-engine 3D exports in SymPy.**
 
 Overview
 --------
 
-``geometor-polyhedra`` explores three-dimensional constructive geometry, regular and semi-regular polyhedra, and spatial proportion in **100% exact symbolic algebra** (zero floating-point approximations) using `SymPy <https://www.sympy.org/>`_ and `geometor.model`.
+``geometor-polyhedra`` models three-dimensional constructive geometry, regular and semi-regular polyhedra, and spatial proportion in **100% exact symbolic algebra** (zero floating-point approximations) using `SymPy <https://www.sympy.org/>`_, ``geometor.model``, and ``geometor.divine``.
 
-From Euclid's *Elements* Book XIII to Plato's *Timaeus*, Luca Pacioli and Leonardo da Vinci's *De Divina Proportione* (1509), and Johannes Kepler's *Harmonices Mundi* (1619), polyhedra represent the pinnacle of classical deductive solid geometry.
+From Euclid's *Elements* Book XIII to Plato's *Timaeus*, Luca Pacioli and Leonardo da Vinci's *De Divina Proportione* (1509), and Johannes Kepler's *Strena* (1611) and *Harmonices Mundi* (1619), polyhedra unite exact algebraic invariants over $\mathbb{Z}$ and $\mathbb{Q}(\phi)$ ($\phi = \frac{1 + \sqrt{5}}{2}$) with multi-engine 2D and 3D visualization.
 
 The Five Platonic Solids
 ------------------------
 
-All five regular solids $\{p, q\}$ are modeled over $\mathbb{Z}$ and the golden field $\mathbb{Q}(\phi)$ ($\phi = \frac{1 + \sqrt{5}}{2}$):
+All five regular solids $\{p, q\}$ are modeled symbolically over $\mathbb{Z}$ and $\mathbb{Q}(\phi)$ with pure rational dihedral spreads:
 
 .. list-table::
    :header-rows: 1
@@ -82,13 +78,21 @@ All five regular solids $\{p, q\}$ are modeled over $\mathbb{Z}$ and the golden 
 Key Capabilities
 ----------------
 
-- **Exact Symbolic Seed Kernel** (:mod:`geometor.polyhedra.platonic`): Frozen dataclass :class:`~geometor.polyhedra.platonic.RegularSolid` storing exact radical coordinates, oriented planar faces (CCW outward), edge graphs, and rational invariants over $\mathbb{Z}$ and $\mathbb{Q}(\phi)$.
-- **Rational Trigonometry in 3D**: Exact quadrance, cross product, dot product, face normal, and dihedral spread functions (:func:`~geometor.polyhedra.platonic.dihedral_spread_3d`).
-- **Polar Duality Invariants**: Exact equality of circumquadrance-to-inquadrance ratios between dual pairs:
-  $$\frac{Q_{\text{in}}}{Q_{\text{out}}}(\text{Cube}) = \frac{Q_{\text{in}}}{Q_{\text{out}}}(\text{Octahedron}) = \frac{1}{3}$$
-  $$\frac{Q_{\text{in}}}{Q_{\text{out}}}(\text{Dodecahedron}) = \frac{Q_{\text{in}}}{Q_{\text{out}}}(\text{Icosahedron}) = \frac{4\phi + 3}{15} = \frac{1}{3} + \frac{2\sqrt{5}}{15}$$
-- **Leonardo da Vinci Plate Concordance**: Direct mapping to Leonardo da Vinci's 60 polyhedral woodcuts from Luca Pacioli's *De Divina Proportione* (1509).
-- **Interactive Rich CLI**: Inspect solids and invariants via ``polyhedra``.
+- **Exact 3D Kernel & 2D Bridge** (``geometor.polyhedra.model3d``):
+  Zero-float ``Vector3D``, ``Point3D``, ``Line3D``, ``Plane3D``, ``Sphere3D``, and ``Solid3D`` primitives, ``slice_solid_to_model`` for exact planar cross-sections into 2D ``geometor.model.Model``, and ``unfold_net_2d`` for non-overlapping dihedral-hinge 2D nets.
+- **Conway, Pacioli & Leonardo Operators** (``geometor.polyhedra.operators``):
+  - ``vacuate(solid, aperture, shell)``: Reconstructs Leonardo da Vinci's hollow mitered wooden frames (*Corpora Vacua*) as exact orientable manifolds of $V_{\text{vac}} = 2V + 4E$ vertices, $6E$ strictly coplanar trapezoids, Euler characteristic $\chi = 4 - 2F$, and genus $g = F - 1$.
+  - ``rectify`` (*Abscisum*), ``truncate``, ``elevate`` (*Elevatum*, e.g. *Stella Octangula* on the Octahedron), and ``polar_dual`` (yielding Kepler's Rhombic Dodecahedron and Rhombic Triacontahedron).
+- **Golden Proportions in the Polyhedra** (``geometor.polyhedra.golden``):
+  Six certified theorems with SymPy algebraic proofs and ``geometor.divine`` hooks:
+  1. Three mutually orthogonal $1:\phi$ Golden Rectangles spanning the Icosahedron.
+  2. $1:\phi$ golden edge division transforming the $\phi^2$-Octahedron into the Icosahedron.
+  3. Euclid XIII.17 pentagonal hipped roofs and the compound of 5 inscribed Cubes in the Dodecahedron.
+  4. Kepler's 30-face Rhombic Triacontahedron ($Q_{\text{long}} / Q_{\text{short}} = \phi^2$).
+  5. George Odom's 1983 equilateral triangle & Tetrahedron circumsphere golden section.
+  6. 2D Kepler–Pacioli Golden Meridian Hexagon and Equatorial Pentagon/Pentagram sections.
+- **Multi-Backend Renderers & Interactive 3D Codex** (``geometor.polyhedra.render``):
+  Theme-adaptive ``.euclid-graphic`` SVGs (``render_solid_svg``, ``render_net_svg``, ``render_model2d_svg``), Wavefront ``.obj``/``.mtl`` export, runnable **IngeTrazo 0.6.0** and **Blender 5.x** studio generators, 38 curated 1509 Leonardo da Vinci woodcut plates, and a zero-dependency interactive HTML5 ``<canvas>`` 3D Book Codex viewer (``polyhedra_3d_codex.js``).
 
 Quickstart
 ----------
@@ -96,25 +100,30 @@ Quickstart
 .. code-block:: python
 
    from geometor.polyhedra import (
+       Solid3D,
+       build_dodecahedron_five_cubes,
+       build_octahedron_golden_icosahedron,
        get_platonic_solid,
-       get_platonic_solids,
-       dihedral_spread_3d,
-       face_normal_3d,
-       quadrance_3d,
+       polar_dual,
+       rectify,
+       vacuate,
    )
 
-   # Fetch all five solids
-   solids = get_platonic_solids()
-   for slug, solid in solids.items():
-       print(f"{solid.name} {{{solid.schlafli[0]},{solid.schlafli[1]}}}: V={len(solid.vertices)} E={len(solid.edges)} F={len(solid.faces)}")
+   # Reconstruct Leonardo's Dodecahedron Vacuum (Folio 0245, genus g = 11)
+   dodec = Solid3D.from_regular_solid(get_platonic_solid("dodecahedron"))
+   dodec_vac = vacuate(dodec)
+   print(dodec_vac.num_vertices, dodec_vac.num_faces, dodec_vac.genus)  # 160 180 11
 
-   # Inspect the dodecahedron
-   dodec = get_platonic_solid("dodecahedron")
-   print("Dihedral spread:", dodec.dihedral_spread)  # 4/5
-   print("Q_in / Q_out:", dodec.q_in_over_q_out)      # (4*phi + 3)/15
+   # Construct Kepler's 30-face Rhombic Triacontahedron via polar duality
+   triaconta = polar_dual(rectify(dodec))
+   print(triaconta.num_vertices, triaconta.num_faces)  # 32 30
 
-CLI Usage
----------
+   # Verify all 5 Euclid XIII.17 Cubes inscribed in the Dodecahedron
+   five_cubes = build_dodecahedron_five_cubes()
+   print(len(five_cubes.cubes))  # 5
+
+CLI & Book Codex
+----------------
 
 .. code-block:: bash
 
@@ -122,4 +131,7 @@ CLI Usage
    polyhedra
 
    # Inspect specific solid details
-   polyhedra icosahedron
+   polyhedra dodecahedron
+
+   # Build the interactive Sphinx Book Codex into docs/
+   publish build

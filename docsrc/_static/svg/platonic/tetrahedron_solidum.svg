@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480" class="euclid-graphic" data-graphic-id="tetrahedron_solidum">
+  <style>
+    .euclid-graphic {
+      background-color: transparent;
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .poly-stroke {
+      stroke: #2b2116;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .poly-hidden {
+      stroke: #94a3b8;
+      stroke-dasharray: 3 3;
+      stroke-width: 1.0;
+      opacity: 0.5;
+      fill: none;
+    }
+    .poly-gold {
+      fill: #d4af37;
+      fill-opacity: 0.45;
+      stroke: #f59e0b;
+      stroke-width: 1.8;
+      stroke-linejoin: round;
+    }
+    @media (prefers-color-scheme: dark) {
+      .poly-stroke {
+        stroke: #e8dec8;
+      }
+      .poly-hidden {
+        stroke: #64748b;
+        opacity: 0.6;
+      }
+    }
+    html[data-theme="dark"] .poly-stroke {
+      stroke: #e8dec8;
+    }
+    html[data-theme="dark"] .poly-hidden {
+      stroke: #64748b;
+      opacity: 0.6;
+    }
+  </style>
+  <defs />
+  <g id="hidden-edges">
+    <line x1="315.24" y1="422.40" x2="229.88" y2="250.01" class="poly-hidden" />
+    <line x1="457.42" y1="57.60" x2="229.88" y2="250.01" class="poly-hidden" />
+    <line x1="229.88" y1="250.01" x2="62.58" y2="82.67" class="poly-hidden" />
+  </g>
+  <g id="faces">
+    <polygon points="457.42,57.60 62.58,82.67 315.24,422.40" fill="#a5a097" stroke="#2b2116" stroke-width="1.4" class="poly-stroke" data-face-role="base" data-face-idx="1" />
+  </g>
+</svg>

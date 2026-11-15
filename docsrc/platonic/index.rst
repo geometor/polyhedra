@@ -1,3 +1,7 @@
+:layout: book
+:title: The Five Platonic Solids
+
+========================
 The Five Platonic Solids
 ========================
 
@@ -9,148 +13,225 @@ The Five Platonic Solids
 
    — :person:`Euclid of Alexandria`, *Elements* Book XIII, Proposition 18a (Porism)
 
-Axiomatic Foundation
---------------------
+.. epigraph::
 
-In Book XIII of the *Elements*, Euclid constructs the five regular convex polyhedra and proves that no other regular solids can exist in Euclidean 3-space:
+   *Quinque corpora regularia sunt: tetraedron, exaedron sive cubus, octaedron, icosaedron, et dodecaedron. Quorum quodlibet intra sphaeram comprehendi potest.*
 
-1. **Proposition XIII.13**: Construction of the regular **Tetrahedron** inside a given sphere.
-2. **Proposition XIII.14**: Construction of the regular **Octahedron** inside a given sphere.
-3. **Proposition XIII.15**: Construction of the regular **Hexahedron (Cube)** inside a given sphere.
-4. **Proposition XIII.16**: Construction of the regular **Icosahedron** inside a given sphere.
-5. **Proposition XIII.17**: Construction of the regular **Dodecahedron** inside a given sphere.
+   *There are five regular solids: the tetrahedron, hexahedron or cube, octahedron, icosahedron, and dodecahedron. Every one of them can be comprehended within a sphere.*
 
-In the GEOMETOR formulation, these solids are modeled with **zero floating-point numbers** over the rational field :math:`\mathbb{Q}` and the golden field :math:`\mathbb{Q}(\phi)`, where :math:`\phi = \frac{1 + \sqrt{5}}{2}` satisfies :math:`\phi^2 - \phi - 1 = 0`.
+   — :person:`Luca Pacioli`, *De Divina Proportione*, Cap. I (Venice, 1509)
 
-Exact Symbolic Metrics
-----------------------
+Axiomatic Foundation & Euclidean Canon
+--------------------------------------
 
-Tetrahedron :math:`\{3, 3\}`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In Book XIII of the *Elements*, Euclid constructs the five regular convex polyhedra inside a given sphere and proves in the celebrated Porism to Proposition XIII.18 that **no more than five regular convex solids can exist in Euclidean 3-space**:
 
-The regular tetrahedron is modeled using four alternating vertices of the cube :math:`[-1, 1]^3`:
+1. **Proposition XIII.13** (G-Index: ``G.592``): Construction of the regular **Tetrahedron** inside a sphere (:math:`D^2 = \frac{3}{2} S^2`).
+2. **Proposition XIII.14** (G-Index: ``G.594``): Construction of the regular **Octahedron** inside a sphere (:math:`D^2 = 2 S^2`).
+3. **Proposition XIII.15** (G-Index: ``G.595``): Construction of the regular **Hexahedron (Cube)** inside a sphere (:math:`D^2 = 3 S^2`).
+4. **Proposition XIII.16** (G-Index: ``G.597``): Construction of the regular **Icosahedron** inside a sphere (:math:`S = \text{minor}`).
+5. **Proposition XIII.17** (G-Index: ``G.600``): Construction of the regular **Dodecahedron** inside a sphere (:math:`S = \text{apotome}`).
 
-.. math::
+In the GEOMETOR formulation, these five solids are modeled with **zero floating-point numbers** over the rational integer ring :math:`\mathbb{Z}` and the golden algebraic field :math:`\mathbb{Q}(\phi)`, where :math:`\phi = \frac{1 + \sqrt{5}}{2}` satisfies the canonical quadratic minimal polynomial :math:`\phi^2 - \phi - 1 = 0`.
 
-   V_0 = (1, 1, 1), \quad V_1 = (1, -1, -1), \quad V_2 = (-1, 1, -1), \quad V_3 = (-1, -1, 1)
+Dedicated Platonic Solid Monographs
+-----------------------------------
 
-- **Schläfli Symbol**: :math:`\{3, 3\}` (4 equilateral triangles, 3 meeting at each vertex).
-- **Euler Characteristic**: :math:`V - E + F = 4 - 6 + 4 = 2`.
-- **Edge Quadrance**: :math:`Q_E = 8` (edge length :math:`2\sqrt{2}`).
-- **Circumquadrance**: :math:`Q_{\text{out}} = 3`.
-- **Inquadrance**: :math:`Q_{\text{in}} = 1/3`.
-- **Midquadrance**: :math:`Q_{\text{mid}} = 1`.
-- **Ratio Invariants**: :math:`Q_{\text{in}} / Q_{\text{out}} = 1/9`, :math:`Q_{\text{mid}} / Q_{\text{out}} = 1/3`.
-- **Dihedral Spread**: :math:`s = 8/9` (:math:`\cos\theta = 1/3`, :math:`\sin^2\theta = 8/9`).
-- **Polar Duality**: The tetrahedron is self-dual (:math:`\{3, 3\}^* = \{3, 3\}`).
+Each of the five solids is treated in an exhaustive dedicated monograph combining interactive 3D WebGL rendering, exact symbolic coordinate ledgers, 3D Rational Trigonometry proofs, golden ratio analyses, Leonardo da Vinci 1509 woodcut comparisons, and 2D unfolded nets:
 
-Hexahedron (Cube) :math:`\{4, 3\}`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. toctree::
+   :maxdepth: 1
 
-The regular hexahedron (cube) is modeled on the eight canonical corners:
+   tetrahedron
+   hexahedron
+   octahedron
+   icosahedron
+   dodecahedron
 
-.. math::
+Comparative Synthesis Ledger
+----------------------------
 
-   V \in \{(\pm 1, \pm 1, \pm 1)\}
+.. list-table::
+   :widths: 14 10 12 10 8 6 6 6 10 12 10 12
+   :header-rows: 1
 
-- **Schläfli Symbol**: :math:`\{4, 3\}` (6 squares, 3 meeting at each vertex).
-- **Euler Characteristic**: :math:`V - E + F = 8 - 12 + 6 = 2`.
-- **Edge Quadrance**: :math:`Q_E = 4` (edge length :math:`2`).
-- **Circumquadrance**: :math:`Q_{\text{out}} = 3`.
-- **Inquadrance**: :math:`Q_{\text{in}} = 1`.
-- **Midquadrance**: :math:`Q_{\text{mid}} = 2`.
-- **Ratio Invariants**: :math:`Q_{\text{in}} / Q_{\text{out}} = 1/3`, :math:`Q_{\text{mid}} / Q_{\text{out}} = 2/3`.
-- **Dihedral Spread**: :math:`s = 1` (:math:`\theta = 90^\circ`, :math:`\sin^2\theta = 1`).
-- **Polar Dual**: Octahedron :math:`\{3, 4\}`.
+   * - Solid
+     - Greek
+     - Latin
+     - Element
+     - $\{p, q\}$
+     - $V$
+     - $E$
+     - $F$
+     - Spread $s$
+     - $Q_{\text{in}} / Q_{\text{out}}$
+     - Dual
+     - Vacuum $\chi, g$
+   * - :doc:`tetrahedron`
+     - Τετράεδρον
+     - *Tetrahedron*
+     - **Fire**
+     - $\{3, 3\}$
+     - 4
+     - 6
+     - 4
+     - $8/9$
+     - $1/9$
+     - Self-dual
+     - $\chi = -4, g = 3$
+   * - :doc:`hexahedron`
+     - Ἑξάεδρον
+     - *Exahedron*
+     - **Earth**
+     - $\{4, 3\}$
+     - 8
+     - 12
+     - 6
+     - $1$
+     - $1/3$
+     - Octahedron
+     - $\chi = -8, g = 5$
+   * - :doc:`octahedron`
+     - Ὀκτάεδρον
+     - *Octahedron*
+     - **Air**
+     - $\{3, 4\}$
+     - 6
+     - 12
+     - 8
+     - $8/9$
+     - $1/3$
+     - Hexahedron
+     - $\chi = -12, g = 7$
+   * - :doc:`icosahedron`
+     - Εἰκοσάεδρον
+     - *Icosahedron*
+     - **Water**
+     - $\{3, 5\}$
+     - 12
+     - 30
+     - 20
+     - $4/9$
+     - $\frac{4\phi+3}{15}$
+     - Dodecahedron
+     - $\chi = -36, g = 19$
+   * - :doc:`dodecahedron`
+     - Δωδεκάεδρον
+     - *Dodecahedron*
+     - **Aether**
+     - $\{5, 3\}$
+     - 20
+     - 30
+     - 12
+     - $4/5$
+     - $\frac{4\phi+3}{15}$
+     - Icosahedron
+     - $\chi = -20, g = 11$
 
-Octahedron :math:`\{3, 4\}`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3D Rational Trigonometry Dihedral Spread Proof
+----------------------------------------------
 
-The regular octahedron is modeled on the six axial unit vertices:
-
-.. math::
-
-   V \in \{(\pm 1, 0, 0), (0, \pm 1, 0), (0, 0, \pm 1)\}
-
-- **Schläfli Symbol**: :math:`\{3, 4\}` (8 equilateral triangles, 4 meeting at each vertex).
-- **Euler Characteristic**: :math:`V - E + F = 6 - 12 + 8 = 2`.
-- **Edge Quadrance**: :math:`Q_E = 2` (edge length :math:`\sqrt{2}`).
-- **Circumquadrance**: :math:`Q_{\text{out}} = 1`.
-- **Inquadrance**: :math:`Q_{\text{in}} = 1/3`.
-- **Midquadrance**: :math:`Q_{\text{mid}} = 1/2`.
-- **Ratio Invariants**: :math:`Q_{\text{in}} / Q_{\text{out}} = 1/3`, :math:`Q_{\text{mid}} / Q_{\text{out}} = 1/2`.
-- **Dihedral Spread**: :math:`s = 8/9` (:math:`\cos\theta = -1/3`, :math:`\sin^2\theta = 8/9`).
-- **Polar Dual**: Hexahedron :math:`\{4, 3\}`.
-
-Icosahedron :math:`\{3, 5\}`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The regular icosahedron is modeled on three mutually perpendicular golden rectangles of aspect ratio :math:`1 : \phi`:
-
-.. math::
-
-   V \in \{(0, \pm 1, \pm \phi), (\pm 1, \pm \phi, 0), (\pm \phi, 0, \pm 1)\}
-
-- **Schläfli Symbol**: :math:`\{3, 5\}` (20 equilateral triangles, 5 meeting at each vertex).
-- **Euler Characteristic**: :math:`V - E + F = 12 - 30 + 20 = 2`.
-- **Edge Quadrance**: :math:`Q_E = 4` (edge length :math:`2`).
-- **Circumquadrance**: :math:`Q_{\text{out}} = 1 + \phi^2 = \phi + 2`.
-- **Ratio Invariants**:
-
-  .. math::
-
-     \frac{Q_{\text{in}}}{Q_{\text{out}}} = \frac{4\phi + 3}{15} = \frac{1}{3} + \frac{2\sqrt{5}}{15}
-
-  .. math::
-
-     \frac{Q_{\text{mid}}}{Q_{\text{out}}} = \frac{\phi + 2}{5} = \frac{1}{2} + \frac{\sqrt{5}}{10}
-
-- **Dihedral Spread**: :math:`s = 4/9` (:math:`\cos\theta = -\sqrt{5}/3`, :math:`\sin^2\theta = 4/9`).
-- **Polar Dual**: Dodecahedron :math:`\{5, 3\}`.
-
-Dodecahedron :math:`\{5, 3\}`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The regular dodecahedron is modeled on twenty vertices: the eight corners of a cube :math:`(\pm 1, \pm 1, \pm 1)` plus twelve vertices on the golden planes:
-
-.. math::
-
-   (0, \pm \phi^{-1}, \pm \phi), \quad (\pm \phi^{-1}, \pm \phi, 0), \quad (\pm \phi, 0, \pm \phi^{-1})
-
-where :math:`\phi^{-1} = \phi - 1`.
-
-- **Schläfli Symbol**: :math:`\{5, 3\}` (12 regular pentagons, 3 meeting at each vertex).
-- **Euler Characteristic**: :math:`V - E + F = 20 - 30 + 12 = 2`.
-- **Edge Quadrance**: :math:`Q_E = 4\phi^{-2} = 4(2 - \phi) = 6 - 2\sqrt{5}`.
-- **Circumquadrance**: :math:`Q_{\text{out}} = 3`.
-- **Ratio Invariants**:
-
-  .. math::
-
-     \frac{Q_{\text{in}}}{Q_{\text{out}}} = \frac{4\phi + 3}{15} = \frac{1}{3} + \frac{2\sqrt{5}}{15}
-
-  .. math::
-
-     \frac{Q_{\text{mid}}}{Q_{\text{out}}} = \frac{\phi + 1}{3} = \frac{1}{2} + \frac{\sqrt{5}}{6}
-
-- **Dihedral Spread**: :math:`s = 4/5` (:math:`\cos\theta = -1/\sqrt{5}`, :math:`\sin^2\theta = 4/5`).
-- **Polar Dual**: Icosahedron :math:`\{3, 5\}`.
-
-Rational Trigonometry Invariants
---------------------------------
-
-In Norman Wildberger's Rational Trigonometry, angles between faces are measured not in transcendental radians or degrees, but via the **spread** :math:`s = \sin^2\theta`:
+In Norman Wildberger's Rational Trigonometry, angles between intersecting planes are replaced by the **planar spread** :math:`s = \sin^2\theta`. Given two adjacent planar faces with unnormalized outward normal vectors :math:`n_1` and :math:`n_2`, the spread is computed algebraically without transcendental trigonometric functions:
 
 .. math::
 
    s(n_1, n_2) = 1 - \frac{(n_1 \cdot n_2)^2}{Q(n_1) Q(n_2)}
 
-For all five Platonic solids, the dihedral spread is an exact rational number in :math:`\mathbb{Q}`:
+where :math:`Q(v) = v_x^2 + v_y^2 + v_z^2` denotes the 3D vector quadrance.
+
+A universal consequence of regular polyhedral geometry is that **the dihedral spread of every Platonic solid is an exact rational number in** :math:`\mathbb{Q}`:
+
+Tetrahedron Dihedral Spread Proof
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Let :math:`F_0 = (V_0, V_1, V_2)` and :math:`F_1 = (V_0, V_3, V_1)` with normal vectors :math:`n_0 = (1, 1, -1)` and :math:`n_1 = (1, -1, 1)`.
 
 .. math::
 
-   s(\text{Tetrahedron}) = \frac{8}{9}, \quad s(\text{Cube}) = 1, \quad s(\text{Octahedron}) = \frac{8}{9}
+   n_0 \cdot n_1 = 1(1) + 1(-1) + (-1)(1) = -1
 
 .. math::
 
-   s(\text{Dodecahedron}) = \frac{4}{5}, \quad s(\text{Icosahedron}) = \frac{4}{9}
+   Q(n_0) = 1^2 + 1^2 + (-1)^2 = 3, \quad Q(n_1) = 1^2 + (-1)^2 + 1^2 = 3
+
+.. math::
+
+   s(\text{Tetrahedron}) = 1 - \frac{(-1)^2}{3 \times 3} = 1 - \frac{1}{9} = \frac{8}{9}
+
+Hexahedron (Cube) Dihedral Spread Proof
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Adjacent square faces meet along Cartesian axes with normal vectors :math:`n_0 = (1, 0, 0)` and :math:`n_2 = (0, 1, 0)`.
+
+.. math::
+
+   n_0 \cdot n_2 = 0, \quad Q(n_0) = 1, \quad Q(n_2) = 1
+
+.. math::
+
+   s(\text{Hexahedron}) = 1 - \frac{0^2}{1 \times 1} = 1
+
+Octahedron Dihedral Spread Proof
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Adjacent triangular faces have outward normals :math:`n_0 = (1, 1, 1)` and :math:`n_1 = (1, -1, 1)`.
+
+.. math::
+
+   n_0 \cdot n_1 = 1(1) + 1(-1) + 1(1) = 1
+
+.. math::
+
+   Q(n_0) = 3, \quad Q(n_1) = 3
+
+.. math::
+
+   s(\text{Octahedron}) = 1 - \frac{1^2}{3 \times 3} = 1 - \frac{1}{9} = \frac{8}{9}
+
+.. note::
+
+   The **Tetrahedron** and **Octahedron** share the exact same dihedral spread :math:`s = 8/9`, reflecting their mutual participation in the face-centered cubic lattice!
+
+Icosahedron Dihedral Spread Proof
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The outward normals to two adjacent equilateral triangular faces in golden coordinates satisfy :math:`\cos\theta = -\frac{\sqrt{5}}{3}`.
+
+.. math::
+
+   \cos^2\theta = \frac{5}{9} \implies s(\text{Icosahedron}) = 1 - \frac{5}{9} = \frac{4}{9}
+
+Dodecahedron Dihedral Spread Proof
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The outward normals to two adjacent regular pentagonal faces satisfy :math:`\cos\theta = -\frac{1}{\sqrt{5}}`.
+
+.. math::
+
+   \cos^2\theta = \frac{1}{5} \implies s(\text{Dodecahedron}) = 1 - \frac{1}{5} = \frac{4}{5}
+
+Polar Duality and Symmetry Groups
+---------------------------------
+
+The five Platonic solids partition into three reflexive duality pairs governed by finite subgroups of :math:`O(3)`:
+
+1. **Self-Duality (:math:`T_d` Symmetry, Order 24)**:
+   The **Tetrahedron** is self-dual (:math:`\{3, 3\}^* = \{3, 3\}`). Connecting the four face centroids yields an inverted regular tetrahedron of edge quadrance :math:`Q = 8/9`.
+2. **Cubic Duality (:math:`O_h` Symmetry, Order 48)**:
+   The **Hexahedron (Cube)** :math:`\{4, 3\}` and the **Octahedron** :math:`\{3, 4\}` are polar duals. The six face centroids of the cube form the vertices of an inscribed regular octahedron, and the eight face centroids of an octahedron form the vertices of an inscribed cube.
+3. **Icosahedral Duality (:math:`I_h` Symmetry, Order 120)**:
+   The **Icosahedron** :math:`\{3, 5\}` and the **Dodecahedron** :math:`\{5, 3\}` are polar duals. The twelve face centroids of the dodecahedron form a regular icosahedron, and the twenty face centroids of the icosahedron form a regular dodecahedron. Both solids share the exact same inquadrance-to-circumquadrance ratio:
+
+   .. math::
+
+      \frac{Q_{\text{in}}}{Q_{\text{out}}} = \frac{4\phi + 3}{15} = \frac{5 + 2\sqrt{5}}{15}
+
+Leonardo da Vinci's Structural Variations (1509)
+------------------------------------------------
+
+In Luca Pacioli's *De Divina Proportione* (1509), Leonardo da Vinci introduced four principal architectural variations for every regular solid:
+
+- **Planum Solidum**: An opaque body with solid planar facets, shaded with Renaissance woodcut hatching indicating a single upper-left light source (*luce primaria*).
+- **Planum Vacuum**: A hollow wooden armillary framework of beam width parameter :math:`\mu`, opening the faces to reveal internal spatial structure, opposite vertices, and dihedral joinery.
+- **Abscisum (Truncatum)**: Vertices are cut off perpendicular to their radial vectors, yielding Archimedean semi-regular polyhedra.
+- **Elevatum (Stellatum)**: Regular polygonal pyramids are erected on each face, producing Keplerian star polyhedra and triacontahedra.

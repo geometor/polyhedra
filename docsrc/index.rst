@@ -24,6 +24,13 @@ Overview
 
 Grounding its algebraic foundations in Euclid's *Elements* Book XIII, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509), and Norman Wildberger's Rational Trigonometry, this codex unites classical geometric scholarship with symbolic computation over :math:`\mathbb{Z}` and :math:`\mathbb{Q}(\phi)` (:math:`\phi = \frac{1 + \sqrt{5}}{2}`).
 
+Interactive 3D Polyhedra Explorer
+---------------------------------
+
+.. raw:: html
+
+   <div class="polyhedra-3d-mount" data-solid="dodecahedron" data-initial-variant="vacuum"></div>
+
 The Five Platonic Solids
 ------------------------
 
@@ -40,7 +47,7 @@ The Five Platonic Solids
      - $F$
      - Spread
      - $Q_{\text{in}} / Q_{\text{out}}$
-   * - **Tetrahedron**
+   * - :doc:`platonic/tetrahedron`
      - Τετράεδρον
      - Fire
      - $\{3, 3\}$
@@ -49,7 +56,7 @@ The Five Platonic Solids
      - 4
      - $8/9$
      - $1/9$
-   * - **Hexahedron**
+   * - :doc:`platonic/hexahedron`
      - Ἑξάεδρον
      - Earth
      - $\{4, 3\}$
@@ -58,7 +65,7 @@ The Five Platonic Solids
      - 6
      - $1$
      - $1/3$
-   * - **Octahedron**
+   * - :doc:`platonic/octahedron`
      - Ὀκτάεδρον
      - Air
      - $\{3, 4\}$
@@ -67,7 +74,7 @@ The Five Platonic Solids
      - 8
      - $8/9$
      - $1/3$
-   * - **Icosahedron**
+   * - :doc:`platonic/icosahedron`
      - Εἰκοσάεδρον
      - Water
      - $\{3, 5\}$
@@ -76,7 +83,7 @@ The Five Platonic Solids
      - 20
      - $4/9$
      - $\frac{4\phi+3}{15}$
-   * - **Dodecahedron**
+   * - :doc:`platonic/dodecahedron`
      - Δωδεκάεδρον
      - Aether
      - $\{5, 3\}$
@@ -91,7 +98,10 @@ Codex Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: Polyhedra Canon
 
    platonic/index
+   golden/index
    leonardo/index
+   pipeline/index
 

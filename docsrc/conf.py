@@ -11,6 +11,7 @@ _WORKSPACE_ROOT = _PROJECT_ROOT.parent
 for _front_path in (
     _PROJECT_ROOT / "src",
     _WORKSPACE_ROOT / "model" / "src",
+    _WORKSPACE_ROOT / "divine" / "src",
     _WORKSPACE_ROOT / "polyhedra" / "src",
 ):
     if _front_path.exists() and str(_front_path) not in sys.path:
@@ -66,7 +67,7 @@ for key in list(intersphinx_mapping.keys()):  # noqa: F405
 html_theme = "foundation"
 html_static_path = ["_static"]
 html_css_files = [*globals().get("html_css_files", []), "css/custom.css"]
-html_logo = None
+html_js_files = [*globals().get("html_js_files", []), "js/polyhedra_3d_codex.js"]
 
 autoapi_dirs = [str(_PROJECT_ROOT / "src" / "geometor")]
 autoapi_add_toctree_entry = False

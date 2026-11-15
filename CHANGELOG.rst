@@ -1,3 +1,12 @@
+0.2.0 (2026-11-15)
+------------------
+
+- Added exact 3D symbolic modeling kernel :mod:`geometor.polyhedra.model3d` (:class:`~geometor.polyhedra.model3d.Point3D`, :class:`~geometor.polyhedra.model3d.Vector3D`, :class:`~geometor.polyhedra.model3d.Line3D`, :class:`~geometor.polyhedra.model3d.Plane3D`, :class:`~geometor.polyhedra.model3d.Sphere3D`, :class:`~geometor.polyhedra.model3d.Solid3D`) plus 2D Dimensional Bridge (:func:`~geometor.polyhedra.model3d.slice_solid_to_model` and :func:`~geometor.polyhedra.model3d.unfold_net_2d`).
+- Implemented exact Conway/Pacioli/Leonardo polyhedral operators in :mod:`geometor.polyhedra.operators`: :func:`~geometor.polyhedra.operators.vacuate` (genus :math:`g = F - 1` hollow wooden manifold), :func:`~geometor.polyhedra.operators.rectify`, :func:`~geometor.polyhedra.operators.truncate`, :func:`~geometor.polyhedra.operators.elevate` (equilateral stellations including *Stella Octangula*), and :func:`~geometor.polyhedra.operators.polar_dual`.
+- Added :mod:`geometor.polyhedra.golden` proving six canonical Golden Proportion theorems across 3D polyhedra and 2D cross-sections (3 orthogonal golden rectangles in the icosahedron, golden division of the 12 octahedron edges, Euclid XIII.17 compound of 5 cubes in the dodecahedron, Kepler's 30-face rhombic triacontahedron, Odom's tetrahedron section, meridian hexagon, and equatorial pentagon/pentagram).
+- Built multi-backend visualization & CAD export suite :mod:`geometor.polyhedra.render` (`.euclid-graphic` 3D solid/vacuum SVGs, 2D unfolded net SVGs, 2D section SVGs, Wavefront `.obj`/`.mtl`, IngeTrazo 0.6.0 live builder, and Blender 5.x `bpy` studio script) plus zero-dependency interactive HTML5 `<canvas>` 3D Book Codex engine (`polyhedra_3d_codex.js`).
+- Authored 15 dedicated `:layout: book` codex pages across `docsrc/platonic/`, `docsrc/golden/`, `docsrc/leonardo/` (with 38 curated 1509 Leonardo da Vinci woodcut plates), and `docsrc/pipeline/`.
+
 0.1.0 (2026-11-14)
 ------------------
 

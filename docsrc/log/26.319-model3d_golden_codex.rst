@@ -1,0 +1,14 @@
+:date: 2026-11-15
+:type: log
+:summary: Exact 3D symbolic model3d kernel, Conway/Leonardo vacuate operators, Golden Proportions suite, interactive 3D codex viewer, and dedicated Book Codex monographs.
+
+Model3D, Golden Proportions & Leonardo Codex (v0.2.0)
+=====================================================
+
+Expanded ``geometor.polyhedra`` (v0.2.0) with full 3D symbolic modeling, Golden Ratio proofs,
+multi-backend CAD/Blender/SVG exporters, and dedicated interactive Book Codex pages:
+
+- **Exact 3D Kernel & 2D Bridge** (:mod:`geometor.polyhedra.model3d`): Added ``Point3D``, ``Vector3D``, ``Line3D``, ``Plane3D``, ``Sphere3D``, ``Solid3D``, ``slice_solid_to_model`` (slicing 3D polyhedra into exact 2D ``geometor.model.Model`` planar constructions), and ``unfold_net_2d`` (non-overlapping dihedral-hinge 2D nets).
+- **Conway, Pacioli & Leonardo Operators** (:mod:`geometor.polyhedra.operators`): Added ``vacuate`` (generating Leonardo da Vinci's *Corpora Vacua* as exact genus :math:`g = F - 1` manifolds of :math:`6E` coplanar trapezoids), ``rectify``, ``truncate``, ``elevate``, and ``polar_dual``.
+- **Golden Proportions in the Polyhedra** (:mod:`geometor.polyhedra.golden`): Certified exact SymPy theorems for the three orthogonal golden rectangles in the icosahedron, the :math:`1:\phi` edge division transforming the octahedron into the icosahedron, Euclid XIII.17's compound of five cubes in the dodecahedron, Kepler's 30-face rhombic triacontahedron, George Odom's tetrahedron section, and 2D meridian/pentagonal cross-sections.
+- **Interactive 3D Codex & Multi-Engine Exporters**: Created ``polyhedra_3d_codex.js`` (zero-dependency HTML5 ``<canvas>`` 3D viewer with live *Vacuum* beam-aperture morphing and golden edge/cube controls), 25 publication ``.euclid-graphic`` SVGs, 38 curated 1509 Leonardo woodcut plates, and IngeTrazo 0.6.0 / Blender 5.x / ``.obj`` exporters across 15 dedicated ``:layout: book`` pages.

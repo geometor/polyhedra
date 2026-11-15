@@ -1,0 +1,50 @@
+# GEOMETOR Polyhedra Material Library: dodecahedron_vacuate
+# Renaissance Woodcut & Alabaster Palette
+
+# Alabaster / Parchment Base Solid
+newmtl base
+Ka 0.20 0.20 0.20
+Kd 0.90 0.87 0.82
+Ks 0.15 0.15 0.15
+Ns 10.0
+illum 2
+
+# Renaissance Boxwood Outer Frame
+newmtl outer_frame
+Ka 0.22 0.20 0.16
+Kd 0.937 0.886 0.776
+Ks 0.12 0.12 0.12
+Ns 8.0
+illum 2
+
+# Deep Boxwood Window Reveal (Frame Thickness)
+newmtl window_reveal
+Ka 0.18 0.15 0.10
+Kd 0.784 0.678 0.498
+Ks 0.10 0.10 0.10
+Ns 8.0
+illum 2
+
+# Walnut Tone Inner Frame (Hollow Cavity)
+newmtl inner_frame
+Ka 0.12 0.10 0.06
+Kd 0.541 0.435 0.278
+Ks 0.06 0.06 0.06
+Ns 6.0
+illum 2
+
+# Sandstone Truncation Facets
+newmtl truncation
+Ka 0.18 0.18 0.18
+Kd 0.85 0.80 0.74
+Ks 0.15 0.15 0.15
+Ns 12.0
+illum 2
+
+# Ochre Pyramid Facets
+newmtl pyramid
+Ka 0.20 0.18 0.12
+Kd 0.92 0.84 0.71
+Ks 0.16 0.16 0.16
+Ns 12.0
+illum 2

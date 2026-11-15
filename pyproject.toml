@@ -21,6 +21,7 @@ dependencies = [
     "sympy",
     "rich",
     "geometor-model",
+    "geometor-divine",
 ]
 
 [project.optional-dependencies]

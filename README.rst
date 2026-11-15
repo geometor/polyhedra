@@ -91,6 +91,8 @@ Key Capabilities
   4. Kepler's 30-face Rhombic Triacontahedron ($Q_{\text{long}} / Q_{\text{short}} = \phi^2$).
   5. George Odom's 1983 equilateral triangle & Tetrahedron circumsphere golden section.
   6. 2D Kepler–Pacioli Golden Meridian Hexagon and Equatorial Pentagon/Pentagram sections.
+- **Kepler, Squaring the Circle & the Great Pyramid** (``geometor.polyhedra.pyramid``):
+  Exact symbolic comparison of the **Kepler Golden Pyramid** ($1, \sqrt{\phi}, \phi$; $A_{\text{face}} = h^2 = \phi$; $Q_{\text{edge}} = \phi + 2 = Q_{\text{out}}(\text{Icosahedron})$), **True Circle-Quadrature Pyramid** ($h = 4/\pi$, $8 = 2\pi h$), **Old Kingdom $14:11$ Seked Pyramid** ($280/220$ Royal Cubits, $\pi \approx 22/7$), and **Earth–Moon $11:3$ Cosmogram** ($r_M / r_E = 3/11 \approx \sqrt{\phi} - 1$).
 - **Multi-Backend Renderers & Interactive 3D Codex** (``geometor.polyhedra.render``):
   Theme-adaptive ``.euclid-graphic`` SVGs (``render_solid_svg``, ``render_net_svg``, ``render_model2d_svg``), Wavefront ``.obj``/``.mtl`` export, runnable **IngeTrazo 0.6.0** and **Blender 5.x** studio generators, 38 curated 1509 Leonardo da Vinci woodcut plates, and a zero-dependency interactive HTML5 ``<canvas>`` 3D Book Codex viewer (``polyhedra_3d_codex.js``).
 

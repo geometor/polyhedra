@@ -378,3 +378,47 @@ html[data-theme="dark"] {
 .golden-theorem-card p:last-child {
   margin-bottom: 0;
 }
+
+/* =========================================================================
+   Great Pyramid & Kepler Telemetry Readout Bar (.polyhedra-telemetry-bar)
+   ========================================================================= */
+
+.polyhedra-telemetry-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--poly-mount-panel);
+  border: 1px solid var(--poly-mount-border);
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.polyhedra-telemetry-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--poly-pill-bg);
+  border: 1px solid var(--poly-pill-border);
+  border-radius: 6px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+
+.polyhedra-telemetry-label {
+  color: var(--poly-mount-subtext);
+  font-weight: 500;
+}
+
+.polyhedra-telemetry-val {
+  color: var(--polyhedra-gold);
+  font-weight: 700;
+}
+
+.polyhedra-telemetry-val.match {
+  color: #10b981;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+

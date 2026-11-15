@@ -47,6 +47,18 @@ from geometor.polyhedra.platonic import (
     get_platonic_solids,
     quadrance_3d,
 )
+from geometor.polyhedra.pyramid import (
+    SQRT_PHI,
+    PyramidModelProfile,
+    build_kepler_bipyramid_solid,
+    build_kepler_pyramid_solid,
+    build_kepler_triangle_model,
+    build_pyramid_squaring_circle_model,
+    build_seked_pyramid_solid,
+    get_great_pyramid_profile,
+    get_great_pyramid_profiles,
+    verify_kepler_pyramid_identities,
+)
 from geometor.polyhedra.render import (
     export_blender_script,
     export_ingetrazo_script,
@@ -56,7 +68,7 @@ from geometor.polyhedra.render import (
     render_solid_svg,
 )
 
-__version__: str = "0.2.1"
+__version__: str = "0.3.0"
 
 __all__: list[str] = [
     "GoldenPolyhedronTheorem",
@@ -65,7 +77,9 @@ __all__: list[str] = [
     "PHI_INV",
     "Plane3D",
     "Point3D",
+    "PyramidModelProfile",
     "RegularSolid",
+    "SQRT_PHI",
     "Solid3D",
     "Sphere3D",
     "Vector3D",
@@ -73,10 +87,15 @@ __all__: list[str] = [
     "build_dodecahedron_five_cubes",
     "build_icosahedron_golden_rectangles",
     "build_icosahedron_meridian_model",
+    "build_kepler_bipyramid_solid",
+    "build_kepler_pyramid_solid",
+    "build_kepler_triangle_model",
     "build_octahedron_golden_icosahedron",
     "build_odom_tetrahedron_section_model",
     "build_pentagon_cross_section_model",
+    "build_pyramid_squaring_circle_model",
     "build_rhombic_triacontahedron_golden",
+    "build_seked_pyramid_solid",
     "cross_3d",
     "dihedral_spread_3d",
     "dot_3d",
@@ -87,6 +106,8 @@ __all__: list[str] = [
     "face_normal_3d",
     "get_golden_theorem",
     "get_golden_theorems",
+    "get_great_pyramid_profile",
+    "get_great_pyramid_profiles",
     "get_platonic_solid",
     "get_platonic_solids",
     "polar_dual",
@@ -99,4 +120,5 @@ __all__: list[str] = [
     "truncate",
     "unfold_net_2d",
     "vacuate",
+    "verify_kepler_pyramid_identities",
 ]

@@ -1,0 +1,12 @@
+:date: 2026-11-15
+:type: log
+:summary: Exact symbolic modeling, interactive 3D studio, and Book Codex for the 1597 Kepler Right Triangle, Squaring the Circle, and the Geometry of the Great Pyramid.
+
+Kepler, Squaring the Circle & the Great Pyramid (v0.3.0)
+========================================================
+
+Added the dedicated **Great Pyramid** symbolic module (:mod:`geometor.polyhedra.pyramid`), interactive 3D studio scene, and four-chapter Book Codex (``docsrc/pyramid/``):
+
+- **Four Canonical Pyramid Profiles** (:class:`~geometor.polyhedra.pyramid.PyramidModelProfile`): Exact symbolic profiles over :math:`\mathbb{Q}(\sqrt{\phi})`, :math:`\mathbb{Q}(\pi)`, and :math:`\mathbb{Q}` comparing the **Kepler Golden Pyramid** (:math:`h = \sqrt{\phi}`, :math:`s = \phi`), **True Circle-Quadrature Pyramid** (:math:`h = 4/\pi`), **Old Kingdom 14:11 Seked Pyramid** (280 / 220 Royal Cubits, :math:`\pi \approx 22/7`), and **Regular Half-Octahedron** (:math:`h = \sqrt{2}`).
+- **Certified Symbolic Theorems**: Proved 11 exact identities in SymPy, including Herodotus's area law (:math:`A_{\text{face}} = h^2 = \phi`), the continuous golden surface progression (:math:`A_{\text{base}} : A_{\text{lateral}} : A_{\text{total}} = 1 : \phi : \phi^2`), the Icosahedron circumradius bridge (:math:`Q_{\text{edge}} = \phi + 2 = Q_{\text{out}}(\text{Icosahedron})`), and pure :math:`\mathbb{Q}(\phi)` / :math:`\mathbb{Q}` Rational Trigonometry dihedral spreads (:math:`3\phi - 4` and :math:`85848/100489`).
+- **2D Compass Constructions & 3D Interactive Studio**: Built exact 2D ``geometor.model.Model`` constructions for the 1597 Kepler Right Triangle and the Squaring-the-Circle / Earth–Moon (:math:`3/11 \approx \sqrt{\phi} - 1`) Cosmogram, paired with 6 ``.euclid-graphic`` SVGs and the live ``great_pyramid_kepler`` 3D canvas studio.

@@ -802,6 +802,100 @@
     return { acuteVerts, obtuseVerts, rhombi, diagLines, showDodeca, showIcosa, showDiagonals, solidShading };
   }
 
+  // Scene 5 Helper: Leonardo da Vinci 1509 Vacuum Frame for Square Pyramid (Pyramis Quadrata Vacua)
+  function buildPyramidVacuumMesh(H, showBipyramid, mu, frameThickness) {
+    const polygons = [];
+    const t = frameThickness || 0.12;
+    const m = mu || 0.58;
+
+    const C0 = [ 1, 0,  1];
+    const C1 = [-1, 0,  1];
+    const C2 = [-1, 0, -1];
+    const C3 = [ 1, 0, -1];
+    const A_top = [0, H, 0];
+    const A_bot = [0, -H, 0];
+
+    // Upper pyramid faces
+    const upperFaces = [
+      { name: 'south', pts: [C1, C0, A_top] },
+      { name: 'east',  pts: [C0, C3, A_top] },
+      { name: 'north', pts: [C3, C2, A_top] },
+      { name: 'west',  pts: [C2, C1, A_top] }
+    ];
+
+    if (!showBipyramid) {
+      upperFaces.push({ name: 'base', pts: [C0, C1, C2, C3] });
+    }
+
+    const cPyrTop = [0, H * 0.25, 0];
+
+    function processFace(facePts, cCenter, isBase) {
+      const k = facePts.length;
+      const cFace = facePts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / k)), [0, 0, 0]);
+      let faceNorm = vNorm(vCross(vSub(facePts[1], facePts[0]), vSub(facePts[2], facePts[0])));
+      if (isBase && faceNorm[1] > 0) faceNorm = vScale(faceNorm, -1);
+
+      // Outer aperture vertices
+      const wOut = facePts.map(v => vLerp(v, cFace, m));
+      // Inner shell vertices (shrunk toward pyramid centroid)
+      const vIn = facePts.map(v => vLerp(v, cCenter, t));
+      const wIn = wOut.map(w => vLerp(w, cCenter, t));
+
+      for (let i = 0; i < k; i++) {
+        const next = (i + 1) % k;
+
+        // 1. Outer frame quad (warm sunlit Italian boxwood)
+        const outerQuad = [facePts[i], facePts[next], wOut[next], wOut[i]];
+        const cOuter = outerQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
+        polygons.push({
+          pts: outerQuad,
+          centroid: cOuter,
+          norm: faceNorm,
+          baseColor: PAL.boxwood,
+          type: 'vacuum_outer'
+        });
+
+        // 2. Inner frame quad (deep shaded Italian walnut)
+        const innerQuad = [vIn[next], vIn[i], wIn[i], wIn[next]];
+        const cInner = innerQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
+        polygons.push({
+          pts: innerQuad,
+          centroid: cInner,
+          norm: vScale(faceNorm, -1),
+          baseColor: PAL.walnut,
+          type: 'vacuum_inner'
+        });
+
+        // 3. Window reveal quad (mid-tone carved pearwood)
+        const revealQuad = [wOut[i], wOut[next], wIn[next], wIn[i]];
+        const cReveal = revealQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
+        const revealNorm = vNorm(vCross(vSub(wOut[next], wOut[i]), vSub(wIn[next], wOut[next])));
+        polygons.push({
+          pts: revealQuad,
+          centroid: cReveal,
+          norm: revealNorm,
+          baseColor: PAL.pearwood,
+          type: 'vacuum_reveal'
+        });
+      }
+    }
+
+    upperFaces.forEach(f => processFace(f.pts, cPyrTop, f.name === 'base'));
+
+    if (showBipyramid) {
+      const cPyrBot = [0, -H * 0.25, 0];
+      const lowerFaces = [
+        { name: 'south_bot', pts: [C0, C1, A_bot] },
+        { name: 'east_bot',  pts: [C3, C0, A_bot] },
+        { name: 'north_bot', pts: [C2, C3, A_bot] },
+        { name: 'west_bot',  pts: [C1, C2, A_bot] }
+      ];
+      lowerFaces.forEach(f => processFace(f.pts, cPyrBot, false));
+    }
+
+    return polygons;
+  }
+
   // --- Projection & 3D Camera Engine ---
   class Camera3D {
     constructor(preset) {
@@ -882,6 +976,14 @@
       this.rtShowDiagonals = true;
       this.rtSolid = false;
 
+      // Great Pyramid & Kepler Scene State
+      this.pyramidH = Math.sqrt(PHI);  // Height of pyramid (a = 1.0)
+      this.showKeplerTriangle = true;  // Kepler Right Triangle (1 : √φ : φ)
+      this.showQuadrature = true;      // Squaring the Circle (2πh = 8)
+      this.showCosmogram = false;      // Earth & Moon Cosmogram
+      this.pyramidVacuum = false;      // Leonardo Vacuum Frame (genus 4)
+      this.showBipyramid = false;      // Reflected Golden Bipyramid
+
       // Camera presets
       this.presets = {
         leonardo: { yaw: 0.42, pitch: 0.32, zoom: 1.0, persp: 0.32 },
@@ -919,6 +1021,9 @@
       } else if (this.sceneName === 'rhombic_triacontahedron') {
         title = 'KEPLER • RHOMBIC TRIACONTAHEDRON (30 GOLDEN RHOMBI)';
         subtitle = '32 Vertices (20 Dodecahedron + 12 Icosahedron) • Diagonal Ratio Long:Short = φ : 1';
+      } else if (this.sceneName === 'great_pyramid_kepler') {
+        title = 'KEPLER, SQUARING THE CIRCLE & THE GREAT PYRAMID';
+        subtitle = 'Kepler Right Triangle (1 : √φ : φ) • Exact Perimeter Quadrature (2πh = 8) • Earth & Moon Cosmogram';
       }
 
       this.container.innerHTML = `
@@ -941,6 +1046,8 @@
           <div class="polyhedra-slider-wrap"></div>
         </div>
 
+        <div class="polyhedra-telemetry-bar" style="display:none;"></div>
+
         <div class="polyhedra-canvas-container">
           <canvas class="polyhedra-canvas"></canvas>
         </div>
@@ -955,6 +1062,7 @@
       this.ctx = this.canvas.getContext('2d');
       this.statusEl = this.container.querySelector('.polyhedra-status');
       this.eulerEl = this.container.querySelector('.euler-pill');
+      this.telemetryBar = this.container.querySelector('.polyhedra-telemetry-bar');
 
       this.populateControls();
     }
@@ -1154,6 +1262,213 @@
           btnSolid.classList.toggle('active', this.rtSolid);
         });
         togGroup.appendChild(btnSolid);
+      } else if (this.sceneName === 'great_pyramid_kepler') {
+        if (this.telemetryBar) {
+          this.telemetryBar.style.display = 'flex';
+        }
+
+        // 1. Preset Model Buttons (snapping live h parameter and highlighting active preset)
+        const presets = [
+          { id: 'kepler', label: 'Kepler φ (h = √φ ≈ 1.2720)', h: Math.sqrt(PHI) },
+          { id: 'seked', label: 'Seked 14:11 (Khufu 280/220 ≈ 1.2727)', h: 14 / 11 },
+          { id: 'pi_quad', label: 'True π Quadrature (h = 4/π ≈ 1.2732)', h: 4 / Math.PI },
+          { id: 'half_octa', label: 'Half-Octahedron (h = √2 ≈ 1.4142)', h: Math.SQRT2 }
+        ];
+
+        const presetBtns = [];
+        presets.forEach(p => {
+          const btn = document.createElement('button');
+          btn.className = `polyhedra-btn pyramid-preset-btn ${Math.abs(this.pyramidH - p.h) < 0.001 ? 'active' : ''}`;
+          btn.textContent = p.label;
+          btn.addEventListener('click', () => {
+            this.pyramidH = p.h;
+            const sl = sliderWrap.querySelector('.h-slider');
+            const sv = sliderWrap.querySelector('.h-val');
+            if (sl) sl.value = p.h.toFixed(4);
+            if (sv) sv.textContent = p.h.toFixed(4);
+            presetBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            this.updatePyramidTelemetry();
+          });
+          varGroup.appendChild(btn);
+          presetBtns.push(btn);
+        });
+
+        // 2. Interactive Visual Layer Checkboxes / Toggles
+        // a) Kepler Meridian Triangle (1, √φ, φ) - default ON
+        const btnKepler = document.createElement('button');
+        btnKepler.className = `polyhedra-btn ${this.showKeplerTriangle ? 'active' : ''}`;
+        btnKepler.textContent = 'Kepler (1, √φ, φ)';
+        btnKepler.title = 'Luminous Gold Interior Right Triangle from Base Center to East Edge Midpoint to Apex';
+        btnKepler.addEventListener('click', () => {
+          this.showKeplerTriangle = !this.showKeplerTriangle;
+          btnKepler.classList.toggle('active', this.showKeplerTriangle);
+        });
+        togGroup.appendChild(btnKepler);
+
+        // b) Squaring the Circle (2πh = 8) - default ON
+        const btnQuad = document.createElement('button');
+        btnQuad.className = `polyhedra-btn ${this.showQuadrature ? 'active' : ''}`;
+        btnQuad.textContent = 'Squaring the Circle (2πh = 8)';
+        btnQuad.title = 'Base Plane & Vertical Meridian Quadrature Circles (Radius = h)';
+        btnQuad.addEventListener('click', () => {
+          this.showQuadrature = !this.showQuadrature;
+          btnQuad.classList.toggle('active', this.showQuadrature);
+        });
+        togGroup.appendChild(btnQuad);
+
+        // c) Earth & Moon Cosmogram - default OFF
+        const btnCosmo = document.createElement('button');
+        btnCosmo.className = `polyhedra-btn ${this.showCosmogram ? 'active' : ''}`;
+        btnCosmo.textContent = 'Earth & Moon';
+        btnCosmo.title = 'Translucent Earth Wireframe Sphere (r=1) and Tangent Moon Sphere (r=h-1)';
+        btnCosmo.addEventListener('click', () => {
+          this.showCosmogram = !this.showCosmogram;
+          btnCosmo.classList.toggle('active', this.showCosmogram);
+        });
+        togGroup.appendChild(btnCosmo);
+
+        // d) Leonardo Vacuum Frame - default OFF
+        const btnVac = document.createElement('button');
+        btnVac.className = `polyhedra-btn ${this.pyramidVacuum ? 'active' : ''}`;
+        btnVac.textContent = 'Vacuum Frame';
+        btnVac.title = 'Hollow Mitered Boxwood Wooden Frame (Pyramis Quadrata Vacua, genus g = 4)';
+        btnVac.addEventListener('click', () => {
+          this.pyramidVacuum = !this.pyramidVacuum;
+          btnVac.classList.toggle('active', this.pyramidVacuum);
+        });
+        togGroup.appendChild(btnVac);
+
+        // e) Reflected Golden Bipyramid - default OFF
+        const btnBi = document.createElement('button');
+        btnBi.className = `polyhedra-btn ${this.showBipyramid ? 'active' : ''}`;
+        btnBi.textContent = 'Golden Bipyramid';
+        btnBi.title = 'Reflect 4 Lateral Faces Downward to Compare Against Regular Octahedron';
+        btnBi.addEventListener('click', () => {
+          this.showBipyramid = !this.showBipyramid;
+          btnBi.classList.toggle('active', this.showBipyramid);
+        });
+        togGroup.appendChild(btnBi);
+
+        // f) Auto-Spin
+        const btnSpin = document.createElement('button');
+        btnSpin.className = `polyhedra-btn ${this.autoOrbit ? 'active' : ''}`;
+        btnSpin.textContent = 'Auto-Spin';
+        btnSpin.addEventListener('click', () => {
+          this.autoOrbit = !this.autoOrbit;
+          btnSpin.classList.toggle('active', this.autoOrbit);
+        });
+        togGroup.appendChild(btnSpin);
+
+        // 3. Continuous Apex Height Slider (0.75 to 1.60, step 0.001)
+        sliderWrap.innerHTML = `
+          <div class="polyhedra-slider-row pyramid-slider-row">
+            <span class="polyhedra-label">Apex Height (h):</span>
+            <input type="range" class="polyhedra-slider h-slider" min="0.75" max="1.60" step="0.001" value="${this.pyramidH.toFixed(4)}" />
+            <span class="polyhedra-val h-val">${this.pyramidH.toFixed(4)}</span>
+          </div>
+        `;
+        const hSlider = sliderWrap.querySelector('.h-slider');
+        const hVal = sliderWrap.querySelector('.h-val');
+        if (hSlider) {
+          hSlider.addEventListener('input', e => {
+            this.pyramidH = parseFloat(e.target.value);
+            if (hVal) hVal.textContent = this.pyramidH.toFixed(4);
+            presetBtns.forEach((b, idx) => {
+              b.classList.toggle('active', Math.abs(this.pyramidH - presets[idx].h) < 0.001);
+            });
+            this.updatePyramidTelemetry();
+          });
+        }
+
+        this.updatePyramidTelemetry();
+      }
+    }
+
+    updatePyramidTelemetry() {
+      if (this.sceneName !== 'great_pyramid_kepler') return;
+      const h = this.pyramidH;
+      const a = 1.0;
+      const s = Math.hypot(a, h);
+      const isKepler = Math.abs(h - Math.sqrt(PHI)) < 0.002;
+      const isSeked = Math.abs(h - 14 / 11) < 0.002;
+      const isPiQuad = Math.abs(h - 4 / Math.PI) < 0.002;
+      const isOcta = Math.abs(h - Math.SQRT2) < 0.002;
+
+      // Slope Angle α in degrees, minutes, seconds
+      const alphaRad = Math.atan2(h, a);
+      const alphaDeg = (alphaRad * 180) / Math.PI;
+      const d = Math.floor(alphaDeg);
+      const mRem = (alphaDeg - d) * 60;
+      const m = Math.floor(mRem);
+      const sec = Math.round((mRem - m) * 60);
+      const slopeDMS = `${d}° ${m}' ${sec < 10 ? '0' : ''}${sec}"`;
+
+      // Quadrature: Base perimeter = 8.0000, Circle Circumference = 2 * π * h
+      const circleCirc = 2 * Math.PI * h;
+      const circDiff = Math.abs(circleCirc - 8.0);
+      const circErrPct = (circDiff / 8.0) * 100;
+
+      // Face Area: lateral triangle base=2, height=s => Area = s
+      // Apex height squared: h^2
+      const faceArea = s;
+      const hSq = h * h;
+      const areaDiff = Math.abs(faceArea - hSq);
+
+      if (this.telemetryBar) {
+        this.telemetryBar.innerHTML = `
+          <div class="polyhedra-telemetry-item">
+            <span class="polyhedra-telemetry-label">h / a:</span>
+            <span class="polyhedra-telemetry-val">${h.toFixed(4)}</span>
+            <span class="polyhedra-telemetry-label">Slope α:</span>
+            <span class="polyhedra-telemetry-val">${slopeDMS} (${alphaDeg.toFixed(3)}°)</span>
+          </div>
+          <div class="polyhedra-telemetry-item">
+            <span class="polyhedra-telemetry-label">Apothem s:</span>
+            <span class="polyhedra-telemetry-val ${isKepler ? 'match' : ''}">${s.toFixed(4)}${isKepler ? ' = φ ✨' : ''}</span>
+          </div>
+          <div class="polyhedra-telemetry-item">
+            <span class="polyhedra-telemetry-label">Base P (8.0000) vs 2πh:</span>
+            <span class="polyhedra-telemetry-val ${isPiQuad || circErrPct < 0.1 ? 'match' : ''}">${circleCirc.toFixed(4)} (${circErrPct < 0.01 ? '0.00%' : circErrPct.toFixed(2) + '% err'})</span>
+          </div>
+          <div class="polyhedra-telemetry-item">
+            <span class="polyhedra-telemetry-label">Face Area s vs h²:</span>
+            <span class="polyhedra-telemetry-val ${isKepler || areaDiff < 0.005 ? 'match' : ''}">${faceArea.toFixed(4)} vs ${hSq.toFixed(4)}${isKepler ? ' (φ = φ ✨)' : ''}</span>
+          </div>
+        `;
+      }
+
+      if (this.eulerEl) {
+        if (isKepler) {
+          this.eulerEl.textContent = '✨ KEPLER TRIANGLE • a=1, h=√φ, s=φ • 1 + φ = φ² • Face Area = h² = φ';
+          this.eulerEl.style.borderColor = '#f59e0b';
+        } else if (isSeked) {
+          this.eulerEl.textContent = '🏛️ SEKED 14:11 (KHUFU) • Rise 280 / Run 220 • Archimedean π ≈ 22/7 Quadrature';
+          this.eulerEl.style.borderColor = '#10b981';
+        } else if (isPiQuad) {
+          this.eulerEl.textContent = '⭕ TRUE π QUADRATURE • h = 4/π ≈ 1.2732 • Exact 2πh = 8.0000 (Equal Perimeter)';
+          this.eulerEl.style.borderColor = '#38bdf8';
+        } else if (isOcta) {
+          this.eulerEl.textContent = '🔷 HALF-OCTAHEDRON • h = √2 ≈ 1.4142 • Equilateral Lateral Faces (Edge = 2)';
+          this.eulerEl.style.borderColor = '#a78bfa';
+        } else {
+          this.eulerEl.textContent = `Pyramid: h = ${h.toFixed(4)} • Slope = ${alphaDeg.toFixed(2)}° • V = 5, E = 8, F = 5`;
+          this.eulerEl.style.borderColor = '';
+        }
+      }
+
+      if (this.statusEl) {
+        if (isKepler) {
+          this.statusEl.textContent = 'Kepler (1596): "Geometry has two great treasures: Pythagorean theorem & Golden ratio." Here combined in one!';
+        } else if (isSeked) {
+          this.statusEl.textContent = 'Rhind Papyrus Seked 5½ palms/cubit gives slope 14/11; circle of radius h has perimeter = 8!';
+        } else if (isPiQuad) {
+          this.statusEl.textContent = 'Perimeter Squaring of Circle: Vertical height circle circumference 2πh = 8.0000 exactly matches square base!';
+        } else if (isOcta) {
+          this.statusEl.textContent = 'Half-Octahedron: Equilateral triangular lateral faces of edge 2; golden bipyramid becomes Regular Octahedron!';
+        } else {
+          this.statusEl.textContent = 'Interactive Great Pyramid & Kepler Proportions • Drag to orbit, scroll to zoom';
+        }
       }
     }
 
@@ -1275,6 +1590,8 @@
         this.renderSceneDodecaFiveCubes(renderQueue, w, h, baseScale);
       } else if (this.sceneName === 'rhombic_triacontahedron') {
         this.renderSceneRhombicTriacontahedron(renderQueue, w, h, baseScale);
+      } else if (this.sceneName === 'great_pyramid_kepler') {
+        this.renderSceneGreatPyramidKepler(renderQueue, w, h, baseScale);
       }
 
       // Sort by camera depth Z (Painter's algorithm: farthest first)
@@ -1771,6 +2088,338 @@
             }
           });
         });
+      }
+    }
+
+    renderSceneGreatPyramidKepler(q, w, h, sc) {
+      const H = this.pyramidH;
+      const a = 1.0;
+      const s = Math.hypot(a, H);
+      const isKepler = Math.abs(H - Math.sqrt(PHI)) < 0.01;
+      const yOffset = this.showBipyramid ? 0 : -0.42;
+
+      // Projection helper with vertical center offset
+      const pr = pt => this.cam.project([pt[0], pt[1] + yOffset, pt[2]], w, h, sc);
+
+      // Base vertices (Square 2x2 in plane y = 0)
+      const C0 = [ 1, 0,  1]; // SE
+      const C1 = [-1, 0,  1]; // SW
+      const C2 = [-1, 0, -1]; // NW
+      const C3 = [ 1, 0, -1]; // NE
+      const O  = [ 0, 0,  0]; // Base center
+      const A_top = [0,  H, 0]; // Apex
+      const A_bot = [0, -H, 0]; // Lower Apex (for bipyramid)
+
+      // 3D Line Helper
+      function addLine3D(p1_3d, p2_3d, strokeStyle, lineWidth, isDashed, extraZ) {
+        const p1 = pr(p1_3d);
+        const p2 = pr(p2_3d);
+        const avgZ = (p1[2] + p2[2]) * 0.5 + (extraZ || 0);
+        q.push({
+          z: avgZ,
+          draw: ctx => {
+            ctx.save();
+            ctx.beginPath();
+            if (isDashed) ctx.setLineDash([4, 4]);
+            ctx.moveTo(p1[0], p1[1]);
+            ctx.lineTo(p2[0], p2[1]);
+            ctx.strokeStyle = strokeStyle;
+            ctx.lineWidth = lineWidth || 1.5;
+            ctx.stroke();
+            ctx.restore();
+          }
+        });
+      }
+
+      // 3D Circle Helper
+      function addCircle3D(center, normal, radius, strokeStyle, lineWidth, isDashed, fillStyle, extraZ) {
+        const segs = 64;
+        let u, v;
+        if (Math.abs(normal[1]) > 0.9) {
+          u = [1, 0, 0];
+        } else {
+          u = vNorm(vCross([0, 1, 0], normal));
+        }
+        v = vNorm(vCross(normal, u));
+
+        const pts = [];
+        for (let i = 0; i <= segs; i++) {
+          const theta = (i / segs) * Math.PI * 2;
+          const cos = Math.cos(theta);
+          const sin = Math.sin(theta);
+          const pt = [
+            center[0] + radius * (u[0] * cos + v[0] * sin),
+            center[1] + radius * (u[1] * cos + v[1] * sin),
+            center[2] + radius * (u[2] * cos + v[2] * sin)
+          ];
+          pts.push(pr(pt));
+        }
+
+        const avgZ = pts.reduce((acc, p) => acc + p[2], 0) / pts.length + (extraZ || 0);
+
+        q.push({
+          z: avgZ,
+          draw: ctx => {
+            ctx.save();
+            ctx.beginPath();
+            pts.forEach((p, i) => i === 0 ? ctx.moveTo(p[0], p[1]) : ctx.lineTo(p[0], p[1]));
+            ctx.closePath();
+            if (fillStyle) {
+              ctx.fillStyle = fillStyle;
+              ctx.fill();
+            }
+            if (strokeStyle) {
+              if (isDashed) ctx.setLineDash([4, 4]);
+              ctx.strokeStyle = strokeStyle;
+              ctx.lineWidth = lineWidth || 1.5;
+              ctx.stroke();
+            }
+            ctx.restore();
+          }
+        });
+      }
+
+      // 3D Point Marker Helper
+      function addPointMarker3D(pt3d, radius, fillStyle, strokeStyle, extraZ) {
+        const p = pr(pt3d);
+        q.push({
+          z: p[2] - 0.08 + (extraZ || 0),
+          draw: ctx => {
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(p[0], p[1], radius || 3.5, 0, Math.PI * 2);
+            ctx.fillStyle = fillStyle || '#f59e0b';
+            ctx.fill();
+            if (strokeStyle) {
+              ctx.strokeStyle = strokeStyle;
+              ctx.lineWidth = 1.2;
+              ctx.stroke();
+            }
+            ctx.restore();
+          }
+        });
+      }
+
+      // 3D Callout Label Helper
+      function addCallout3D(pt3d, text, color, isHighlight, extraZ) {
+        const p = pr(pt3d);
+        q.push({
+          z: p[2] - 0.12 + (extraZ || 0),
+          draw: ctx => {
+            ctx.save();
+            ctx.font = isHighlight ? '700 12px ui-monospace, sans-serif' : '600 11px ui-monospace, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.strokeStyle = 'rgba(13, 17, 23, 0.88)';
+            ctx.lineWidth = 3.2;
+            ctx.strokeText(text, p[0], p[1]);
+            ctx.fillStyle = color;
+            ctx.fillText(text, p[0], p[1]);
+            ctx.restore();
+          }
+        });
+      }
+
+      // --- Ground / Base Reference Grid ---
+      addLine3D(C0, C1, 'rgba(180, 160, 130, 0.45)', 1.2, true, 0.05);
+      addLine3D(C1, C2, 'rgba(180, 160, 130, 0.45)', 1.2, true, 0.05);
+      addLine3D(C2, C3, 'rgba(180, 160, 130, 0.45)', 1.2, true, 0.05);
+      addLine3D(C3, C0, 'rgba(180, 160, 130, 0.45)', 1.2, true, 0.05);
+      addLine3D([-1.4, 0, 0], [1.4, 0, 0], 'rgba(148, 163, 184, 0.28)', 1.0, true, 0.06);
+      addLine3D([0, 0, -1.4], [0, 0, 1.4], 'rgba(148, 163, 184, 0.28)', 1.0, true, 0.06);
+
+      // --- 1. Pyramid Solid Faces / Leonardo Vacuum Frame ---
+      if (this.pyramidVacuum) {
+        const vacPolys = buildPyramidVacuumMesh(H, this.showBipyramid, this.mu, 0.12);
+        vacPolys.forEach(poly => {
+          const projPts = poly.pts.map(pr);
+          const pC = pr(poly.centroid);
+
+          const v1 = [projPts[1][0] - projPts[0][0], projPts[1][1] - projPts[0][1]];
+          const v2 = [projPts[2][0] - projPts[0][0], projPts[2][1] - projPts[0][1]];
+          const isFacing = (v1[0] * v2[1] - v1[1] * v2[0]) > 0;
+
+          const color = shadeColor(poly.baseColor, poly.norm, !isFacing, 0.96);
+
+          q.push({
+            z: pC[2],
+            draw: ctx => {
+              ctx.beginPath();
+              projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
+              ctx.closePath();
+              ctx.fillStyle = color;
+              ctx.fill();
+              ctx.strokeStyle = 'rgba(30, 20, 10, 0.65)';
+              ctx.lineWidth = 1.0;
+              ctx.stroke();
+            }
+          });
+        });
+      } else {
+        // Translucent Sunlit Limestone / Alabaster Faces
+        const faces = [
+          { name: 'south', pts: [C1, C0, A_top] },
+          { name: 'east',  pts: [C0, C3, A_top] },
+          { name: 'north', pts: [C3, C2, A_top] },
+          { name: 'west',  pts: [C2, C1, A_top] }
+        ];
+
+        if (!this.showBipyramid) {
+          faces.push({ name: 'base', pts: [C0, C1, C2, C3] });
+        } else {
+          faces.push(
+            { name: 'south_bot', pts: [C0, C1, A_bot] },
+            { name: 'east_bot',  pts: [C3, C0, A_bot] },
+            { name: 'north_bot', pts: [C2, C3, A_bot] },
+            { name: 'west_bot',  pts: [C1, C2, A_bot] }
+          );
+        }
+
+        faces.forEach(f => {
+          const k = f.pts.length;
+          const cFace = f.pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / k)), [0, 0, 0]);
+          let faceNorm = vNorm(vCross(vSub(f.pts[1], f.pts[0]), vSub(f.pts[2], f.pts[0])));
+          if (f.name === 'base' && faceNorm[1] > 0) faceNorm = vScale(faceNorm, -1);
+
+          const projPts = f.pts.map(pr);
+          const pCentroid = pr(cFace);
+
+          const v1 = [projPts[1][0] - projPts[0][0], projPts[1][1] - projPts[0][1]];
+          const v2 = [projPts[2][0] - projPts[0][0], projPts[2][1] - projPts[0][1]];
+          const isFacing = (v1[0] * v2[1] - v1[1] * v2[0]) > 0;
+
+          const color = shadeColor([238, 228, 206], faceNorm, !isFacing, 0.35);
+
+          q.push({
+            z: pCentroid[2],
+            draw: ctx => {
+              ctx.beginPath();
+              projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
+              ctx.closePath();
+              ctx.fillStyle = color;
+              ctx.fill();
+              ctx.strokeStyle = isFacing ? 'rgba(180, 155, 110, 0.85)' : 'rgba(180, 155, 110, 0.35)';
+              ctx.lineWidth = 1.3;
+              ctx.stroke();
+            }
+          });
+        });
+      }
+
+      // --- 2. Kepler Meridian Triangle (1, √φ, φ) ---
+      if (this.showKeplerTriangle) {
+        const ME = [1, 0, 0];  // East edge midpoint
+        const MW = [-1, 0, 0]; // West edge midpoint
+        const pO = pr(O);
+        const pME = pr(ME);
+        const pA = pr(A_top);
+
+        const cZ = (pO[2] + pME[2] + pA[2]) / 3 - 0.05;
+
+        // Luminous Gold Triangle Polygon [O, ME, A]
+        q.push({
+          z: cZ,
+          draw: ctx => {
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(pO[0], pO[1]);
+            ctx.lineTo(pME[0], pME[1]);
+            ctx.lineTo(pA[0], pA[1]);
+            ctx.closePath();
+            ctx.fillStyle = isKepler ? 'rgba(245, 158, 11, 0.44)' : 'rgba(245, 158, 11, 0.22)';
+            ctx.fill();
+
+            if (isKepler) {
+              ctx.shadowColor = '#f59e0b';
+              ctx.shadowBlur = 14;
+            }
+            ctx.strokeStyle = isKepler ? '#f59e0b' : 'rgba(245, 158, 11, 0.80)';
+            ctx.lineWidth = isKepler ? 3.0 : 2.0;
+            ctx.stroke();
+            ctx.restore();
+          }
+        });
+
+        // West half dashed cross-section outline [MW, A] and [MW, O]
+        addLine3D(MW, A_top, 'rgba(245, 158, 11, 0.45)', 1.4, true, -0.04);
+        addLine3D(MW, O, 'rgba(245, 158, 11, 0.45)', 1.4, true, -0.04);
+
+        // Crisp Right-Angle Marker at Base Center O(0, 0, 0)
+        const d = 0.12;
+        const pR1 = pr([d, 0, 0]);
+        const pR2 = pr([d, d, 0]);
+        const pR3 = pr([0, d, 0]);
+        q.push({
+          z: pO[2] - 0.06,
+          draw: ctx => {
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(pR1[0], pR1[1]);
+            ctx.lineTo(pR2[0], pR2[1]);
+            ctx.lineTo(pR3[0], pR3[1]);
+            ctx.strokeStyle = isKepler ? '#f59e0b' : 'rgba(245, 158, 11, 0.85)';
+            ctx.lineWidth = 1.8;
+            ctx.stroke();
+            ctx.restore();
+          }
+        });
+
+        // Vertex Dots
+        addPointMarker3D(O, 3.5, '#f59e0b', '#ffffff', -0.05);
+        addPointMarker3D(ME, 4.0, '#f59e0b', '#ffffff', -0.05);
+        addPointMarker3D(A_top, 4.8, isKepler ? '#fbbf24' : '#f59e0b', '#ffffff', -0.05);
+
+        // Canvas Text Callouts for a=1, h, and apothem s
+        addCallout3D([0.5, -0.10, 0], 'a = 1.000', '#f59e0b', false);
+        addCallout3D([-0.16, H * 0.5, 0], `h = ${H.toFixed(4)}${isKepler ? ' (√φ)' : ''}`, '#f59e0b', isKepler);
+        addCallout3D([0.58, H * 0.5 + 0.08, 0], `s = ${s.toFixed(4)}${isKepler ? ' (φ = 1.6180 ✨)' : ''}`, isKepler ? '#fbbf24' : '#f59e0b', isKepler);
+      }
+
+      // --- 3. Squaring the Circle (2πh = 8) ---
+      if (this.showQuadrature) {
+        // Horizontal Quadrature Circle of radius h in base plane (y = 0)
+        addCircle3D([0, 0, 0], [0, 1, 0], H, '#06b6d4', 2.2, false, 'rgba(6, 182, 212, 0.07)', -0.02);
+        const isQuadExact = Math.abs(2 * Math.PI * H - 8.0) < 0.02;
+        addCallout3D([H + 0.18, 0, 0], `2πh = ${(2 * Math.PI * H).toFixed(3)}${isQuadExact ? ' ≈ 8 (Quadrature)' : ''}`, '#06b6d4', isQuadExact);
+
+        // Vertical Meridian Circle of radius h in plane z = 0 passing right through Pyramid Apex
+        addCircle3D([0, 0, 0], [0, 0, 1], H, '#38bdf8', 2.0, false, null, -0.02);
+        addPointMarker3D(A_top, 6.0, 'transparent', '#38bdf8', -0.08);
+        addCallout3D([0, H + 0.14, 0], `Apex on Circle (R = h = ${H.toFixed(4)})`, '#38bdf8', false);
+      }
+
+      // --- 4. Earth & Moon Cosmogram ---
+      if (this.showCosmogram) {
+        // Earth Sphere: Radius 1, inscribed tangent to the 4 sides of the 2x2 pyramid base, centered at (0, 0, 0)
+        // Earth Equator (y = 0)
+        addCircle3D([0, 0, 0], [0, 1, 0], 1.0, '#3b82f6', 2.0, false, 'rgba(59, 130, 246, 0.08)');
+        // Earth Latitudes (+-30°, +-60°)
+        [30, -30, 60, -60].forEach(deg => {
+          const rad = (deg * Math.PI) / 180;
+          addCircle3D([0, Math.sin(rad), 0], [0, 1, 0], Math.cos(rad), 'rgba(59, 130, 246, 0.45)', 1.2, true);
+        });
+        // Earth Longitude Great Circles (Meridians)
+        [0, Math.PI / 4, Math.PI / 2, (3 * Math.PI) / 4].forEach(lambda => {
+          addCircle3D([0, 0, 0], [Math.sin(lambda), 0, -Math.cos(lambda)], 1.0, 'rgba(59, 130, 246, 0.45)', 1.2, false);
+        });
+        // North Pole Marker (0, 1, 0)
+        addPointMarker3D([0, 1, 0], 4.5, '#10b981', '#ffffff', -0.05);
+        addCallout3D([0.35, 1.0, 0], 'Earth North Pole (0, 1, 0)', '#10b981', true);
+
+        // Moon Sphere: Radius |h - 1|, centered at Pyramid Apex (0, h, 0), tangent to Earth's North Pole (0, 1, 0)
+        const rM = Math.abs(H - 1.0);
+        if (rM > 0.02) {
+          addCircle3D([0, H, 0], [0, 1, 0], rM, '#e2e8f0', 1.8, false, 'rgba(241, 245, 249, 0.14)');
+          [45, -45].forEach(deg => {
+            const rad = (deg * Math.PI) / 180;
+            addCircle3D([0, H + rM * Math.sin(rad), 0], [0, 1, 0], rM * Math.cos(rad), 'rgba(203, 213, 225, 0.45)', 1.1, true);
+          });
+          [0, Math.PI / 2].forEach(lambda => {
+            addCircle3D([0, H, 0], [Math.sin(lambda), 0, -Math.cos(lambda)], rM, 'rgba(203, 213, 225, 0.55)', 1.2, false);
+          });
+          const isMoonMatch = Math.abs(rM - 0.2727) < 0.005;
+          addCallout3D([0, H + rM + 0.10, 0], `Moon (r = ${rM.toFixed(4)}) • Ratio: ${(rM / 1.0).toFixed(4)} vs 0.2727`, '#e2e8f0', isMoonMatch);
+        }
       }
     }
   }

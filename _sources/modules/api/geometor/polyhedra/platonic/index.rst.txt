@@ -1,0 +1,213 @@
+geometor.polyhedra.platonic
+===========================
+
+.. py:module:: geometor.polyhedra.platonic
+
+.. autoapi-nested-parse::
+
+   Exact symbolic Platonic solids registry and 3D Rational Trigonometry.
+
+   Provides canonical definitions of the five regular polyhedra over Z and Q(phi)
+   with exact coordinates, face orientations, edge topologies, and dihedral spreads.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.polyhedra.platonic.PHI
+   geometor.polyhedra.platonic.PHI_INV
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.polyhedra.platonic.RegularSolid
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.platonic.dot_3d
+   geometor.polyhedra.platonic.cross_3d
+   geometor.polyhedra.platonic.quadrance_3d
+   geometor.polyhedra.platonic.face_normal_3d
+   geometor.polyhedra.platonic.dihedral_spread_3d
+   geometor.polyhedra.platonic.get_platonic_solids
+   geometor.polyhedra.platonic.get_platonic_solid
+
+
+Module Contents
+---------------
+
+.. py:data:: PHI
+   :type:  sympy.Expr
+
+.. py:data:: PHI_INV
+   :type:  sympy.Expr
+
+.. py:class:: RegularSolid
+
+   Exact symbolic specification of a regular convex Platonic solid.
+
+   :ivar slug: Short lowercase identifier ('tetrahedron', 'hexahedron', etc.).
+   :ivar name: Standard English name ('Tetrahedron', 'Hexahedron', etc.).
+   :ivar latin_name: Classical Latin name from Pacioli, Kepler, and Renaissance texts.
+   :ivar greek_name: Ancient Greek name with polytonic Greek orthography.
+   :ivar element: Classical natural element assigned in Plato's Timaeus.
+   :ivar schlafli: Schläfli symbol {p, q} indicating p-gons with q meeting per vertex.
+   :ivar dual_slug: Slug of the polar dual regular solid.
+   :ivar euclid_prop: Proposition in Euclid's Elements Book XIII constructing the solid.
+   :ivar g_index: GEOMETOR G-Index citation in elements canon.
+   :ivar leonardo_plates: Mapping of variant keys to (plate_roman, folio_number) pairs.
+   :ivar vertices: Tuple of exact 3D vertex coordinates over Z or Q(phi).
+   :ivar faces: Tuple of oriented planar faces (vertex index cycles CCW outward).
+   :ivar edges: Tuple of undirected edge pairs (i, j) with i < j.
+   :ivar dihedral_spread: Exact rational dihedral spread sin^2(theta).
+   :ivar q_in_over_q_out: Exact ratio of inquadrance to circumquadrance Q_in / Q_out.
+   :ivar q_mid_over_q_out: Exact ratio of midquadrance to circumquadrance Q_mid / Q_out.
+
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: latin_name
+      :type:  str
+
+
+   .. py:attribute:: greek_name
+      :type:  str
+
+
+   .. py:attribute:: element
+      :type:  str
+
+
+   .. py:attribute:: schlafli
+      :type:  tuple[int, int]
+
+
+   .. py:attribute:: dual_slug
+      :type:  str
+
+
+   .. py:attribute:: euclid_prop
+      :type:  str
+
+
+   .. py:attribute:: g_index
+      :type:  str
+
+
+   .. py:attribute:: leonardo_plates
+      :type:  dict[str, tuple[str, str]]
+
+
+   .. py:attribute:: vertices
+      :type:  tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...]
+
+
+   .. py:attribute:: faces
+      :type:  tuple[tuple[int, ...], ...]
+
+
+   .. py:attribute:: edges
+      :type:  tuple[tuple[int, int], ...]
+
+
+   .. py:attribute:: dihedral_spread
+      :type:  sympy.Rational
+
+
+   .. py:attribute:: q_in_over_q_out
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_mid_over_q_out
+      :type:  sympy.Expr
+
+
+.. py:function:: dot_3d(u: tuple[sympy.Expr, sympy.Expr, sympy.Expr], v: tuple[sympy.Expr, sympy.Expr, sympy.Expr]) -> sympy.Expr
+
+   Computes the exact dot product of two 3D vectors.
+
+   :param u: First 3D vector.
+   :param v: Second 3D vector.
+
+   :returns: Exact symbolic dot product u_x * v_x + u_y * v_y + u_z * v_z.
+
+
+.. py:function:: cross_3d(u: tuple[sympy.Expr, sympy.Expr, sympy.Expr], v: tuple[sympy.Expr, sympy.Expr, sympy.Expr]) -> tuple[sympy.Expr, sympy.Expr, sympy.Expr]
+
+   Computes the exact cross product of two 3D vectors.
+
+   :param u: First 3D vector.
+   :param v: Second 3D vector.
+
+   :returns: Exact 3D vector u x v.
+
+
+.. py:function:: quadrance_3d(v: tuple[sympy.Expr, sympy.Expr, sympy.Expr]) -> sympy.Expr
+
+   Computes the exact 3D quadrance (squared Euclidean norm) of a vector.
+
+   :param v: 3D vector coordinates (x, y, z).
+
+   :returns: Exact symbolic quadrance v_x^2 + v_y^2 + v_z^2.
+
+
+.. py:function:: face_normal_3d(vertices: tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...], face: tuple[int, ...]) -> tuple[sympy.Expr, sympy.Expr, sympy.Expr]
+
+   Computes the unnormalized outward normal vector of a planar face.
+
+   :param vertices: Sequence of 3D vertex coordinates.
+   :param face: Sequence of vertex indices ordered counter-clockwise outward.
+
+   :returns: Exact 3D normal vector via cross product of first two directed edges.
+
+
+.. py:function:: dihedral_spread_3d(n1: tuple[sympy.Expr, sympy.Expr, sympy.Expr], n2: tuple[sympy.Expr, sympy.Expr, sympy.Expr]) -> sympy.Expr
+
+   Computes the exact dihedral spread (sin^2 theta) between two face normals.
+
+   In Rational Trigonometry, the spread between two planes with normal
+   vectors n1 and n2 is 1 - (n1 . n2)^2 / (Q(n1) * Q(n2)).
+
+   :param n1: First face normal vector.
+   :param n2: Second face normal vector.
+
+   :returns: Exact rational or algebraic dihedral spread in [0, 1].
+
+
+.. py:function:: get_platonic_solids() -> dict[str, RegularSolid]
+
+   Retrieves all five Platonic solids mapped by slug.
+
+   :returns: Dictionary mapping slug names ('tetrahedron', 'hexahedron',
+             'octahedron', 'icosahedron', 'dodecahedron') to their exact
+             symbolic RegularSolid instances.
+
+
+.. py:function:: get_platonic_solid(slug: str) -> RegularSolid
+
+   Retrieves a single Platonic solid by slug name.
+
+   :param slug: Standard slug identifier ('tetrahedron', 'hexahedron', etc.).
+
+   :returns: The corresponding RegularSolid instance.
+
+   :raises KeyError: If slug is not recognized.
+
+

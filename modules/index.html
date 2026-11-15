@@ -1,0 +1,1527 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modules &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../pipeline/index.html" title="3D Symbolic Infrastructure &amp; Multi-Engine Pipeline">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="api/geometor/polyhedra/__main__/index.html" title="geometor.polyhedra.__main__"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="modules">
+        <h1>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h1>
+        </section>
+        <section class="level-1" id="module-geometor.polyhedra">
+        <span id="geometor-polyhedra"></span><h1>geometor.polyhedra<a class="headerlink" href="#module-geometor.polyhedra" title="Link to this heading">¶</a></h1>
+        <p>GEOMETOR Polyhedra.</p>
+        <p>Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry in
+        SymPy, Rational Trigonometry, and the GEOMETOR Digital Scriptorium.</p>
+        <section class="level-2" id="submodules">
+        <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+        <div class="toctree-wrapper compound">
+        <ul>
+        <li class="toctree-l1"><a class="reference internal" href="api/geometor/polyhedra/__main__/index.html">geometor.polyhedra.__main__</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="api/geometor/polyhedra/cli/index.html">geometor.polyhedra.cli</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="api/geometor/polyhedra/golden/index.html">geometor.polyhedra.golden</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="api/geometor/polyhedra/model3d/index.html">geometor.polyhedra.model3d</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="api/geometor/polyhedra/operators/index.html">geometor.polyhedra.operators</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="api/geometor/polyhedra/platonic/index.html">geometor.polyhedra.platonic</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="api/geometor/polyhedra/render/index.html">geometor.polyhedra.render</a></li>
+        </ul>
+        </div>
+        </section>
+        <section class="level-2" id="attributes">
+        <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.PHI" title="geometor.polyhedra.PHI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PHI</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.PHI_INV" title="geometor.polyhedra.PHI_INV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PHI_INV</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.__version__" title="geometor.polyhedra.__version__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__version__</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="classes">
+        <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.GoldenPolyhedronTheorem" title="geometor.polyhedra.GoldenPolyhedronTheorem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GoldenPolyhedronTheorem</span></code></a></p></td>
+        <td><p>Exact symbolic specification of a golden proportion theorem in polyhedra.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.Line3D" title="geometor.polyhedra.Line3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Line3D</span></code></a></p></td>
+        <td><p>Exact 3D line passing through two distinct points.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.Plane3D" title="geometor.polyhedra.Plane3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Plane3D</span></code></a></p></td>
+        <td><p>Exact 3D plane represented by algebraic equation a*x + b*y + c*z + d = 0.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Point3D</span></code></a></p></td>
+        <td><p>Exact 3D symbolic point over algebraic number fields.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.Solid3D" title="geometor.polyhedra.Solid3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Solid3D</span></code></a></p></td>
+        <td><p>Exact 3D polyhedral manifold with oriented face cycles and metadata.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.Sphere3D" title="geometor.polyhedra.Sphere3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sphere3D</span></code></a></p></td>
+        <td><p>Exact 3D sphere defined by center and quadrance.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector3D</span></code></a></p></td>
+        <td><p>Exact 3D symbolic vector over algebraic number fields.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.RegularSolid" title="geometor.polyhedra.RegularSolid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegularSolid</span></code></a></p></td>
+        <td><p>Exact symbolic specification of a regular convex Platonic solid.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.build_dodecahedron_five_cubes" title="geometor.polyhedra.build_dodecahedron_five_cubes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_dodecahedron_five_cubes</span></code></a>() → DodecahedronFiveCubesResult</p></td>
+        <td><p>Finds and certifies all five regular cubes inscribed in the dodecahedron.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.build_icosahedron_golden_rectangles" title="geometor.polyhedra.build_icosahedron_golden_rectangles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_icosahedron_golden_rectangles</span></code></a>() → GoldenRectanglesResult</p></td>
+        <td><p>Extracts and certifies the three mutually orthogonal golden rectangles in the icosahedron.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.build_icosahedron_meridian_model" title="geometor.polyhedra.build_icosahedron_meridian_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_icosahedron_meridian_model</span></code></a>() → tuple[geometor.model.Model, dict[str, sympy.Expr]]</p></td>
+        <td><p>Constructs the exact 2D principal meridian section of the icosahedron.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.build_octahedron_golden_icosahedron" title="geometor.polyhedra.build_octahedron_golden_icosahedron"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_octahedron_golden_icosahedron</span></code></a>() → OctahedronGoldenIcosahedronResult</p></td>
+        <td><p>Divides the twelve edges of a regular octahedron in the golden ratio.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.build_odom_tetrahedron_section_model" title="geometor.polyhedra.build_odom_tetrahedron_section_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_odom_tetrahedron_section_model</span></code></a>() → tuple[geometor.model.Model, dict[str, sympy.Expr]]</p></td>
+        <td><p>Constructs George Odom's golden section on the regular tetrahedron face circumcircle.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.build_pentagon_cross_section_model" title="geometor.polyhedra.build_pentagon_cross_section_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_pentagon_cross_section_model</span></code></a>() → tuple[geometor.model.Model, dict[str, sympy.Expr]]</p></td>
+        <td><p>Constructs the regular pentagon and pentagram section over Q(phi, sqrt(5 - sqrt(5))).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.build_rhombic_triacontahedron_golden" title="geometor.polyhedra.build_rhombic_triacontahedron_golden"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_rhombic_triacontahedron_golden</span></code></a>() → RhombicTriacontahedronResult</p></td>
+        <td><p>Constructs the exact 32-vertex Rhombic Triacontahedron over Q(phi).</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.get_golden_theorem" title="geometor.polyhedra.get_golden_theorem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_golden_theorem</span></code></a>(slug) → GoldenPolyhedronTheorem</p></td>
+        <td><p>Retrieves a single golden proportion theorem by slug name.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.get_golden_theorems" title="geometor.polyhedra.get_golden_theorems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_golden_theorems</span></code></a>() → dict[str, GoldenPolyhedronTheorem]</p></td>
+        <td><p>Retrieves all canonical golden proportion theorems in polyhedra.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.slice_solid_to_model" title="geometor.polyhedra.slice_solid_to_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_solid_to_model</span></code></a>(solid, plane, u_axis, v_axis[, ...]) → geometor.model.Model</p></td>
+        <td><p>Computes exact planar cross-section of a Solid3D and constructs a 2D Model.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.unfold_net_2d" title="geometor.polyhedra.unfold_net_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unfold_net_2d</span></code></a>(solid[, root_face]) → list[dict[str, object]]</p></td>
+        <td><p>Unfolds faces of a Solid3D onto a 2D plane via dual graph BFS spanning tree.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.elevate" title="geometor.polyhedra.elevate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elevate</span></code></a>(solid[, height_scale]) → geometor.polyhedra.model3d.primitives.Solid3D</p></td>
+        <td><p>Constructs Pacioli/Leonardo's stellation (Elevatum / Conway kis).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.polar_dual" title="geometor.polyhedra.polar_dual"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polar_dual</span></code></a>(solid[, sphere_quadrance]) → geometor.polyhedra.model3d.primitives.Solid3D</p></td>
+        <td><p>Constructs exact polar dual of an origin-centered polyhedral solid.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.rectify" title="geometor.polyhedra.rectify"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rectify</span></code></a>(solid) → geometor.polyhedra.model3d.primitives.Solid3D</p></td>
+        <td><p>Constructs Pacioli's edge-midpoint truncation (Abscisum).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.truncate" title="geometor.polyhedra.truncate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncate</span></code></a>(solid[, ratio]) → geometor.polyhedra.model3d.primitives.Solid3D</p></td>
+        <td><p>Constructs Archimedean corner truncation at an exact rational ratio.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.vacuate" title="geometor.polyhedra.vacuate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vacuate</span></code></a>(solid[, aperture, shell]) → geometor.polyhedra.model3d.primitives.Solid3D</p></td>
+        <td><p>Constructs Leonardo da Vinci's hollow manifold (Corpus Vacuum).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.cross_3d" title="geometor.polyhedra.cross_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross_3d</span></code></a>(u, v) → tuple[sympy.Expr, sympy.Expr, sympy.Expr]</p></td>
+        <td><p>Computes the exact cross product of two 3D vectors.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.dihedral_spread_3d" title="geometor.polyhedra.dihedral_spread_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dihedral_spread_3d</span></code></a>(n1, n2) → sympy.Expr</p></td>
+        <td><p>Computes the exact dihedral spread (sin^2 theta) between two face normals.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.dot_3d" title="geometor.polyhedra.dot_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot_3d</span></code></a>(u, v) → sympy.Expr</p></td>
+        <td><p>Computes the exact dot product of two 3D vectors.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.face_normal_3d" title="geometor.polyhedra.face_normal_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">face_normal_3d</span></code></a>(vertices, face) → tuple[sympy.Expr, sympy.Expr, sympy.Expr]</p></td>
+        <td><p>Computes the unnormalized outward normal vector of a planar face.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.get_platonic_solid" title="geometor.polyhedra.get_platonic_solid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_platonic_solid</span></code></a>(slug) → RegularSolid</p></td>
+        <td><p>Retrieves a single Platonic solid by slug name.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.get_platonic_solids" title="geometor.polyhedra.get_platonic_solids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_platonic_solids</span></code></a>() → dict[str, RegularSolid]</p></td>
+        <td><p>Retrieves all five Platonic solids mapped by slug.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.quadrance_3d" title="geometor.polyhedra.quadrance_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quadrance_3d</span></code></a>(v) → sympy.Expr</p></td>
+        <td><p>Computes the exact 3D quadrance (squared Euclidean norm) of a vector.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.export_blender_script" title="geometor.polyhedra.export_blender_script"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_blender_script</span></code></a>(solids, script_path[, spacing]) → pathlib.Path</p></td>
+        <td><p>Emits a standalone Blender 5.x Python script generating a studio showcase.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.export_ingetrazo_script" title="geometor.polyhedra.export_ingetrazo_script"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_ingetrazo_script</span></code></a>(solids, script_path[, spacing]) → pathlib.Path</p></td>
+        <td><p>Emits a runnable Python script for IngeTrazo 0.6.0 CAD modeler.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.export_obj_mtl" title="geometor.polyhedra.export_obj_mtl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_obj_mtl</span></code></a>(solid, obj_path) → tuple[pathlib.Path, pathlib.Path]</p></td>
+        <td><p>Exports a Solid3D to Wavefront .obj and companion .mtl material library.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.render_model2d_svg" title="geometor.polyhedra.render_model2d_svg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_model2d_svg</span></code></a>(model, *[, golden_segments, width, ...]) → str</p></td>
+        <td><p>Renders a 2D GEOMETOR symbolic Model to publication-grade SVG.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.render_net_svg" title="geometor.polyhedra.render_net_svg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_net_svg</span></code></a>(solid, *[, width, height, graphic_id]) → str</p></td>
+        <td><p>Renders unfolded 2D papercraft net layout of a Solid3D to SVG.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.render_solid_svg" title="geometor.polyhedra.render_solid_svg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_solid_svg</span></code></a>(solid, *[, yaw_deg, pitch_deg, ...]) → str</p></td>
+        <td><p>Renders a 3D polyhedral solid to publication-grade theme-adaptive SVG.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="package-contents">
+        <h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.GoldenPolyhedronTheorem">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">GoldenPolyhedronTheorem</span></span><a class="headerlink" href="#geometor.polyhedra.GoldenPolyhedronTheorem" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic specification of a golden proportion theorem in polyhedra.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>slug</strong> – Short lowercase identifier (‘icosahedron_golden_rectangles’, etc.).</p></li>
+        <li><p><strong>title</strong> – Standard English title of the theorem or construction.</p></li>
+        <li><p><strong>subtitle</strong> – Descriptive subtitle highlighting key geometric properties.</p></li>
+        <li><p><strong>historical_source</strong> – Scholarly citation (Euclid, Pacioli, Kepler, Odom).</p></li>
+        <li><p><strong>summary</strong> – Concise mathematical summary of the theorem and geometric proof.</p></li>
+        <li><p><strong>golden_identities</strong> – Sequence of (description, lhs, rhs) triples where
+        lhs - rhs simplifies to exact zero.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.GoldenPolyhedronTheorem.slug">
+        <span class="sig-name descname"><span class="pre">slug</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.GoldenPolyhedronTheorem.slug" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.GoldenPolyhedronTheorem.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.GoldenPolyhedronTheorem.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.GoldenPolyhedronTheorem.subtitle">
+        <span class="sig-name descname"><span class="pre">subtitle</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.GoldenPolyhedronTheorem.subtitle" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.GoldenPolyhedronTheorem.historical_source">
+        <span class="sig-name descname"><span class="pre">historical_source</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.GoldenPolyhedronTheorem.historical_source" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.GoldenPolyhedronTheorem.summary">
+        <span class="sig-name descname"><span class="pre">summary</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.GoldenPolyhedronTheorem.summary" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.GoldenPolyhedronTheorem.golden_identities">
+        <span class="sig-name descname"><span class="pre">golden_identities</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.GoldenPolyhedronTheorem.golden_identities" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.build_dodecahedron_five_cubes">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">build_dodecahedron_five_cubes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/golden/index.html#geometor.polyhedra.golden.DodecahedronFiveCubesResult" title="geometor.polyhedra.golden.DodecahedronFiveCubesResult"><span class="pre">DodecahedronFiveCubesResult</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.build_dodecahedron_five_cubes" title="Link to this definition">¶</a></dt>
+        <dd><p>Finds and certifies all five regular cubes inscribed in the dodecahedron.</p>
+        <p>Euclid Elements XIII.17 constructs the regular dodecahedron upon an inscribed
+        cube by adding roof-like wedges above each square face. There are five distinct
+        inscribed regular cubes whose 60 edges partition all 60 diagonals of the twelve
+        pentagonal faces.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>DodecahedronFiveCubesResult containing dodecahedron geometry and the five cubes.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.build_icosahedron_golden_rectangles">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">build_icosahedron_golden_rectangles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/golden/index.html#geometor.polyhedra.golden.GoldenRectanglesResult" title="geometor.polyhedra.golden.GoldenRectanglesResult"><span class="pre">GoldenRectanglesResult</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.build_icosahedron_golden_rectangles" title="Link to this definition">¶</a></dt>
+        <dd><p>Extracts and certifies the three mutually orthogonal golden rectangles in the icosahedron.</p>
+        <p>Euclid Elements XIII.16 shows that the twelve vertices of a regular icosahedron
+        form the vertices of three congruent golden rectangles whose planes are pairwise
+        perpendicular and meet at the center of the circumscribing sphere.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>GoldenRectanglesResult certifying rectangle dimensions, orthogonality, and edges.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.build_icosahedron_meridian_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">build_icosahedron_meridian_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.build_icosahedron_meridian_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the exact 2D principal meridian section of the icosahedron.</p>
+        <p>In the principal plane X = 0, the canonical regular icosahedron has four
+        vertices forming a golden rectangle (±1, ±phi) and two equatorial crossings
+        at (±phi, 0) in (Y, Z) coordinates.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of (Model, metrics_dict) certifying golden proportions in the meridian slice.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.build_octahedron_golden_icosahedron">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">build_octahedron_golden_icosahedron</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/golden/index.html#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult" title="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult"><span class="pre">OctahedronGoldenIcosahedronResult</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.build_octahedron_golden_icosahedron" title="Link to this definition">¶</a></dt>
+        <dd><p>Divides the twelve edges of a regular octahedron in the golden ratio.</p>
+        <p>Starts with a regular octahedron of scale phi^2 = phi + 1 whose vertices
+        lie along the coordinate axes: (±phi^2, 0, 0), (0, ±phi^2, 0), (0, 0, ±phi^2).
+        Dividing each directed edge in the golden ratio AG : GB = 1 : phi yields
+        the exact twelve vertices of the canonical regular icosahedron.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>OctahedronGoldenIcosahedronResult containing octahedron geometry and inscribed icosahedron.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.build_odom_tetrahedron_section_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">build_odom_tetrahedron_section_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.build_odom_tetrahedron_section_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs George Odom’s golden section on the regular tetrahedron face circumcircle.</p>
+        <p>In 1983, George Odom discovered that connecting the midpoints of two sides of
+        an equilateral triangle inscribed in a circle and extending the line to meet
+        the circle divides the chord in the exact golden ratio.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of (Model, metrics_dict) with certified exact golden proportions.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.build_pentagon_cross_section_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">build_pentagon_cross_section_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.build_pentagon_cross_section_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the regular pentagon and pentagram section over Q(phi, sqrt(5 - sqrt(5))).</p>
+        <p>Euclid Elements XIII.8 demonstrates that the diagonals of a regular pentagon
+        cut one another in extreme and mean ratio (the golden ratio). This configuration
+        represents the vertex figure of the icosahedron and the face of the dodecahedron.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of (Model, metrics_dict) certifying pentagon-pentagram golden proportions.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.build_rhombic_triacontahedron_golden">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">build_rhombic_triacontahedron_golden</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/golden/index.html#geometor.polyhedra.golden.RhombicTriacontahedronResult" title="geometor.polyhedra.golden.RhombicTriacontahedronResult"><span class="pre">RhombicTriacontahedronResult</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.build_rhombic_triacontahedron_golden" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the exact 32-vertex Rhombic Triacontahedron over Q(phi).</p>
+        <p>Unites the twenty vertices of the canonical regular dodecahedron with the
+        twelve vertices of the dual-oriented regular icosahedron. Each of the thirty
+        faces is a planar golden rhombus whose long diagonal joins two acute degree-5
+        icosahedral vertices and whose short diagonal joins two obtuse degree-3
+        dodecahedral vertices, with diagonal quadrance ratio equal to phi^2.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>RhombicTriacontahedronResult specifying vertices, rhombic faces, and metric ratios.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.get_golden_theorem">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">get_golden_theorem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.GoldenPolyhedronTheorem" title="geometor.polyhedra.GoldenPolyhedronTheorem"><span class="pre">GoldenPolyhedronTheorem</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.get_golden_theorem" title="Link to this definition">¶</a></dt>
+        <dd><p>Retrieves a single golden proportion theorem by slug name.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>slug</strong> – Short lowercase identifier (‘icosahedron_golden_rectangles’, etc.).</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>The corresponding GoldenPolyhedronTheorem instance.</p>
+        </dd>
+        <dt class="field-odd">Raises<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>KeyError</strong> – If slug is not recognized.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.get_golden_theorems">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">get_golden_theorems</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#geometor.polyhedra.GoldenPolyhedronTheorem" title="geometor.polyhedra.GoldenPolyhedronTheorem"><span class="pre">GoldenPolyhedronTheorem</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.get_golden_theorems" title="Link to this definition">¶</a></dt>
+        <dd><p>Retrieves all canonical golden proportion theorems in polyhedra.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Dictionary mapping theorem slugs to GoldenPolyhedronTheorem instances.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Line3D">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">Line3D</span></span><a class="headerlink" href="#geometor.polyhedra.Line3D" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact 3D line passing through two distinct points.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>p1</strong> – First point on line.</p></li>
+        <li><p><strong>p2</strong> – Second point on line.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Line3D.p1">
+        <span class="sig-name descname"><span class="pre">p1</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span><a class="headerlink" href="#geometor.polyhedra.Line3D.p1" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Line3D.p2">
+        <span class="sig-name descname"><span class="pre">p2</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span><a class="headerlink" href="#geometor.polyhedra.Line3D.p2" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Line3D.direction">
+        <span class="sig-name descname"><span class="pre">direction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Line3D.direction" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns direction vector from p1 to p2.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">Plane3D</span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact 3D plane represented by algebraic equation a*x + b*y + c*z + d = 0.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>a</strong> – Coefficient for x.</p></li>
+        <li><p><strong>b</strong> – Coefficient for y.</p></li>
+        <li><p><strong>c</strong> – Coefficient for z.</p></li>
+        <li><p><strong>d</strong> – Constant term.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.a">
+        <span class="sig-name descname"><span class="pre">a</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.a" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.b">
+        <span class="sig-name descname"><span class="pre">b</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.b" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.c">
+        <span class="sig-name descname"><span class="pre">c</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.c" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.d">
+        <span class="sig-name descname"><span class="pre">d</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.d" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.__post_init__">
+        <span class="sig-name descname"><span class="pre">__post_init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.__post_init__" title="Link to this definition">¶</a></dt>
+        <dd><p>Validates exact algebraic coefficients.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.from_points">
+        <span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Plane3D" title="geometor.polyhedra.Plane3D"><span class="pre">Plane3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.from_points" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs plane passing through three non-collinear points.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>p1</strong> – First point.</p></li>
+        <li><p><strong>p2</strong> – Second point.</p></li>
+        <li><p><strong>p3</strong> – Third point.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Plane3D passing through p1, p2, and p3.</p>
+        </dd>
+        <dt class="field-odd">Raises<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>ValueError</strong> – If points are collinear.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.from_normal_point">
+        <span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_normal_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">normal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Plane3D" title="geometor.polyhedra.Plane3D"><span class="pre">Plane3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.from_normal_point" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs plane from normal vector and point on plane.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>normal</strong> – Non-zero normal vector.</p></li>
+        <li><p><strong>point</strong> – Point lying on plane.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Plane3D with given normal containing point.</p>
+        </dd>
+        <dt class="field-odd">Raises<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>ValueError</strong> – If normal vector is zero.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.normal">
+        <span class="sig-name descname"><span class="pre">normal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.normal" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns normal vector (a, b, c).</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.eval_point">
+        <span class="sig-name descname"><span class="pre">eval_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sympy.Expr</span></span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.eval_point" title="Link to this definition">¶</a></dt>
+        <dd><p>Evaluates linear form a*pt.x + b*pt.y + c*pt.z + d.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.contains">
+        <span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.contains" title="Link to this definition">¶</a></dt>
+        <dd><p>Tests whether point lies exactly on plane.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Plane3D.intersect_segment">
+        <span class="sig-name descname"><span class="pre">intersect_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#geometor.polyhedra.Plane3D.intersect_segment" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes exact intersection point of segment [p1, p2] with plane.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>p1</strong> – Segment start point.</p></li>
+        <li><p><strong>p2</strong> – Segment end point.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact Point3D if segment intersects plane, or None otherwise.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">Point3D</span></span><a class="headerlink" href="#geometor.polyhedra.Point3D" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact 3D symbolic point over algebraic number fields.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>x</strong> – Exact X coordinate.</p></li>
+        <li><p><strong>y</strong> – Exact Y coordinate.</p></li>
+        <li><p><strong>z</strong> – Exact Z coordinate.</p></li>
+        <li><p><strong>label</strong> – Optional symbolic label.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.x">
+        <span class="sig-name descname"><span class="pre">x</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.x" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.y">
+        <span class="sig-name descname"><span class="pre">y</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.y" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.z">
+        <span class="sig-name descname"><span class="pre">z</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.z" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.label">
+        <span class="sig-name descname"><span class="pre">label</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.label" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.__post_init__">
+        <span class="sig-name descname"><span class="pre">__post_init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.__post_init__" title="Link to this definition">¶</a></dt>
+        <dd><p>Validates exact algebraic coordinates.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.vector_to">
+        <span class="sig-name descname"><span class="pre">vector_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.vector_to" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns displacement vector from self to other.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.quadrance_to">
+        <span class="sig-name descname"><span class="pre">quadrance_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sympy.Expr</span></span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.quadrance_to" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns exact quadrance (squared Euclidean distance) to other.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.lerp">
+        <span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.lerp" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes exact linear interpolation (1 - t)*self + t*other.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.scale">
+        <span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.scale" title="Link to this definition">¶</a></dt>
+        <dd><p>Scales point coordinates from origin by exact factor.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.to_tuple">
+        <span class="sig-name descname"><span class="pre">to_tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.to_tuple" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns coordinate 3-tuple.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.to_vector">
+        <span class="sig-name descname"><span class="pre">to_vector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.to_vector" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns position vector from origin to this point.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Point3D.__add__">
+        <span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Point3D.__add__" title="Link to this definition">¶</a></dt>
+        <dd><p>Translates point by a vector.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">Solid3D</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact 3D polyhedral manifold with oriented face cycles and metadata.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>slug</strong> – Short lowercase identifier.</p></li>
+        <li><p><strong>title</strong> – Descriptive human-readable title.</p></li>
+        <li><p><strong>vertices</strong> – Sequence of exact 3D vertices.</p></li>
+        <li><p><strong>faces</strong> – Sequence of oriented face cycles (indices in counter-clockwise order).</p></li>
+        <li><p><strong>edges</strong> – Sorted sequence of unique undirected edge index pairs (i, j) with i &lt; j.</p></li>
+        <li><p><strong>face_roles</strong> – Role tags corresponding to each face in faces sequence.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.slug">
+        <span class="sig-name descname"><span class="pre">slug</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.slug" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.vertices">
+        <span class="sig-name descname"><span class="pre">vertices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.vertices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.faces">
+        <span class="sig-name descname"><span class="pre">faces</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.faces" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.edges">
+        <span class="sig-name descname"><span class="pre">edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.face_roles">
+        <span class="sig-name descname"><span class="pre">face_roles</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.face_roles" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.__post_init__">
+        <span class="sig-name descname"><span class="pre">__post_init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.__post_init__" title="Link to this definition">¶</a></dt>
+        <dd><p>Normalizes edges and face roles.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.from_regular_solid">
+        <span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_regular_solid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/platonic/index.html#geometor.polyhedra.platonic.RegularSolid" title="geometor.polyhedra.platonic.RegularSolid"><span class="pre">geometor.polyhedra.platonic.RegularSolid</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Solid3D" title="geometor.polyhedra.Solid3D"><span class="pre">Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.from_regular_solid" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs Solid3D from a RegularSolid instance.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>solid</strong> – Exact symbolic RegularSolid instance.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Corresponding Solid3D instance.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.num_vertices">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">num_vertices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.num_vertices" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns number of vertices.</p>
+        </dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.num_edges">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">num_edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.num_edges" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns number of edges.</p>
+        </dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.num_faces">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">num_faces</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.num_faces" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns number of faces.</p>
+        </dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.euler_characteristic">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">euler_characteristic</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.euler_characteristic" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns Euler characteristic V - E + F.</p>
+        </dd></dl>
+
+        <dl class="py property">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.genus">
+        <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">genus</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.genus" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns topological genus (2 - chi) // 2.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.face_centroid">
+        <span class="sig-name descname"><span class="pre">face_centroid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.face_centroid" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes exact centroid of a face.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>face_idx</strong> – Index of face in faces tuple.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Point3D representing the centroid.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.face_normal">
+        <span class="sig-name descname"><span class="pre">face_normal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.face_normal" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes unnormalized outward normal vector of a face.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>face_idx</strong> – Index of face in faces tuple.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Vector3D normal vector via cycle cross product sum.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.are_faces_coplanar">
+        <span class="sig-name descname"><span class="pre">are_faces_coplanar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.are_faces_coplanar" title="Link to this definition">¶</a></dt>
+        <dd><p>Verifies that all vertices of every face are strictly coplanar.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>True if all faces are planar, False otherwise.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Solid3D.is_outward_oriented">
+        <span class="sig-name descname"><span class="pre">is_outward_oriented</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#geometor.polyhedra.Solid3D.is_outward_oriented" title="Link to this definition">¶</a></dt>
+        <dd><p>Checks consistent outward orientation relative to origin or cavity.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>True if all face normal orientations match expected outwards conventions.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Sphere3D">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">Sphere3D</span></span><a class="headerlink" href="#geometor.polyhedra.Sphere3D" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact 3D sphere defined by center and quadrance.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>center</strong> – Center point of sphere.</p></li>
+        <li><p><strong>quadrance</strong> – Exact squared radius Q = R^2.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Sphere3D.center">
+        <span class="sig-name descname"><span class="pre">center</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span><a class="headerlink" href="#geometor.polyhedra.Sphere3D.center" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Sphere3D.quadrance">
+        <span class="sig-name descname"><span class="pre">quadrance</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Sphere3D.quadrance" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Sphere3D.__post_init__">
+        <span class="sig-name descname"><span class="pre">__post_init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#geometor.polyhedra.Sphere3D.__post_init__" title="Link to this definition">¶</a></dt>
+        <dd><p>Validates exact algebraic parameters.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Sphere3D.contains">
+        <span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Point3D" title="geometor.polyhedra.Point3D"><span class="pre">Point3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#geometor.polyhedra.Sphere3D.contains" title="Link to this definition">¶</a></dt>
+        <dd><p>Tests whether point lies exactly on sphere surface.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">Vector3D</span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact 3D symbolic vector over algebraic number fields.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>x</strong> – Exact X component.</p></li>
+        <li><p><strong>y</strong> – Exact Y component.</p></li>
+        <li><p><strong>z</strong> – Exact Z component.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.x">
+        <span class="sig-name descname"><span class="pre">x</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.x" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.y">
+        <span class="sig-name descname"><span class="pre">y</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.y" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.z">
+        <span class="sig-name descname"><span class="pre">z</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.z" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.__post_init__">
+        <span class="sig-name descname"><span class="pre">__post_init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.__post_init__" title="Link to this definition">¶</a></dt>
+        <dd><p>Validates exact algebraic coordinates.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.__add__">
+        <span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.__add__" title="Link to this definition">¶</a></dt>
+        <dd><p>Adds two 3D vectors.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.__sub__">
+        <span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.__sub__" title="Link to this definition">¶</a></dt>
+        <dd><p>Subtracts two 3D vectors.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.__neg__">
+        <span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.__neg__" title="Link to this definition">¶</a></dt>
+        <dd><p>Negates vector coordinates.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.__mul__">
+        <span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scalar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.__mul__" title="Link to this definition">¶</a></dt>
+        <dd><p>Multiplies vector by exact scalar.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.__rmul__">
+        <span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scalar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.__rmul__" title="Link to this definition">¶</a></dt>
+        <dd><p>Multiplies vector by exact scalar from left.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.dot">
+        <span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sympy.Expr</span></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.dot" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes exact dot product with another vector.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.cross">
+        <span class="sig-name descname"><span class="pre">cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.Vector3D" title="geometor.polyhedra.Vector3D"><span class="pre">Vector3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.cross" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes exact cross product with another vector.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.quadrance">
+        <span class="sig-name descname"><span class="pre">quadrance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sympy.Expr</span></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.quadrance" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes exact quadrance (squared norm) of vector.</p>
+        </dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.Vector3D.to_tuple">
+        <span class="sig-name descname"><span class="pre">to_tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.Vector3D.to_tuple" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns coordinate 3-tuple.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.slice_solid_to_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">slice_solid_to_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Plane3D" title="geometor.polyhedra.model3d.primitives.Plane3D"><span class="pre">geometor.polyhedra.model3d.primitives.Plane3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Vector3D" title="geometor.polyhedra.model3d.primitives.Vector3D"><span class="pre">geometor.polyhedra.model3d.primitives.Vector3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Vector3D" title="geometor.polyhedra.model3d.primitives.Vector3D"><span class="pre">geometor.polyhedra.model3d.primitives.Vector3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Point3D" title="geometor.polyhedra.model3d.primitives.Point3D"><span class="pre">geometor.polyhedra.model3d.primitives.Point3D</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'slice'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">geometor.model.Model</span></span></span><a class="headerlink" href="#geometor.polyhedra.slice_solid_to_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes exact planar cross-section of a Solid3D and constructs a 2D Model.</p>
+        <p>Intersects all boundary edges of the solid with the given slicing plane,
+        projects the exact intersection points onto the 2D plane defined by u_axis
+        and v_axis, sorts them cyclically around their centroid, and constructs
+        exact points, segments, and polygon entities in a 2D Model.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact 3D polyhedral solid.</p></li>
+        <li><p><strong>plane</strong> – Slicing plane.</p></li>
+        <li><p><strong>u_axis</strong> – Direction vector for 2D X axis.</p></li>
+        <li><p><strong>v_axis</strong> – Direction vector for 2D Y axis.</p></li>
+        <li><p><strong>origin</strong> – Optional 3D point mapped to 2D origin (0, 0). Defaults to (0,0,0).</p></li>
+        <li><p><strong>name</strong> – Name identifier for the constructed Model.</p></li>
+        <li><p><strong>normalize_axes</strong> – If True, divides projections by axis quadrances.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact 2D Model containing the cross-section polygon and boundary segments.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.unfold_net_2d">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">unfold_net_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_face</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.unfold_net_2d" title="Link to this definition">¶</a></dt>
+        <dd><p>Unfolds faces of a Solid3D onto a 2D plane via dual graph BFS spanning tree.</p>
+        <p>Starting from root_face, flattens each adjacent face around its shared hinge
+        edge without folding backward or overlapping adjacent faces.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact 3D polyhedral solid.</p></li>
+        <li><p><strong>root_face</strong> – Index of the base face placed first at 2D origin.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p><ul class="simple">
+        <li><p>face_index: Index of the face in solid.faces.</p></li>
+        <li><p>role: Role string from solid.face_roles.</p></li>
+        <li><p>pts_2d: List of 2D vertex coordinates as (x, y) floats.</p></li>
+        <li><p>parent_face: Index of parent face across hinge, or None for root.</p></li>
+        <li><p>hinge_2d: Pair of (start, end) 2D coordinates of hinge, or None for root.</p></li>
+        </ul>
+        </p>
+        </dd>
+        <dt class="field-odd">Return type<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>List of dictionaries with face net layout metadata</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.elevate">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">elevate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">height_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.elevate" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs Pacioli/Leonardo’s stellation (Elevatum / Conway kis).</p>
+        <p>Replaces each k-gon face with k triangular pyramid faces meeting at an apex
+        above the face centroid. When height_scale is None, calculates the exact
+        algebraic height making all lateral triangular faces equilateral.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact 3D polyhedral solid.</p></li>
+        <li><p><strong>height_scale</strong> – Optional exact height scaling factor. When None, calculates
+        exact equilateral pyramid height.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact elevated Solid3D instance.</p>
+        </dd>
+        <dt class="field-odd">Raises<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>ValueError</strong> – If face circumradius exceeds edge length for equilateral pyramid.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.polar_dual">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">polar_dual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere_quadrance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.polar_dual" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs exact polar dual of an origin-centered polyhedral solid.</p>
+        <p>Reciprocates every face plane across a concentric sphere of quadrance
+        sphere_quadrance, producing dual vertices at poles of face planes and dual
+        faces corresponding to original vertices.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact origin-centered Solid3D instance.</p></li>
+        <li><p><strong>sphere_quadrance</strong> – Optional exact sphere quadrance. Defaults to midquadrance
+        of the first edge.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact dual Solid3D instance.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.rectify">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">rectify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.rectify" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs Pacioli’s edge-midpoint truncation (Abscisum).</p>
+        <p>Places vertices at exact midpoints of all edges, yielding shrunk faces
+        on original faces and vertex-figure polygons at all original vertices.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>solid</strong> – Exact 3D polyhedral solid.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact rectified Solid3D instance.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.truncate">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">truncate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">sp.Rational(1,</span> <span class="pre">3)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.truncate" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs Archimedean corner truncation at an exact rational ratio.</p>
+        <p>Divides each directed edge at parameter ratio, creating 2k-gons on original
+        k-gon faces and q-gon vertex-figure faces at vertices of degree q.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact 3D polyhedral solid.</p></li>
+        <li><p><strong>ratio</strong> – Truncation ratio in (0, 1/2). Defaults to 1/3.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact truncated Solid3D instance.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.vacuate">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">vacuate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">aperture</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">sp.Rational(3,</span> <span class="pre">5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sympy.Expr</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">sp.Rational(4,</span> <span class="pre">5)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.vacuate" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs Leonardo da Vinci’s hollow manifold (Corpus Vacuum).</p>
+        <p>Generates outer and inner concentric shell vertices and mitered frame
+        quadrilaterals around window openings for each face of the solid.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact 3D polyhedral solid.</p></li>
+        <li><p><strong>aperture</strong> – Shrink factor for face window opening in (0, 1). Defaults to 3/5.</p></li>
+        <li><p><strong>shell</strong> – Shrink factor for inner concentric shell in (0, 1). Defaults to 4/5.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact Solid3D representing the 2-manifold hollow cage polyhedron.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.polyhedra.PHI">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">PHI</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.PHI" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.polyhedra.PHI_INV">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">PHI_INV</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.PHI_INV" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">RegularSolid</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic specification of a regular convex Platonic solid.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>slug</strong> – Short lowercase identifier (‘tetrahedron’, ‘hexahedron’, etc.).</p></li>
+        <li><p><strong>name</strong> – Standard English name (‘Tetrahedron’, ‘Hexahedron’, etc.).</p></li>
+        <li><p><strong>latin_name</strong> – Classical Latin name from Pacioli, Kepler, and Renaissance texts.</p></li>
+        <li><p><strong>greek_name</strong> – Ancient Greek name with polytonic Greek orthography.</p></li>
+        <li><p><strong>element</strong> – Classical natural element assigned in Plato’s Timaeus.</p></li>
+        <li><p><strong>schlafli</strong> – Schläfli symbol {p, q} indicating p-gons with q meeting per vertex.</p></li>
+        <li><p><strong>dual_slug</strong> – Slug of the polar dual regular solid.</p></li>
+        <li><p><strong>euclid_prop</strong> – Proposition in Euclid’s Elements Book XIII constructing the solid.</p></li>
+        <li><p><strong>g_index</strong> – GEOMETOR G-Index citation in elements canon.</p></li>
+        <li><p><strong>leonardo_plates</strong> – Mapping of variant keys to (plate_roman, folio_number) pairs.</p></li>
+        <li><p><strong>vertices</strong> – Tuple of exact 3D vertex coordinates over Z or Q(phi).</p></li>
+        <li><p><strong>faces</strong> – Tuple of oriented planar faces (vertex index cycles CCW outward).</p></li>
+        <li><p><strong>edges</strong> – Tuple of undirected edge pairs (i, j) with i &lt; j.</p></li>
+        <li><p><strong>dihedral_spread</strong> – Exact rational dihedral spread sin^2(theta).</p></li>
+        <li><p><strong>q_in_over_q_out</strong> – Exact ratio of inquadrance to circumquadrance Q_in / Q_out.</p></li>
+        <li><p><strong>q_mid_over_q_out</strong> – Exact ratio of midquadrance to circumquadrance Q_mid / Q_out.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.slug">
+        <span class="sig-name descname"><span class="pre">slug</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.slug" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.name">
+        <span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.latin_name">
+        <span class="sig-name descname"><span class="pre">latin_name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.latin_name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.greek_name">
+        <span class="sig-name descname"><span class="pre">greek_name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.greek_name" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.element">
+        <span class="sig-name descname"><span class="pre">element</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.element" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.schlafli">
+        <span class="sig-name descname"><span class="pre">schlafli</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.schlafli" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.dual_slug">
+        <span class="sig-name descname"><span class="pre">dual_slug</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.dual_slug" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.euclid_prop">
+        <span class="sig-name descname"><span class="pre">euclid_prop</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.euclid_prop" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.g_index">
+        <span class="sig-name descname"><span class="pre">g_index</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.g_index" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.leonardo_plates">
+        <span class="sig-name descname"><span class="pre">leonardo_plates</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.leonardo_plates" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.vertices">
+        <span class="sig-name descname"><span class="pre">vertices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.vertices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.faces">
+        <span class="sig-name descname"><span class="pre">faces</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.faces" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.edges">
+        <span class="sig-name descname"><span class="pre">edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.dihedral_spread">
+        <span class="sig-name descname"><span class="pre">dihedral_spread</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Rational</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.dihedral_spread" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.q_in_over_q_out">
+        <span class="sig-name descname"><span class="pre">q_in_over_q_out</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.q_in_over_q_out" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.RegularSolid.q_mid_over_q_out">
+        <span class="sig-name descname"><span class="pre">q_mid_over_q_out</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.RegularSolid.q_mid_over_q_out" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.cross_3d">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">cross_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.cross_3d" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes the exact cross product of two 3D vectors.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>u</strong> – First 3D vector.</p></li>
+        <li><p><strong>v</strong> – Second 3D vector.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact 3D vector u x v.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.dihedral_spread_3d">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">dihedral_spread_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sympy.Expr</span></span></span><a class="headerlink" href="#geometor.polyhedra.dihedral_spread_3d" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes the exact dihedral spread (sin^2 theta) between two face normals.</p>
+        <p>In Rational Trigonometry, the spread between two planes with normal
+        vectors n1 and n2 is 1 - (n1 . n2)^2 / (Q(n1) * Q(n2)).</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>n1</strong> – First face normal vector.</p></li>
+        <li><p><strong>n2</strong> – Second face normal vector.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact rational or algebraic dihedral spread in [0, 1].</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.dot_3d">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">dot_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sympy.Expr</span></span></span><a class="headerlink" href="#geometor.polyhedra.dot_3d" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes the exact dot product of two 3D vectors.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>u</strong> – First 3D vector.</p></li>
+        <li><p><strong>v</strong> – Second 3D vector.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact symbolic dot product u_x * v_x + u_y * v_y + u_z * v_z.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.face_normal_3d">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">face_normal_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.face_normal_3d" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes the unnormalized outward normal vector of a planar face.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>vertices</strong> – Sequence of 3D vertex coordinates.</p></li>
+        <li><p><strong>face</strong> – Sequence of vertex indices ordered counter-clockwise outward.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact 3D normal vector via cross product of first two directed edges.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.get_platonic_solid">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">get_platonic_solid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.RegularSolid" title="geometor.polyhedra.RegularSolid"><span class="pre">RegularSolid</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.get_platonic_solid" title="Link to this definition">¶</a></dt>
+        <dd><p>Retrieves a single Platonic solid by slug name.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>slug</strong> – Standard slug identifier (‘tetrahedron’, ‘hexahedron’, etc.).</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>The corresponding RegularSolid instance.</p>
+        </dd>
+        <dt class="field-odd">Raises<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>KeyError</strong> – If slug is not recognized.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.get_platonic_solids">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">get_platonic_solids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#geometor.polyhedra.RegularSolid" title="geometor.polyhedra.RegularSolid"><span class="pre">RegularSolid</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.get_platonic_solids" title="Link to this definition">¶</a></dt>
+        <dd><p>Retrieves all five Platonic solids mapped by slug.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Dictionary mapping slug names (‘tetrahedron’, ‘hexahedron’,
+        ‘octahedron’, ‘icosahedron’, ‘dodecahedron’) to their exact
+        symbolic RegularSolid instances.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.quadrance_3d">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">quadrance_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sympy.Expr</span></span></span><a class="headerlink" href="#geometor.polyhedra.quadrance_3d" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes the exact 3D quadrance (squared Euclidean norm) of a vector.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>v</strong> – 3D vector coordinates (x, y, z).</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact symbolic quadrance v_x^2 + v_y^2 + v_z^2.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.export_blender_script">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">export_blender_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#geometor.polyhedra.export_blender_script" title="Link to this definition">¶</a></dt>
+        <dd><p>Emits a standalone Blender 5.x Python script generating a studio showcase.</p>
+        <p>Creates collections, meshes, Principled BSDF materials (Boxwood, Alabaster,
+        Gold), studio 3-point lighting, and camera framing.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solids</strong> – List of Solid3D polyhedral models to include in the scene.</p></li>
+        <li><p><strong>script_path</strong> – Target filesystem path for the emitted Python script.</p></li>
+        <li><p><strong>spacing</strong> – Center-to-center offset along the X axis between models.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Path to the generated Python script.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.export_ingetrazo_script">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">export_ingetrazo_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#geometor.polyhedra.export_ingetrazo_script" title="Link to this definition">¶</a></dt>
+        <dd><p>Emits a runnable Python script for IngeTrazo 0.6.0 CAD modeler.</p>
+        <p>Lays out polyhedra along the X-axis on named layers (‘Platonic_Solida’,
+        ‘Leonardo_Vacua’) with warm boxwood and alabaster materials.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solids</strong> – List of Solid3D polyhedral models to include in the scene.</p></li>
+        <li><p><strong>script_path</strong> – Target filesystem path for the emitted Python script.</p></li>
+        <li><p><strong>spacing</strong> – Center-to-center offset along the X axis between models.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Path to the generated Python script.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.export_obj_mtl">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">export_obj_mtl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.export_obj_mtl" title="Link to this definition">¶</a></dt>
+        <dd><p>Exports a Solid3D to Wavefront .obj and companion .mtl material library.</p>
+        <p>Maps face_roles (‘base’, ‘outer_frame’, ‘window_reveal’, ‘inner_frame’,
+        ‘truncation’, ‘pyramid’) to distinct Renaissance boxwood, alabaster, and
+        stone material definitions.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact symbolic Solid3D polyhedral model.</p></li>
+        <li><p><strong>obj_path</strong> – Target filesystem path for the .obj file.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Tuple of (obj_path, mtl_path).</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.render_model2d_svg">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">render_model2d_svg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">geometor.model.Model</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">golden_segments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">520</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">480</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphic_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'slice'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.polyhedra.render_model2d_svg" title="Link to this definition">¶</a></dt>
+        <dd><p>Renders a 2D GEOMETOR symbolic Model to publication-grade SVG.</p>
+        <p>Renders circles, polygons, 3-vertex midpoint path segments, points, and
+        labels with data-ref attributes using luminous gold and sky-blue theme
+        colors with full dark-mode adaptation.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>model</strong> – Exact symbolic 2D geometor.model.Model instance.</p></li>
+        <li><p><strong>golden_segments</strong> – Optional list of (pt1_label, pt2_label, role) triples
+        designating golden ratio segments to highlight in gold or terracotta.</p></li>
+        <li><p><strong>width</strong> – SVG viewport width in pixels.</p></li>
+        <li><p><strong>height</strong> – SVG viewport height in pixels.</p></li>
+        <li><p><strong>graphic_id</strong> – Unique identifier for data-graphic-id attribute.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Valid XML SVG string with class ‘euclid-graphic’.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.render_net_svg">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">render_net_svg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">520</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">420</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphic_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'net'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.polyhedra.render_net_svg" title="Link to this definition">¶</a></dt>
+        <dd><p>Renders unfolded 2D papercraft net layout of a Solid3D to SVG.</p>
+        <p>Uses dual graph BFS unfolding from geometor.polyhedra.model3d.bridge,
+        drawing filled face polygons, dashed interior hinge folds, solid boundary
+        cut lines, and centered face index labels.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact symbolic Solid3D polyhedral model.</p></li>
+        <li><p><strong>width</strong> – SVG viewport width in pixels.</p></li>
+        <li><p><strong>height</strong> – SVG viewport height in pixels.</p></li>
+        <li><p><strong>graphic_id</strong> – Unique identifier for data-graphic-id attribute.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Valid XML SVG string with class ‘euclid-graphic’.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.render_solid_svg">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">render_solid_svg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/geometor/polyhedra/model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw_deg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch_deg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">22.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roll_deg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_dist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">focal_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">520</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">480</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'elemental'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_hidden_edges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">golden_polygons_3d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphic_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'g1'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#geometor.polyhedra.render_solid_svg" title="Link to this definition">¶</a></dt>
+        <dd><p>Renders a 3D polyhedral solid to publication-grade theme-adaptive SVG.</p>
+        <p>Uses orbit camera perspective projection with depth-sorted painter’s
+        algorithm, back-face culling, and directional lighting.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact symbolic Solid3D polyhedral model.</p></li>
+        <li><p><strong>yaw_deg</strong> – Horizontal orbit yaw angle in degrees.</p></li>
+        <li><p><strong>pitch_deg</strong> – Vertical orbit pitch angle in degrees.</p></li>
+        <li><p><strong>roll_deg</strong> – Camera roll angle in degrees.</p></li>
+        <li><p><strong>camera_dist</strong> – Orbit distance from model center.</p></li>
+        <li><p><strong>focal_length</strong> – Perspective camera focal length.</p></li>
+        <li><p><strong>width</strong> – SVG viewport width in pixels.</p></li>
+        <li><p><strong>height</strong> – SVG viewport height in pixels.</p></li>
+        <li><p><strong>style</strong> – Visual style (‘elemental’, ‘woodcut_vacuum’, ‘woodcut_solidum’).</p></li>
+        <li><p><strong>show_hidden_edges</strong> – Whether to render dashed back-facing edges.</p></li>
+        <li><p><strong>golden_polygons_3d</strong> – Optional list of 3D polygon vertex loops to render
+        as translucent golden planes depth-interleaved with faces.</p></li>
+        <li><p><strong>graphic_id</strong> – Unique identifier for data-graphic-id attribute.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Valid XML SVG string with class ‘euclid-graphic’.</p>
+        </dd>
+        <dt class="field-odd">Raises<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>ValueError</strong> – If style is unknown or solid has no vertices.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.polyhedra.__version__">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.</span></span><span class="sig-name descname"><span class="pre">__version__</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'0.2.0'</span></span><a class="headerlink" href="#geometor.polyhedra.__version__" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../pipeline/index.html" title="3D Symbolic Infrastructure &amp; Multi-Engine Pipeline">&larr; <span class="nav-label">3D Symbolic Infrastructure & Multi-Engine Pipeline</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="api/geometor/polyhedra/__main__/index.html" title="geometor.polyhedra.__main__"><span class="nav-label">geometor.polyhedra.__main__</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="#" class="is-active" aria-selected="true" aria-current="page">Modules</a></li>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+        <li><a href="../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

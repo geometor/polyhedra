@@ -1,0 +1,432 @@
+geometor.polyhedra.golden
+=========================
+
+.. py:module:: geometor.polyhedra.golden
+
+.. autoapi-nested-parse::
+
+   Exact symbolic golden proportions and Keplerian compounds in polyhedra.
+
+   Explores canonical golden ratio occurrences across regular and semi-regular polyhedra:
+   mutually orthogonal golden rectangles in the icosahedron, golden edge division
+   of the octahedron, the compound of five inscribed cubes in the dodecahedron,
+   Kepler's rhombic triacontahedron, and planar cross sections (George Odom's theorem,
+   icosahedron principal meridian, and regular pentagon/pentagram).
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.polyhedra.golden.GoldenPolyhedronTheorem
+   geometor.polyhedra.golden.GoldenRectanglesResult
+   geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult
+   geometor.polyhedra.golden.InscribedCube
+   geometor.polyhedra.golden.DodecahedronFiveCubesResult
+   geometor.polyhedra.golden.RhombicTriacontahedronResult
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.golden.build_icosahedron_golden_rectangles
+   geometor.polyhedra.golden.build_octahedron_golden_icosahedron
+   geometor.polyhedra.golden.build_dodecahedron_five_cubes
+   geometor.polyhedra.golden.build_rhombic_triacontahedron_golden
+   geometor.polyhedra.golden.build_odom_tetrahedron_section_model
+   geometor.polyhedra.golden.build_icosahedron_meridian_model
+   geometor.polyhedra.golden.build_pentagon_cross_section_model
+   geometor.polyhedra.golden.get_golden_theorems
+   geometor.polyhedra.golden.get_golden_theorem
+
+
+Module Contents
+---------------
+
+.. py:class:: GoldenPolyhedronTheorem
+
+   Exact symbolic specification of a golden proportion theorem in polyhedra.
+
+   :ivar slug: Short lowercase identifier ('icosahedron_golden_rectangles', etc.).
+   :ivar title: Standard English title of the theorem or construction.
+   :ivar subtitle: Descriptive subtitle highlighting key geometric properties.
+   :ivar historical_source: Scholarly citation (Euclid, Pacioli, Kepler, Odom).
+   :ivar summary: Concise mathematical summary of the theorem and geometric proof.
+   :ivar golden_identities: Sequence of (description, lhs, rhs) triples where
+                            lhs - rhs simplifies to exact zero.
+
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: subtitle
+      :type:  str
+
+
+   .. py:attribute:: historical_source
+      :type:  str
+
+
+   .. py:attribute:: summary
+      :type:  str
+
+
+   .. py:attribute:: golden_identities
+      :type:  tuple[tuple[str, sympy.Expr, sympy.Expr], ...]
+
+
+.. py:class:: GoldenRectanglesResult
+
+   Exact symbolic specification of the three golden rectangles in the icosahedron.
+
+   :ivar rectangles: Mapping of plane label ('R_YZ', 'R_ZX', 'R_XY') to 4 vertices.
+   :ivar normals: Mapping of plane label to exact 3D normal vector.
+   :ivar q_short: Exact quadrance of each rectangle short edge.
+   :ivar q_long: Exact quadrance of each rectangle long edge.
+   :ivar q_ratio: Exact quadrance ratio Q_long / Q_short == PHI**2.
+   :ivar q_diagonal: Exact quadrance of each rectangle diagonal.
+   :ivar q_circumradius: Exact circumquadrance of the parent icosahedron.
+   :ivar short_edges_in_icosahedron: Sequence of edge index pairs matching
+                                     canonical icosahedron edges.
+
+
+
+   .. py:attribute:: rectangles
+      :type:  dict[str, tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...]]
+
+
+   .. py:attribute:: normals
+      :type:  dict[str, tuple[sympy.Expr, sympy.Expr, sympy.Expr]]
+
+
+   .. py:attribute:: q_short
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_long
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_ratio
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_diagonal
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_circumradius
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: short_edges_in_icosahedron
+      :type:  tuple[tuple[int, int], ...]
+
+
+.. py:class:: OctahedronGoldenIcosahedronResult
+
+   Exact symbolic result of inscribing an icosahedron in an octahedron.
+
+   :ivar octahedron_vertices: Six exact 3D vertices of the scaled octahedron.
+   :ivar octahedron_edges: Twelve undirected edge index pairs of the octahedron.
+   :ivar octahedron_faces: Eight triangular face index triples of the octahedron.
+   :ivar directed_edges: Twelve directed edge index pairs oriented for golden division.
+   :ivar division_points: Twelve exact golden division points matching icosahedron vertices.
+   :ivar icosahedron_vertices: Twelve canonical icosahedron vertex coordinates.
+   :ivar icosahedron_edges: Thirty undirected edge index pairs of the inscribed icosahedron.
+   :ivar icosahedron_faces: Twenty triangular face index triples of the inscribed icosahedron.
+   :ivar q_oct_edge: Exact edge quadrance of each octahedron edge.
+   :ivar q_major: Exact quadrance of the major golden segment on each edge.
+   :ivar q_minor: Exact quadrance of the minor golden segment on each edge.
+   :ivar q_ico_edge: Exact edge quadrance of each inscribed icosahedron edge.
+
+
+
+   .. py:attribute:: octahedron_vertices
+      :type:  tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...]
+
+
+   .. py:attribute:: octahedron_edges
+      :type:  tuple[tuple[int, int], ...]
+
+
+   .. py:attribute:: octahedron_faces
+      :type:  tuple[tuple[int, ...], ...]
+
+
+   .. py:attribute:: directed_edges
+      :type:  tuple[tuple[int, int], ...]
+
+
+   .. py:attribute:: division_points
+      :type:  tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...]
+
+
+   .. py:attribute:: icosahedron_vertices
+      :type:  tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...]
+
+
+   .. py:attribute:: icosahedron_edges
+      :type:  tuple[tuple[int, int], ...]
+
+
+   .. py:attribute:: icosahedron_faces
+      :type:  tuple[tuple[int, ...], ...]
+
+
+   .. py:attribute:: q_oct_edge
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_major
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_minor
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_ico_edge
+      :type:  sympy.Expr
+
+
+.. py:class:: InscribedCube
+
+   Exact symbolic specification of one inscribed regular cube in the dodecahedron.
+
+   :ivar cube_index: Index of the cube (0 through 4).
+   :ivar vertices: Eight vertex indices into the parent dodecahedron vertex list.
+   :ivar vertex_coords: Eight exact 3D vertex coordinates of this cube.
+   :ivar edges: Twelve edge index pairs into the parent dodecahedron vertex list.
+   :ivar faces: Six square face 4-tuples of parent dodecahedron vertex indices.
+
+
+
+   .. py:attribute:: cube_index
+      :type:  int
+
+
+   .. py:attribute:: vertices
+      :type:  tuple[int, ...]
+
+
+   .. py:attribute:: vertex_coords
+      :type:  tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...]
+
+
+   .. py:attribute:: edges
+      :type:  tuple[tuple[int, int], ...]
+
+
+   .. py:attribute:: faces
+      :type:  tuple[tuple[int, ...], ...]
+
+
+.. py:class:: DodecahedronFiveCubesResult
+
+   Exact symbolic result of the compound of five inscribed cubes in the dodecahedron.
+
+   :ivar dodecahedron_vertices: Twenty exact 3D vertices of the canonical dodecahedron.
+   :ivar dodecahedron_edges: Thirty undirected edge index pairs of the dodecahedron.
+   :ivar dodecahedron_faces: Twelve pentagonal face index 5-tuples.
+   :ivar q_dod_edge: Exact edge quadrance of the dodecahedron.
+   :ivar q_cube_edge: Exact edge quadrance of each inscribed cube.
+   :ivar q_ratio: Exact quadrance ratio Q_cube / Q_dod == PHI**2.
+   :ivar cubes: Sequence of five InscribedCube instances.
+   :ivar all_cube_edges: Sequence of all sixty cube edge index pairs partitioning diagonals.
+
+
+
+   .. py:attribute:: dodecahedron_vertices
+      :type:  tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...]
+
+
+   .. py:attribute:: dodecahedron_edges
+      :type:  tuple[tuple[int, int], ...]
+
+
+   .. py:attribute:: dodecahedron_faces
+      :type:  tuple[tuple[int, ...], ...]
+
+
+   .. py:attribute:: q_dod_edge
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_cube_edge
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_ratio
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: cubes
+      :type:  tuple[InscribedCube, ...]
+
+
+   .. py:attribute:: all_cube_edges
+      :type:  tuple[tuple[int, int], ...]
+
+
+.. py:class:: RhombicTriacontahedronResult
+
+   Exact symbolic specification of the Rhombic Triacontahedron over Q(phi).
+
+   :ivar vertices: Thirty-two exact 3D vertices (20 dodecahedral + 12 dual icosahedral).
+   :ivar faces: Thirty rhombic face index 4-tuples, ordered outward counter-clockwise.
+   :ivar edges: Sixty undirected edge index pairs.
+   :ivar dodecahedron_indices: Indices of the twenty degree-3 obtuse vertices (0..19).
+   :ivar icosahedron_indices: Indices of the twelve degree-5 acute vertices (20..31).
+   :ivar q_long_diagonal: Exact quadrance of each rhombus long diagonal.
+   :ivar q_short_diagonal: Exact quadrance of each rhombus short diagonal.
+   :ivar q_diagonal_ratio: Exact quadrance ratio Q_long / Q_short == PHI**2.
+   :ivar q_edge: Exact edge quadrance of each rhombic face edge.
+
+
+
+   .. py:attribute:: vertices
+      :type:  tuple[tuple[sympy.Expr, sympy.Expr, sympy.Expr], ...]
+
+
+   .. py:attribute:: faces
+      :type:  tuple[tuple[int, int, int, int], ...]
+
+
+   .. py:attribute:: edges
+      :type:  tuple[tuple[int, int], ...]
+
+
+   .. py:attribute:: dodecahedron_indices
+      :type:  tuple[int, ...]
+
+
+   .. py:attribute:: icosahedron_indices
+      :type:  tuple[int, ...]
+
+
+   .. py:attribute:: q_long_diagonal
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_short_diagonal
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_diagonal_ratio
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: q_edge
+      :type:  sympy.Expr
+
+
+.. py:function:: build_icosahedron_golden_rectangles() -> GoldenRectanglesResult
+
+   Extracts and certifies the three mutually orthogonal golden rectangles in the icosahedron.
+
+   Euclid Elements XIII.16 shows that the twelve vertices of a regular icosahedron
+   form the vertices of three congruent golden rectangles whose planes are pairwise
+   perpendicular and meet at the center of the circumscribing sphere.
+
+   :returns: GoldenRectanglesResult certifying rectangle dimensions, orthogonality, and edges.
+
+
+.. py:function:: build_octahedron_golden_icosahedron() -> OctahedronGoldenIcosahedronResult
+
+   Divides the twelve edges of a regular octahedron in the golden ratio.
+
+   Starts with a regular octahedron of scale phi^2 = phi + 1 whose vertices
+   lie along the coordinate axes: (±phi^2, 0, 0), (0, ±phi^2, 0), (0, 0, ±phi^2).
+   Dividing each directed edge in the golden ratio AG : GB = 1 : phi yields
+   the exact twelve vertices of the canonical regular icosahedron.
+
+   :returns: OctahedronGoldenIcosahedronResult containing octahedron geometry and inscribed icosahedron.
+
+
+.. py:function:: build_dodecahedron_five_cubes() -> DodecahedronFiveCubesResult
+
+   Finds and certifies all five regular cubes inscribed in the dodecahedron.
+
+   Euclid Elements XIII.17 constructs the regular dodecahedron upon an inscribed
+   cube by adding roof-like wedges above each square face. There are five distinct
+   inscribed regular cubes whose 60 edges partition all 60 diagonals of the twelve
+   pentagonal faces.
+
+   :returns: DodecahedronFiveCubesResult containing dodecahedron geometry and the five cubes.
+
+
+.. py:function:: build_rhombic_triacontahedron_golden() -> RhombicTriacontahedronResult
+
+   Constructs the exact 32-vertex Rhombic Triacontahedron over Q(phi).
+
+   Unites the twenty vertices of the canonical regular dodecahedron with the
+   twelve vertices of the dual-oriented regular icosahedron. Each of the thirty
+   faces is a planar golden rhombus whose long diagonal joins two acute degree-5
+   icosahedral vertices and whose short diagonal joins two obtuse degree-3
+   dodecahedral vertices, with diagonal quadrance ratio equal to phi^2.
+
+   :returns: RhombicTriacontahedronResult specifying vertices, rhombic faces, and metric ratios.
+
+
+.. py:function:: build_odom_tetrahedron_section_model() -> tuple[geometor.model.Model, dict[str, sympy.Expr]]
+
+   Constructs George Odom's golden section on the regular tetrahedron face circumcircle.
+
+   In 1983, George Odom discovered that connecting the midpoints of two sides of
+   an equilateral triangle inscribed in a circle and extending the line to meet
+   the circle divides the chord in the exact golden ratio.
+
+   :returns: Tuple of (Model, metrics_dict) with certified exact golden proportions.
+
+
+.. py:function:: build_icosahedron_meridian_model() -> tuple[geometor.model.Model, dict[str, sympy.Expr]]
+
+   Constructs the exact 2D principal meridian section of the icosahedron.
+
+   In the principal plane X = 0, the canonical regular icosahedron has four
+   vertices forming a golden rectangle (±1, ±phi) and two equatorial crossings
+   at (±phi, 0) in (Y, Z) coordinates.
+
+   :returns: Tuple of (Model, metrics_dict) certifying golden proportions in the meridian slice.
+
+
+.. py:function:: build_pentagon_cross_section_model() -> tuple[geometor.model.Model, dict[str, sympy.Expr]]
+
+   Constructs the regular pentagon and pentagram section over Q(phi, sqrt(5 - sqrt(5))).
+
+   Euclid Elements XIII.8 demonstrates that the diagonals of a regular pentagon
+   cut one another in extreme and mean ratio (the golden ratio). This configuration
+   represents the vertex figure of the icosahedron and the face of the dodecahedron.
+
+   :returns: Tuple of (Model, metrics_dict) certifying pentagon-pentagram golden proportions.
+
+
+.. py:function:: get_golden_theorems() -> dict[str, GoldenPolyhedronTheorem]
+
+   Retrieves all canonical golden proportion theorems in polyhedra.
+
+   :returns: Dictionary mapping theorem slugs to GoldenPolyhedronTheorem instances.
+
+
+.. py:function:: get_golden_theorem(slug: str) -> GoldenPolyhedronTheorem
+
+   Retrieves a single golden proportion theorem by slug name.
+
+   :param slug: Short lowercase identifier ('icosahedron_golden_rectangles', etc.).
+
+   :returns: The corresponding GoldenPolyhedronTheorem instance.
+
+   :raises KeyError: If slug is not recognized.
+
+

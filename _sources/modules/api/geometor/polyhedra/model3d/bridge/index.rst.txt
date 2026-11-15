@@ -1,0 +1,64 @@
+geometor.polyhedra.model3d.bridge
+=================================
+
+.. py:module:: geometor.polyhedra.model3d.bridge
+
+.. autoapi-nested-parse::
+
+   Bridge module connecting 3D polyhedra to 2D GEOMETOR symbolic models.
+
+   Provides cross-section planar slicing into exact 2D Model instances and
+   2D net unfolding for SVG visualization and physical papercraft modeling.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.model3d.bridge.slice_solid_to_model
+   geometor.polyhedra.model3d.bridge.unfold_net_2d
+
+
+Module Contents
+---------------
+
+.. py:function:: slice_solid_to_model(solid: geometor.polyhedra.model3d.primitives.Solid3D, plane: geometor.polyhedra.model3d.primitives.Plane3D, u_axis: geometor.polyhedra.model3d.primitives.Vector3D, v_axis: geometor.polyhedra.model3d.primitives.Vector3D, origin: geometor.polyhedra.model3d.primitives.Point3D | None = None, name: str = 'slice', normalize_axes: bool = False) -> geometor.model.Model
+
+   Computes exact planar cross-section of a Solid3D and constructs a 2D Model.
+
+   Intersects all boundary edges of the solid with the given slicing plane,
+   projects the exact intersection points onto the 2D plane defined by u_axis
+   and v_axis, sorts them cyclically around their centroid, and constructs
+   exact points, segments, and polygon entities in a 2D Model.
+
+   :param solid: Exact 3D polyhedral solid.
+   :param plane: Slicing plane.
+   :param u_axis: Direction vector for 2D X axis.
+   :param v_axis: Direction vector for 2D Y axis.
+   :param origin: Optional 3D point mapped to 2D origin (0, 0). Defaults to (0,0,0).
+   :param name: Name identifier for the constructed Model.
+   :param normalize_axes: If True, divides projections by axis quadrances.
+
+   :returns: Exact 2D Model containing the cross-section polygon and boundary segments.
+
+
+.. py:function:: unfold_net_2d(solid: geometor.polyhedra.model3d.primitives.Solid3D, root_face: int = 0) -> list[dict[str, object]]
+
+   Unfolds faces of a Solid3D onto a 2D plane via dual graph BFS spanning tree.
+
+   Starting from root_face, flattens each adjacent face around its shared hinge
+   edge without folding backward or overlapping adjacent faces.
+
+   :param solid: Exact 3D polyhedral solid.
+   :param root_face: Index of the base face placed first at 2D origin.
+
+   :returns:     - face_index: Index of the face in solid.faces.
+                 - role: Role string from solid.face_roles.
+                 - pts_2d: List of 2D vertex coordinates as (x, y) floats.
+                 - parent_face: Index of parent face across hinge, or None for root.
+                 - hinge_2d: Pair of (start, end) 2D coordinates of hinge, or None for root.
+   :rtype: List of dictionaries with face net layout metadata
+
+

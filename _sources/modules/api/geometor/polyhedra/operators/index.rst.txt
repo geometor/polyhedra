@@ -1,0 +1,106 @@
+geometor.polyhedra.operators
+============================
+
+.. py:module:: geometor.polyhedra.operators
+
+.. autoapi-nested-parse::
+
+   Exact symbolic polyhedral operators over algebraic number fields.
+
+   Provides five exact geometric operators preserving 100% symbolic coordinates
+   over Q(phi, sqrt(d)):
+
+   - ``vacuate``: Leonardo da Vinci's hollow manifold (*Corpus Vacuum*).
+   - ``rectify``: Pacioli's edge-midpoint truncation (*Abscisum*).
+   - ``truncate``: Archimedean corner-cutting at rational edge ratios.
+   - ``elevate``: Pacioli/Leonardo's equilateral face stellations (*Elevatum* / *kis*).
+   - ``polar_dual``: Reciprocal face-polar duality across concentric spheres.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.operators.vacuate
+   geometor.polyhedra.operators.rectify
+   geometor.polyhedra.operators.truncate
+   geometor.polyhedra.operators.elevate
+   geometor.polyhedra.operators.polar_dual
+
+
+Module Contents
+---------------
+
+.. py:function:: vacuate(solid: geometor.polyhedra.model3d.primitives.Solid3D, aperture: sympy.Expr = sp.Rational(3, 5), shell: sympy.Expr = sp.Rational(4, 5)) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs Leonardo da Vinci's hollow manifold (Corpus Vacuum).
+
+   Generates outer and inner concentric shell vertices and mitered frame
+   quadrilaterals around window openings for each face of the solid.
+
+   :param solid: Exact 3D polyhedral solid.
+   :param aperture: Shrink factor for face window opening in (0, 1). Defaults to 3/5.
+   :param shell: Shrink factor for inner concentric shell in (0, 1). Defaults to 4/5.
+
+   :returns: Exact Solid3D representing the 2-manifold hollow cage polyhedron.
+
+
+.. py:function:: rectify(solid: geometor.polyhedra.model3d.primitives.Solid3D) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs Pacioli's edge-midpoint truncation (Abscisum).
+
+   Places vertices at exact midpoints of all edges, yielding shrunk faces
+   on original faces and vertex-figure polygons at all original vertices.
+
+   :param solid: Exact 3D polyhedral solid.
+
+   :returns: Exact rectified Solid3D instance.
+
+
+.. py:function:: truncate(solid: geometor.polyhedra.model3d.primitives.Solid3D, ratio: sympy.Expr = sp.Rational(1, 3)) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs Archimedean corner truncation at an exact rational ratio.
+
+   Divides each directed edge at parameter ratio, creating 2k-gons on original
+   k-gon faces and q-gon vertex-figure faces at vertices of degree q.
+
+   :param solid: Exact 3D polyhedral solid.
+   :param ratio: Truncation ratio in (0, 1/2). Defaults to 1/3.
+
+   :returns: Exact truncated Solid3D instance.
+
+
+.. py:function:: elevate(solid: geometor.polyhedra.model3d.primitives.Solid3D, height_scale: sympy.Expr | None = None) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs Pacioli/Leonardo's stellation (Elevatum / Conway kis).
+
+   Replaces each k-gon face with k triangular pyramid faces meeting at an apex
+   above the face centroid. When height_scale is None, calculates the exact
+   algebraic height making all lateral triangular faces equilateral.
+
+   :param solid: Exact 3D polyhedral solid.
+   :param height_scale: Optional exact height scaling factor. When None, calculates
+                        exact equilateral pyramid height.
+
+   :returns: Exact elevated Solid3D instance.
+
+   :raises ValueError: If face circumradius exceeds edge length for equilateral pyramid.
+
+
+.. py:function:: polar_dual(solid: geometor.polyhedra.model3d.primitives.Solid3D, sphere_quadrance: sympy.Expr | None = None) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs exact polar dual of an origin-centered polyhedral solid.
+
+   Reciprocates every face plane across a concentric sphere of quadrance
+   sphere_quadrance, producing dual vertices at poles of face planes and dual
+   faces corresponding to original vertices.
+
+   :param solid: Exact origin-centered Solid3D instance.
+   :param sphere_quadrance: Optional exact sphere quadrance. Defaults to midquadrance
+                            of the first edge.
+
+   :returns: Exact dual Solid3D instance.
+
+

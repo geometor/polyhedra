@@ -1,0 +1,14 @@
+:date: 2026-11-14
+:type: log
+:summary: Initialization of geometor-polyhedra repository with exact symbolic Platonic solids and Book Codex.
+
+Initialize geometor-polyhedra
+=============================
+
+Initialized the ``geometor.polyhedra`` repository (v0.1.0) strictly adhering to GEOMETOR
+exact symbolic standards (zero ``float`` / ``sp.Float`` coordinates):
+
+- Implemented the exact symbolic Platonic solids registry in :mod:`geometor.polyhedra.platonic`.
+- Established 3D Rational Trigonometry vector helpers and dihedral spread invariants.
+- Linked all 60 Leonardo da Vinci polyhedral plates from Luca Pacioli's *De Divina Proportione* (1509).
+- Created Rich CLI, runnable demonstrations, comprehensive tests, and Sphinx Book Codex.

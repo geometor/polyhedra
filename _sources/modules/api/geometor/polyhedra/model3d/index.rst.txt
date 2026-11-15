@@ -1,0 +1,521 @@
+geometor.polyhedra.model3d
+==========================
+
+.. py:module:: geometor.polyhedra.model3d
+
+.. autoapi-nested-parse::
+
+   Exact 3D symbolic geometry, polyhedral models, and 2D bridge.
+
+   Exports primitives for 3D points, vectors, planes, lines, spheres, and polyhedra,
+   along with slicing and net-unfolding utilities into 2D GEOMETOR models.
+
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /modules/api/geometor/polyhedra/model3d/bridge/index
+   /modules/api/geometor/polyhedra/model3d/primitives/index
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.polyhedra.model3d.Line3D
+   geometor.polyhedra.model3d.Plane3D
+   geometor.polyhedra.model3d.Point3D
+   geometor.polyhedra.model3d.Solid3D
+   geometor.polyhedra.model3d.Sphere3D
+   geometor.polyhedra.model3d.Vector3D
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.model3d.slice_solid_to_model
+   geometor.polyhedra.model3d.unfold_net_2d
+
+
+Package Contents
+----------------
+
+.. py:function:: slice_solid_to_model(solid: geometor.polyhedra.model3d.primitives.Solid3D, plane: geometor.polyhedra.model3d.primitives.Plane3D, u_axis: geometor.polyhedra.model3d.primitives.Vector3D, v_axis: geometor.polyhedra.model3d.primitives.Vector3D, origin: geometor.polyhedra.model3d.primitives.Point3D | None = None, name: str = 'slice', normalize_axes: bool = False) -> geometor.model.Model
+
+   Computes exact planar cross-section of a Solid3D and constructs a 2D Model.
+
+   Intersects all boundary edges of the solid with the given slicing plane,
+   projects the exact intersection points onto the 2D plane defined by u_axis
+   and v_axis, sorts them cyclically around their centroid, and constructs
+   exact points, segments, and polygon entities in a 2D Model.
+
+   :param solid: Exact 3D polyhedral solid.
+   :param plane: Slicing plane.
+   :param u_axis: Direction vector for 2D X axis.
+   :param v_axis: Direction vector for 2D Y axis.
+   :param origin: Optional 3D point mapped to 2D origin (0, 0). Defaults to (0,0,0).
+   :param name: Name identifier for the constructed Model.
+   :param normalize_axes: If True, divides projections by axis quadrances.
+
+   :returns: Exact 2D Model containing the cross-section polygon and boundary segments.
+
+
+.. py:function:: unfold_net_2d(solid: geometor.polyhedra.model3d.primitives.Solid3D, root_face: int = 0) -> list[dict[str, object]]
+
+   Unfolds faces of a Solid3D onto a 2D plane via dual graph BFS spanning tree.
+
+   Starting from root_face, flattens each adjacent face around its shared hinge
+   edge without folding backward or overlapping adjacent faces.
+
+   :param solid: Exact 3D polyhedral solid.
+   :param root_face: Index of the base face placed first at 2D origin.
+
+   :returns:     - face_index: Index of the face in solid.faces.
+                 - role: Role string from solid.face_roles.
+                 - pts_2d: List of 2D vertex coordinates as (x, y) floats.
+                 - parent_face: Index of parent face across hinge, or None for root.
+                 - hinge_2d: Pair of (start, end) 2D coordinates of hinge, or None for root.
+   :rtype: List of dictionaries with face net layout metadata
+
+
+.. py:class:: Line3D
+
+   Exact 3D line passing through two distinct points.
+
+   :ivar p1: First point on line.
+   :ivar p2: Second point on line.
+
+
+
+   .. py:attribute:: p1
+      :type:  Point3D
+
+
+   .. py:attribute:: p2
+      :type:  Point3D
+
+
+   .. py:method:: direction() -> Vector3D
+
+      Returns direction vector from p1 to p2.
+
+
+
+.. py:class:: Plane3D
+
+   Exact 3D plane represented by algebraic equation a*x + b*y + c*z + d = 0.
+
+   :ivar a: Coefficient for x.
+   :ivar b: Coefficient for y.
+   :ivar c: Coefficient for z.
+   :ivar d: Constant term.
+
+
+
+   .. py:attribute:: a
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: b
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: c
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: d
+      :type:  sympy.Expr
+
+
+   .. py:method:: __post_init__() -> None
+
+      Validates exact algebraic coefficients.
+
+
+
+   .. py:method:: from_points(p1: Point3D, p2: Point3D, p3: Point3D) -> Plane3D
+      :classmethod:
+
+
+      Constructs plane passing through three non-collinear points.
+
+      :param p1: First point.
+      :param p2: Second point.
+      :param p3: Third point.
+
+      :returns: Plane3D passing through p1, p2, and p3.
+
+      :raises ValueError: If points are collinear.
+
+
+
+   .. py:method:: from_normal_point(normal: Vector3D, point: Point3D) -> Plane3D
+      :classmethod:
+
+
+      Constructs plane from normal vector and point on plane.
+
+      :param normal: Non-zero normal vector.
+      :param point: Point lying on plane.
+
+      :returns: Plane3D with given normal containing point.
+
+      :raises ValueError: If normal vector is zero.
+
+
+
+   .. py:method:: normal() -> Vector3D
+
+      Returns normal vector (a, b, c).
+
+
+
+   .. py:method:: eval_point(pt: Point3D) -> sympy.Expr
+
+      Evaluates linear form a*pt.x + b*pt.y + c*pt.z + d.
+
+
+
+   .. py:method:: contains(pt: Point3D) -> bool
+
+      Tests whether point lies exactly on plane.
+
+
+
+   .. py:method:: intersect_segment(p1: Point3D, p2: Point3D) -> Point3D | None
+
+      Computes exact intersection point of segment [p1, p2] with plane.
+
+      :param p1: Segment start point.
+      :param p2: Segment end point.
+
+      :returns: Exact Point3D if segment intersects plane, or None otherwise.
+
+
+
+.. py:class:: Point3D
+
+   Exact 3D symbolic point over algebraic number fields.
+
+   :ivar x: Exact X coordinate.
+   :ivar y: Exact Y coordinate.
+   :ivar z: Exact Z coordinate.
+   :ivar label: Optional symbolic label.
+
+
+
+   .. py:attribute:: x
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: y
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: z
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: label
+      :type:  str
+      :value: ''
+
+
+
+   .. py:method:: __post_init__() -> None
+
+      Validates exact algebraic coordinates.
+
+
+
+   .. py:method:: vector_to(other: Point3D) -> Vector3D
+
+      Returns displacement vector from self to other.
+
+
+
+   .. py:method:: quadrance_to(other: Point3D) -> sympy.Expr
+
+      Returns exact quadrance (squared Euclidean distance) to other.
+
+
+
+   .. py:method:: lerp(other: Point3D, t: sympy.Expr | int) -> Point3D
+
+      Computes exact linear interpolation (1 - t)*self + t*other.
+
+
+
+   .. py:method:: scale(factor: sympy.Expr | int) -> Point3D
+
+      Scales point coordinates from origin by exact factor.
+
+
+
+   .. py:method:: to_tuple() -> tuple[sympy.Expr, sympy.Expr, sympy.Expr]
+
+      Returns coordinate 3-tuple.
+
+
+
+   .. py:method:: to_vector() -> Vector3D
+
+      Returns position vector from origin to this point.
+
+
+
+   .. py:method:: __add__(vec: Vector3D) -> Point3D
+
+      Translates point by a vector.
+
+
+
+.. py:class:: Solid3D
+
+   Exact 3D polyhedral manifold with oriented face cycles and metadata.
+
+   :ivar slug: Short lowercase identifier.
+   :ivar title: Descriptive human-readable title.
+   :ivar vertices: Sequence of exact 3D vertices.
+   :ivar faces: Sequence of oriented face cycles (indices in counter-clockwise order).
+   :ivar edges: Sorted sequence of unique undirected edge index pairs (i, j) with i < j.
+   :ivar face_roles: Role tags corresponding to each face in faces sequence.
+
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: vertices
+      :type:  tuple[Point3D, ...]
+
+
+   .. py:attribute:: faces
+      :type:  tuple[tuple[int, ...], ...]
+
+
+   .. py:attribute:: edges
+      :type:  tuple[tuple[int, int], ...]
+      :value: ()
+
+
+
+   .. py:attribute:: face_roles
+      :type:  tuple[str, ...]
+      :value: ()
+
+
+
+   .. py:method:: __post_init__() -> None
+
+      Normalizes edges and face roles.
+
+
+
+   .. py:method:: from_regular_solid(solid: geometor.polyhedra.platonic.RegularSolid) -> Solid3D
+      :classmethod:
+
+
+      Constructs Solid3D from a RegularSolid instance.
+
+      :param solid: Exact symbolic RegularSolid instance.
+
+      :returns: Corresponding Solid3D instance.
+
+
+
+   .. py:property:: num_vertices
+      :type: int
+
+
+      Returns number of vertices.
+
+
+   .. py:property:: num_edges
+      :type: int
+
+
+      Returns number of edges.
+
+
+   .. py:property:: num_faces
+      :type: int
+
+
+      Returns number of faces.
+
+
+   .. py:property:: euler_characteristic
+      :type: int
+
+
+      Returns Euler characteristic V - E + F.
+
+
+   .. py:property:: genus
+      :type: int
+
+
+      Returns topological genus (2 - chi) // 2.
+
+
+   .. py:method:: face_centroid(face_idx: int) -> Point3D
+
+      Computes exact centroid of a face.
+
+      :param face_idx: Index of face in faces tuple.
+
+      :returns: Point3D representing the centroid.
+
+
+
+   .. py:method:: face_normal(face_idx: int) -> Vector3D
+
+      Computes unnormalized outward normal vector of a face.
+
+      :param face_idx: Index of face in faces tuple.
+
+      :returns: Vector3D normal vector via cycle cross product sum.
+
+
+
+   .. py:method:: are_faces_coplanar() -> bool
+
+      Verifies that all vertices of every face are strictly coplanar.
+
+      :returns: True if all faces are planar, False otherwise.
+
+
+
+   .. py:method:: is_outward_oriented() -> bool
+
+      Checks consistent outward orientation relative to origin or cavity.
+
+      :returns: True if all face normal orientations match expected outwards conventions.
+
+
+
+.. py:class:: Sphere3D
+
+   Exact 3D sphere defined by center and quadrance.
+
+   :ivar center: Center point of sphere.
+   :ivar quadrance: Exact squared radius Q = R^2.
+
+
+
+   .. py:attribute:: center
+      :type:  Point3D
+
+
+   .. py:attribute:: quadrance
+      :type:  sympy.Expr
+
+
+   .. py:method:: __post_init__() -> None
+
+      Validates exact algebraic parameters.
+
+
+
+   .. py:method:: contains(pt: Point3D) -> bool
+
+      Tests whether point lies exactly on sphere surface.
+
+
+
+.. py:class:: Vector3D
+
+   Exact 3D symbolic vector over algebraic number fields.
+
+   :ivar x: Exact X component.
+   :ivar y: Exact Y component.
+   :ivar z: Exact Z component.
+
+
+
+   .. py:attribute:: x
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: y
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: z
+      :type:  sympy.Expr
+
+
+   .. py:method:: __post_init__() -> None
+
+      Validates exact algebraic coordinates.
+
+
+
+   .. py:method:: __add__(other: Vector3D) -> Vector3D
+
+      Adds two 3D vectors.
+
+
+
+   .. py:method:: __sub__(other: Vector3D) -> Vector3D
+
+      Subtracts two 3D vectors.
+
+
+
+   .. py:method:: __neg__() -> Vector3D
+
+      Negates vector coordinates.
+
+
+
+   .. py:method:: __mul__(scalar: sympy.Expr | int) -> Vector3D
+
+      Multiplies vector by exact scalar.
+
+
+
+   .. py:method:: __rmul__(scalar: sympy.Expr | int) -> Vector3D
+
+      Multiplies vector by exact scalar from left.
+
+
+
+   .. py:method:: dot(other: Vector3D) -> sympy.Expr
+
+      Computes exact dot product with another vector.
+
+
+
+   .. py:method:: cross(other: Vector3D) -> Vector3D
+
+      Computes exact cross product with another vector.
+
+
+
+   .. py:method:: quadrance() -> sympy.Expr
+
+      Computes exact quadrance (squared norm) of vector.
+
+
+
+   .. py:method:: to_tuple() -> tuple[sympy.Expr, sympy.Expr, sympy.Expr]
+
+      Returns coordinate 3-tuple.
+
+
+

@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>geometor.polyhedra.golden &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html">
+        <img src="../../../../../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../../../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../../../../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Book Breadcrumbs">
+            <a class="book-crumb-link" href="../../../../index.html">Modules</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../cli/index.html" title="geometor.polyhedra.cli">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../model3d/index.html" title="geometor.polyhedra.model3d"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="module-geometor.polyhedra.golden">
+        <span id="geometor-polyhedra-golden"></span><h1>geometor.polyhedra.golden<a class="headerlink" href="#module-geometor.polyhedra.golden" title="Link to this heading">¶</a></h1>
+        <p>Exact symbolic golden proportions and Keplerian compounds in polyhedra.</p>
+        <p>Explores canonical golden ratio occurrences across regular and semi-regular polyhedra:
+        mutually orthogonal golden rectangles in the icosahedron, golden edge division
+        of the octahedron, the compound of five inscribed cubes in the dodecahedron,
+        Kepler’s rhombic triacontahedron, and planar cross sections (George Odom’s theorem,
+        icosahedron principal meridian, and regular pentagon/pentagram).</p>
+        <section class="level-2" id="classes">
+        <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem" title="geometor.polyhedra.golden.GoldenPolyhedronTheorem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GoldenPolyhedronTheorem</span></code></a></p></td>
+        <td><p>Exact symbolic specification of a golden proportion theorem in polyhedra.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.GoldenRectanglesResult" title="geometor.polyhedra.golden.GoldenRectanglesResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GoldenRectanglesResult</span></code></a></p></td>
+        <td><p>Exact symbolic specification of the three golden rectangles in the icosahedron.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult" title="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OctahedronGoldenIcosahedronResult</span></code></a></p></td>
+        <td><p>Exact symbolic result of inscribing an icosahedron in an octahedron.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.InscribedCube" title="geometor.polyhedra.golden.InscribedCube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InscribedCube</span></code></a></p></td>
+        <td><p>Exact symbolic specification of one inscribed regular cube in the dodecahedron.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult" title="geometor.polyhedra.golden.DodecahedronFiveCubesResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DodecahedronFiveCubesResult</span></code></a></p></td>
+        <td><p>Exact symbolic result of the compound of five inscribed cubes in the dodecahedron.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult" title="geometor.polyhedra.golden.RhombicTriacontahedronResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RhombicTriacontahedronResult</span></code></a></p></td>
+        <td><p>Exact symbolic specification of the Rhombic Triacontahedron over Q(phi).</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.build_icosahedron_golden_rectangles" title="geometor.polyhedra.golden.build_icosahedron_golden_rectangles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_icosahedron_golden_rectangles</span></code></a>() → GoldenRectanglesResult</p></td>
+        <td><p>Extracts and certifies the three mutually orthogonal golden rectangles in the icosahedron.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.build_octahedron_golden_icosahedron" title="geometor.polyhedra.golden.build_octahedron_golden_icosahedron"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_octahedron_golden_icosahedron</span></code></a>() → OctahedronGoldenIcosahedronResult</p></td>
+        <td><p>Divides the twelve edges of a regular octahedron in the golden ratio.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.build_dodecahedron_five_cubes" title="geometor.polyhedra.golden.build_dodecahedron_five_cubes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_dodecahedron_five_cubes</span></code></a>() → DodecahedronFiveCubesResult</p></td>
+        <td><p>Finds and certifies all five regular cubes inscribed in the dodecahedron.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.build_rhombic_triacontahedron_golden" title="geometor.polyhedra.golden.build_rhombic_triacontahedron_golden"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_rhombic_triacontahedron_golden</span></code></a>() → RhombicTriacontahedronResult</p></td>
+        <td><p>Constructs the exact 32-vertex Rhombic Triacontahedron over Q(phi).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.build_odom_tetrahedron_section_model" title="geometor.polyhedra.golden.build_odom_tetrahedron_section_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_odom_tetrahedron_section_model</span></code></a>() → tuple[geometor.model.Model, dict[str, sympy.Expr]]</p></td>
+        <td><p>Constructs George Odom's golden section on the regular tetrahedron face circumcircle.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.build_icosahedron_meridian_model" title="geometor.polyhedra.golden.build_icosahedron_meridian_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_icosahedron_meridian_model</span></code></a>() → tuple[geometor.model.Model, dict[str, sympy.Expr]]</p></td>
+        <td><p>Constructs the exact 2D principal meridian section of the icosahedron.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.build_pentagon_cross_section_model" title="geometor.polyhedra.golden.build_pentagon_cross_section_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_pentagon_cross_section_model</span></code></a>() → tuple[geometor.model.Model, dict[str, sympy.Expr]]</p></td>
+        <td><p>Constructs the regular pentagon and pentagram section over Q(phi, sqrt(5 - sqrt(5))).</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.get_golden_theorems" title="geometor.polyhedra.golden.get_golden_theorems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_golden_theorems</span></code></a>() → dict[str, GoldenPolyhedronTheorem]</p></td>
+        <td><p>Retrieves all canonical golden proportion theorems in polyhedra.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.golden.get_golden_theorem" title="geometor.polyhedra.golden.get_golden_theorem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_golden_theorem</span></code></a>(slug) → GoldenPolyhedronTheorem</p></td>
+        <td><p>Retrieves a single golden proportion theorem by slug name.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenPolyhedronTheorem">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">GoldenPolyhedronTheorem</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic specification of a golden proportion theorem in polyhedra.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>slug</strong> – Short lowercase identifier (‘icosahedron_golden_rectangles’, etc.).</p></li>
+        <li><p><strong>title</strong> – Standard English title of the theorem or construction.</p></li>
+        <li><p><strong>subtitle</strong> – Descriptive subtitle highlighting key geometric properties.</p></li>
+        <li><p><strong>historical_source</strong> – Scholarly citation (Euclid, Pacioli, Kepler, Odom).</p></li>
+        <li><p><strong>summary</strong> – Concise mathematical summary of the theorem and geometric proof.</p></li>
+        <li><p><strong>golden_identities</strong> – Sequence of (description, lhs, rhs) triples where
+        lhs - rhs simplifies to exact zero.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenPolyhedronTheorem.slug">
+        <span class="sig-name descname"><span class="pre">slug</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem.slug" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenPolyhedronTheorem.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenPolyhedronTheorem.subtitle">
+        <span class="sig-name descname"><span class="pre">subtitle</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem.subtitle" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenPolyhedronTheorem.historical_source">
+        <span class="sig-name descname"><span class="pre">historical_source</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem.historical_source" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenPolyhedronTheorem.summary">
+        <span class="sig-name descname"><span class="pre">summary</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem.summary" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenPolyhedronTheorem.golden_identities">
+        <span class="sig-name descname"><span class="pre">golden_identities</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem.golden_identities" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">GoldenRectanglesResult</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic specification of the three golden rectangles in the icosahedron.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>rectangles</strong> – Mapping of plane label (‘R_YZ’, ‘R_ZX’, ‘R_XY’) to 4 vertices.</p></li>
+        <li><p><strong>normals</strong> – Mapping of plane label to exact 3D normal vector.</p></li>
+        <li><p><strong>q_short</strong> – Exact quadrance of each rectangle short edge.</p></li>
+        <li><p><strong>q_long</strong> – Exact quadrance of each rectangle long edge.</p></li>
+        <li><p><strong>q_ratio</strong> – Exact quadrance ratio Q_long / Q_short == PHI**2.</p></li>
+        <li><p><strong>q_diagonal</strong> – Exact quadrance of each rectangle diagonal.</p></li>
+        <li><p><strong>q_circumradius</strong> – Exact circumquadrance of the parent icosahedron.</p></li>
+        <li><p><strong>short_edges_in_icosahedron</strong> – Sequence of edge index pairs matching
+        canonical icosahedron edges.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult.rectangles">
+        <span class="sig-name descname"><span class="pre">rectangles</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult.rectangles" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult.normals">
+        <span class="sig-name descname"><span class="pre">normals</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult.normals" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult.q_short">
+        <span class="sig-name descname"><span class="pre">q_short</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult.q_short" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult.q_long">
+        <span class="sig-name descname"><span class="pre">q_long</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult.q_long" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult.q_ratio">
+        <span class="sig-name descname"><span class="pre">q_ratio</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult.q_ratio" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult.q_diagonal">
+        <span class="sig-name descname"><span class="pre">q_diagonal</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult.q_diagonal" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult.q_circumradius">
+        <span class="sig-name descname"><span class="pre">q_circumradius</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult.q_circumradius" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.GoldenRectanglesResult.short_edges_in_icosahedron">
+        <span class="sig-name descname"><span class="pre">short_edges_in_icosahedron</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.GoldenRectanglesResult.short_edges_in_icosahedron" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">OctahedronGoldenIcosahedronResult</span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic result of inscribing an icosahedron in an octahedron.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>octahedron_vertices</strong> – Six exact 3D vertices of the scaled octahedron.</p></li>
+        <li><p><strong>octahedron_edges</strong> – Twelve undirected edge index pairs of the octahedron.</p></li>
+        <li><p><strong>octahedron_faces</strong> – Eight triangular face index triples of the octahedron.</p></li>
+        <li><p><strong>directed_edges</strong> – Twelve directed edge index pairs oriented for golden division.</p></li>
+        <li><p><strong>division_points</strong> – Twelve exact golden division points matching icosahedron vertices.</p></li>
+        <li><p><strong>icosahedron_vertices</strong> – Twelve canonical icosahedron vertex coordinates.</p></li>
+        <li><p><strong>icosahedron_edges</strong> – Thirty undirected edge index pairs of the inscribed icosahedron.</p></li>
+        <li><p><strong>icosahedron_faces</strong> – Twenty triangular face index triples of the inscribed icosahedron.</p></li>
+        <li><p><strong>q_oct_edge</strong> – Exact edge quadrance of each octahedron edge.</p></li>
+        <li><p><strong>q_major</strong> – Exact quadrance of the major golden segment on each edge.</p></li>
+        <li><p><strong>q_minor</strong> – Exact quadrance of the minor golden segment on each edge.</p></li>
+        <li><p><strong>q_ico_edge</strong> – Exact edge quadrance of each inscribed icosahedron edge.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.octahedron_vertices">
+        <span class="sig-name descname"><span class="pre">octahedron_vertices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.octahedron_vertices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.octahedron_edges">
+        <span class="sig-name descname"><span class="pre">octahedron_edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.octahedron_edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.octahedron_faces">
+        <span class="sig-name descname"><span class="pre">octahedron_faces</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.octahedron_faces" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.directed_edges">
+        <span class="sig-name descname"><span class="pre">directed_edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.directed_edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.division_points">
+        <span class="sig-name descname"><span class="pre">division_points</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.division_points" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.icosahedron_vertices">
+        <span class="sig-name descname"><span class="pre">icosahedron_vertices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.icosahedron_vertices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.icosahedron_edges">
+        <span class="sig-name descname"><span class="pre">icosahedron_edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.icosahedron_edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.icosahedron_faces">
+        <span class="sig-name descname"><span class="pre">icosahedron_faces</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.icosahedron_faces" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.q_oct_edge">
+        <span class="sig-name descname"><span class="pre">q_oct_edge</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.q_oct_edge" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.q_major">
+        <span class="sig-name descname"><span class="pre">q_major</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.q_major" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.q_minor">
+        <span class="sig-name descname"><span class="pre">q_minor</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.q_minor" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.q_ico_edge">
+        <span class="sig-name descname"><span class="pre">q_ico_edge</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult.q_ico_edge" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.InscribedCube">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">InscribedCube</span></span><a class="headerlink" href="#geometor.polyhedra.golden.InscribedCube" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic specification of one inscribed regular cube in the dodecahedron.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>cube_index</strong> – Index of the cube (0 through 4).</p></li>
+        <li><p><strong>vertices</strong> – Eight vertex indices into the parent dodecahedron vertex list.</p></li>
+        <li><p><strong>vertex_coords</strong> – Eight exact 3D vertex coordinates of this cube.</p></li>
+        <li><p><strong>edges</strong> – Twelve edge index pairs into the parent dodecahedron vertex list.</p></li>
+        <li><p><strong>faces</strong> – Six square face 4-tuples of parent dodecahedron vertex indices.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.InscribedCube.cube_index">
+        <span class="sig-name descname"><span class="pre">cube_index</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#geometor.polyhedra.golden.InscribedCube.cube_index" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.InscribedCube.vertices">
+        <span class="sig-name descname"><span class="pre">vertices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.InscribedCube.vertices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.InscribedCube.vertex_coords">
+        <span class="sig-name descname"><span class="pre">vertex_coords</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.InscribedCube.vertex_coords" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.InscribedCube.edges">
+        <span class="sig-name descname"><span class="pre">edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.InscribedCube.edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.InscribedCube.faces">
+        <span class="sig-name descname"><span class="pre">faces</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.InscribedCube.faces" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">DodecahedronFiveCubesResult</span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic result of the compound of five inscribed cubes in the dodecahedron.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>dodecahedron_vertices</strong> – Twenty exact 3D vertices of the canonical dodecahedron.</p></li>
+        <li><p><strong>dodecahedron_edges</strong> – Thirty undirected edge index pairs of the dodecahedron.</p></li>
+        <li><p><strong>dodecahedron_faces</strong> – Twelve pentagonal face index 5-tuples.</p></li>
+        <li><p><strong>q_dod_edge</strong> – Exact edge quadrance of the dodecahedron.</p></li>
+        <li><p><strong>q_cube_edge</strong> – Exact edge quadrance of each inscribed cube.</p></li>
+        <li><p><strong>q_ratio</strong> – Exact quadrance ratio Q_cube / Q_dod == PHI**2.</p></li>
+        <li><p><strong>cubes</strong> – Sequence of five InscribedCube instances.</p></li>
+        <li><p><strong>all_cube_edges</strong> – Sequence of all sixty cube edge index pairs partitioning diagonals.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult.dodecahedron_vertices">
+        <span class="sig-name descname"><span class="pre">dodecahedron_vertices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult.dodecahedron_vertices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult.dodecahedron_edges">
+        <span class="sig-name descname"><span class="pre">dodecahedron_edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult.dodecahedron_edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult.dodecahedron_faces">
+        <span class="sig-name descname"><span class="pre">dodecahedron_faces</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult.dodecahedron_faces" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult.q_dod_edge">
+        <span class="sig-name descname"><span class="pre">q_dod_edge</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult.q_dod_edge" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult.q_cube_edge">
+        <span class="sig-name descname"><span class="pre">q_cube_edge</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult.q_cube_edge" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult.q_ratio">
+        <span class="sig-name descname"><span class="pre">q_ratio</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult.q_ratio" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult.cubes">
+        <span class="sig-name descname"><span class="pre">cubes</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#geometor.polyhedra.golden.InscribedCube" title="geometor.polyhedra.golden.InscribedCube"><span class="pre">InscribedCube</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult.cubes" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.DodecahedronFiveCubesResult.all_cube_edges">
+        <span class="sig-name descname"><span class="pre">all_cube_edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult.all_cube_edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">RhombicTriacontahedronResult</span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic specification of the Rhombic Triacontahedron over Q(phi).</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>vertices</strong> – Thirty-two exact 3D vertices (20 dodecahedral + 12 dual icosahedral).</p></li>
+        <li><p><strong>faces</strong> – Thirty rhombic face index 4-tuples, ordered outward counter-clockwise.</p></li>
+        <li><p><strong>edges</strong> – Sixty undirected edge index pairs.</p></li>
+        <li><p><strong>dodecahedron_indices</strong> – Indices of the twenty degree-3 obtuse vertices (0..19).</p></li>
+        <li><p><strong>icosahedron_indices</strong> – Indices of the twelve degree-5 acute vertices (20..31).</p></li>
+        <li><p><strong>q_long_diagonal</strong> – Exact quadrance of each rhombus long diagonal.</p></li>
+        <li><p><strong>q_short_diagonal</strong> – Exact quadrance of each rhombus short diagonal.</p></li>
+        <li><p><strong>q_diagonal_ratio</strong> – Exact quadrance ratio Q_long / Q_short == PHI**2.</p></li>
+        <li><p><strong>q_edge</strong> – Exact edge quadrance of each rhombic face edge.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.vertices">
+        <span class="sig-name descname"><span class="pre">vertices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.vertices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.faces">
+        <span class="sig-name descname"><span class="pre">faces</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.faces" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.edges">
+        <span class="sig-name descname"><span class="pre">edges</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.edges" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.dodecahedron_indices">
+        <span class="sig-name descname"><span class="pre">dodecahedron_indices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.dodecahedron_indices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.icosahedron_indices">
+        <span class="sig-name descname"><span class="pre">icosahedron_indices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.icosahedron_indices" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.q_long_diagonal">
+        <span class="sig-name descname"><span class="pre">q_long_diagonal</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.q_long_diagonal" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.q_short_diagonal">
+        <span class="sig-name descname"><span class="pre">q_short_diagonal</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.q_short_diagonal" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.q_diagonal_ratio">
+        <span class="sig-name descname"><span class="pre">q_diagonal_ratio</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.q_diagonal_ratio" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.RhombicTriacontahedronResult.q_edge">
+        <span class="sig-name descname"><span class="pre">q_edge</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult.q_edge" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.build_icosahedron_golden_rectangles">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">build_icosahedron_golden_rectangles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.golden.GoldenRectanglesResult" title="geometor.polyhedra.golden.GoldenRectanglesResult"><span class="pre">GoldenRectanglesResult</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.golden.build_icosahedron_golden_rectangles" title="Link to this definition">¶</a></dt>
+        <dd><p>Extracts and certifies the three mutually orthogonal golden rectangles in the icosahedron.</p>
+        <p>Euclid Elements XIII.16 shows that the twelve vertices of a regular icosahedron
+        form the vertices of three congruent golden rectangles whose planes are pairwise
+        perpendicular and meet at the center of the circumscribing sphere.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>GoldenRectanglesResult certifying rectangle dimensions, orthogonality, and edges.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.build_octahedron_golden_icosahedron">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">build_octahedron_golden_icosahedron</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult" title="geometor.polyhedra.golden.OctahedronGoldenIcosahedronResult"><span class="pre">OctahedronGoldenIcosahedronResult</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.golden.build_octahedron_golden_icosahedron" title="Link to this definition">¶</a></dt>
+        <dd><p>Divides the twelve edges of a regular octahedron in the golden ratio.</p>
+        <p>Starts with a regular octahedron of scale phi^2 = phi + 1 whose vertices
+        lie along the coordinate axes: (±phi^2, 0, 0), (0, ±phi^2, 0), (0, 0, ±phi^2).
+        Dividing each directed edge in the golden ratio AG : GB = 1 : phi yields
+        the exact twelve vertices of the canonical regular icosahedron.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>OctahedronGoldenIcosahedronResult containing octahedron geometry and inscribed icosahedron.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.build_dodecahedron_five_cubes">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">build_dodecahedron_five_cubes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.golden.DodecahedronFiveCubesResult" title="geometor.polyhedra.golden.DodecahedronFiveCubesResult"><span class="pre">DodecahedronFiveCubesResult</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.golden.build_dodecahedron_five_cubes" title="Link to this definition">¶</a></dt>
+        <dd><p>Finds and certifies all five regular cubes inscribed in the dodecahedron.</p>
+        <p>Euclid Elements XIII.17 constructs the regular dodecahedron upon an inscribed
+        cube by adding roof-like wedges above each square face. There are five distinct
+        inscribed regular cubes whose 60 edges partition all 60 diagonals of the twelve
+        pentagonal faces.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>DodecahedronFiveCubesResult containing dodecahedron geometry and the five cubes.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.build_rhombic_triacontahedron_golden">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">build_rhombic_triacontahedron_golden</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.golden.RhombicTriacontahedronResult" title="geometor.polyhedra.golden.RhombicTriacontahedronResult"><span class="pre">RhombicTriacontahedronResult</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.golden.build_rhombic_triacontahedron_golden" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the exact 32-vertex Rhombic Triacontahedron over Q(phi).</p>
+        <p>Unites the twenty vertices of the canonical regular dodecahedron with the
+        twelve vertices of the dual-oriented regular icosahedron. Each of the thirty
+        faces is a planar golden rhombus whose long diagonal joins two acute degree-5
+        icosahedral vertices and whose short diagonal joins two obtuse degree-3
+        dodecahedral vertices, with diagonal quadrance ratio equal to phi^2.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>RhombicTriacontahedronResult specifying vertices, rhombic faces, and metric ratios.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.build_odom_tetrahedron_section_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">build_odom_tetrahedron_section_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.build_odom_tetrahedron_section_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs George Odom’s golden section on the regular tetrahedron face circumcircle.</p>
+        <p>In 1983, George Odom discovered that connecting the midpoints of two sides of
+        an equilateral triangle inscribed in a circle and extending the line to meet
+        the circle divides the chord in the exact golden ratio.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of (Model, metrics_dict) with certified exact golden proportions.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.build_icosahedron_meridian_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">build_icosahedron_meridian_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.build_icosahedron_meridian_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the exact 2D principal meridian section of the icosahedron.</p>
+        <p>In the principal plane X = 0, the canonical regular icosahedron has four
+        vertices forming a golden rectangle (±1, ±phi) and two equatorial crossings
+        at (±phi, 0) in (Y, Z) coordinates.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of (Model, metrics_dict) certifying golden proportions in the meridian slice.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.build_pentagon_cross_section_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">build_pentagon_cross_section_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.build_pentagon_cross_section_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the regular pentagon and pentagram section over Q(phi, sqrt(5 - sqrt(5))).</p>
+        <p>Euclid Elements XIII.8 demonstrates that the diagonals of a regular pentagon
+        cut one another in extreme and mean ratio (the golden ratio). This configuration
+        represents the vertex figure of the icosahedron and the face of the dodecahedron.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of (Model, metrics_dict) certifying pentagon-pentagram golden proportions.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.get_golden_theorems">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">get_golden_theorems</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem" title="geometor.polyhedra.golden.GoldenPolyhedronTheorem"><span class="pre">GoldenPolyhedronTheorem</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.golden.get_golden_theorems" title="Link to this definition">¶</a></dt>
+        <dd><p>Retrieves all canonical golden proportion theorems in polyhedra.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Dictionary mapping theorem slugs to GoldenPolyhedronTheorem instances.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.golden.get_golden_theorem">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.golden.</span></span><span class="sig-name descname"><span class="pre">get_golden_theorem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.golden.GoldenPolyhedronTheorem" title="geometor.polyhedra.golden.GoldenPolyhedronTheorem"><span class="pre">GoldenPolyhedronTheorem</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.golden.get_golden_theorem" title="Link to this definition">¶</a></dt>
+        <dd><p>Retrieves a single golden proportion theorem by slug name.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>slug</strong> – Short lowercase identifier (‘icosahedron_golden_rectangles’, etc.).</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>The corresponding GoldenPolyhedronTheorem instance.</p>
+        </dd>
+        <dt class="field-odd">Raises<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>KeyError</strong> – If slug is not recognized.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../cli/index.html" title="geometor.polyhedra.cli">&larr; <span class="nav-label">geometor.polyhedra.cli</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../model3d/index.html" title="geometor.polyhedra.model3d"><span class="nav-label">geometor.polyhedra.model3d</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../../../../../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../index.html" class="is-active" aria-selected="true" >Modules</a></li>
+        <li><a href="../../../../../changelog.html"  >Changelog</a></li>
+        <li><a href="../../../../../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

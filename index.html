@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="./">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>polyhedra &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="#">
+        <img src="_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="#" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="#">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="platonic/index.html" title="The Five Platonic Solids"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="polyhedra">
+        <h1>polyhedra<a class="headerlink" href="#polyhedra" title="Link to this heading">¶</a></h1>
+        <p><em>Exact Symbolic Platonic Solids, 3D Rational Trigonometry, and Leonardo da Vinci’s Polyhedral Woodcuts</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>Quinque corpora regularia sunt: tetraedron, exaedron sive cubus, octaedron, icosaedron, et dodecaedron. Quorum quodlibet intra sphaeram comprehendi potest.</em></p>
+        <p><em>There are five regular solids: the tetrahedron, hexahedron or cube, octahedron, icosahedron, and dodecahedron. Every one of them can be comprehended within a sphere.</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="luca-pacioli" title="Person: luca-pacioli">Luca Pacioli</span>, <em>De Divina Proportione</em> (Venice, 1509)</p>
+        </div></blockquote>
+        <section class="level-2" id="overview">
+        <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+        <p><strong>GEOMETOR Polyhedra</strong> (<code class="docutils literal notranslate"><span class="pre">geometor-polyhedra</span></code>) models three-dimensional constructive geometry and regular solids in <strong>100% exact symbolic algebra</strong> (zero floating-point approximations) using <a class="reference external" href="https://www.sympy.org/">SymPy</a> and <cite>geometor.model</cite>.</p>
+        <p>Grounding its algebraic foundations in Euclid’s <em>Elements</em> Book XIII, Plato’s <em>Timaeus</em>, Luca Pacioli’s <em>De Divina Proportione</em> (1509), and Norman Wildberger’s Rational Trigonometry, this codex unites classical geometric scholarship with symbolic computation over <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span> (<span class="math notranslate nohighlight">\(\phi = \frac{1 + \sqrt{5}}{2}\)</span>).</p>
+        </section>
+        <section class="level-2" id="interactive-3d-polyhedra-explorer">
+        <h2>Interactive 3D Polyhedra Explorer<a class="headerlink" href="#interactive-3d-polyhedra-explorer" title="Link to this heading">¶</a></h2>
+        <div class="polyhedra-3d-mount" data-solid="dodecahedron" data-initial-variant="vacuum"></div></section>
+        <section class="level-2" id="the-five-platonic-solids">
+        <h2>The Five Platonic Solids<a class="headerlink" href="#the-five-platonic-solids" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 16.0%" />
+        <col style="width: 10.0%" />
+        <col style="width: 10.0%" />
+        <col style="width: 8.0%" />
+        <col style="width: 8.0%" />
+        <col style="width: 8.0%" />
+        <col style="width: 12.0%" />
+        <col style="width: 14.0%" />
+        <col style="width: 14.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Solid</p></th>
+        <th class="head"><p>Greek</p></th>
+        <th class="head"><p>Element</p></th>
+        <th class="head"><p>$\{p, q\}$</p></th>
+        <th class="head"><p>$V$</p></th>
+        <th class="head"><p>$E$</p></th>
+        <th class="head"><p>$F$</p></th>
+        <th class="head"><p>Spread</p></th>
+        <th class="head"><p>$Q_{\text{in}} / Q_{\text{out}}$</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><a class="reference internal" href="platonic/tetrahedron.html"><span class="doc">Tetrahedron</span></a></p></td>
+        <td><p>Τετράεδρον</p></td>
+        <td><p>Fire</p></td>
+        <td><p>$\{3, 3\}$</p></td>
+        <td><p>4</p></td>
+        <td><p>6</p></td>
+        <td><p>4</p></td>
+        <td><p>$8/9$</p></td>
+        <td><p>$1/9$</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="platonic/hexahedron.html"><span class="doc">Hexahedron (Cube)</span></a></p></td>
+        <td><p>Ἑξάεδρον</p></td>
+        <td><p>Earth</p></td>
+        <td><p>$\{4, 3\}$</p></td>
+        <td><p>8</p></td>
+        <td><p>12</p></td>
+        <td><p>6</p></td>
+        <td><p>$1$</p></td>
+        <td><p>$1/3$</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="platonic/octahedron.html"><span class="doc">Octahedron</span></a></p></td>
+        <td><p>Ὀκτάεδρον</p></td>
+        <td><p>Air</p></td>
+        <td><p>$\{3, 4\}$</p></td>
+        <td><p>6</p></td>
+        <td><p>12</p></td>
+        <td><p>8</p></td>
+        <td><p>$8/9$</p></td>
+        <td><p>$1/3$</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="platonic/icosahedron.html"><span class="doc">Icosahedron</span></a></p></td>
+        <td><p>Εἰκοσάεδρον</p></td>
+        <td><p>Water</p></td>
+        <td><p>$\{3, 5\}$</p></td>
+        <td><p>12</p></td>
+        <td><p>30</p></td>
+        <td><p>20</p></td>
+        <td><p>$4/9$</p></td>
+        <td><p>$\frac{4\phi+3}{15}$</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="platonic/dodecahedron.html"><span class="doc">Dodecahedron</span></a></p></td>
+        <td><p>Δωδεκάεδρον</p></td>
+        <td><p>Aether</p></td>
+        <td><p>$\{5, 3\}$</p></td>
+        <td><p>20</p></td>
+        <td><p>30</p></td>
+        <td><p>12</p></td>
+        <td><p>$4/5$</p></td>
+        <td><p>$\frac{4\phi+3}{15}$</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="codex-contents">
+        <h2>Codex Contents<a class="headerlink" href="#codex-contents" title="Link to this heading">¶</a></h2>
+        <div class="toctree-wrapper compound">
+        <p class="caption" role="heading"><span class="caption-text">Polyhedra Canon</span></p>
+        <ul>
+        <li class="toctree-l1"><a class="reference internal" href="platonic/index.html">The Five Platonic Solids</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="platonic/index.html#axiomatic-foundation-euclidean-canon">Axiomatic Foundation &amp; Euclidean Canon</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="platonic/index.html#dedicated-platonic-solid-monographs">Dedicated Platonic Solid Monographs</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="platonic/index.html#comparative-synthesis-ledger">Comparative Synthesis Ledger</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="platonic/index.html#d-rational-trigonometry-dihedral-spread-proof">3D Rational Trigonometry Dihedral Spread Proof</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="platonic/index.html#polar-duality-and-symmetry-groups">Polar Duality and Symmetry Groups</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="platonic/index.html#leonardo-da-vinci-s-structural-variations-1509">Leonardo da Vinci’s Structural Variations (1509)</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="golden/index.html">Golden Proportions in Polyhedra</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="golden/index.html#the-golden-ratio-in-three-dimensions">The Golden Ratio in Three Dimensions</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="golden/index.html#golden-invariants-across-the-platonic-solids">Golden Invariants across the Platonic Solids</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="golden/index.html#certified-golden-polyhedra-theorems">Certified Golden Polyhedra Theorems</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="golden/index.html#codex-sections">Codex Sections</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="leonardo/index.html">Leonardo da Vinci’s Polyhedral Plates (1509)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="leonardo/index.html#historical-artistic-context">Historical &amp; Artistic Context</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="leonardo/index.html#taxonomy-of-polyhedral-variations">Taxonomy of Polyhedral Variations</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="leonardo/index.html#the-mathematical-structure-of-leonardo-s-corpora-vacua">The Mathematical Structure of Leonardo’s <em>Corpora Vacua</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="leonardo/index.html#leonardo-plate-concordance-tabulae-ixxxvi">Leonardo Plate Concordance (Tabulae I–XXXVI)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="leonardo/index.html#monographic-galleries">Monographic Galleries</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="pipeline/index.html">3D Symbolic Infrastructure &amp; Multi-Engine Pipeline</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="pipeline/index.html#i-exact-symbolic-3d-architecture-model3d">I. Exact Symbolic 3D Architecture (<code class="docutils literal notranslate"><span class="pre">model3d</span></code>)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#spatial-primitives-primitives-py">Spatial Primitives (<code class="docutils literal notranslate"><span class="pre">primitives.py</span></code>)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#the-solid3d-manifold-data-model">The Solid3D Manifold Data Model</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="pipeline/index.html#ii-conway-pacioli-polyhedral-operators-operators-py">II. Conway &amp; Pacioli Polyhedral Operators (<code class="docutils literal notranslate"><span class="pre">operators.py</span></code>)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#vacuate-vacuate">1. Vacuate (<code class="docutils literal notranslate"><span class="pre">vacuate</span></code>)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#rectify-rectify">2. Rectify (<code class="docutils literal notranslate"><span class="pre">rectify</span></code>)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#truncate-truncate">3. Truncate (<code class="docutils literal notranslate"><span class="pre">truncate</span></code>)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#elevate-elevate">4. Elevate (<code class="docutils literal notranslate"><span class="pre">elevate</span></code>)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#polar-dual-polar-dual">5. Polar Dual (<code class="docutils literal notranslate"><span class="pre">polar_dual</span></code>)</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="pipeline/index.html#iii-the-dimensional-bridge-bridge-py">III. The Dimensional Bridge (<code class="docutils literal notranslate"><span class="pre">bridge.py</span></code>)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#planar-cross-section-slicing-slice-solid-to-model">Planar Cross-Section Slicing (<code class="docutils literal notranslate"><span class="pre">slice_solid_to_model</span></code>)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#d-net-unfolding-unfold-net-2d">2D Net Unfolding (<code class="docutils literal notranslate"><span class="pre">unfold_net_2d</span></code>)</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="pipeline/index.html#iv-the-multi-engine-export-pipeline">IV. The Multi-Engine Export Pipeline</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#target-1-publication-grade-2d-svgs-render-svg3d">Target 1: Publication-Grade 2D SVGs (<code class="docutils literal notranslate"><span class="pre">render.svg3d</span></code>)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#target-2-interactive-book-codex-3d-canvas">Target 2: Interactive Book Codex 3D Canvas</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#target-3-ingetrazo-0-6-0-cad-live-mcp-bridge">Target 3: IngeTrazo 0.6.0 CAD &amp; Live MCP Bridge</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="pipeline/index.html#target-4-blender-5-x-studio-renderer">Target 4: Blender 5.x Studio Renderer</a></li>
+        </ul>
+        </li>
+        </ul>
+        </div>
+        <div class="toctree-wrapper compound">
+        </div>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="#">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="platonic/index.html" title="The Five Platonic Solids"><span class="nav-label">The Five Platonic Solids</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="modules/index.html"  >Modules</a></li>
+        <li><a href="changelog.html"  >Changelog</a></li>
+        <li><a href="log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="_static/jquery.js?v=5d32c60e"></script>
+  <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="_static/js/search_highlight.js"></script>
+
+</body>
+</html>

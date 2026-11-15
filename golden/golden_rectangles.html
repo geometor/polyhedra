@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Rectangles of the Icosahedron &mdash; Golden Rectangles of the Icosahedron</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">Golden Rectangles of the Icosahedron</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Book Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Golden Proportions in Polyhedra</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="index.html" title="Golden Proportions in Polyhedra">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="octahedron_icosahedron.html" title="Golden Division of the Octahedron"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="golden-rectangles-of-the-icosahedron">
+        <h1>Golden Rectangles of the Icosahedron<a class="headerlink" href="#golden-rectangles-of-the-icosahedron" title="Link to this heading">¶</a></h1>
+        <p><em>Three Mutually Orthogonal Planes, Exact Circumquadrance, and the Keplerian Meridian</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>Icosaedron intra sphaeram constituere, et comprehendere sphaerae superficie, sicut priora corpora: ostendere etiam quod icosaedri latus irrationalis est linea quae minor vocatur.</em></p>
+        <p><em>To construct an icosahedron within a sphere, and comprehend it by the surface of the sphere, like the preceding bodies; and to show that the side of the icosahedron is the irrational line called minor.</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="euclid-of-alexandria" title="Person: euclid-of-alexandria">Euclid of Alexandria</span>, <em>Elements</em> Book XIII, Proposition 16</p>
+        </div></blockquote>
+        <section class="level-2" id="interactive-3d-codex">
+        <h2>Interactive 3D Codex<a class="headerlink" href="#interactive-3d-codex" title="Link to this heading">¶</a></h2>
+        <p>The interactive 3D model below displays the canonical regular icosahedron intersected by the three mutually perpendicular golden rectangles spanning its twelve vertices:</p>
+        <div class="polyhedra-3d-mount" data-scene="icosa_golden_rects"></div></section>
+        <section class="level-2" id="three-orthogonal-golden-rectangles">
+        <h2>Three Orthogonal Golden Rectangles<a class="headerlink" href="#three-orthogonal-golden-rectangles" title="Link to this heading">¶</a></h2>
+        <p>In Cartesian 3-space, the twelve vertices of the regular icosahedron can be partitioned into three congruent, mutually orthogonal rectangles whose center is the origin <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[R_{YZ} = \{(0, 1, \phi), (0, -1, \phi), (0, -1, -\phi), (0, 1, -\phi)\}\]</div>
+        <div class="math notranslate nohighlight">
+        \[R_{ZX} = \{(\phi, 0, 1), (-\phi, 0, 1), (-\phi, 0, -1), (\phi, 0, -1)\}\]</div>
+        <div class="math notranslate nohighlight">
+        \[R_{XY} = \{(1, \phi, 0), (-1, \phi, 0), (-1, -\phi, 0), (1, -\phi, 0)\}\]</div>
+        <p>where <span class="math notranslate nohighlight">\(\phi = \frac{1 + \sqrt{5}}{2}\)</span> satisfies <span class="math notranslate nohighlight">\(\phi^2 = \phi + 1\)</span>.</p>
+        <figure class="align-center" id="id1">
+        <img alt="Three Mutually Orthogonal Golden Rectangles in the Icosahedron" src="../_images/icosa_golden_rects.svg" />
+        <figcaption>
+        <p><span class="caption-text"><em>The three mutually perpendicular golden rectangles :math:`R_{YZ}`, :math:`R_{ZX}`, and :math:`R_{XY}` spanning the twelve vertices of the regular icosahedron.</em></span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <section class="level-3" id="pairwise-orthogonality-of-normal-vectors">
+        <h3>Pairwise Orthogonality of Normal Vectors<a class="headerlink" href="#pairwise-orthogonality-of-normal-vectors" title="Link to this heading">¶</a></h3>
+        <p>The normal vectors to the planes of these three rectangles are the coordinate unit vectors:</p>
+        <div class="math notranslate nohighlight">
+        \[\mathbf{n}_{YZ} = (1, 0, 0), \quad \mathbf{n}_{ZX} = (0, 1, 0), \quad \mathbf{n}_{XY} = (0, 0, 1)\]</div>
+        <p>Their mutual dot products vanish identically:</p>
+        <div class="math notranslate nohighlight">
+        \[\mathbf{n}_{YZ} \cdot \mathbf{n}_{ZX} = \mathbf{n}_{ZX} \cdot \mathbf{n}_{XY} = \mathbf{n}_{XY} \cdot \mathbf{n}_{YZ} = 0\]</div>
+        <p>Thus, the three planes are pairwise perpendicular, meeting along the three coordinate axes.</p>
+        </section>
+        <section class="level-3" id="exact-metric-proportions-and-circumquadrance">
+        <h3>Exact Metric Proportions and Circumquadrance<a class="headerlink" href="#exact-metric-proportions-and-circumquadrance" title="Link to this heading">¶</a></h3>
+        <p>Consider the rectangle <span class="math notranslate nohighlight">\(R_{YZ}\)</span> in the plane <span class="math notranslate nohighlight">\(X = 0\)</span>:</p>
+        <ol class="arabic">
+        <li><p><strong>Short Edge</strong>: Joining <span class="math notranslate nohighlight">\((0, 1, \phi)\)</span> and <span class="math notranslate nohighlight">\((0, -1, \phi)\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[Q_{\text{short}} = (0 - 0)^2 + (-1 - 1)^2 + (\phi - \phi)^2 = (-2)^2 = 4\]</div>
+        <p>The length of the short edge is <span class="math notranslate nohighlight">\(\sqrt{4} = 2\)</span>. Each of the three rectangles contributes two short edges, accounting for <span class="math notranslate nohighlight">\(3 \times 2 = 6\)</span> edges of the twenty-face icosahedron.</p>
+        </li>
+        <li><p><strong>Long Edge</strong>: Joining <span class="math notranslate nohighlight">\((0, 1, \phi)\)</span> and <span class="math notranslate nohighlight">\((0, 1, -\phi)\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[Q_{\text{long}} = (0 - 0)^2 + (1 - 1)^2 + (-\phi - \phi)^2 = (-2\phi)^2 = 4\phi^2 = 4(\phi + 1)\]</div>
+        <p>The length of the long edge is <span class="math notranslate nohighlight">\(2\phi\)</span>. These long edges do not lie on the surface of the icosahedron, but form interior chords passing through the interior.</p>
+        </li>
+        <li><p><strong>Aspect Ratio</strong>: The quadrance ratio between the edges is:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{Q_{\text{long}}}{Q_{\text{short}}} = \frac{4\phi^2}{4} = \phi^2 = \phi + 1\]</div>
+        <p>Taking square roots confirms the classical golden aspect ratio <span class="math notranslate nohighlight">\(\frac{\text{long}}{\text{short}} = \phi : 1\)</span>.</p>
+        </li>
+        <li><p><strong>Diagonal Quadrance</strong>: By the Pythagorean theorem in the rectangle:</p>
+        <div class="math notranslate nohighlight">
+        \[Q_{\text{diag}} = Q_{\text{short}} + Q_{\text{long}} = 4 + 4\phi^2 = 4(1 + \phi + 1) = 4(\phi + 2)\]</div>
+        </li>
+        <li><p><strong>Circumquadrance</strong>: Since the rectangle is centered at the origin, each diagonal connects antipodal vertices <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(-V\)</span>. The circumradius is half the diagonal, so its quadrance is:</p>
+        <div class="math notranslate nohighlight">
+        \[Q_{\text{out}} = \frac{Q_{\text{diag}}}{4} = \phi + 2 = \frac{5 + \sqrt{5}}{2}\]</div>
+        </li>
+        </ol>
+        </section>
+        </section>
+        <section class="level-2" id="the-principal-meridian-hexagon">
+        <h2>The Principal Meridian Hexagon<a class="headerlink" href="#the-principal-meridian-hexagon" title="Link to this heading">¶</a></h2>
+        <p>When the regular icosahedron is sliced along the principal symmetry plane <span class="math notranslate nohighlight">\(X = 0\)</span>, the cross-section reveals both the golden rectangle <span class="math notranslate nohighlight">\(R_{YZ}\)</span> and the equatorial crossings of the remaining icosahedron edges.</p>
+        <figure class="align-center" id="id2">
+        <img alt="Icosahedron Principal Meridian Section" src="../_images/icosahedron_meridian.svg" />
+        <figcaption>
+        <p><span class="caption-text"><em>The 2D principal meridian section (:math:`X = 0`) showing the :math:`2 times 2phi` golden rectangle :math:`ABCD`, the equatorial axis :math:`EF`, and the golden meridian hexagon.</em></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <section class="level-3" id="keplerpacioli-meridian-construction">
+        <h3>Kepler–Pacioli Meridian Construction<a class="headerlink" href="#keplerpacioli-meridian-construction" title="Link to this heading">¶</a></h3>
+        <p>In the <span class="math notranslate nohighlight">\((Y, Z)\)</span> coordinate plane:</p>
+        <ul class="simple">
+        <li><p><strong>Vertices of :math:`R_{YZ}`</strong>:
+        <span class="math notranslate nohighlight">\(A = (1, \phi)\)</span>, <span class="math notranslate nohighlight">\(B = (-1, \phi)\)</span>, <span class="math notranslate nohighlight">\(C = (-1, -\phi)\)</span>, <span class="math notranslate nohighlight">\(D = (1, -\phi)\)</span>.</p></li>
+        <li><p><strong>Equatorial Crossings</strong>:
+        The four icosahedral edges connecting <span class="math notranslate nohighlight">\(R_{ZX}\)</span> and <span class="math notranslate nohighlight">\(R_{XY}\)</span> intersect the plane <span class="math notranslate nohighlight">\(X = 0\)</span> at the two equatorial points <span class="math notranslate nohighlight">\(E = (-\phi, 0)\)</span> and <span class="math notranslate nohighlight">\(F = (\phi, 0)\)</span>.</p></li>
+        <li><p><strong>Meridian Hexagon</strong>:
+        Connecting the cyclic sequence <span class="math notranslate nohighlight">\(A \to B \to E \to C \to D \to F \to A\)</span> forms a symmetric equiangular hexagon whose diagonals and axes divide one another in extreme and mean ratio.</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="equatorial-golden-division">
+        <h3>Equatorial Golden Division<a class="headerlink" href="#equatorial-golden-division" title="Link to this heading">¶</a></h3>
+        <p>Let <span class="math notranslate nohighlight">\(O = (0, 0)\)</span> be the center of the icosahedron, and <span class="math notranslate nohighlight">\(H = (1, 0)\)</span> be the midpoint of the vertical side <span class="math notranslate nohighlight">\(AD\)</span>:</p>
+        <ol class="arabic">
+        <li><p>Quadrance from center to equatorial vertex <span class="math notranslate nohighlight">\(F\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[Q(O, F) = \phi^2 = \phi + 1\]</div>
+        </li>
+        <li><p>Quadrance from center to chord midpoint <span class="math notranslate nohighlight">\(H\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[Q(O, H) = 1^2 = 1\]</div>
+        </li>
+        <li><p>Quadrance from chord midpoint to equatorial vertex <span class="math notranslate nohighlight">\(F\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[Q(H, F) = (\phi - 1)^2 = \phi^{-2} = 2 - \phi\]</div>
+        </li>
+        <li><p>The resulting quadrance ratios certify the divine proportion:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{Q(O, F)}{Q(O, H)} = \frac{\phi^2}{1} = \phi^2, \quad \frac{Q(O, H)}{Q(H, F)} = \frac{1}{\phi^{-2}} = \phi^2\]</div>
+        </li>
+        </ol>
+        <p>Thus, the vertical side of the golden rectangle divides the equatorial radius <span class="math notranslate nohighlight">\(OF\)</span> in exact extreme and mean ratio.</p>
+        </section>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="index.html" title="Golden Proportions in Polyhedra">&larr; <span class="nav-label">Golden Proportions in Polyhedra</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">Golden Rectangles of the Icosahedron</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="octahedron_icosahedron.html" title="Golden Division of the Octahedron"><span class="nav-label">Golden Division of the Octahedron</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../modules/index.html"  >Modules</a></li>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+        <li><a href="../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

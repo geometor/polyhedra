@@ -1,0 +1,92 @@
+geometor.polyhedra.render.svg3d
+===============================
+
+.. py:module:: geometor.polyhedra.render.svg3d
+
+.. autoapi-nested-parse::
+
+   SVG 3D projection and publication-grade geometric renderers.
+
+   Provides three theme-adaptive SVG renderers for polyhedra and 2D models:
+       - render_solid_svg: Perspective projection of 3D solids with depth sorting,
+         directional lighting, back-face culling, and Renaissance woodcut or
+         elemental styling.
+       - render_net_svg: Unfolded 2D net layout with hinge folds and cut boundaries.
+       - render_model2d_svg: 2D GEOMETOR symbolic models with golden sections and
+         dark-mode theme adaptation.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.render.svg3d.render_solid_svg
+   geometor.polyhedra.render.svg3d.render_net_svg
+   geometor.polyhedra.render.svg3d.render_model2d_svg
+
+
+Module Contents
+---------------
+
+.. py:function:: render_solid_svg(solid: geometor.polyhedra.model3d.primitives.Solid3D, *, yaw_deg: float = 32.0, pitch_deg: float = 22.0, roll_deg: float = 0.0, camera_dist: float = 5.2, focal_length: float = 4.4, width: int = 520, height: int = 480, style: str = 'elemental', show_hidden_edges: bool = True, golden_polygons_3d: list[list[tuple[float, float, float]]] | None = None, graphic_id: str = 'g1') -> str
+
+   Renders a 3D polyhedral solid to publication-grade theme-adaptive SVG.
+
+   Uses orbit camera perspective projection with depth-sorted painter's
+   algorithm, back-face culling, and directional lighting.
+
+   :param solid: Exact symbolic Solid3D polyhedral model.
+   :param yaw_deg: Horizontal orbit yaw angle in degrees.
+   :param pitch_deg: Vertical orbit pitch angle in degrees.
+   :param roll_deg: Camera roll angle in degrees.
+   :param camera_dist: Orbit distance from model center.
+   :param focal_length: Perspective camera focal length.
+   :param width: SVG viewport width in pixels.
+   :param height: SVG viewport height in pixels.
+   :param style: Visual style ('elemental', 'woodcut_vacuum', 'woodcut_solidum').
+   :param show_hidden_edges: Whether to render dashed back-facing edges.
+   :param golden_polygons_3d: Optional list of 3D polygon vertex loops to render
+                              as translucent golden planes depth-interleaved with faces.
+   :param graphic_id: Unique identifier for data-graphic-id attribute.
+
+   :returns: Valid XML SVG string with class 'euclid-graphic'.
+
+   :raises ValueError: If style is unknown or solid has no vertices.
+
+
+.. py:function:: render_net_svg(solid: geometor.polyhedra.model3d.primitives.Solid3D, *, width: int = 520, height: int = 420, graphic_id: str = 'net') -> str
+
+   Renders unfolded 2D papercraft net layout of a Solid3D to SVG.
+
+   Uses dual graph BFS unfolding from geometor.polyhedra.model3d.bridge,
+   drawing filled face polygons, dashed interior hinge folds, solid boundary
+   cut lines, and centered face index labels.
+
+   :param solid: Exact symbolic Solid3D polyhedral model.
+   :param width: SVG viewport width in pixels.
+   :param height: SVG viewport height in pixels.
+   :param graphic_id: Unique identifier for data-graphic-id attribute.
+
+   :returns: Valid XML SVG string with class 'euclid-graphic'.
+
+
+.. py:function:: render_model2d_svg(model: geometor.model.Model, *, golden_segments: list[tuple[str, str, str]] | None = None, width: int = 520, height: int = 480, graphic_id: str = 'slice') -> str
+
+   Renders a 2D GEOMETOR symbolic Model to publication-grade SVG.
+
+   Renders circles, polygons, 3-vertex midpoint path segments, points, and
+   labels with data-ref attributes using luminous gold and sky-blue theme
+   colors with full dark-mode adaptation.
+
+   :param model: Exact symbolic 2D geometor.model.Model instance.
+   :param golden_segments: Optional list of (pt1_label, pt2_label, role) triples
+                           designating golden ratio segments to highlight in gold or terracotta.
+   :param width: SVG viewport width in pixels.
+   :param height: SVG viewport height in pixels.
+   :param graphic_id: Unique identifier for data-graphic-id attribute.
+
+   :returns: Valid XML SVG string with class 'euclid-graphic'.
+
+

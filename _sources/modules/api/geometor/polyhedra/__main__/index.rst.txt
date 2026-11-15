@@ -1,0 +1,11 @@
+geometor.polyhedra.__main__
+===========================
+
+.. py:module:: geometor.polyhedra.__main__
+
+.. autoapi-nested-parse::
+
+   CLI entry point for geometor.polyhedra.
+
+
+

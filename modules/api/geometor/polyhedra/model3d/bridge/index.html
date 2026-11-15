@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>geometor.polyhedra.model3d.bridge &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../../index.html">
+        <img src="../../../../../../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../../../../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../../../../../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Book Breadcrumbs">
+            <a class="book-crumb-link" href="../../../../../index.html">Modules</a>
+            <span class="book-crumb-sep">/</span>
+            <a class="book-crumb-link" href="../index.html">geometor.polyhedra.model3d</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../index.html" title="geometor.polyhedra.model3d">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../primitives/index.html" title="geometor.polyhedra.model3d.primitives"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="module-geometor.polyhedra.model3d.bridge">
+        <span id="geometor-polyhedra-model3d-bridge"></span><h1>geometor.polyhedra.model3d.bridge<a class="headerlink" href="#module-geometor.polyhedra.model3d.bridge" title="Link to this heading">¶</a></h1>
+        <p>Bridge module connecting 3D polyhedra to 2D GEOMETOR symbolic models.</p>
+        <p>Provides cross-section planar slicing into exact 2D Model instances and
+        2D net unfolding for SVG visualization and physical papercraft modeling.</p>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.model3d.bridge.slice_solid_to_model" title="geometor.polyhedra.model3d.bridge.slice_solid_to_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_solid_to_model</span></code></a>(solid, plane, u_axis, v_axis[, ...]) → geometor.model.Model</p></td>
+        <td><p>Computes exact planar cross-section of a Solid3D and constructs a 2D Model.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.model3d.bridge.unfold_net_2d" title="geometor.polyhedra.model3d.bridge.unfold_net_2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unfold_net_2d</span></code></a>(solid[, root_face]) → list[dict[str, object]]</p></td>
+        <td><p>Unfolds faces of a Solid3D onto a 2D plane via dual graph BFS spanning tree.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.model3d.bridge.slice_solid_to_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.model3d.bridge.</span></span><span class="sig-name descname"><span class="pre">slice_solid_to_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../primitives/index.html#geometor.polyhedra.model3d.primitives.Plane3D" title="geometor.polyhedra.model3d.primitives.Plane3D"><span class="pre">geometor.polyhedra.model3d.primitives.Plane3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../primitives/index.html#geometor.polyhedra.model3d.primitives.Vector3D" title="geometor.polyhedra.model3d.primitives.Vector3D"><span class="pre">geometor.polyhedra.model3d.primitives.Vector3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../primitives/index.html#geometor.polyhedra.model3d.primitives.Vector3D" title="geometor.polyhedra.model3d.primitives.Vector3D"><span class="pre">geometor.polyhedra.model3d.primitives.Vector3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../primitives/index.html#geometor.polyhedra.model3d.primitives.Point3D" title="geometor.polyhedra.model3d.primitives.Point3D"><span class="pre">geometor.polyhedra.model3d.primitives.Point3D</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'slice'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_axes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">geometor.model.Model</span></span></span><a class="headerlink" href="#geometor.polyhedra.model3d.bridge.slice_solid_to_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Computes exact planar cross-section of a Solid3D and constructs a 2D Model.</p>
+        <p>Intersects all boundary edges of the solid with the given slicing plane,
+        projects the exact intersection points onto the 2D plane defined by u_axis
+        and v_axis, sorts them cyclically around their centroid, and constructs
+        exact points, segments, and polygon entities in a 2D Model.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact 3D polyhedral solid.</p></li>
+        <li><p><strong>plane</strong> – Slicing plane.</p></li>
+        <li><p><strong>u_axis</strong> – Direction vector for 2D X axis.</p></li>
+        <li><p><strong>v_axis</strong> – Direction vector for 2D Y axis.</p></li>
+        <li><p><strong>origin</strong> – Optional 3D point mapped to 2D origin (0, 0). Defaults to (0,0,0).</p></li>
+        <li><p><strong>name</strong> – Name identifier for the constructed Model.</p></li>
+        <li><p><strong>normalize_axes</strong> – If True, divides projections by axis quadrances.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact 2D Model containing the cross-section polygon and boundary segments.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.model3d.bridge.unfold_net_2d">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.model3d.bridge.</span></span><span class="sig-name descname"><span class="pre">unfold_net_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_face</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">object</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.model3d.bridge.unfold_net_2d" title="Link to this definition">¶</a></dt>
+        <dd><p>Unfolds faces of a Solid3D onto a 2D plane via dual graph BFS spanning tree.</p>
+        <p>Starting from root_face, flattens each adjacent face around its shared hinge
+        edge without folding backward or overlapping adjacent faces.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact 3D polyhedral solid.</p></li>
+        <li><p><strong>root_face</strong> – Index of the base face placed first at 2D origin.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p><ul class="simple">
+        <li><p>face_index: Index of the face in solid.faces.</p></li>
+        <li><p>role: Role string from solid.face_roles.</p></li>
+        <li><p>pts_2d: List of 2D vertex coordinates as (x, y) floats.</p></li>
+        <li><p>parent_face: Index of parent face across hinge, or None for root.</p></li>
+        <li><p>hinge_2d: Pair of (start, end) 2D coordinates of hinge, or None for root.</p></li>
+        </ul>
+        </p>
+        </dd>
+        <dt class="field-odd">Return type<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>List of dictionaries with face net layout metadata</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../index.html" title="geometor.polyhedra.model3d">&larr; <span class="nav-label">geometor.polyhedra.model3d</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../../../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../primitives/index.html" title="geometor.polyhedra.model3d.primitives"><span class="nav-label">geometor.polyhedra.model3d.primitives</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../../../../../../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../index.html" class="is-active" aria-selected="true" >Modules</a></li>
+        <li><a href="../../../../../../changelog.html"  >Changelog</a></li>
+        <li><a href="../../../../../../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

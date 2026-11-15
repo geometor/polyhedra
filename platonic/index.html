@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Five Platonic Solids &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../index.html" title="polyhedra">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="tetrahedron.html" title="Tetrahedron"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="the-five-platonic-solids">
+        <h1>The Five Platonic Solids<a class="headerlink" href="#the-five-platonic-solids" title="Link to this heading">¶</a></h1>
+        <p><em>Euclidean Constructions, Golden Ratio Coordinates, and 3D Rational Trigonometry</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>No other figure can be constructed from equilateral and equiangular plane figures, except these five solids alone.</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="euclid-of-alexandria" title="Person: euclid-of-alexandria">Euclid of Alexandria</span>, <em>Elements</em> Book XIII, Proposition 18a (Porism)</p>
+        </div></blockquote>
+        <blockquote class="epigraph">
+        <div><p><em>Quinque corpora regularia sunt: tetraedron, exaedron sive cubus, octaedron, icosaedron, et dodecaedron. Quorum quodlibet intra sphaeram comprehendi potest.</em></p>
+        <p><em>There are five regular solids: the tetrahedron, hexahedron or cube, octahedron, icosahedron, and dodecahedron. Every one of them can be comprehended within a sphere.</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="luca-pacioli" title="Person: luca-pacioli">Luca Pacioli</span>, <em>De Divina Proportione</em>, Cap. I (Venice, 1509)</p>
+        </div></blockquote>
+        <section class="level-2" id="axiomatic-foundation-euclidean-canon">
+        <h2>Axiomatic Foundation &amp; Euclidean Canon<a class="headerlink" href="#axiomatic-foundation-euclidean-canon" title="Link to this heading">¶</a></h2>
+        <p>In Book XIII of the <em>Elements</em>, Euclid constructs the five regular convex polyhedra inside a given sphere and proves in the celebrated Porism to Proposition XIII.18 that <strong>no more than five regular convex solids can exist in Euclidean 3-space</strong>:</p>
+        <ol class="arabic simple">
+        <li><p><strong>Proposition XIII.13</strong> (G-Index: <code class="docutils literal notranslate"><span class="pre">G.592</span></code>): Construction of the regular <strong>Tetrahedron</strong> inside a sphere (<span class="math notranslate nohighlight">\(D^2 = \frac{3}{2} S^2\)</span>).</p></li>
+        <li><p><strong>Proposition XIII.14</strong> (G-Index: <code class="docutils literal notranslate"><span class="pre">G.594</span></code>): Construction of the regular <strong>Octahedron</strong> inside a sphere (<span class="math notranslate nohighlight">\(D^2 = 2 S^2\)</span>).</p></li>
+        <li><p><strong>Proposition XIII.15</strong> (G-Index: <code class="docutils literal notranslate"><span class="pre">G.595</span></code>): Construction of the regular <strong>Hexahedron (Cube)</strong> inside a sphere (<span class="math notranslate nohighlight">\(D^2 = 3 S^2\)</span>).</p></li>
+        <li><p><strong>Proposition XIII.16</strong> (G-Index: <code class="docutils literal notranslate"><span class="pre">G.597</span></code>): Construction of the regular <strong>Icosahedron</strong> inside a sphere (<span class="math notranslate nohighlight">\(S = \text{minor}\)</span>).</p></li>
+        <li><p><strong>Proposition XIII.17</strong> (G-Index: <code class="docutils literal notranslate"><span class="pre">G.600</span></code>): Construction of the regular <strong>Dodecahedron</strong> inside a sphere (<span class="math notranslate nohighlight">\(S = \text{apotome}\)</span>).</p></li>
+        </ol>
+        <p>In the GEOMETOR formulation, these five solids are modeled with <strong>zero floating-point numbers</strong> over the rational integer ring <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and the golden algebraic field <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span>, where <span class="math notranslate nohighlight">\(\phi = \frac{1 + \sqrt{5}}{2}\)</span> satisfies the canonical quadratic minimal polynomial <span class="math notranslate nohighlight">\(\phi^2 - \phi - 1 = 0\)</span>.</p>
+        </section>
+        <section class="level-2" id="dedicated-platonic-solid-monographs">
+        <h2>Dedicated Platonic Solid Monographs<a class="headerlink" href="#dedicated-platonic-solid-monographs" title="Link to this heading">¶</a></h2>
+        <p>Each of the five solids is treated in an exhaustive dedicated monograph combining interactive 3D WebGL rendering, exact symbolic coordinate ledgers, 3D Rational Trigonometry proofs, golden ratio analyses, Leonardo da Vinci 1509 woodcut comparisons, and 2D unfolded nets:</p>
+        <div class="toctree-wrapper compound">
+        <ul>
+        <li class="toctree-l1"><a class="reference internal" href="tetrahedron.html">Tetrahedron</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="hexahedron.html">Hexahedron (Cube)</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="octahedron.html">Octahedron</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="icosahedron.html">Icosahedron</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="dodecahedron.html">Dodecahedron</a></li>
+        </ul>
+        </div>
+        </section>
+        <section class="level-2" id="comparative-synthesis-ledger">
+        <h2>Comparative Synthesis Ledger<a class="headerlink" href="#comparative-synthesis-ledger" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 12.1%" />
+        <col style="width: 8.6%" />
+        <col style="width: 10.3%" />
+        <col style="width: 8.6%" />
+        <col style="width: 6.9%" />
+        <col style="width: 5.2%" />
+        <col style="width: 5.2%" />
+        <col style="width: 5.2%" />
+        <col style="width: 8.6%" />
+        <col style="width: 10.3%" />
+        <col style="width: 8.6%" />
+        <col style="width: 10.3%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Solid</p></th>
+        <th class="head"><p>Greek</p></th>
+        <th class="head"><p>Latin</p></th>
+        <th class="head"><p>Element</p></th>
+        <th class="head"><p>$\{p, q\}$</p></th>
+        <th class="head"><p>$V$</p></th>
+        <th class="head"><p>$E$</p></th>
+        <th class="head"><p>$F$</p></th>
+        <th class="head"><p>Spread $s$</p></th>
+        <th class="head"><p>$Q_{\text{in}} / Q_{\text{out}}$</p></th>
+        <th class="head"><p>Dual</p></th>
+        <th class="head"><p>Vacuum $\chi, g$</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><a class="reference internal" href="tetrahedron.html"><span class="doc">Tetrahedron</span></a></p></td>
+        <td><p>Τετράεδρον</p></td>
+        <td><p><em>Tetrahedron</em></p></td>
+        <td><p><strong>Fire</strong></p></td>
+        <td><p>$\{3, 3\}$</p></td>
+        <td><p>4</p></td>
+        <td><p>6</p></td>
+        <td><p>4</p></td>
+        <td><p>$8/9$</p></td>
+        <td><p>$1/9$</p></td>
+        <td><p>Self-dual</p></td>
+        <td><p>$\chi = -4, g = 3$</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="hexahedron.html"><span class="doc">Hexahedron (Cube)</span></a></p></td>
+        <td><p>Ἑξάεδρον</p></td>
+        <td><p><em>Exahedron</em></p></td>
+        <td><p><strong>Earth</strong></p></td>
+        <td><p>$\{4, 3\}$</p></td>
+        <td><p>8</p></td>
+        <td><p>12</p></td>
+        <td><p>6</p></td>
+        <td><p>$1$</p></td>
+        <td><p>$1/3$</p></td>
+        <td><p>Octahedron</p></td>
+        <td><p>$\chi = -8, g = 5$</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="octahedron.html"><span class="doc">Octahedron</span></a></p></td>
+        <td><p>Ὀκτάεδρον</p></td>
+        <td><p><em>Octahedron</em></p></td>
+        <td><p><strong>Air</strong></p></td>
+        <td><p>$\{3, 4\}$</p></td>
+        <td><p>6</p></td>
+        <td><p>12</p></td>
+        <td><p>8</p></td>
+        <td><p>$8/9$</p></td>
+        <td><p>$1/3$</p></td>
+        <td><p>Hexahedron</p></td>
+        <td><p>$\chi = -12, g = 7$</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="icosahedron.html"><span class="doc">Icosahedron</span></a></p></td>
+        <td><p>Εἰκοσάεδρον</p></td>
+        <td><p><em>Icosahedron</em></p></td>
+        <td><p><strong>Water</strong></p></td>
+        <td><p>$\{3, 5\}$</p></td>
+        <td><p>12</p></td>
+        <td><p>30</p></td>
+        <td><p>20</p></td>
+        <td><p>$4/9$</p></td>
+        <td><p>$\frac{4\phi+3}{15}$</p></td>
+        <td><p>Dodecahedron</p></td>
+        <td><p>$\chi = -36, g = 19$</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="dodecahedron.html"><span class="doc">Dodecahedron</span></a></p></td>
+        <td><p>Δωδεκάεδρον</p></td>
+        <td><p><em>Dodecahedron</em></p></td>
+        <td><p><strong>Aether</strong></p></td>
+        <td><p>$\{5, 3\}$</p></td>
+        <td><p>20</p></td>
+        <td><p>30</p></td>
+        <td><p>12</p></td>
+        <td><p>$4/5$</p></td>
+        <td><p>$\frac{4\phi+3}{15}$</p></td>
+        <td><p>Icosahedron</p></td>
+        <td><p>$\chi = -20, g = 11$</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="d-rational-trigonometry-dihedral-spread-proof">
+        <h2>3D Rational Trigonometry Dihedral Spread Proof<a class="headerlink" href="#d-rational-trigonometry-dihedral-spread-proof" title="Link to this heading">¶</a></h2>
+        <p>In Norman Wildberger’s Rational Trigonometry, angles between intersecting planes are replaced by the <strong>planar spread</strong> <span class="math notranslate nohighlight">\(s = \sin^2\theta\)</span>. Given two adjacent planar faces with unnormalized outward normal vectors <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span>, the spread is computed algebraically without transcendental trigonometric functions:</p>
+        <div class="math notranslate nohighlight">
+        \[s(n_1, n_2) = 1 - \frac{(n_1 \cdot n_2)^2}{Q(n_1) Q(n_2)}\]</div>
+        <p>where <span class="math notranslate nohighlight">\(Q(v) = v_x^2 + v_y^2 + v_z^2\)</span> denotes the 3D vector quadrance.</p>
+        <p>A universal consequence of regular polyhedral geometry is that <strong>the dihedral spread of every Platonic solid is an exact rational number in</strong> <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>:</p>
+        <section class="level-3" id="tetrahedron-dihedral-spread-proof">
+        <h3>Tetrahedron Dihedral Spread Proof<a class="headerlink" href="#tetrahedron-dihedral-spread-proof" title="Link to this heading">¶</a></h3>
+        <p>Let <span class="math notranslate nohighlight">\(F_0 = (V_0, V_1, V_2)\)</span> and <span class="math notranslate nohighlight">\(F_1 = (V_0, V_3, V_1)\)</span> with normal vectors <span class="math notranslate nohighlight">\(n_0 = (1, 1, -1)\)</span> and <span class="math notranslate nohighlight">\(n_1 = (1, -1, 1)\)</span>.</p>
+        <div class="math notranslate nohighlight">
+        \[n_0 \cdot n_1 = 1(1) + 1(-1) + (-1)(1) = -1\]</div>
+        <div class="math notranslate nohighlight">
+        \[Q(n_0) = 1^2 + 1^2 + (-1)^2 = 3, \quad Q(n_1) = 1^2 + (-1)^2 + 1^2 = 3\]</div>
+        <div class="math notranslate nohighlight">
+        \[s(\text{Tetrahedron}) = 1 - \frac{(-1)^2}{3 \times 3} = 1 - \frac{1}{9} = \frac{8}{9}\]</div>
+        </section>
+        <section class="level-3" id="hexahedron-cube-dihedral-spread-proof">
+        <h3>Hexahedron (Cube) Dihedral Spread Proof<a class="headerlink" href="#hexahedron-cube-dihedral-spread-proof" title="Link to this heading">¶</a></h3>
+        <p>Adjacent square faces meet along Cartesian axes with normal vectors <span class="math notranslate nohighlight">\(n_0 = (1, 0, 0)\)</span> and <span class="math notranslate nohighlight">\(n_2 = (0, 1, 0)\)</span>.</p>
+        <div class="math notranslate nohighlight">
+        \[n_0 \cdot n_2 = 0, \quad Q(n_0) = 1, \quad Q(n_2) = 1\]</div>
+        <div class="math notranslate nohighlight">
+        \[s(\text{Hexahedron}) = 1 - \frac{0^2}{1 \times 1} = 1\]</div>
+        </section>
+        <section class="level-3" id="octahedron-dihedral-spread-proof">
+        <h3>Octahedron Dihedral Spread Proof<a class="headerlink" href="#octahedron-dihedral-spread-proof" title="Link to this heading">¶</a></h3>
+        <p>Adjacent triangular faces have outward normals <span class="math notranslate nohighlight">\(n_0 = (1, 1, 1)\)</span> and <span class="math notranslate nohighlight">\(n_1 = (1, -1, 1)\)</span>.</p>
+        <div class="math notranslate nohighlight">
+        \[n_0 \cdot n_1 = 1(1) + 1(-1) + 1(1) = 1\]</div>
+        <div class="math notranslate nohighlight">
+        \[Q(n_0) = 3, \quad Q(n_1) = 3\]</div>
+        <div class="math notranslate nohighlight">
+        \[s(\text{Octahedron}) = 1 - \frac{1^2}{3 \times 3} = 1 - \frac{1}{9} = \frac{8}{9}\]</div>
+        <div class="admonition note">
+        <p class="admonition-title">Note</p>
+        <p>The <strong>Tetrahedron</strong> and <strong>Octahedron</strong> share the exact same dihedral spread <span class="math notranslate nohighlight">\(s = 8/9\)</span>, reflecting their mutual participation in the face-centered cubic lattice!</p>
+        </div>
+        </section>
+        <section class="level-3" id="icosahedron-dihedral-spread-proof">
+        <h3>Icosahedron Dihedral Spread Proof<a class="headerlink" href="#icosahedron-dihedral-spread-proof" title="Link to this heading">¶</a></h3>
+        <p>The outward normals to two adjacent equilateral triangular faces in golden coordinates satisfy <span class="math notranslate nohighlight">\(\cos\theta = -\frac{\sqrt{5}}{3}\)</span>.</p>
+        <div class="math notranslate nohighlight">
+        \[\cos^2\theta = \frac{5}{9} \implies s(\text{Icosahedron}) = 1 - \frac{5}{9} = \frac{4}{9}\]</div>
+        </section>
+        <section class="level-3" id="dodecahedron-dihedral-spread-proof">
+        <h3>Dodecahedron Dihedral Spread Proof<a class="headerlink" href="#dodecahedron-dihedral-spread-proof" title="Link to this heading">¶</a></h3>
+        <p>The outward normals to two adjacent regular pentagonal faces satisfy <span class="math notranslate nohighlight">\(\cos\theta = -\frac{1}{\sqrt{5}}\)</span>.</p>
+        <div class="math notranslate nohighlight">
+        \[\cos^2\theta = \frac{1}{5} \implies s(\text{Dodecahedron}) = 1 - \frac{1}{5} = \frac{4}{5}\]</div>
+        </section>
+        </section>
+        <section class="level-2" id="polar-duality-and-symmetry-groups">
+        <h2>Polar Duality and Symmetry Groups<a class="headerlink" href="#polar-duality-and-symmetry-groups" title="Link to this heading">¶</a></h2>
+        <p>The five Platonic solids partition into three reflexive duality pairs governed by finite subgroups of <span class="math notranslate nohighlight">\(O(3)\)</span>:</p>
+        <ol class="arabic">
+        <li><p><strong>Self-Duality (:math:`T_d` Symmetry, Order 24)</strong>:
+        The <strong>Tetrahedron</strong> is self-dual (<span class="math notranslate nohighlight">\(\{3, 3\}^* = \{3, 3\}\)</span>). Connecting the four face centroids yields an inverted regular tetrahedron of edge quadrance <span class="math notranslate nohighlight">\(Q = 8/9\)</span>.</p></li>
+        <li><p><strong>Cubic Duality (:math:`O_h` Symmetry, Order 48)</strong>:
+        The <strong>Hexahedron (Cube)</strong> <span class="math notranslate nohighlight">\(\{4, 3\}\)</span> and the <strong>Octahedron</strong> <span class="math notranslate nohighlight">\(\{3, 4\}\)</span> are polar duals. The six face centroids of the cube form the vertices of an inscribed regular octahedron, and the eight face centroids of an octahedron form the vertices of an inscribed cube.</p></li>
+        <li><p><strong>Icosahedral Duality (:math:`I_h` Symmetry, Order 120)</strong>:
+        The <strong>Icosahedron</strong> <span class="math notranslate nohighlight">\(\{3, 5\}\)</span> and the <strong>Dodecahedron</strong> <span class="math notranslate nohighlight">\(\{5, 3\}\)</span> are polar duals. The twelve face centroids of the dodecahedron form a regular icosahedron, and the twenty face centroids of the icosahedron form a regular dodecahedron. Both solids share the exact same inquadrance-to-circumquadrance ratio:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{Q_{\text{in}}}{Q_{\text{out}}} = \frac{4\phi + 3}{15} = \frac{5 + 2\sqrt{5}}{15}\]</div>
+        </li>
+        </ol>
+        </section>
+        <section class="level-2" id="leonardo-da-vinci-s-structural-variations-1509">
+        <h2>Leonardo da Vinci’s Structural Variations (1509)<a class="headerlink" href="#leonardo-da-vinci-s-structural-variations-1509" title="Link to this heading">¶</a></h2>
+        <p>In Luca Pacioli’s <em>De Divina Proportione</em> (1509), Leonardo da Vinci introduced four principal architectural variations for every regular solid:</p>
+        <ul class="simple">
+        <li><p><strong>Planum Solidum</strong>: An opaque body with solid planar facets, shaded with Renaissance woodcut hatching indicating a single upper-left light source (<em>luce primaria</em>).</p></li>
+        <li><p><strong>Planum Vacuum</strong>: A hollow wooden armillary framework of beam width parameter <span class="math notranslate nohighlight">\(\mu\)</span>, opening the faces to reveal internal spatial structure, opposite vertices, and dihedral joinery.</p></li>
+        <li><p><strong>Abscisum (Truncatum)</strong>: Vertices are cut off perpendicular to their radial vectors, yielding Archimedean semi-regular polyhedra.</p></li>
+        <li><p><strong>Elevatum (Stellatum)</strong>: Regular polygonal pyramids are erected on each face, producing Keplerian star polyhedra and triacontahedra.</p></li>
+        </ul>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../index.html" title="polyhedra">&larr; <span class="nav-label">polyhedra</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="tetrahedron.html" title="Tetrahedron"><span class="nav-label">Tetrahedron</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../modules/index.html"  >Modules</a></li>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+        <li><a href="../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

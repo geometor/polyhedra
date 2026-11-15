@@ -1,0 +1,72 @@
+geometor.polyhedra.render.exporters
+===================================
+
+.. py:module:: geometor.polyhedra.render.exporters
+
+.. autoapi-nested-parse::
+
+   Export pipelines for 3D polyhedra into Wavefront CAD, IngeTrazo, and Blender.
+
+   Provides three export targets:
+
+   - ``export_obj_mtl``: Wavefront ``.obj`` and companion ``.mtl`` with face role materials.
+   - ``export_ingetrazo_script``: Runnable Python script for IngeTrazo 0.6.0 CAD.
+   - ``export_blender_script``: Standalone Blender 5.x Python studio generator.
+
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.render.exporters.export_obj_mtl
+   geometor.polyhedra.render.exporters.export_ingetrazo_script
+   geometor.polyhedra.render.exporters.export_blender_script
+
+
+Module Contents
+---------------
+
+.. py:function:: export_obj_mtl(solid: geometor.polyhedra.model3d.primitives.Solid3D, obj_path: pathlib.Path) -> tuple[pathlib.Path, pathlib.Path]
+
+   Exports a Solid3D to Wavefront .obj and companion .mtl material library.
+
+   Maps face_roles ('base', 'outer_frame', 'window_reveal', 'inner_frame',
+   'truncation', 'pyramid') to distinct Renaissance boxwood, alabaster, and
+   stone material definitions.
+
+   :param solid: Exact symbolic Solid3D polyhedral model.
+   :param obj_path: Target filesystem path for the .obj file.
+
+   :returns: Tuple of (obj_path, mtl_path).
+
+
+.. py:function:: export_ingetrazo_script(solids: list[geometor.polyhedra.model3d.primitives.Solid3D], script_path: pathlib.Path, spacing: float = 4.5) -> pathlib.Path
+
+   Emits a runnable Python script for IngeTrazo 0.6.0 CAD modeler.
+
+   Lays out polyhedra along the X-axis on named layers ('Platonic_Solida',
+   'Leonardo_Vacua') with warm boxwood and alabaster materials.
+
+   :param solids: List of Solid3D polyhedral models to include in the scene.
+   :param script_path: Target filesystem path for the emitted Python script.
+   :param spacing: Center-to-center offset along the X axis between models.
+
+   :returns: Path to the generated Python script.
+
+
+.. py:function:: export_blender_script(solids: list[geometor.polyhedra.model3d.primitives.Solid3D], script_path: pathlib.Path, spacing: float = 4.5) -> pathlib.Path
+
+   Emits a standalone Blender 5.x Python script generating a studio showcase.
+
+   Creates collections, meshes, Principled BSDF materials (Boxwood, Alabaster,
+   Gold), studio 3-point lighting, and camera framing.
+
+   :param solids: List of Solid3D polyhedral models to include in the scene.
+   :param script_path: Target filesystem path for the emitted Python script.
+   :param spacing: Center-to-center offset along the X axis between models.
+
+   :returns: Path to the generated Python script.
+
+

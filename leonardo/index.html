@@ -1,0 +1,596 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leonardo da Vinci’s Polyhedral Plates (1509) &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../golden/rhombic_triacontahedron_odom.html" title="Kepler’s Triacontahedron &amp; Odom’s Section">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="tetrahedron_cube_octahedron.html" title="Leonardo Plates: Tetrahedron, Hexahedron &amp; Octahedron (Tabulae I–XX)"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="leonardo-da-vinci-s-polyhedral-plates-1509">
+        <h1>Leonardo da Vinci’s Polyhedral Plates (1509)<a class="headerlink" href="#leonardo-da-vinci-s-polyhedral-plates-1509" title="Link to this heading">¶</a></h1>
+        <p><em>The Sixty Woodcut Plates of Luca Pacioli’s De Divina Proportione</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>…per mano del nostro Lionardo da Vinci Fiorentino, che di pictura, prospettiva, architettura, e musica in ciascuna ha dato opera con somma laude, il quale con sua propria mano tutti questi solidi ed altri ha composti e figurati…</em></p>
+        <p><em>…by the hand of our own Leonardo da Vinci the Florentine, who in painting, perspective, architecture, and music has laboured with the highest praise, and who with his own hand has constructed and figured all these solids and others…</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="luca-pacioli" title="Person: luca-pacioli">Luca Pacioli</span>, <em>De Divina Proportione</em>, Cap. I &amp; Cap. XXIII (Venice, 1509)</p>
+        </div></blockquote>
+        <section class="level-2" id="historical-artistic-context">
+        <h2>Historical &amp; Artistic Context<a class="headerlink" href="#historical-artistic-context" title="Link to this heading">¶</a></h2>
+        <p>In 1496, the Franciscan friar, Renaissance humanist, and master mathematician <strong>Luca Pacioli</strong> arrived at the Milanese court of Duke Ludovico Sforza (<em>Il Moro</em>). There he entered into an intimate intellectual partnership with <strong>Leonardo da Vinci</strong>, instructing Leonardo in Euclidean geometry, proportional theory, and the rigorous mathematical perspective of Piero della Francesca.</p>
+        <p>In return, Leonardo composed sixty masterly drawings of polyhedra to illustrate Pacioli’s seminal treatise <em>De Divina Proportione</em> (completed in manuscript in Milan in 1498 and printed at Venice by Paganino de’ Paganini in May 1509). Leonardo’s woodcuts represent a watershed moment in the history of science and art: they are the <strong>first published polyhedral illustrations in Western history</strong> to render both opaque solid bodies (<em>corpora solida</em>) and hollow wooden lattice frameworks (<em>corpora vacua</em>) with perspective depth, dramatic chiaroscuro illumination, and mitered carpentry joints.</p>
+        </section>
+        <section class="level-2" id="taxonomy-of-polyhedral-variations">
+        <h2>Taxonomy of Polyhedral Variations<a class="headerlink" href="#taxonomy-of-polyhedral-variations" title="Link to this heading">¶</a></h2>
+        <p>For each regular solid, Leonardo created four systematic architectural variations:</p>
+        <ol class="arabic simple">
+        <li><p><strong>Solidum</strong> (<em>Planum Solidum</em>): A closed convex body with opaque planar facets, rendered with parallel woodcut hatching to indicate directional lighting and cast shadow.</p></li>
+        <li><p><strong>Vacuum</strong> (<em>Planum Vacuum</em>): A hollow, open-lattice wooden framework composed of mitered boundary beams around central window apertures, exposing the interior geometry, antipodal faces, and three-dimensional perspective depth.</p></li>
+        <li><p><strong>Abscisum</strong> (<em>Truncatum</em>): The Archimedean truncated solid, obtained by cutting off vertices to create new regular polygonal facets.</p></li>
+        <li><p><strong>Elevatum</strong> (<em>Stellatum</em> / <em>Cum Pyramide</em>): The stellated solid, erecting regular pyramids on each polygonal facet.</p></li>
+        </ol>
+        </section>
+        <section class="level-2" id="the-mathematical-structure-of-leonardo-s-corpora-vacua">
+        <h2>The Mathematical Structure of Leonardo’s <em>Corpora Vacua</em><a class="headerlink" href="#the-mathematical-structure-of-leonardo-s-corpora-vacua" title="Link to this heading">¶</a></h2>
+        <p>Leonardo’s hollow models (<em>corpora vacua</em>) were not mere artistic fantasies: they were real wooden structures crafted by Leonardo and Pacioli and suspended from the ceiling of Duke Ludovico Sforza’s banquet hall. In <code class="docutils literal notranslate"><span class="pre">geometor.polyhedra</span></code>, Leonardo’s hollow framework is formalized as the exact algebraic operator <code class="docutils literal notranslate"><span class="pre">vacuate(solid,</span> <span class="pre">aperture=μ,</span> <span class="pre">shell=λ)</span></code>.</p>
+        <section class="level-3" id="the-vacuate-manifold-theorem">
+        <h3>The Vacuate Manifold Theorem<a class="headerlink" href="#the-vacuate-manifold-theorem" title="Link to this heading">¶</a></h3>
+        <p>Let <span class="math notranslate nohighlight">\(S\)</span> be an orientable, closed 2-manifold polyhedral solid with <span class="math notranslate nohighlight">\(V\)</span> vertices, <span class="math notranslate nohighlight">\(E\)</span> edges, and <span class="math notranslate nohighlight">\(F\)</span> planar faces, where each face <span class="math notranslate nohighlight">\(f_i\)</span> is a <span class="math notranslate nohighlight">\(k_i\)</span>-sided polygon.</p>
+        <p>Let <span class="math notranslate nohighlight">\(\mu \in (0, 1) \cap \mathbb{Q}\)</span> be the window aperture shrink factor (default <span class="math notranslate nohighlight">\(\mu = 3/5\)</span>), and let <span class="math notranslate nohighlight">\(\lambda \in (0, 1) \cap \mathbb{Q}\)</span> be the inner concentric shell shrink factor (default <span class="math notranslate nohighlight">\(\lambda = 4/5\)</span>). For every face <span class="math notranslate nohighlight">\(f\)</span>, let <span class="math notranslate nohighlight">\(c_f = \frac{1}{k} \sum_{m=1}^k v_m\)</span> be its affine centroid.</p>
+        <p>For each face vertex <span class="math notranslate nohighlight">\(v_m\)</span>, define the outer window vertex <span class="math notranslate nohighlight">\(w_m\)</span> and the corresponding inner shell vertices <span class="math notranslate nohighlight">\(v'_m, w'_m\)</span> by:</p>
+        <div class="math notranslate nohighlight">
+        \[w_m = c_f + \mu (v_m - c_f) = (1 - \mu) c_f + \mu v_m, \quad v'_m = \lambda v_m, \quad w'_m = \lambda w_m\]</div>
+        <p>Then the resulting hollow manifold solid <span class="math notranslate nohighlight">\(S_{\text{vac}} = \text{vacuate}(S, \mu, \lambda)\)</span> satisfies the following exact structural invariants:</p>
+        <ol class="arabic">
+        <li><p><strong>Exact Number Field Invariance</strong>:
+        Because <span class="math notranslate nohighlight">\(c_f\)</span> is an affine combination with rational weights <span class="math notranslate nohighlight">\(1/k\)</span>, and <span class="math notranslate nohighlight">\(\mu, \lambda \in \mathbb{Q}\)</span>, all generated coordinates of <span class="math notranslate nohighlight">\(w_m, v'_m, w'_m\)</span> belong to the <strong>exact same algebraic number field</strong> as the parent solid <span class="math notranslate nohighlight">\(S\)</span> (e.g., <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> for the Tetrahedron, Hexahedron, and Octahedron; <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span> for the Icosahedron and Dodecahedron). Zero radical tower extensions or floating-point approximations are introduced.</p></li>
+        <li><p><strong>Vertex Cardinality</strong>:
+        The hollow body comprises four concentric sets of vertices: original outer vertices (<span class="math notranslate nohighlight">\(V\)</span>), inner shell vertices (<span class="math notranslate nohighlight">\(V\)</span>), outer window reveal vertices (<span class="math notranslate nohighlight">\(\sum k_i = 2E\)</span>), and inner window reveal vertices (<span class="math notranslate nohighlight">\(2E\)</span>):</p>
+        <div class="math notranslate nohighlight">
+        \[V_{\text{vac}} = V + V + 2E + 2E = 2V + 4E\]</div>
+        </li>
+        <li><p><strong>Face Cardinality &amp; Strict Coplanarity</strong>:
+        Around each face opening of degree <span class="math notranslate nohighlight">\(k\)</span>, exactly three rings of quadrilaterals are formed:
+        - <span class="math notranslate nohighlight">\(k\)</span> outer frame trapezoids (<span class="math notranslate nohighlight">\(v_m, v_{m+1}, w_{m+1}, w_m\)</span>) lying strictly in the parent face plane.
+        - <span class="math notranslate nohighlight">\(k\)</span> inner frame trapezoids (<span class="math notranslate nohighlight">\(v'_{m+1}, v'_m, w'_m, w'_{m+1}\)</span>) lying strictly in the parallel scaled inner plane.
+        - <span class="math notranslate nohighlight">\(k\)</span> window reveal jambs (<span class="math notranslate nohighlight">\(w_m, w_{m+1}, w'_{m+1}, w'_m\)</span>) lying in the radial plane connecting the edge to the origin.</p>
+        <p>Summing over all faces:</p>
+        <div class="math notranslate nohighlight">
+        \[F_{\text{vac}} = \sum_{i=1}^F 3 k_i = 3 \sum_{i=1}^F k_i = 3(2E) = 6E\]</div>
+        <p>Every one of these <span class="math notranslate nohighlight">\(6E\)</span> faces is a <strong>strictly coplanar planar quadrilateral</strong>.</p>
+        </li>
+        <li><p><strong>Edge Cardinality</strong>:
+        Since every face of <span class="math notranslate nohighlight">\(S_{\text{vac}}\)</span> is a quadrilateral (4 boundary edges) and every edge in a closed 2-manifold borders exactly 2 faces:</p>
+        <div class="math notranslate nohighlight">
+        \[2 E_{\text{vac}} = 4 F_{\text{vac}} \implies E_{\text{vac}} = 2 F_{\text{vac}} = 12E\]</div>
+        </li>
+        <li><p><strong>Euler Characteristic &amp; Topological Genus</strong>:
+        The Euler characteristic <span class="math notranslate nohighlight">\(\chi_{\text{vac}}\)</span> of the hollow manifold is:</p>
+        <div class="math notranslate nohighlight">
+        \[\chi_{\text{vac}} = V_{\text{vac}} - E_{\text{vac}} + F_{\text{vac}} = (2V + 4E) - 12E + 6E = 2(V - E)\]</div>
+        <p>Since the parent solid satisfies <span class="math notranslate nohighlight">\(V - E + F = 2 \implies V - E = 2 - F\)</span>, substitution yields:</p>
+        <div class="math notranslate nohighlight">
+        \[\chi_{\text{vac}} = 2(2 - F) = 4 - 2F\]</div>
+        <p>For an orientable closed surface of genus <span class="math notranslate nohighlight">\(g\)</span>, <span class="math notranslate nohighlight">\(\chi = 2 - 2g\)</span>. Equating:</p>
+        <div class="math notranslate nohighlight">
+        \[2 - 2g = 4 - 2F \implies 2g = 2F - 2 \implies g = F - 1\]</div>
+        <p>The topological genus of Leonardo’s hollow cage is <strong>precisely one less than the number of faces of the parent solid</strong>! Every face aperture acts as a through-hole (handle) into the central hollow cavity.</p>
+        </li>
+        </ol>
+        </section>
+        <section class="level-3" id="topological-invariants-of-the-platonic-vacua">
+        <h3>Topological Invariants of the Platonic Vacua<a class="headerlink" href="#topological-invariants-of-the-platonic-vacua" title="Link to this heading">¶</a></h3>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 16.0%" />
+        <col style="width: 10.0%" />
+        <col style="width: 10.0%" />
+        <col style="width: 10.0%" />
+        <col style="width: 10.0%" />
+        <col style="width: 10.0%" />
+        <col style="width: 12.0%" />
+        <col style="width: 12.0%" />
+        <col style="width: 10.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Solid</p></th>
+        <th class="head"><p>Base $V$</p></th>
+        <th class="head"><p>Base $E$</p></th>
+        <th class="head"><p>Base $F$</p></th>
+        <th class="head"><p>$V_{\text{vac}}$</p></th>
+        <th class="head"><p>$E_{\text{vac}}$</p></th>
+        <th class="head"><p>$F_{\text{vac}}$</p></th>
+        <th class="head"><p>$\chi_{\text{vac}}$</p></th>
+        <th class="head"><p>Genus $g$</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Tetrahedron</strong></p></td>
+        <td><p>4</p></td>
+        <td><p>6</p></td>
+        <td><p>4</p></td>
+        <td><p>32</p></td>
+        <td><p>72</p></td>
+        <td><p>36</p></td>
+        <td><p>$-4$</p></td>
+        <td><p><strong>3</strong></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Hexahedron</strong></p></td>
+        <td><p>8</p></td>
+        <td><p>12</p></td>
+        <td><p>6</p></td>
+        <td><p>64</p></td>
+        <td><p>144</p></td>
+        <td><p>72</p></td>
+        <td><p>$-8$</p></td>
+        <td><p><strong>5</strong></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Octahedron</strong></p></td>
+        <td><p>6</p></td>
+        <td><p>12</p></td>
+        <td><p>8</p></td>
+        <td><p>60</p></td>
+        <td><p>144</p></td>
+        <td><p>72</p></td>
+        <td><p>$-12$</p></td>
+        <td><p><strong>7</strong></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Dodecahedron</strong></p></td>
+        <td><p>20</p></td>
+        <td><p>30</p></td>
+        <td><p>12</p></td>
+        <td><p>160</p></td>
+        <td><p>360</p></td>
+        <td><p>180</p></td>
+        <td><p>$-20$</p></td>
+        <td><p><strong>11</strong></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Icosahedron</strong></p></td>
+        <td><p>12</p></td>
+        <td><p>30</p></td>
+        <td><p>20</p></td>
+        <td><p>144</p></td>
+        <td><p>360</p></td>
+        <td><p>180</p></td>
+        <td><p>$-36$</p></td>
+        <td><p><strong>19</strong></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        </section>
+        <section class="level-2" id="leonardo-plate-concordance-tabulae-ixxxvi">
+        <h2>Leonardo Plate Concordance (Tabulae I–XXXVI)<a class="headerlink" href="#leonardo-plate-concordance-tabulae-ixxxvi" title="Link to this heading">¶</a></h2>
+        <p>The following concordance correlates all thirty-six principal polyhedral plates of Leonardo da Vinci from the 1509 Paganini edition with their high-resolution folio scans, Latin inscriptions, and modern geometric designations:</p>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 12.0%" />
+        <col style="width: 14.0%" />
+        <col style="width: 44.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Solid</p></th>
+        <th class="head"><p>Variant</p></th>
+        <th class="head"><p>Plate</p></th>
+        <th class="head"><p>Folio</p></th>
+        <th class="head"><p>Latin Inscription (1509)</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Tetrahedron</strong></p></td>
+        <td><p>solidum</p></td>
+        <td><p>Tabula I</p></td>
+        <td><p>Folio 0187</p></td>
+        <td><p><em>Tetrahedron Planum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>vacuum ($g=3$)</p></td>
+        <td><p>Tabula II</p></td>
+        <td><p>Folio 0189</p></td>
+        <td><p><em>Tetrahedron Planum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>abscisum solidum</p></td>
+        <td><p>Tabula III</p></td>
+        <td><p>Folio 0191</p></td>
+        <td><p><em>Tetrahedron Abscisum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>abscisum vacuum</p></td>
+        <td><p>Tabula IIII</p></td>
+        <td><p>Folio 0193</p></td>
+        <td><p><em>Tetrahedron Abscisum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>elevatum solidum</p></td>
+        <td><p>Tabula V</p></td>
+        <td><p>Folio 0195</p></td>
+        <td><p><em>Tetrahedron Elevatum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>elevatum vacuum</p></td>
+        <td><p>Tabula VI</p></td>
+        <td><p>Folio 0197</p></td>
+        <td><p><em>Tetrahedron Elevatum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Hexahedron</strong></p></td>
+        <td><p>solidum</p></td>
+        <td><p>Tabula VII</p></td>
+        <td><p>Folio 0199</p></td>
+        <td><p><em>Exahedron sive Cubus Planum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>vacuum ($g=5$)</p></td>
+        <td><p>Tabula VIII</p></td>
+        <td><p>Folio 0201</p></td>
+        <td><p><em>Exahedron Planum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>abscisum solidum</p></td>
+        <td><p>Tabula VIIII</p></td>
+        <td><p>Folio 0203</p></td>
+        <td><p><em>Exahedron Abscisum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>abscisum vacuum</p></td>
+        <td><p>Tabula X</p></td>
+        <td><p>Folio 0205</p></td>
+        <td><p><em>Exahedron Abscisum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>elevatum solidum</p></td>
+        <td><p>Tabula XI</p></td>
+        <td><p>Folio 0207</p></td>
+        <td><p><em>Exahedron Elevatum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>elevatum vacuum</p></td>
+        <td><p>Tabula XII</p></td>
+        <td><p>Folio 0209</p></td>
+        <td><p><em>Exahedron Elevatum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>abscisum elevatum solidum</p></td>
+        <td><p>Tabula XIII</p></td>
+        <td><p>Folio 0211</p></td>
+        <td><p><em>Exahedron Abscisum Elevatum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>abscisum elevatum vacuum</p></td>
+        <td><p>Tabula XIIII</p></td>
+        <td><p>Folio 0217</p></td>
+        <td><p><em>Exahedron Abscisum Elevatum Vacuum</em> <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Octahedron</strong></p></td>
+        <td><p>solidum</p></td>
+        <td><p>Tabula XV</p></td>
+        <td><p>Folio 0219</p></td>
+        <td><p><em>Octahedron Planum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>vacuum ($g=7$)</p></td>
+        <td><p>Tabula XVI</p></td>
+        <td><p>Folio 0221</p></td>
+        <td><p><em>Octahedron Planum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>abscisum solidum</p></td>
+        <td><p>Tabula XVII</p></td>
+        <td><p>Folio 0223</p></td>
+        <td><p><em>Octahedron Abscisum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>abscisum vacuum</p></td>
+        <td><p>Tabula XVIII</p></td>
+        <td><p>Folio 0225</p></td>
+        <td><p><em>Octahedron Abscisum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>elevatum solidum (<em>Stella Octangula</em>)</p></td>
+        <td><p>Tabula XIX</p></td>
+        <td><p>Folio 0227</p></td>
+        <td><p><em>Octahedron Elevatum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>elevatum vacuum</p></td>
+        <td><p>Tabula XX</p></td>
+        <td><p>Folio 0229</p></td>
+        <td><p><em>Octahedron Elevatum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Icosahedron</strong></p></td>
+        <td><p>solidum</p></td>
+        <td><p>Tabula XXI</p></td>
+        <td><p>Folio 0231</p></td>
+        <td><p><em>Icosahedron Planum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>vacuum ($g=19$)</p></td>
+        <td><p>Tabula XXII</p></td>
+        <td><p>Folio 0233</p></td>
+        <td><p><em>Icosahedron Planum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>abscisum solidum (Fullerene)</p></td>
+        <td><p>Tabula XXIII</p></td>
+        <td><p>Folio 0235</p></td>
+        <td><p><em>Icosahedron Abscisum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>abscisum vacuum</p></td>
+        <td><p>Tabula XXIIII</p></td>
+        <td><p>Folio 0237</p></td>
+        <td><p><em>Icosahedron Abscisum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>elevatum solidum</p></td>
+        <td><p>Tabula XXV</p></td>
+        <td><p>Folio 0239</p></td>
+        <td><p><em>Icosahedron Elevatum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>elevatum vacuum</p></td>
+        <td><p>Tabula XXVI</p></td>
+        <td><p>Folio 0241</p></td>
+        <td><p><em>Icosahedron Elevatum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Dodecahedron</strong></p></td>
+        <td><p>solidum</p></td>
+        <td><p>Tabula XXVII</p></td>
+        <td><p>Folio 0243</p></td>
+        <td><p><em>Dodecahedron Planum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>vacuum ($g=11$)</p></td>
+        <td><p>Tabula XXVIII</p></td>
+        <td><p>Folio 0245</p></td>
+        <td><p><em>Dodecahedron Planum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>abscisum solidum</p></td>
+        <td><p>Tabula XXIX</p></td>
+        <td><p>Folio 0247</p></td>
+        <td><p><em>Dodecahedron Abscisum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>abscisum vacuum</p></td>
+        <td><p>Tabula XXX</p></td>
+        <td><p>Folio 0249</p></td>
+        <td><p><em>Dodecahedron Abscisum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>elevatum solidum</p></td>
+        <td><p>Tabula XXXI</p></td>
+        <td><p>Folio 0251</p></td>
+        <td><p><em>Dodecahedron Elevatum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>elevatum vacuum</p></td>
+        <td><p>Tabula XXXII</p></td>
+        <td><p>Folio 0253</p></td>
+        <td><p><em>Dodecahedron Elevatum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td></td>
+        <td><p>abscisum elevatum solidum</p></td>
+        <td><p>Tabula XXXIII</p></td>
+        <td><p>Folio 0255</p></td>
+        <td><p><em>Dodecahedron Abscisum Elevatum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>abscisum elevatum vacuum</p></td>
+        <td><p>Tabula XXXIIII</p></td>
+        <td><p>Folio 0257</p></td>
+        <td><p><em>Dodecahedron Abscisum Elevatum Vacuum</em></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Vigintisex Basium</strong></p></td>
+        <td><p>solidum (Rhombicuboctahedron)</p></td>
+        <td><p>Tabula XXXV</p></td>
+        <td><p>Folio 0259</p></td>
+        <td><p><em>Vigintisex Basium Planum Solidum</em></p></td>
+        </tr>
+        <tr class="row-odd"><td></td>
+        <td><p>vacuum</p></td>
+        <td><p>Tabula XXXVI</p></td>
+        <td><p>Folio 0261</p></td>
+        <td><p><em>Vigintisex Basium Planum Vacuum</em></p></td>
+        </tr>
+        </tbody>
+        </table>
+        <aside class="footnote-list brackets">
+        <aside class="footnote brackets" id="id2" role="doc-footnote">
+        <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+        <p>In Paganini’s 1509 edition, folios 0213 and 0215 were used for the Vitruvian architectural column plates (<em>Colonna Corinta, Jonica e Pulvinata</em>), placing Tabula XIIII on Folio 0217.</p>
+        </aside>
+        </aside>
+        </section>
+        <section class="level-2" id="monographic-galleries">
+        <h2>Monographic Galleries<a class="headerlink" href="#monographic-galleries" title="Link to this heading">¶</a></h2>
+        <div class="toctree-wrapper compound">
+        <ul>
+        <li class="toctree-l1"><a class="reference internal" href="tetrahedron_cube_octahedron.html">Leonardo Plates: Tetrahedron, Hexahedron &amp; Octahedron (Tabulae I–XX)</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="tetrahedron_cube_octahedron.html#i-the-tetrahedron-family-tabulae-ivi-folios-01870197">I. The Tetrahedron Family (Tabulae I–VI, Folios 0187–0197)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-i-folio-0187-tetrahedron-planum-solidum">Tabula I (Folio 0187): <em>Tetrahedron Planum Solidum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-ii-folio-0189-tetrahedron-planum-vacuum">Tabula II (Folio 0189): <em>Tetrahedron Planum Vacuum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#interactive-3d-codex-tetrahedron">Interactive 3D Codex: Tetrahedron</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-iii-iiii-folios-01910193-tetrahedron-abscisum">Tabula III &amp; IIII (Folios 0191–0193): <em>Tetrahedron Abscisum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-v-vi-folios-01950197-tetrahedron-elevatum">Tabula V &amp; VI (Folios 0195–0197): <em>Tetrahedron Elevatum</em></a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="tetrahedron_cube_octahedron.html#ii-the-hexahedron-cube-family-tabulae-viixiiii-folios-01990217">II. The Hexahedron / Cube Family (Tabulae VII–XIIII, Folios 0199–0217)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-vii-viii-folios-01990201-exahedron-planum-solidum-et-vacuum">Tabula VII &amp; VIII (Folios 0199–0201): <em>Exahedron Planum Solidum et Vacuum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-viiii-x-folios-02030205-exahedron-abscisum-the-cuboctahedron">Tabula VIIII &amp; X (Folios 0203–0205): <em>Exahedron Abscisum</em> (The Cuboctahedron)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#interactive-3d-codex-hexahedron">Interactive 3D Codex: Hexahedron</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-xi-xii-folios-02070209-exahedron-elevatum">Tabula XI &amp; XII (Folios 0207–0209): <em>Exahedron Elevatum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-xiii-xiiii-folios-0211-0217-exahedron-abscisum-elevatum">Tabula XIII &amp; XIIII (Folios 0211 &amp; 0217): <em>Exahedron Abscisum Elevatum</em></a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="tetrahedron_cube_octahedron.html#iii-the-octahedron-family-tabulae-xvxx-folios-02190229">III. The Octahedron Family (Tabulae XV–XX, Folios 0219–0229)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-xv-xvi-folios-02190221-octahedron-planum-solidum-et-vacuum">Tabula XV &amp; XVI (Folios 0219–0221): <em>Octahedron Planum Solidum et Vacuum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabula-xvii-xviii-folios-02230225-octahedron-abscisum-truncated-octahedron">Tabula XVII &amp; XVIII (Folios 0223–0225): <em>Octahedron Abscisum</em> (Truncated Octahedron)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#tabulae-xix-xx-octahedron-elevatum-the-stella-octangula-1509">Tabulae XIX &amp; XX: <em>Octahedron Elevatum</em> — The Stella Octangula (1509)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="tetrahedron_cube_octahedron.html#interactive-3d-codex-octahedron-elevatum">Interactive 3D Codex: Octahedron Elevatum</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="icosahedron_dodecahedron.html">Leonardo Plates: Icosahedron, Dodecahedron &amp; Vigintisex Basium (Tabulae XXI–XXXVI)</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="icosahedron_dodecahedron.html#i-the-icosahedron-family-tabulae-xxixxvi-folios-02310241">I. The Icosahedron Family (Tabulae XXI–XXVI, Folios 0231–0241)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#tabula-xxi-xxii-folios-02310233-icosahedron-planum-solidum-et-vacuum">Tabula XXI &amp; XXII (Folios 0231–0233): <em>Icosahedron Planum Solidum et Vacuum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#interactive-3d-codex-icosahedron">Interactive 3D Codex: Icosahedron</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#tabula-xxiii-xxiiii-folios-02350237-icosahedron-abscisum-the-fullerene-soccer-ball">Tabula XXIII &amp; XXIIII (Folios 0235–0237): <em>Icosahedron Abscisum</em> (The Fullerene / Soccer Ball)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#tabula-xxv-xxvi-folios-02390241-icosahedron-elevatum">Tabula XXV &amp; XXVI (Folios 0239–0241): <em>Icosahedron Elevatum</em></a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="icosahedron_dodecahedron.html#ii-the-dodecahedron-family-tabulae-xxviixxxiiii-folios-02430257">II. The Dodecahedron Family (Tabulae XXVII–XXXIIII, Folios 0243–0257)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#tabula-xxvii-xxviii-folios-02430245-dodecahedron-planum-solidum-et-vacuum">Tabula XXVII &amp; XXVIII (Folios 0243–0245): <em>Dodecahedron Planum Solidum et Vacuum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#interactive-3d-codex-dodecahedron">Interactive 3D Codex: Dodecahedron</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#tabula-xxix-xxx-folios-02470249-dodecahedron-abscisum-the-icosidodecahedron">Tabula XXIX &amp; XXX (Folios 0247–0249): <em>Dodecahedron Abscisum</em> (The Icosidodecahedron)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#tabula-xxxi-xxxii-folios-02510253-dodecahedron-elevatum">Tabula XXXI &amp; XXXII (Folios 0251–0253): <em>Dodecahedron Elevatum</em></a></li>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#tabula-xxxiii-xxxiiii-folios-02550257-dodecahedron-abscisum-elevatum">Tabula XXXIII &amp; XXXIIII (Folios 0255–0257): <em>Dodecahedron Abscisum Elevatum</em></a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="icosahedron_dodecahedron.html#iii-the-26-base-body-vigintisex-basium-tabulae-xxxvxxxvi">III. The 26-Base Body (<em>Vigintisex Basium</em>, Tabulae XXXV–XXXVI)</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#the-piazza-san-marco-anecdote-1489">The Piazza San Marco Anecdote (1489)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="icosahedron_dodecahedron.html#mathematical-architecture-of-the-rhombicuboctahedron">Mathematical Architecture of the Rhombicuboctahedron</a></li>
+        </ul>
+        </li>
+        </ul>
+        </div>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../golden/rhombic_triacontahedron_odom.html" title="Kepler’s Triacontahedron &amp; Odom’s Section">&larr; <span class="nav-label">Kepler’s Triacontahedron & Odom’s Section</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="tetrahedron_cube_octahedron.html" title="Leonardo Plates: Tetrahedron, Hexahedron &amp; Octahedron (Tabulae I–XX)"><span class="nav-label">Leonardo Plates: Tetrahedron, Hexahedron & Octahedron (Tabulae I–XX)</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../modules/index.html"  >Modules</a></li>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+        <li><a href="../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetrahedron &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Book Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">The Five Platonic Solids</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="index.html" title="The Five Platonic Solids">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="hexahedron.html" title="Hexahedron (Cube)"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="tetrahedron">
+        <h1>Tetrahedron<a class="headerlink" href="#tetrahedron" title="Link to this heading">¶</a></h1>
+        <p><em>Euclid XIII.13 · Plato Timaeus (Fire) · Pacioli De Divina Proportione Cap. XXI · Tabulae I–VI</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>To construct a regular tetrahedron inside a given sphere and to prove that the square on the diameter of the sphere is one and a half times the square on the side of the tetrahedron.</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="euclid-of-alexandria" title="Person: euclid-of-alexandria">Euclid of Alexandria</span>, <em>Elements</em> Book XIII, Proposition 13 (G-Index: <code class="docutils literal notranslate"><span class="pre">G.592</span></code>)</p>
+        </div></blockquote>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 20.0%" />
+        <col style="width: 20.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Classical Name</p></th>
+        <th class="head"><p>Greek Orthography</p></th>
+        <th class="head"><p>Element (Plato)</p></th>
+        <th class="head"><p>Schläfli $\{p, q\}$</p></th>
+        <th class="head"><p>Euclid Proposition</p></th>
+        <th class="head"><p>Pacioli Chapter</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Tetrahedron</strong></p></td>
+        <td><p>Τετράεδρον</p></td>
+        <td><p><strong>Fire</strong> (<em>Ignis</em> / Πῦρ)</p></td>
+        <td><p>$\{3, 3\}$</p></td>
+        <td><p>Book XIII, Prop. 13 (<code class="docutils literal notranslate"><span class="pre">G.592</span></code>)</p></td>
+        <td><p><em>De Divina Proportione</em>, Cap. XXI</p></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>The <strong>Regular Tetrahedron</strong> is the primary regular convex polyhedron in three-dimensional Euclidean space. In Plato’s <em>Timaeus</em> (56b), the tetrahedron is assigned to the element <strong>Fire</strong>: having the fewest faces (4), the sharpest solid angles, and the greatest piercing power, it is the lightest, keenest, and most mobile of all elementary bodies.</p>
+        <p>Euclid constructs the regular tetrahedron in <em>Elements</em> XIII.13 by setting out a diameter of the given sphere, dividing it into three equal segments, and erecting an equilateral triangle on the plane perpendicular to the diameter at the two-thirds point.</p>
+        <p>In the GEOMETOR formulation, the tetrahedron is embedded directly into the integer lattice <span class="math notranslate nohighlight">\(\mathbb{Z}^3\)</span> with zero floating-point approximations, as four alternating vertices of the canonical cube <span class="math notranslate nohighlight">\([-1, 1]^3\)</span>.</p>
+        <section class="level-2" id="interactive-3d-explorer">
+        <h2>Interactive 3D Explorer<a class="headerlink" href="#interactive-3d-explorer" title="Link to this heading">¶</a></h2>
+        <div class="polyhedra-3d-mount" data-solid="tetrahedron" data-initial-variant="vacuum"></div><div class="admonition note">
+        <p class="admonition-title">Note</p>
+        <p><strong>Interactive Codex Controls</strong>:</p>
+        <ul class="simple">
+        <li><p><strong>Orbit &amp; Inspect</strong>: Click and drag to orbit in three dimensions. Scroll or pinch to zoom.</p></li>
+        <li><p><strong>Variant Toggle</strong>: Switch seamlessly between Leonardo da Vinci’s <em>Vacuum</em> (open-lattice wooden beams), <em>Solidum</em> (opaque planar facets), <em>Abscisum</em> (truncated tetrahedron), and <em>Elevatum</em> (triacontahedron stellations).</p></li>
+        <li><p><strong>Aperture Slider</strong>: Scrub the wooden beam aperture parameter <span class="math notranslate nohighlight">\(\mu \in [0.10, 0.45]\)</span> to inspect Leonardo’s interior joinery.</p></li>
+        <li><p><strong>Structural Overlays</strong>: Toggle the <strong>Golden Ratio</strong> structure and <strong>Polar Dual</strong> (self-dual inverted tetrahedron).</p></li>
+        <li><p><strong>Perspective Snap</strong>: Reset camera to Leonardo da Vinci’s canonical 1509 woodcut vantage point.</p></li>
+        </ul>
+        </div>
+        </section>
+        <section class="level-2" id="exact-symbolic-coordinates-metric-ledger">
+        <h2>Exact Symbolic Coordinates &amp; Metric Ledger<a class="headerlink" href="#exact-symbolic-coordinates-metric-ledger" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="canonical-lattice-coordinates">
+        <h3>Canonical Lattice Coordinates<a class="headerlink" href="#canonical-lattice-coordinates" title="Link to this heading">¶</a></h3>
+        <p>The regular tetrahedron is modeled over <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> on four alternating vertices of the cube:</p>
+        <div class="math notranslate nohighlight">
+        \[V_0 = (1, 1, 1), \quad V_1 = (1, -1, -1), \quad V_2 = (-1, 1, -1), \quad V_3 = (-1, -1, 1)\]</div>
+        </section>
+        <section class="level-3" id="face-cycles-normal-orientations">
+        <h3>Face Cycles &amp; Normal Orientations<a class="headerlink" href="#face-cycles-normal-orientations" title="Link to this heading">¶</a></h3>
+        <p>The four equilateral triangular faces are oriented with outward-pointing counter-clockwise normal cycles:</p>
+        <div class="math notranslate nohighlight">
+        \[F_0 = (0, 1, 2), \quad F_1 = (0, 3, 1), \quad F_2 = (0, 2, 3), \quad F_3 = (1, 3, 2)\]</div>
+        <p>Outward face normal vectors are computed via exact 3D cross products:</p>
+        <div class="math notranslate nohighlight">
+        \[n_0 = (V_1 - V_0) \times (V_2 - V_0) = (0, -2, -2) \times (-2, 0, -2) = (4, 4, -4) \sim (1, 1, -1)\]</div>
+        <div class="math notranslate nohighlight">
+        \[n_1 = (V_3 - V_0) \times (V_1 - V_0) = (-2, -2, 0) \times (0, -2, -2) = (4, -4, 4) \sim (1, -1, 1)\]</div>
+        <div class="math notranslate nohighlight">
+        \[n_2 = (V_2 - V_0) \times (V_3 - V_0) = (-2, 0, -2) \times (-2, -2, 0) = (-4, 4, 4) \sim (-1, 1, 1)\]</div>
+        <div class="math notranslate nohighlight">
+        \[n_3 = (V_3 - V_1) \times (V_2 - V_1) = (-2, 0, 2) \times (-2, 2, 0) = (-4, -4, -4) \sim (-1, -1, -1)\]</div>
+        </section>
+        <section class="level-3" id="d-rational-trigonometry-ledger">
+        <h3>3D Rational Trigonometry Ledger<a class="headerlink" href="#d-rational-trigonometry-ledger" title="Link to this heading">¶</a></h3>
+        <p>In Norman Wildberger’s Rational Trigonometry, the metric properties of 3D polyhedra are formulated strictly via exact rational <strong>quadrances</strong> (squared lengths) and planar <strong>spreads</strong> (<span class="math notranslate nohighlight">\(s = \sin^2\theta\)</span>):</p>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 35.0%" />
+        <col style="width: 25.0%" />
+        <col style="width: 40.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Metric Invariant</p></th>
+        <th class="head"><p>Exact Value</p></th>
+        <th class="head"><p>Geometric Significance</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Edge Quadrance</strong> <span class="math notranslate nohighlight">\(Q_E\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(8\)</span></p></td>
+        <td><p>Edge length <span class="math notranslate nohighlight">\(s = 2\sqrt{2}\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Circumquadrance</strong> <span class="math notranslate nohighlight">\(Q_{\text{out}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+        <td><p>Circumradius <span class="math notranslate nohighlight">\(R = \sqrt{3}\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Midquadrance</strong> <span class="math notranslate nohighlight">\(Q_{\text{mid}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+        <td><p>Midradius <span class="math notranslate nohighlight">\(r_{\text{mid}} = 1\)</span> at edge midpoint <span class="math notranslate nohighlight">\((1, 0, 0)\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Inquadrance</strong> <span class="math notranslate nohighlight">\(Q_{\text{in}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1/3\)</span></p></td>
+        <td><p>Inradius <span class="math notranslate nohighlight">\(r = 1/\sqrt{3}\)</span> at face centroid <span class="math notranslate nohighlight">\((1/3, 1/3, -1/3)\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Sphere Quadrance Ratio</strong> <span class="math notranslate nohighlight">\(Q_{\text{in}} / Q_{\text{out}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1/9\)</span></p></td>
+        <td><p>Concentric sphere volume ratio <span class="math notranslate nohighlight">\((1/9)^{3/2} = 1/27\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Mid-to-Circum Ratio</strong> <span class="math notranslate nohighlight">\(Q_{\text{mid}} / Q_{\text{out}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1/3\)</span></p></td>
+        <td><p>Ratio of mid-sphere to circumsphere</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Euclid XIII.13 Invariant</strong> <span class="math notranslate nohighlight">\(Q_D / Q_E\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(3/2\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(Q_{\text{diameter}} = 4 Q_{\text{out}} = 12 \implies 12 / 8 = 3/2\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Dihedral Spread</strong> <span class="math notranslate nohighlight">\(s\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(8/9\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\cos\theta = 1/3 \implies s = 1 - (1/3)^2 = 8/9\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Polar Dual</strong></p></td>
+        <td><p>Self-dual</p></td>
+        <td><p>Dual is an inverted tetrahedron <span class="math notranslate nohighlight">\(\{3, 3\}^* = \{3, 3\}\)</span></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-3" id="dihedral-spread-derivation">
+        <h3>Dihedral Spread Derivation<a class="headerlink" href="#dihedral-spread-derivation" title="Link to this heading">¶</a></h3>
+        <p>The dihedral spread between two adjacent faces with normal vectors <span class="math notranslate nohighlight">\(n_0 = (1, 1, -1)\)</span> and <span class="math notranslate nohighlight">\(n_1 = (1, -1, 1)\)</span> is computed directly:</p>
+        <div class="math notranslate nohighlight">
+        \[n_0 \cdot n_1 = 1(1) + 1(-1) + (-1)(1) = 1 - 1 - 1 = -1\]</div>
+        <div class="math notranslate nohighlight">
+        \[Q(n_0) = 1^2 + 1^2 + (-1)^2 = 3, \quad Q(n_1) = 1^2 + (-1)^2 + 1^2 = 3\]</div>
+        <div class="math notranslate nohighlight">
+        \[s(F_0, F_1) = 1 - \frac{(n_0 \cdot n_1)^2}{Q(n_0) Q(n_1)} = 1 - \frac{(-1)^2}{3 \times 3} = 1 - \frac{1}{9} = \frac{8}{9}\]</div>
+        </section>
+        <section class="level-3" id="topological-invariants">
+        <h3>Topological Invariants<a class="headerlink" href="#topological-invariants" title="Link to this heading">¶</a></h3>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 30.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 25.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Body Variant</p></th>
+        <th class="head"><p>Vertices <span class="math notranslate nohighlight">\(V\)</span></p></th>
+        <th class="head"><p>Edges <span class="math notranslate nohighlight">\(E\)</span></p></th>
+        <th class="head"><p>Faces <span class="math notranslate nohighlight">\(F\)</span></p></th>
+        <th class="head"><p>Euler Characteristic <span class="math notranslate nohighlight">\(\chi\)</span> &amp; Genus <span class="math notranslate nohighlight">\(g\)</span></p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Solidum</strong> (Closed Polyhedron)</p></td>
+        <td><p>4</p></td>
+        <td><p>6</p></td>
+        <td><p>4</p></td>
+        <td><p><span class="math notranslate nohighlight">\(\chi = V - E + F = 2\)</span>, <span class="math notranslate nohighlight">\(g = 0\)</span> (Sphere)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Vacuum</strong> (Open Wooden Frame)</p></td>
+        <td><p>32</p></td>
+        <td><p>60</p></td>
+        <td><p>24</p></td>
+        <td><p><span class="math notranslate nohighlight">\(\chi = 4 - 2F = -4\)</span>, <span class="math notranslate nohighlight">\(g = F - 1 = 3\)</span> (3-Hole Torus)</p></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>In Leonardo da Vinci’s open-lattice <em>Vacuum</em>, each face aperture becomes a tunnel through the body. Topologically, a regular hollow frame with <span class="math notranslate nohighlight">\(F\)</span> polygonal openings is an orientable closed surface of genus <span class="math notranslate nohighlight">\(g = F - 1 = 3\)</span> and Euler characteristic <span class="math notranslate nohighlight">\(\chi = 2 - 2g = 4 - 2F = -4\)</span>.</p>
+        </section>
+        </section>
+        <section class="level-2" id="golden-proportions-phi-in-the-tetrahedron">
+        <h2>Golden Proportions (<span class="math notranslate nohighlight">\(\phi\)</span>) in the Tetrahedron<a class="headerlink" href="#golden-proportions-phi-in-the-tetrahedron" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="george-odom-s-1983-golden-section-construction">
+        <h3>George Odom’s 1983 Golden Section Construction<a class="headerlink" href="#george-odom-s-1983-golden-section-construction" title="Link to this heading">¶</a></h3>
+        <p>While the tetrahedron is traditionally considered an elemental figure devoid of the golden ratio, in 1983 the American artist and geometer <strong>George Odom</strong> made a stunning discovery: <strong>the golden ratio is encoded directly on the face of the regular tetrahedron</strong> when inscribed within its circumscribing circle.</p>
+        <figure class="align-center" id="id1">
+        <a class="reference internal image-reference" href="../_images/tetrahedron_solidum.svg"><img alt="George Odom's Golden Construction on the Tetrahedron Face" src="../_images/tetrahedron_solidum.svg" style="width: 60%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><em>George Odom’s Golden Section (1983)</em>: Connecting the midpoints <span class="math notranslate nohighlight">\(M_1, M_2\)</span> of two edges of an equilateral face and extending the segment to the circumscribing small circle produces the exact golden ratio <span class="math notranslate nohighlight">\(\phi\)</span>.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <p>Let <span class="math notranslate nohighlight">\(\triangle ABC\)</span> be an equilateral face of the tetrahedron inscribed in its circumcircle <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> of radius <span class="math notranslate nohighlight">\(r = 2\)</span>:</p>
+        <ol class="arabic">
+        <li><p>Let <span class="math notranslate nohighlight">\(M_1\)</span> be the midpoint of edge <span class="math notranslate nohighlight">\(AB\)</span>, and <span class="math notranslate nohighlight">\(M_2\)</span> be the midpoint of edge <span class="math notranslate nohighlight">\(AC\)</span>.</p></li>
+        <li><p>Draw the midsegment line <span class="math notranslate nohighlight">\(M_1 M_2\)</span> and extend it to intersect the circle <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> at points <span class="math notranslate nohighlight">\(G_1\)</span> and <span class="math notranslate nohighlight">\(G_2\)</span> (with <span class="math notranslate nohighlight">\(G_2\)</span> lying beyond <span class="math notranslate nohighlight">\(M_2\)</span>).</p></li>
+        <li><p><strong>Theorem (George Odom, 1983)</strong>: The point <span class="math notranslate nohighlight">\(M_2\)</span> divides the segment <span class="math notranslate nohighlight">\(M_1 G_2\)</span> in the <strong>golden ratio</strong>:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{|M_1 M_2|}{|M_2 G_2|} = \phi = \frac{1 + \sqrt{5}}{2}\]</div>
+        </li>
+        </ol>
+        <p>In the language of 3D Rational Trigonometry and <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code>, the quadrance ratio satisfies:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{Q(M_1, M_2)}{Q(M_2, G_2)} = \phi^2 = \phi + 1 = \frac{3 + \sqrt{5}}{2}\]</div>
+        <p>Furthermore, the ratio of the total segment <span class="math notranslate nohighlight">\(M_1 G_2\)</span> to the midsegment <span class="math notranslate nohighlight">\(M_1 M_2\)</span> is:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{Q(M_1, G_2)}{Q(M_1, M_2)} = \phi^2 = \phi + 1\]</div>
+        <p>This elementary construction proves that even the simplest Platonic solid—the fire-pyramid of Plato—is intimately linked to the divine proportion <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+        </section>
+        </section>
+        <section class="level-2" id="leonardo-da-vinci-s-1509-woodcuts-vs-exact-mathematical-svgs">
+        <h2>Leonardo da Vinci’s 1509 Woodcuts vs. Exact Mathematical SVGs<a class="headerlink" href="#leonardo-da-vinci-s-1509-woodcuts-vs-exact-mathematical-svgs" title="Link to this heading">¶</a></h2>
+        <p>For Luca Pacioli’s <em>De Divina Proportione</em> (Venice, 1509), <strong>Leonardo da Vinci</strong> designed sixty polyhedral drawings, cut onto pearwood blocks. Tabulae I and II depict the <em>Tetrahedron Planum Solidum</em> and <em>Tetrahedron Planum Vacuum</em>.</p>
+        <section class="level-3" id="comparative-visual-analysis">
+        <h3>Comparative Visual Analysis<a class="headerlink" href="#comparative-visual-analysis" title="Link to this heading">¶</a></h3>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 50.0%" />
+        <col style="width: 50.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Leonardo da Vinci (1509 Woodcut)</p></th>
+        <th class="head"><p>GEOMETOR Exact Symbolic Reconstruction</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><figure class="align-default" id="id2">
+        <a class="reference internal image-reference" href="../_images/0187.g1.png"><img alt="Leonardo da Vinci — Tabula I: Tetrahedron Planum Solidum (1509)" src="../_images/0187.g1.png" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Tabula I</strong>: <em>Tetrahedron Planum Solidum</em> (Folio 0187)</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        <td><figure class="align-default" id="id3">
+        <a class="reference internal image-reference" href="../_images/tetrahedron_solidum.svg"><img alt="GEOMETOR Exact SVG — Tetrahedron Solidum" src="../_images/tetrahedron_solidum.svg" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Exact Solidum</strong>: Renaissance Chiaroscuro Perspective</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 50.0%" />
+        <col style="width: 50.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Leonardo da Vinci (1509 Woodcut)</p></th>
+        <th class="head"><p>GEOMETOR Exact Symbolic Reconstruction</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><figure class="align-default" id="id4">
+        <a class="reference internal image-reference" href="../_images/0189.g1.png"><img alt="Leonardo da Vinci — Tabula II: Tetrahedron Planum Vacuum (1509)" src="../_images/0189.g1.png" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Tabula II</strong>: <em>Tetrahedron Planum Vacuum</em> (Folio 0189)</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        <td><figure class="align-default" id="id5">
+        <a class="reference internal image-reference" href="../_images/tetrahedron_vacuum.svg"><img alt="GEOMETOR Exact SVG — Tetrahedron Vacuum" src="../_images/tetrahedron_vacuum.svg" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Exact Vacuum</strong>: Open Wooden Beam Lattice (<span class="math notranslate nohighlight">\(\mu = 0.25\)</span>)</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-3" id="renaissance-chiaroscuro-perspective-artistry">
+        <h3>Renaissance Chiaroscuro &amp; Perspective Artistry<a class="headerlink" href="#renaissance-chiaroscuro-perspective-artistry" title="Link to this heading">¶</a></h3>
+        <p>Leonardo’s woodcuts demonstrate an unprecedented mastery of descriptive geometry:</p>
+        <ol class="arabic simple">
+        <li><p><strong>Upper-Left Illumination (*Luce Primaria*)</strong>: In accordance with Leonardo’s <em>Trattato della Pittura</em>, light descends from the upper left at an angle of <span class="math notranslate nohighlight">\(45^\circ\)</span>, casting realistic shadow across the lower-right facets.</p></li>
+        <li><p><strong>Open-Lattice Joinery (*Il Corpo Vacuum*)</strong>: Leonardo invented the <em>Vacuum</em> rendering to solve the problem of spatial opacity. By hollowing out the faces into solid wooden beams of width parameter <span class="math notranslate nohighlight">\(\mu\)</span>, the interior edges, rear vertices, and spatial depth are revealed simultaneously.</p></li>
+        <li><p><strong>Mitered Triangular Vertices</strong>: At each of the four vertices, three wooden beams meet at dihedral angles of <span class="math notranslate nohighlight">\(\arccos(1/3) \approx 70.53^\circ\)</span>, joined with precision bevels.</p></li>
+        </ol>
+        </section>
+        </section>
+        <section class="level-2" id="d-unfolded-net">
+        <h2>2D Unfolded Net<a class="headerlink" href="#d-unfolded-net" title="Link to this heading">¶</a></h2>
+        <p>The regular tetrahedron unfolds into the plane along three of its six edges without overlapping. The resulting net forms a larger equilateral triangle whose sides are twice the length of the tetrahedron’s edges:</p>
+        <figure class="align-center" id="id6">
+        <a class="reference internal image-reference" href="../_images/tetrahedron_net.svg"><img alt="2D Unfolded Net of the Regular Tetrahedron" src="../_images/tetrahedron_net.svg" style="width: 70%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><em>2D Dihedral-Hinge Unfolding</em>: Central triangular face surrounded by three outer faces hinged along internal seams (dashed lines) and cut boundaries (solid lines).</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <p>The net demonstrates that the total surface area of the regular tetrahedron is four times the area of a single equilateral face:</p>
+        <div class="math notranslate nohighlight">
+        \[A_{\text{total}} = 4 \times \frac{\sqrt{3}}{4} s^2 = \sqrt{3} s^2 = 8\sqrt{3}\]</div>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="index.html" title="The Five Platonic Solids">&larr; <span class="nav-label">The Five Platonic Solids</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="hexahedron.html" title="Hexahedron (Cube)"><span class="nav-label">Hexahedron (Cube)</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../modules/index.html"  >Modules</a></li>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+        <li><a href="../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

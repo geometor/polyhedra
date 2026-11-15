@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>geometor.polyhedra.render.exporters &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../../index.html">
+        <img src="../../../../../../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../../../../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../../../../../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Book Breadcrumbs">
+            <a class="book-crumb-link" href="../../../../../index.html">Modules</a>
+            <span class="book-crumb-sep">/</span>
+            <a class="book-crumb-link" href="../index.html">geometor.polyhedra.render</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../index.html" title="geometor.polyhedra.render">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../svg3d/index.html" title="geometor.polyhedra.render.svg3d"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="module-geometor.polyhedra.render.exporters">
+        <span id="geometor-polyhedra-render-exporters"></span><h1>geometor.polyhedra.render.exporters<a class="headerlink" href="#module-geometor.polyhedra.render.exporters" title="Link to this heading">¶</a></h1>
+        <p>Export pipelines for 3D polyhedra into Wavefront CAD, IngeTrazo, and Blender.</p>
+        <p>Provides three export targets:</p>
+        <ul class="simple">
+        <li><p><code class="docutils literal notranslate"><span class="pre">export_obj_mtl</span></code>: Wavefront <code class="docutils literal notranslate"><span class="pre">.obj</span></code> and companion <code class="docutils literal notranslate"><span class="pre">.mtl</span></code> with face role materials.</p></li>
+        <li><p><code class="docutils literal notranslate"><span class="pre">export_ingetrazo_script</span></code>: Runnable Python script for IngeTrazo 0.6.0 CAD.</p></li>
+        <li><p><code class="docutils literal notranslate"><span class="pre">export_blender_script</span></code>: Standalone Blender 5.x Python studio generator.</p></li>
+        </ul>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.render.exporters.export_obj_mtl" title="geometor.polyhedra.render.exporters.export_obj_mtl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_obj_mtl</span></code></a>(solid, obj_path) → tuple[pathlib.Path, pathlib.Path]</p></td>
+        <td><p>Exports a Solid3D to Wavefront .obj and companion .mtl material library.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.render.exporters.export_ingetrazo_script" title="geometor.polyhedra.render.exporters.export_ingetrazo_script"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_ingetrazo_script</span></code></a>(solids, script_path[, spacing]) → pathlib.Path</p></td>
+        <td><p>Emits a runnable Python script for IngeTrazo 0.6.0 CAD modeler.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.render.exporters.export_blender_script" title="geometor.polyhedra.render.exporters.export_blender_script"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_blender_script</span></code></a>(solids, script_path[, spacing]) → pathlib.Path</p></td>
+        <td><p>Emits a standalone Blender 5.x Python script generating a studio showcase.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.render.exporters.export_obj_mtl">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.render.exporters.</span></span><span class="sig-name descname"><span class="pre">export_obj_mtl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.render.exporters.export_obj_mtl" title="Link to this definition">¶</a></dt>
+        <dd><p>Exports a Solid3D to Wavefront .obj and companion .mtl material library.</p>
+        <p>Maps face_roles (‘base’, ‘outer_frame’, ‘window_reveal’, ‘inner_frame’,
+        ‘truncation’, ‘pyramid’) to distinct Renaissance boxwood, alabaster, and
+        stone material definitions.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solid</strong> – Exact symbolic Solid3D polyhedral model.</p></li>
+        <li><p><strong>obj_path</strong> – Target filesystem path for the .obj file.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Tuple of (obj_path, mtl_path).</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.render.exporters.export_ingetrazo_script">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.render.exporters.</span></span><span class="sig-name descname"><span class="pre">export_ingetrazo_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#geometor.polyhedra.render.exporters.export_ingetrazo_script" title="Link to this definition">¶</a></dt>
+        <dd><p>Emits a runnable Python script for IngeTrazo 0.6.0 CAD modeler.</p>
+        <p>Lays out polyhedra along the X-axis on named layers (‘Platonic_Solida’,
+        ‘Leonardo_Vacua’) with warm boxwood and alabaster materials.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solids</strong> – List of Solid3D polyhedral models to include in the scene.</p></li>
+        <li><p><strong>script_path</strong> – Target filesystem path for the emitted Python script.</p></li>
+        <li><p><strong>spacing</strong> – Center-to-center offset along the X axis between models.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Path to the generated Python script.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.render.exporters.export_blender_script">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.render.exporters.</span></span><span class="sig-name descname"><span class="pre">export_blender_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#geometor.polyhedra.render.exporters.export_blender_script" title="Link to this definition">¶</a></dt>
+        <dd><p>Emits a standalone Blender 5.x Python script generating a studio showcase.</p>
+        <p>Creates collections, meshes, Principled BSDF materials (Boxwood, Alabaster,
+        Gold), studio 3-point lighting, and camera framing.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>solids</strong> – List of Solid3D polyhedral models to include in the scene.</p></li>
+        <li><p><strong>script_path</strong> – Target filesystem path for the emitted Python script.</p></li>
+        <li><p><strong>spacing</strong> – Center-to-center offset along the X axis between models.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Path to the generated Python script.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../index.html" title="geometor.polyhedra.render">&larr; <span class="nav-label">geometor.polyhedra.render</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../../../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../svg3d/index.html" title="geometor.polyhedra.render.svg3d"><span class="nav-label">geometor.polyhedra.render.svg3d</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../../../../../../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../index.html" class="is-active" aria-selected="true" >Modules</a></li>
+        <li><a href="../../../../../../changelog.html"  >Changelog</a></li>
+        <li><a href="../../../../../../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

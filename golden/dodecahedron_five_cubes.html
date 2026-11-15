@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Inscribed Cubes in the Dodecahedron &mdash; Five Inscribed Cubes in the Dodecahedron</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">Five Inscribed Cubes in the Dodecahedron</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Book Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Golden Proportions in Polyhedra</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="octahedron_icosahedron.html" title="Golden Division of the Octahedron">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="rhombic_triacontahedron_odom.html" title="Kepler’s Triacontahedron &amp; Odom’s Section"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="five-inscribed-cubes-in-the-dodecahedron">
+        <h1>Five Inscribed Cubes in the Dodecahedron<a class="headerlink" href="#five-inscribed-cubes-in-the-dodecahedron" title="Link to this heading">¶</a></h1>
+        <p><em>Euclid XIII.17 Roof Construction, the Sixty Pentagonal Diagonals, and the :math:`A_5` Orbit</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>Dodecaedron intra datum sphaeram construere, et comprehendere sphaerae superficie, sicut priora corpora: ostendere etiam quod dodecaedri latus irrationalis est linea quae apotome vocatur.</em></p>
+        <p><em>To construct a dodecahedron within a given sphere, and comprehend it by the surface of the sphere, like the preceding bodies; and to show that the side of the dodecahedron is the irrational line called an apotome.</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="euclid-of-alexandria" title="Person: euclid-of-alexandria">Euclid of Alexandria</span>, <em>Elements</em> Book XIII, Proposition 17</p>
+        </div></blockquote>
+        <section class="level-2" id="interactive-3d-codex">
+        <h2>Interactive 3D Codex<a class="headerlink" href="#interactive-3d-codex" title="Link to this heading">¶</a></h2>
+        <p>The interactive 3D model below displays the regular dodecahedron and its inscribed regular cubes. Use the widget controls to toggle individual cubes and inspect their partition of the pentagonal face diagonals:</p>
+        <div class="polyhedra-3d-mount" data-scene="dodeca_five_cubes"></div></section>
+        <section class="level-2" id="euclid-s-hipped-roof-construction-elements-xiii-17">
+        <h2>Euclid’s Hipped Roof Construction (Elements XIII.17)<a class="headerlink" href="#euclid-s-hipped-roof-construction-elements-xiii-17" title="Link to this heading">¶</a></h2>
+        <p>In Proposition 17 of Book XIII, Euclid provides an extraordinary constructive proof of the regular dodecahedron: rather than constructing it from twelve isolated pentagons, he builds it upon a central <strong>inscribed cube</strong>.</p>
+        <figure class="align-center" id="id1">
+        <img alt="Compound of Inscribed Cubes in the Dodecahedron" src="../_images/dodeca_five_cubes.svg" />
+        <figcaption>
+        <p><span class="caption-text"><em>The canonical regular dodecahedron with translucent golden faces highlighting an inscribed regular cube :math:`(pm 1, pm 1, pm 1)`.</em></span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <p>Take a regular cube of edge length <span class="math notranslate nohighlight">\(2\)</span> (<span class="math notranslate nohighlight">\(Q_{\text{cube}} = 4\)</span>), centered at the origin with eight vertices:</p>
+        <div class="math notranslate nohighlight">
+        \[V_{\text{cube}} = \{(\pm 1, \pm 1, \pm 1)\}\]</div>
+        <p>On each of the six square faces of this cube, erect a roof-like wedge (a hipped roof or ridge wedge) whose ridge line is parallel to one pair of square edges:</p>
+        <ol class="arabic">
+        <li><p>On the top face <span class="math notranslate nohighlight">\(Z = 1\)</span>, the ridge line is parallel to the <span class="math notranslate nohighlight">\(Y\)</span>-axis, joining:</p>
+        <div class="math notranslate nohighlight">
+        \[(0, \phi^{-1}, \phi) \quad \text{and} \quad (0, -\phi^{-1}, \phi)\]</div>
+        <p>where <span class="math notranslate nohighlight">\(\phi^{-1} = \phi - 1 = \frac{\sqrt{5} - 1}{2}\)</span>.</p>
+        </li>
+        <li><p>Across all six square faces, the twelve ridge endpoints lie on the golden planes:</p>
+        <div class="math notranslate nohighlight">
+        \[V_{\text{ridge}} = \{(0, \pm \phi^{-1}, \pm \phi), (\pm \phi^{-1}, \pm \phi, 0), (\pm \phi, 0, \pm \phi^{-1})\}\]</div>
+        </li>
+        </ol>
+        <p>Combining the <span class="math notranslate nohighlight">\(8\)</span> cube corners with the <span class="math notranslate nohighlight">\(12\)</span> ridge endpoints gives the complete set of <span class="math notranslate nohighlight">\(20\)</span> vertices of the regular dodecahedron:</p>
+        <div class="math notranslate nohighlight">
+        \[V_{\text{dod}} = V_{\text{cube}} \cup V_{\text{ridge}}\]</div>
+        <p>Each square face of the underlying cube is spanned by two adjacent sloped pentagonal faces that meet along the ridge line.</p>
+        <section class="level-3" id="exact-metric-verification">
+        <h3>Exact Metric Verification<a class="headerlink" href="#exact-metric-verification" title="Link to this heading">¶</a></h3>
+        <p>To prove that the twenty vertices form a regular dodecahedron, all thirty edges must be shown to have identical length:</p>
+        <ol class="arabic">
+        <li><p><strong>Ridge Length</strong>: The distance between <span class="math notranslate nohighlight">\((0, \phi^{-1}, \phi)\)</span> and <span class="math notranslate nohighlight">\((0, -\phi^{-1}, \phi)\)</span> is:</p>
+        <div class="math notranslate nohighlight">
+        \[Q_{\text{ridge}} = (2\phi^{-1})^2 = 4\phi^{-2} = 4(2 - \phi) = 8 - 4\phi\]</div>
+        </li>
+        <li><p><strong>Rafter Length (Cube Corner to Ridge Endpoint)</strong>:
+        The distance between <span class="math notranslate nohighlight">\((1, 1, 1)\)</span> and <span class="math notranslate nohighlight">\((0, \phi^{-1}, \phi)\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[\Delta x = 1 - 0 = 1 \implies (\Delta x)^2 = 1\]</div>
+        <div class="math notranslate nohighlight">
+        \[\Delta y = 1 - (\phi - 1) = 2 - \phi \implies (\Delta y)^2 = (2 - \phi)^2 = 4 - 4\phi + \phi^2 = 5 - 3\phi\]</div>
+        <div class="math notranslate nohighlight">
+        \[\Delta z = 1 - \phi = -(\phi - 1) \implies (\Delta z)^2 = (\phi - 1)^2 = \phi^2 - 2\phi + 1 = 2 - \phi\]</div>
+        <p>Summing the three squared components:</p>
+        <div class="math notranslate nohighlight">
+        \[Q_{\text{rafter}} = 1 + (5 - 3\phi) + (2 - \phi) = 8 - 4\phi = 4(2 - \phi) = 4\phi^{-2}\]</div>
+        </li>
+        <li><p><strong>Equality of Edges</strong>: Since <span class="math notranslate nohighlight">\(Q_{\text{ridge}} = Q_{\text{rafter}} = 4\phi^{-2}\)</span>, all thirty edges of the dodecahedron are strictly congruent!</p></li>
+        <li><p><strong>Edge Ratio</strong>: The ratio of the cube edge quadrance to the dodecahedron edge quadrance is:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{Q_{\text{cube}}}{Q_{\text{dod}}} = \frac{4}{4\phi^{-2}} = \phi^2 = \phi + 1\]</div>
+        <p>Thus, the cube edge length is in exact golden proportion to the dodecahedron edge length:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{\text{Length}_{\text{cube}}}{\text{Length}_{\text{dod}}} = \phi : 1\]</div>
+        </li>
+        </ol>
+        </section>
+        </section>
+        <section class="level-2" id="the-sixty-diagonals-and-the-a-5-orbit">
+        <h2>The Sixty Diagonals and the <span class="math notranslate nohighlight">\(A_5\)</span> Orbit<a class="headerlink" href="#the-sixty-diagonals-and-the-a-5-orbit" title="Link to this heading">¶</a></h2>
+        <p>Every edge of an inscribed regular cube connects two non-adjacent vertices of a pentagonal face of the dodecahedron. Therefore, <strong>every cube edge is a diagonal of a pentagon</strong>.</p>
+        <figure class="align-center" id="id2">
+        <img alt="Regular Pentagon and Pentagram Golden Sections" src="../_images/pentagon_cross_section.svg" />
+        <figcaption>
+        <p><span class="caption-text"><em>The regular pentagon and pentagram cross-section showing diagonals cutting one another in extreme and mean ratio (:math:`phi^2`).</em></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <section class="level-3" id="partition-of-diagonals">
+        <h3>Partition of Diagonals<a class="headerlink" href="#partition-of-diagonals" title="Link to this heading">¶</a></h3>
+        <p>A regular dodecahedron has twelve regular pentagonal faces. Each pentagon has <span class="math notranslate nohighlight">\(\binom{5}{2} - 5 = 5\)</span> diagonals:</p>
+        <div class="math notranslate nohighlight">
+        \[12 \text{ faces} \times 5 \text{ diagonals} = 60 \text{ diagonals in total}\]</div>
+        <p>Because each regular cube has twelve edges, five distinct regular cubes require:</p>
+        <div class="math notranslate nohighlight">
+        \[5 \text{ cubes} \times 12 \text{ edges} = 60 \text{ edges}\]</div>
+        <p>In the <code class="docutils literal notranslate"><span class="pre">geometor.polyhedra.golden.build_dodecahedron_five_cubes()</span></code> construction:</p>
+        <ul class="simple">
+        <li><p>The 60 edges of the five inscribed cubes are <strong>completely disjoint</strong>;</p></li>
+        <li><p>They form an exact 1-to-1 partition of all 60 diagonals of the twelve pentagonal faces;</p></li>
+        <li><p>Each pentagonal face contains exactly one edge from each of the five cubes, forming an inscribed pentagram!</p></li>
+        </ul>
+        </section>
+        <section class="level-3" id="group-theoretic-significance-a-5">
+        <h3>Group-Theoretic Significance (<span class="math notranslate nohighlight">\(A_5\)</span>)<a class="headerlink" href="#group-theoretic-significance-a-5" title="Link to this heading">¶</a></h3>
+        <p>The rotational symmetry group of the regular dodecahedron is the <strong>alternating group</strong> <span class="math notranslate nohighlight">\(A_5\)</span> of order <span class="math notranslate nohighlight">\(60\)</span>.</p>
+        <p>Any rotational symmetry of the dodecahedron permutes the five inscribed cubes among themselves. Because no non-trivial rotation leaves all five cubes fixed, this action defines a faithful group isomorphism:</p>
+        <div class="math notranslate nohighlight">
+        \[\text{Rot}(\text{Dodecahedron}) \cong A_5 \subset S_5\]</div>
+        <p>This provides the classical geometric representation of the simple group of order 60, directly linking the solubility of quintic polynomials with the divine proportion in 3-space.</p>
+        </section>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="octahedron_icosahedron.html" title="Golden Division of the Octahedron">&larr; <span class="nav-label">Golden Division of the Octahedron</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">Five Inscribed Cubes in the Dodecahedron</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="rhombic_triacontahedron_odom.html" title="Kepler’s Triacontahedron &amp; Odom’s Section"><span class="nav-label">Kepler’s Triacontahedron & Odom’s Section</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../modules/index.html"  >Modules</a></li>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+        <li><a href="../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

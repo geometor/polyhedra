@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Octahedron &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Book Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">The Five Platonic Solids</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="hexahedron.html" title="Hexahedron (Cube)">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="icosahedron.html" title="Icosahedron"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="octahedron">
+        <h1>Octahedron<a class="headerlink" href="#octahedron" title="Link to this heading">¶</a></h1>
+        <p><em>Euclid XIII.14 · Plato Timaeus (Air) · Pacioli De Divina Proportione Cap. XXIII · Tabulae XV–XX</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>To construct a regular octahedron inside a given sphere and to prove that the square on the diameter of the sphere is double the square on the side of the octahedron.</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="euclid-of-alexandria" title="Person: euclid-of-alexandria">Euclid of Alexandria</span>, <em>Elements</em> Book XIII, Proposition 14 (G-Index: <code class="docutils literal notranslate"><span class="pre">G.594</span></code>)</p>
+        </div></blockquote>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 20.0%" />
+        <col style="width: 20.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Classical Name</p></th>
+        <th class="head"><p>Greek Orthography</p></th>
+        <th class="head"><p>Element (Plato)</p></th>
+        <th class="head"><p>Schläfli $\{p, q\}$</p></th>
+        <th class="head"><p>Euclid Proposition</p></th>
+        <th class="head"><p>Pacioli Chapter</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Octahedron</strong></p></td>
+        <td><p>Ὀκτάεδρον</p></td>
+        <td><p><strong>Air</strong> (<em>Aer</em> / Ἀήρ)</p></td>
+        <td><p>$\{3, 4\}$</p></td>
+        <td><p>Book XIII, Prop. 14 (<code class="docutils literal notranslate"><span class="pre">G.594</span></code>)</p></td>
+        <td><p><em>De Divina Proportione</em>, Cap. XXIII</p></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>The <strong>Regular Octahedron</strong> is the central dual bridge between the fire-tetrahedron and the water-icosahedron. In Plato’s <em>Timaeus</em> (56a–56b), the octahedron is assigned to the element <strong>Air</strong>: with eight equilateral triangular faces and six vertices, it holds intermediate mobility, intermediate sharpness of dihedral angles, and intermediate fineness of elemental parts between the sharp tetrahedron (fire) and the multi-faceted icosahedron (water).</p>
+        <p>Euclid constructs the octahedron in <em>Elements</em> XIII.14 by drawing two diameters of the given sphere at right angles, erecting a third perpendicular diameter through the center, and joining their six endpoints. He establishes the fundamental metric theorem that the diameter squared of the circumscribing sphere is double the square on the side of the octahedron (<span class="math notranslate nohighlight">\(D^2 = 2 s^2 \implies Q_D = 2 Q_E\)</span>).</p>
+        <p>In the GEOMETOR formulation, the octahedron is the simplest regular solid to model symbolically, residing on the six Cartesian unit basis vectors <span class="math notranslate nohighlight">\((\pm 1, 0, 0), (0, \pm 1, 0), (0, 0, \pm 1)\)</span> over <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+        <section class="level-2" id="interactive-3d-explorer">
+        <h2>Interactive 3D Explorer<a class="headerlink" href="#interactive-3d-explorer" title="Link to this heading">¶</a></h2>
+        <div class="polyhedra-3d-mount" data-solid="octahedron" data-initial-variant="vacuum"></div><div class="admonition note">
+        <p class="admonition-title">Note</p>
+        <p><strong>Interactive Codex Controls</strong>:</p>
+        <ul class="simple">
+        <li><p><strong>Orbit &amp; Inspect</strong>: Click and drag to orbit in three dimensions. Scroll or pinch to zoom.</p></li>
+        <li><p><strong>Variant Toggle</strong>: Switch between Leonardo’s <em>Vacuum</em> (wooden beams), <em>Solidum</em> (opaque triangular facets), and <em>Elevatum</em> (stellated octahedron / Kepler’s <em>Stella Octangula</em>).</p></li>
+        <li><p><strong>Aperture Slider</strong>: Scrub the wooden beam aperture <span class="math notranslate nohighlight">\(\mu \in [0.10, 0.45]\)</span> to observe how opposite vertex pyramids frame internal voids.</p></li>
+        <li><p><strong>Structural Overlays</strong>: Toggle the <strong>Golden Ratio</strong> edge division and <strong>Polar Dual</strong> (the cube connecting face centroids).</p></li>
+        <li><p><strong>Perspective Snap</strong>: Snap to Leonardo da Vinci’s canonical 1509 woodcut orientation.</p></li>
+        </ul>
+        </div>
+        </section>
+        <section class="level-2" id="exact-symbolic-coordinates-metric-ledger">
+        <h2>Exact Symbolic Coordinates &amp; Metric Ledger<a class="headerlink" href="#exact-symbolic-coordinates-metric-ledger" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="canonical-lattice-coordinates">
+        <h3>Canonical Lattice Coordinates<a class="headerlink" href="#canonical-lattice-coordinates" title="Link to this heading">¶</a></h3>
+        <p>The regular octahedron is defined by the six axial unit vertices:</p>
+        <div class="math notranslate nohighlight">
+        \[\begin{split}\begin{aligned}
+        V_0 &amp;= (1, 0, 0), &amp; V_1 &amp;= (-1, 0, 0) \\
+        V_2 &amp;= (0, 1, 0), &amp; V_3 &amp;= (0, -1, 0) \\
+        V_4 &amp;= (0, 0, 1), &amp; V_5 &amp;= (0, 0, -1)
+        \end{aligned}\end{split}\]</div>
+        </section>
+        <section class="level-3" id="face-cycles-normal-orientations">
+        <h3>Face Cycles &amp; Normal Orientations<a class="headerlink" href="#face-cycles-normal-orientations" title="Link to this heading">¶</a></h3>
+        <p>The eight equilateral triangular faces are oriented with outward-pointing counter-clockwise normal cycles:</p>
+        <div class="math notranslate nohighlight">
+        \[\begin{split}\begin{aligned}
+        F_0 &amp;= (0, 2, 4) \quad (+++ \text{ octant}, \; n_0 = (1, 1, 1)) \\
+        F_1 &amp;= (0, 4, 3) \quad (+-+ \text{ octant}, \; n_1 = (1, -1, 1)) \\
+        F_2 &amp;= (0, 3, 5) \quad (+-- \text{ octant}, \; n_2 = (1, -1, -1)) \\
+        F_3 &amp;= (0, 5, 2) \quad (++- \text{ octant}, \; n_3 = (1, 1, -1)) \\
+        F_4 &amp;= (1, 4, 2) \quad (-++ \text{ octant}, \; n_4 = (-1, 1, 1)) \\
+        F_5 &amp;= (1, 3, 4) \quad (--+ \text{ octant}, \; n_5 = (-1, -1, 1)) \\
+        F_6 &amp;= (1, 5, 3) \quad (--- \text{ octant}, \; n_6 = (-1, -1, -1)) \\
+        F_7 &amp;= (1, 2, 5) \quad (-+- \text{ octant}, \; n_7 = (-1, 1, -1))
+        \end{aligned}\end{split}\]</div>
+        <p>The twelve edges join adjacent axial points, each lying in one of the three coordinate planes (<span class="math notranslate nohighlight">\(xy\)</span>, <span class="math notranslate nohighlight">\(yz\)</span>, <span class="math notranslate nohighlight">\(zx\)</span>).</p>
+        </section>
+        <section class="level-3" id="d-rational-trigonometry-ledger">
+        <h3>3D Rational Trigonometry Ledger<a class="headerlink" href="#d-rational-trigonometry-ledger" title="Link to this heading">¶</a></h3>
+        <p>In Rational Trigonometry, all metric measures are exact integers or simple fractions:</p>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 35.0%" />
+        <col style="width: 25.0%" />
+        <col style="width: 40.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Metric Invariant</p></th>
+        <th class="head"><p>Exact Value</p></th>
+        <th class="head"><p>Geometric Significance</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Edge Quadrance</strong> <span class="math notranslate nohighlight">\(Q_E\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+        <td><p>Edge length <span class="math notranslate nohighlight">\(s = \sqrt{2}\)</span> across axes</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Circumquadrance</strong> <span class="math notranslate nohighlight">\(Q_{\text{out}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+        <td><p>Circumradius <span class="math notranslate nohighlight">\(R = 1\)</span> along coordinate axes</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Midquadrance</strong> <span class="math notranslate nohighlight">\(Q_{\text{mid}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+        <td><p>Midradius <span class="math notranslate nohighlight">\(r_{\text{mid}} = 1/\sqrt{2}\)</span> at edge midpoint <span class="math notranslate nohighlight">\((1/2, 1/2, 0)\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Inquadrance</strong> <span class="math notranslate nohighlight">\(Q_{\text{in}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1/3\)</span></p></td>
+        <td><p>Inradius <span class="math notranslate nohighlight">\(r = 1/\sqrt{3}\)</span> at face centroid <span class="math notranslate nohighlight">\((1/3, 1/3, 1/3)\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Sphere Quadrance Ratio</strong> <span class="math notranslate nohighlight">\(Q_{\text{in}} / Q_{\text{out}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1/3\)</span></p></td>
+        <td><p>Concentric sphere volume ratio <span class="math notranslate nohighlight">\((1/3)^{3/2} = 1/(3\sqrt{3})\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Mid-to-Circum Ratio</strong> <span class="math notranslate nohighlight">\(Q_{\text{mid}} / Q_{\text{out}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+        <td><p>Mid-sphere tangent to all 12 edges</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Euclid XIII.14 Invariant</strong> <span class="math notranslate nohighlight">\(Q_D / Q_E\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(Q_{\text{diameter}} = 4 Q_{\text{out}} = 4 \implies 4 / 2 = 2\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Dihedral Spread</strong> <span class="math notranslate nohighlight">\(s\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(8/9\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\cos\theta = -1/3 \implies s = 1 - (-1/3)^2 = 8/9\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Polar Dual</strong></p></td>
+        <td><p>Hexahedron (Cube)</p></td>
+        <td><p>Connecting 8 face centroids produces regular cube <span class="math notranslate nohighlight">\(\{4, 3\}\)</span></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-3" id="dihedral-spread-derivation">
+        <h3>Dihedral Spread Derivation<a class="headerlink" href="#dihedral-spread-derivation" title="Link to this heading">¶</a></h3>
+        <p>Consider adjacent faces <span class="math notranslate nohighlight">\(F_0 = (0, 2, 4)\)</span> and <span class="math notranslate nohighlight">\(F_1 = (0, 4, 3)\)</span> with unnormalized outward normals <span class="math notranslate nohighlight">\(n_0 = (1, 1, 1)\)</span> and <span class="math notranslate nohighlight">\(n_1 = (1, -1, 1)\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[n_0 \cdot n_1 = 1(1) + 1(-1) + 1(1) = 1\]</div>
+        <div class="math notranslate nohighlight">
+        \[Q(n_0) = 1^2 + 1^2 + 1^2 = 3, \quad Q(n_1) = 1^2 + (-1)^2 + 1^2 = 3\]</div>
+        <p>The cosine of the interior dihedral angle between the planes is <span class="math notranslate nohighlight">\(\cos\theta = -1/3\)</span> (the angle is <span class="math notranslate nohighlight">\(\theta = \arccos(-1/3) \approx 109.47^\circ\)</span>). The dihedral spread is:</p>
+        <div class="math notranslate nohighlight">
+        \[s(F_0, F_1) = 1 - \frac{(n_0 \cdot n_1)^2}{Q(n_0) Q(n_1)} = 1 - \frac{1^2}{3 \times 3} = 1 - \frac{1}{9} = \frac{8}{9}\]</div>
+        <div class="admonition important">
+        <p class="admonition-title">Important</p>
+        <p><strong>Remarkable Rational Trigonometry Invariant</strong>:
+        The Octahedron <span class="math notranslate nohighlight">\(\{3, 4\}\)</span> and the Tetrahedron <span class="math notranslate nohighlight">\(\{3, 3\}\)</span> share the <strong>identical dihedral spread</strong> <span class="math notranslate nohighlight">\(s = 8/9\)</span>, despite possessing entirely different symmetry groups (<span class="math notranslate nohighlight">\(O_h\)</span> vs. <span class="math notranslate nohighlight">\(T_d\)</span>) and vertex figures!</p>
+        </div>
+        </section>
+        <section class="level-3" id="topological-invariants">
+        <h3>Topological Invariants<a class="headerlink" href="#topological-invariants" title="Link to this heading">¶</a></h3>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 30.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 15.0%" />
+        <col style="width: 25.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Body Variant</p></th>
+        <th class="head"><p>Vertices <span class="math notranslate nohighlight">\(V\)</span></p></th>
+        <th class="head"><p>Edges <span class="math notranslate nohighlight">\(E\)</span></p></th>
+        <th class="head"><p>Faces <span class="math notranslate nohighlight">\(F\)</span></p></th>
+        <th class="head"><p>Euler Characteristic <span class="math notranslate nohighlight">\(\chi\)</span> &amp; Genus <span class="math notranslate nohighlight">\(g\)</span></p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Solidum</strong> (Closed Polyhedron)</p></td>
+        <td><p>6</p></td>
+        <td><p>12</p></td>
+        <td><p>8</p></td>
+        <td><p><span class="math notranslate nohighlight">\(\chi = V - E + F = 2\)</span>, <span class="math notranslate nohighlight">\(g = 0\)</span> (Sphere)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Vacuum</strong> (Open Wooden Frame)</p></td>
+        <td><p>64</p></td>
+        <td><p>120</p></td>
+        <td><p>48</p></td>
+        <td><p><span class="math notranslate nohighlight">\(\chi = 4 - 2F = -12\)</span>, <span class="math notranslate nohighlight">\(g = F - 1 = 7\)</span> (7-Hole Torus)</p></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>In Leonardo da Vinci’s <em>Vacuum</em>, the eight triangular openings create seven interconnected tunnels through the center of the frame, yielding genus <span class="math notranslate nohighlight">\(g = 8 - 1 = 7\)</span> and Euler characteristic <span class="math notranslate nohighlight">\(\chi = 4 - 2(8) = -12\)</span>.</p>
+        </section>
+        </section>
+        <section class="level-2" id="golden-proportions-phi-in-the-octahedron">
+        <h2>Golden Proportions (<span class="math notranslate nohighlight">\(\phi\)</span>) in the Octahedron<a class="headerlink" href="#golden-proportions-phi-in-the-octahedron" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="golden-edge-division-into-the-regular-icosahedron">
+        <h3>Golden Edge Division into the Regular Icosahedron<a class="headerlink" href="#golden-edge-division-into-the-regular-icosahedron" title="Link to this heading">¶</a></h3>
+        <p>The octahedron is the direct geometric mother of the <strong>Regular Icosahedron</strong> through a classic transformation: <strong>golden sectioning of its twelve edges</strong>.</p>
+        <figure class="align-center" id="id1">
+        <a class="reference internal image-reference" href="../_images/octahedron_solidum.svg"><img alt="Octahedron as Mother of the Icosahedron" src="../_images/octahedron_solidum.svg" style="width: 60%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><em>Golden Edge Division</em>: Dividing each of the 12 directed edges of an octahedron of radius <span class="math notranslate nohighlight">\(\phi^2\)</span> in the golden ratio <span class="math notranslate nohighlight">\(1 : \phi\)</span> produces the 12 vertices of the Regular Icosahedron.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <p>Consider a regular octahedron scaled so that its axial radius is <span class="math notranslate nohighlight">\(R = \phi^2 = \phi + 1 = \frac{3+\sqrt{5}}{2}\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[V_{\text{oct}} \in \{(\pm \phi^2, 0, 0), (0, \pm \phi^2, 0), (0, 0, \pm \phi^2)\}\]</div>
+        <p>The edge quadrance of this octahedron is:</p>
+        <div class="math notranslate nohighlight">
+        \[Q_{\text{oct}} = (\phi^2)^2 + (\phi^2)^2 = 2\phi^4 = 2(3\phi + 2) = 6\phi + 4\]</div>
+        <p>If we orient each of the twelve edges cyclically around the faces and divide each directed edge from vertex <span class="math notranslate nohighlight">\(A\)</span> to vertex <span class="math notranslate nohighlight">\(B\)</span> in the golden ratio <span class="math notranslate nohighlight">\(1 : \phi\)</span>, the division point <span class="math notranslate nohighlight">\(P\)</span> is given by:</p>
+        <div class="math notranslate nohighlight">
+        \[P = \frac{\phi A + B}{\phi + 1} = \phi^{-1} A + \phi^{-2} B\]</div>
+        <p>Because <span class="math notranslate nohighlight">\(\phi^2 \times \phi^{-1} = \phi\)</span> and <span class="math notranslate nohighlight">\(\phi^2 \times \phi^{-2} = 1\)</span>, the coordinates of these twelve division points are:</p>
+        <div class="math notranslate nohighlight">
+        \[P \in \{(0, \pm 1, \pm \phi), (\pm \phi, 0, \pm 1), (\pm 1, \pm \phi, 0)\}\]</div>
+        <p>These are <strong>identically the twelve canonical vertices of the Regular Icosahedron</strong>!</p>
+        </section>
+        <section class="level-3" id="quadrance-segments-along-the-octahedral-edges">
+        <h3>Quadrance Segments along the Octahedral Edges<a class="headerlink" href="#quadrance-segments-along-the-octahedral-edges" title="Link to this heading">¶</a></h3>
+        <p>The golden division divides each octahedron edge into a major segment <span class="math notranslate nohighlight">\(S_{\text{maj}}\)</span> and a minor segment <span class="math notranslate nohighlight">\(S_{\text{min}}\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{Q_{\text{maj}}}{Q_{\text{min}}} = \phi^2 = \phi + 1 = \frac{3+\sqrt{5}}{2}\]</div>
+        <p>The distance between two adjacent division points across any octahedral face is exactly <span class="math notranslate nohighlight">\(2\)</span>, yielding an inscribed icosahedron with exact edge quadrance <span class="math notranslate nohighlight">\(Q_{\text{ico}} = 4\)</span>.</p>
+        </section>
+        </section>
+        <section class="level-2" id="leonardo-da-vinci-s-1509-woodcuts-vs-exact-mathematical-svgs">
+        <h2>Leonardo da Vinci’s 1509 Woodcuts vs. Exact Mathematical SVGs<a class="headerlink" href="#leonardo-da-vinci-s-1509-woodcuts-vs-exact-mathematical-svgs" title="Link to this heading">¶</a></h2>
+        <p>Tabulae XV through XX of Pacioli’s <em>De Divina Proportione</em> depict Leonardo’s six variations on the regular octahedron: <em>Planum Solidum</em>, <em>Planum Vacuum</em>, <em>Abscisum Solidum</em>, <em>Abscisum Vacuum</em>, <em>Elevatum Solidum</em>, and <em>Elevatum Vacuum</em>.</p>
+        <section class="level-3" id="comparative-visual-analysis">
+        <h3>Comparative Visual Analysis<a class="headerlink" href="#comparative-visual-analysis" title="Link to this heading">¶</a></h3>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 50.0%" />
+        <col style="width: 50.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Leonardo da Vinci (1509 Woodcut)</p></th>
+        <th class="head"><p>GEOMETOR Exact Symbolic Reconstruction</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><figure class="align-default" id="id2">
+        <a class="reference internal image-reference" href="../_images/0219.g1.png"><img alt="Leonardo da Vinci — Tabula XV: Octahedron Planum Solidum (1509)" src="../_images/0219.g1.png" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Tabula XV</strong>: <em>Octahedron Planum Solidum</em> (Folio 0219)</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        <td><figure class="align-default" id="id3">
+        <a class="reference internal image-reference" href="../_images/octahedron_solidum.svg"><img alt="GEOMETOR Exact SVG — Octahedron Solidum" src="../_images/octahedron_solidum.svg" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Exact Solidum</strong>: Renaissance Chiaroscuro Perspective</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 50.0%" />
+        <col style="width: 50.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Leonardo da Vinci (1509 Woodcut)</p></th>
+        <th class="head"><p>GEOMETOR Exact Symbolic Reconstruction</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><figure class="align-default" id="id4">
+        <a class="reference internal image-reference" href="../_images/0221.g1.png"><img alt="Leonardo da Vinci — Tabula XVI: Octahedron Planum Vacuum (1509)" src="../_images/0221.g1.png" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Tabula XVI</strong>: <em>Octahedron Planum Vacuum</em> (Folio 0221)</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        <td><figure class="align-default" id="id5">
+        <a class="reference internal image-reference" href="../_images/octahedron_vacuum.svg"><img alt="GEOMETOR Exact SVG — Octahedron Vacuum" src="../_images/octahedron_vacuum.svg" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Exact Vacuum</strong>: Open Wooden Beam Lattice (<span class="math notranslate nohighlight">\(\mu = 0.25\)</span>)</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 50.0%" />
+        <col style="width: 50.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Leonardo da Vinci (1509 Woodcut)</p></th>
+        <th class="head"><p>GEOMETOR Exact Symbolic Reconstruction</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><figure class="align-default" id="id6">
+        <a class="reference internal image-reference" href="../_images/0227.g1.png"><img alt="Leonardo da Vinci — Tabula XIX: Octahedron Elevatum Solidum (1509)" src="../_images/0227.g1.png" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Tabula XIX</strong>: <em>Octahedron Elevatum Solidum</em> (Folio 0227)</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        <td><figure class="align-default" id="id7">
+        <a class="reference internal image-reference" href="../_images/octahedron_elevatum.svg"><img alt="GEOMETOR Exact SVG — Octahedron Elevatum" src="../_images/octahedron_elevatum.svg" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Exact Elevatum</strong>: Stellated Octahedron (<em>Stella Octangula</em>)</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        </section>
+        <section class="level-2" id="d-unfolded-net">
+        <h2>2D Unfolded Net<a class="headerlink" href="#d-unfolded-net" title="Link to this heading">¶</a></h2>
+        <p>The regular octahedron unfolds along five of its twelve edges into a planar net of eight equilateral triangles:</p>
+        <figure class="align-center" id="id8">
+        <a class="reference internal image-reference" href="../_images/octahedron_net.svg"><img alt="2D Unfolded Net of the Regular Octahedron" src="../_images/octahedron_net.svg" style="width: 70%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><em>2D Dihedral-Hinge Unfolding</em>: Double-row arrangement of eight equilateral triangular faces connected along hinge seams (dashed) with external cut boundaries (solid).</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <p>For an octahedron of canonical edge length <span class="math notranslate nohighlight">\(s = \sqrt{2}\)</span> (<span class="math notranslate nohighlight">\(Q_E = 2\)</span>), the total surface area and volume are:</p>
+        <div class="math notranslate nohighlight">
+        \[A_{\text{total}} = 8 \times \frac{\sqrt{3}}{4} s^2 = 2\sqrt{3}(2) = 4\sqrt{3}, \quad V_{\text{total}} = \frac{\sqrt{2}}{3} s^3 = \frac{\sqrt{2}}{3}(2\sqrt{2}) = \frac{4}{3}\]</div>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="hexahedron.html" title="Hexahedron (Cube)">&larr; <span class="nav-label">Hexahedron (Cube)</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="icosahedron.html" title="Icosahedron"><span class="nav-label">Icosahedron</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../modules/index.html"  >Modules</a></li>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+        <li><a href="../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

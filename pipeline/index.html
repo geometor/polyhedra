@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Symbolic Infrastructure &amp; Multi-Engine Pipeline &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a0b65bc5" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../leonardo/icosahedron_dodecahedron.html" title="Leonardo Plates: Icosahedron, Dodecahedron &amp; Vigintisex Basium (Tabulae XXI–XXXVI)">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../modules/index.html" title="Modules"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="d-symbolic-infrastructure-multi-engine-pipeline">
+        <h1>3D Symbolic Infrastructure &amp; Multi-Engine Pipeline<a class="headerlink" href="#d-symbolic-infrastructure-multi-engine-pipeline" title="Link to this heading">¶</a></h1>
+        <p><em>Exact Symbolic 3D Modeling, Conway/Pacioli Operators, and Multi-Target Export Architecture</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>Sicut punctum est principium lineae, et linea superficiei, et superficies corporis: ita et scientia de corpore praesupponit scientiam de superficiebus, et haec de lineis, et haec de punctis.</em></p>
+        <p><em>Just as a point is the beginning of a line, a line of a surface, and a surface of a body: so also the science of body presupposes the science of surfaces, this of lines, and this of points.</em></p>
+        <p class="attribution">—<span class="person-ref" data-person="st.-thomas-aquinas" title="Person: st.-thomas-aquinas">St. Thomas Aquinas</span>, <em>In De Caelo et Mundo</em>, Lib. I, Lect. 2</p>
+        </div></blockquote>
+        <p>The core design mandate of <strong>GEOMETOR Polyhedra</strong> is absolute mathematical truth: <strong>100% exact symbolic algebra over algebraic number fields</strong> <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi, \sqrt{d})\)</span>, with zero floating-point approximations.</p>
+        <p>From a single exact symbolic model instantiated in <code class="docutils literal notranslate"><span class="pre">geometor.polyhedra.model3d</span></code>, the system drives a unified multi-engine pipeline delivering four distinct production targets: publication-grade 2D SVGs, interactive Book Codex canvas viewports, IngeTrazo CAD assemblies via MCP, and photorealistic studio rendering in Blender 5.x.</p>
+        <p>—</p>
+        </section>
+        <section class="level-1" id="i-exact-symbolic-3d-architecture-model3d">
+        <h1>I. Exact Symbolic 3D Architecture (<code class="docutils literal notranslate"><span class="pre">model3d</span></code>)<a class="headerlink" href="#i-exact-symbolic-3d-architecture-model3d" title="Link to this heading">¶</a></h1>
+        <p>Every spatial entity in <code class="docutils literal notranslate"><span class="pre">geometor.polyhedra.model3d</span></code> is grounded in SymPy symbolic expressions (<span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{d})\)</span>). The module enforces a <strong>strict zero-float contract</strong>: passing Python <code class="docutils literal notranslate"><span class="pre">float</span></code> or <code class="docutils literal notranslate"><span class="pre">sympy.Float</span></code> values immediately raises a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+        <section class="level-3" id="spatial-primitives-primitives-py">
+        <h3>Spatial Primitives (<code class="docutils literal notranslate"><span class="pre">primitives.py</span></code>)<a class="headerlink" href="#spatial-primitives-primitives-py" title="Link to this heading">¶</a></h3>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 22.0%" />
+        <col style="width: 28.0%" />
+        <col style="width: 50.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Class</p></th>
+        <th class="head"><p>Exact Coordinates</p></th>
+        <th class="head"><p>Key Operations &amp; Algebraic Invariants</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Vector3D</span></code></p></td>
+        <td><p><span class="math notranslate nohighlight">\((x, y, z) \in \mathbb{K}^3\)</span></p></td>
+        <td><p>Vector addition, scalar multiplication, dot product, cross product, exact quadrance <span class="math notranslate nohighlight">\(Q(\mathbf{v}) = x^2 + y^2 + z^2\)</span>.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Point3D</span></code></p></td>
+        <td><p><span class="math notranslate nohighlight">\((x, y, z) \in \mathbb{K}^3\)</span></p></td>
+        <td><p>Affine displacement <span class="math notranslate nohighlight">\(P + \mathbf{v}\)</span>, vector difference <span class="math notranslate nohighlight">\(P_1 \to P_2\)</span>, quadrance between points <span class="math notranslate nohighlight">\(Q(P_1, P_2)\)</span>, exact linear interpolation <span class="math notranslate nohighlight">\(\text{lerp}(P_2, t) = (1 - t)P_1 + t P_2\)</span>.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Line3D</span></code></p></td>
+        <td><p><span class="math notranslate nohighlight">\(P_1 + t(P_2 - P_1)\)</span></p></td>
+        <td><p>Parametric 3D line passing through two exact points; direction vector, containment test.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Plane3D</span></code></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\mathbf{n} \cdot (P - P_0) = 0\)</span></p></td>
+        <td><p>Exact plane equation <span class="math notranslate nohighlight">\(ax + by + cz + d = 0\)</span>; normal vector, point projection, line-plane intersection, segment intersection.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Sphere3D</span></code></p></td>
+        <td><p><span class="math notranslate nohighlight">\((C, Q_R)\)</span></p></td>
+        <td><p>Sphere center <span class="math notranslate nohighlight">\(C \in \text{Point3D}\)</span> and exact squared radius (quadrance) <span class="math notranslate nohighlight">\(Q_R \in \mathbb{K}\)</span>; point power, intersection with lines.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Solid3D</span></code></p></td>
+        <td><p>Frozen manifold</p></td>
+        <td><p>Closed polyhedral surface holding exact vertices, face polygons, boundary edges, face centroids, outward normals, topological invariants (<span class="math notranslate nohighlight">\(\chi, g\)</span>), and semantic face roles.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-3" id="the-solid3d-manifold-data-model">
+        <h3>The Solid3D Manifold Data Model<a class="headerlink" href="#the-solid3d-manifold-data-model" title="Link to this heading">¶</a></h3>
+        <p><code class="docutils literal notranslate"><span class="pre">Solid3D</span></code> is a frozen, immutable data structure representing an exact orientable 2-manifold surface. Each face is stored as an ordered tuple of vertex indices wound counter-clockwise when viewed from the exterior.</p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">geometor.polyhedra.model3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Solid3D</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">geometor.polyhedra.platonic</span><span class="w"> </span><span class="kn">import</span> <span class="n">PHI</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+        <span class="c1"># Golden vertices of the regular icosahedron</span>
+        <span class="n">verts</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">PHI</span><span class="p">),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">PHI</span><span class="p">),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">PHI</span><span class="p">),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">PHI</span><span class="p">),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">PHI</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">PHI</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">PHI</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="n">PHI</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="n">PHI</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="o">-</span><span class="n">PHI</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="n">PHI</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="o">-</span><span class="n">PHI</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Solid3D automatically computes edges, face centroids, face normals,</span>
+        <span class="c1"># Euler characteristic, and verifies planarity and orientation.</span>
+        <span class="n">ico</span> <span class="o">=</span> <span class="n">Solid3D</span><span class="p">(</span><span class="n">slug</span><span class="o">=</span><span class="s2">"icosahedron"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Regular Icosahedron"</span><span class="p">,</span> <span class="n">vertices</span><span class="o">=</span><span class="n">verts</span><span class="p">,</span> <span class="n">faces</span><span class="o">=...</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">ico</span><span class="o">.</span><span class="n">euler_characteristic</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="k">assert</span> <span class="n">ico</span><span class="o">.</span><span class="n">are_faces_coplanar</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">ico</span><span class="o">.</span><span class="n">is_outward_oriented</span><span class="p">()</span>
+        </pre></div>
+        </div>
+        <p>—</p>
+        </section>
+        </section>
+        <section class="level-1" id="ii-conway-pacioli-polyhedral-operators-operators-py">
+        <h1>II. Conway &amp; Pacioli Polyhedral Operators (<code class="docutils literal notranslate"><span class="pre">operators.py</span></code>)<a class="headerlink" href="#ii-conway-pacioli-polyhedral-operators-operators-py" title="Link to this heading">¶</a></h1>
+        <p>The <code class="docutils literal notranslate"><span class="pre">geometor.polyhedra.operators</span></code> module provides five closed-form constructive geometric transformations that preserve exact algebraic coordinates:</p>
+        <section class="level-3" id="vacuate-vacuate">
+        <h3>1. Vacuate (<code class="docutils literal notranslate"><span class="pre">vacuate</span></code>)<a class="headerlink" href="#vacuate-vacuate" title="Link to this heading">¶</a></h3>
+        <p>Implements Leonardo da Vinci’s hollow wooden manifold (<em>Corpus Vacuum</em>). Concentric outer and inner frame rails are generated around central window openings with rational shrink parameters <span class="math notranslate nohighlight">\(\mu\)</span> (aperture) and <span class="math notranslate nohighlight">\(\lambda\)</span> (shell thickness):</p>
+        <div class="math notranslate nohighlight">
+        \[V_{\text{vac}} = 2V + 4E, \quad E_{\text{vac}} = 12E, \quad F_{\text{vac}} = 6E, \quad g = F - 1\]</div>
+        </section>
+        <section class="level-3" id="rectify-rectify">
+        <h3>2. Rectify (<code class="docutils literal notranslate"><span class="pre">rectify</span></code>)<a class="headerlink" href="#rectify-rectify" title="Link to this heading">¶</a></h3>
+        <p>Pacioli’s edge-midpoint truncation (<em>Abscisum</em>). Places vertices at the exact midpoints <span class="math notranslate nohighlight">\(M_e = \frac{1}{2}(u + v)\)</span> of all edges, transforming:
+        - <strong>Tetrahedron</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Regular Octahedron</strong> (<span class="math notranslate nohighlight">\(V=6, E=12, F=8\)</span>)
+        - <strong>Hexahedron</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Cuboctahedron</strong> (<span class="math notranslate nohighlight">\(V=12, E=24, F=14\)</span>)
+        - <strong>Octahedron</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Cuboctahedron</strong> (<span class="math notranslate nohighlight">\(V=12, E=24, F=14\)</span>)
+        - <strong>Dodecahedron</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Icosidodecahedron</strong> (<span class="math notranslate nohighlight">\(V=30, E=60, F=32\)</span>)
+        - <strong>Icosahedron</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Icosidodecahedron</strong> (<span class="math notranslate nohighlight">\(V=30, E=60, F=32\)</span>)</p>
+        </section>
+        <section class="level-3" id="truncate-truncate">
+        <h3>3. Truncate (<code class="docutils literal notranslate"><span class="pre">truncate</span></code>)<a class="headerlink" href="#truncate-truncate" title="Link to this heading">¶</a></h3>
+        <p>Archimedean corner-cutting at rational edge parameter <span class="math notranslate nohighlight">\(t \in (0, 1/2)\)</span> (default <span class="math notranslate nohighlight">\(t = 1/3\)</span>). Divides each directed edge into segments of ratio <span class="math notranslate nohighlight">\(t : 1-2t : t\)</span>, producing:
+        - Truncated Tetrahedron (<span class="math notranslate nohighlight">\(V=12, E=18, F=8\)</span>)
+        - Truncated Octahedron (<span class="math notranslate nohighlight">\(V=24, E=36, F=14\)</span>)
+        - Truncated Icosahedron (<span class="math notranslate nohighlight">\(V=60, E=90, F=32\)</span>, Fullerene soccer ball)</p>
+        </section>
+        <section class="level-3" id="elevate-elevate">
+        <h3>4. Elevate (<code class="docutils literal notranslate"><span class="pre">elevate</span></code>)<a class="headerlink" href="#elevate-elevate" title="Link to this heading">¶</a></h3>
+        <p>Pacioli and Leonardo’s stellation operator (<em>Elevatum</em> / Conway <em>kis</em>). Replaces each <span class="math notranslate nohighlight">\(k\)</span>-gon face with <span class="math notranslate nohighlight">\(k\)</span> triangular facets meeting at an apex erected along the face normal. When <code class="docutils literal notranslate"><span class="pre">height_scale=None</span></code>, the module calculates the exact algebraic height:</p>
+        <div class="math notranslate nohighlight">
+        \[h = \sqrt{s^2 - r^2}\]</div>
+        <p>where <span class="math notranslate nohighlight">\(s^2\)</span> is the face edge quadrance and <span class="math notranslate nohighlight">\(r^2\)</span> is the face circumquadrance, ensuring all lateral triangular facets are <strong>strictly equilateral</strong>.</p>
+        </section>
+        <section class="level-3" id="polar-dual-polar-dual">
+        <h3>5. Polar Dual (<code class="docutils literal notranslate"><span class="pre">polar_dual</span></code>)<a class="headerlink" href="#polar-dual-polar-dual" title="Link to this heading">¶</a></h3>
+        <p>Constructs the exact polar reciprocal across a concentric sphere of quadrance <span class="math notranslate nohighlight">\(Q_S\)</span>. Each face plane is mapped to its pole vertex:</p>
+        <div class="math notranslate nohighlight">
+        \[v^* = \frac{Q_S}{\mathbf{n} \cdot c_f} \mathbf{n}\]</div>
+        <p>mapping the Cube to the Octahedron, the Dodecahedron to the Icosahedron, and the Tetrahedron to itself.</p>
+        <p>—</p>
+        </section>
+        </section>
+        <section class="level-1" id="iii-the-dimensional-bridge-bridge-py">
+        <h1>III. The Dimensional Bridge (<code class="docutils literal notranslate"><span class="pre">bridge.py</span></code>)<a class="headerlink" href="#iii-the-dimensional-bridge-bridge-py" title="Link to this heading">¶</a></h1>
+        <p>The dimensional bridge links 3D polyhedral manifolds directly into 2D constructive geometry and automated discovery engines:</p>
+        <section class="level-3" id="planar-cross-section-slicing-slice-solid-to-model">
+        <h3>Planar Cross-Section Slicing (<code class="docutils literal notranslate"><span class="pre">slice_solid_to_model</span></code>)<a class="headerlink" href="#planar-cross-section-slicing-slice-solid-to-model" title="Link to this heading">¶</a></h3>
+        <p>Computes the exact 3D planar cross-section of a <code class="docutils literal notranslate"><span class="pre">Solid3D</span></code> with an arbitrary slicing plane <span class="math notranslate nohighlight">\(\Pi\)</span>, projects the intersection points onto orthonormal 2D axes <span class="math notranslate nohighlight">\((\mathbf{u}, \mathbf{v})\)</span>, and constructs an exact 2D <code class="docutils literal notranslate"><span class="pre">geometor.model.Model</span></code>:</p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">geometor.polyhedra.model3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plane3D</span><span class="p">,</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Vector3D</span><span class="p">,</span> <span class="n">slice_solid_to_model</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">geometor.divine</span><span class="w"> </span><span class="kn">import</span> <span class="n">scan_model_for_golden_sections</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+        <span class="c1"># Slice dodecahedron along an equatorial golden plane</span>
+        <span class="n">plane</span> <span class="o">=</span> <span class="n">Plane3D</span><span class="o">.</span><span class="n">from_point_and_normal</span><span class="p">(</span>
+            <span class="n">Point3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="n">Vector3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+        <span class="p">)</span>
+        <span class="n">u_axis</span> <span class="o">=</span> <span class="n">Vector3D</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">v_axis</span> <span class="o">=</span> <span class="n">Vector3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">model2d</span> <span class="o">=</span> <span class="n">slice_solid_to_model</span><span class="p">(</span><span class="n">dodecahedron</span><span class="p">,</span> <span class="n">plane</span><span class="p">,</span> <span class="n">u_axis</span><span class="p">,</span> <span class="n">v_axis</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"dodec_slice"</span><span class="p">)</span>
+
+        <span class="c1"># Automated discovery scans the exact 2D model for golden sections and harmonic ranges!</span>
+        <span class="n">golden_sections</span> <span class="o">=</span> <span class="n">scan_model_for_golden_sections</span><span class="p">(</span><span class="n">model2d</span><span class="p">)</span>
+        </pre></div>
+        </div>
+        </section>
+        <section class="level-3" id="d-net-unfolding-unfold-net-2d">
+        <h3>2D Net Unfolding (<code class="docutils literal notranslate"><span class="pre">unfold_net_2d</span></code>)<a class="headerlink" href="#d-net-unfolding-unfold-net-2d" title="Link to this heading">¶</a></h3>
+        <p>Unfolds the 3D polygonal faces of any convex solid onto a 2D Euclidean plane via a <strong>breadth-first spanning tree over the polyhedral dual graph</strong>:</p>
+        <ul class="simple">
+        <li><p>Begins at an initial root face positioned at the 2D origin.</p></li>
+        <li><p>Flattens each neighbor face along its shared hinge edge using 2D rotation matrices.</p></li>
+        <li><p>Guarantees zero backwards folding and produces clean, non-overlapping papercraft nets suitable for physical cardboard assembly and SVG visualization.</p></li>
+        </ul>
+        <figure class="align-center" id="id1">
+        <img alt="Unfolded 2D Net of Regular Octahedron" src="../_images/octahedron_net.svg" />
+        <figcaption>
+        <p><span class="caption-text"><strong>Unfolded 2D Net</strong>: Exact planar layout of the regular octahedron, displaying hinge fold lines and cut boundaries.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <p>—</p>
+        </section>
+        </section>
+        <section class="level-1" id="iv-the-multi-engine-export-pipeline">
+        <h1>IV. The Multi-Engine Export Pipeline<a class="headerlink" href="#iv-the-multi-engine-export-pipeline" title="Link to this heading">¶</a></h1>
+        <p>A single exact <code class="docutils literal notranslate"><span class="pre">Solid3D</span></code> model drives four independent downstream rendering targets:</p>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 20.0%" />
+        <col style="width: 25.0%" />
+        <col style="width: 25.0%" />
+        <col style="width: 30.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Target</p></th>
+        <th class="head"><p>Technology</p></th>
+        <th class="head"><p>Output Artifact</p></th>
+        <th class="head"><p>Key Capabilities</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>1. 2D Vector SVGs</strong></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">render.svg3d</span></code></p></td>
+        <td><p>Standalone <code class="docutils literal notranslate"><span class="pre">.svg</span></code> files</p></td>
+        <td><p>Perspective projection, depth sorting, chiaroscuro shading, dark-mode CSS classes, <cite>.euclid-graphic</cite> integration.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>2. Interactive Codex</strong></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">polyhedra_3d_codex.js</span></code></p></td>
+        <td><p>HTML5 Canvas Mount</p></td>
+        <td><p>Real-time quaternion rotation, trackball drag, variant switcher (Solidum/Vacuum/Abscisum/Elevatum), dual overlays.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>3. IngeTrazo CAD</strong></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">export_ingetrazo_script</span></code></p></td>
+        <td><p>Python Script &amp; Wavefront OBJ/MTL</p></td>
+        <td><p>Live MCP bridge, multi-layer scene layout (<code class="docutils literal notranslate"><span class="pre">Platonic_Solida</span></code>, <code class="docutils literal notranslate"><span class="pre">Leonardo_Vacua</span></code>), parametric mesh editing.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>4. Blender 5.x Studio</strong></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">export_blender_script</span></code></p></td>
+        <td><p>Standalone Python Studio Generator</p></td>
+        <td><p>Studio 3-point lighting, Principled BSDF Renaissance woodcut materials (Boxwood, Alabaster, Gold), Cycles/EEVEE rendering.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        <section class="level-3" id="target-1-publication-grade-2d-svgs-render-svg3d">
+        <h3>Target 1: Publication-Grade 2D SVGs (<code class="docutils literal notranslate"><span class="pre">render.svg3d</span></code>)<a class="headerlink" href="#target-1-publication-grade-2d-svgs-render-svg3d" title="Link to this heading">¶</a></h3>
+        <p>The <code class="docutils literal notranslate"><span class="pre">render_solid_svg</span></code> engine projects 3D solids onto 2D vector viewports using perspective transformation, painter’s depth sorting, directional light intensity calculations, and semantic styling:</p>
+        <ul class="simple">
+        <li><p><strong>Renaissance Palette</strong>: Outer boxwood beams, darker inner reveals, and walnut cavities for <em>corpora vacua</em>.</p></li>
+        <li><p><strong>Platonic Elemental Palette</strong>: Fire crimson (Tetrahedron), Earth ochre (Hexahedron), Air sky-blue (Octahedron), Water azure (Icosahedron), and Aether royal violet (Dodecahedron).</p></li>
+        </ul>
+        <figure class="align-center" id="id2">
+        <img alt="Exact SVG Projection of Dodecahedron Planum Vacuum" src="../_images/dodecahedron_vacuum.svg" />
+        <figcaption>
+        <p><span class="caption-text"><strong>Publication SVG</strong>: <em>Dodecahedron Planum Vacuum</em> rendered with Renaissance boxwood frame styling, deep window jambs, and exact depth sorting.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </section>
+        <section class="level-3" id="target-2-interactive-book-codex-3d-canvas">
+        <h3>Target 2: Interactive Book Codex 3D Canvas<a class="headerlink" href="#target-2-interactive-book-codex-3d-canvas" title="Link to this heading">¶</a></h3>
+        <p>Embedded directly into Sphinx Book Codices via lightweight HTML mounts:</p>
+        <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"polyhedra-3d-mount"</span> <span class="na">data-solid</span><span class="o">=</span><span class="s">"icosahedron"</span> <span class="na">data-initial-variant</span><span class="o">=</span><span class="s">"vacuum"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        </pre></div>
+        </div>
+        <p>The client-side engine (<code class="docutils literal notranslate"><span class="pre">polyhedra_3d_codex.js</span></code>) initializes automatically on document load:
+        - Quaternion trackball rotation with smooth damping and momentum coasting.
+        - Interactive controls for aperture width <span class="math notranslate nohighlight">\(\mu\)</span> and shell scaling <span class="math notranslate nohighlight">\(\lambda\)</span>.
+        - Golden ratio diagnostic toggles (Euclidean 5-cubes compound, internal golden rectangles, circumscribed spheres).</p>
+        </section>
+        <section class="level-3" id="target-3-ingetrazo-0-6-0-cad-live-mcp-bridge">
+        <h3>Target 3: IngeTrazo 0.6.0 CAD &amp; Live MCP Bridge<a class="headerlink" href="#target-3-ingetrazo-0-6-0-cad-live-mcp-bridge" title="Link to this heading">¶</a></h3>
+        <p>The pipeline exports both standard <strong>Wavefront CAD files</strong> (<code class="docutils literal notranslate"><span class="pre">.obj</span></code> and companion <code class="docutils literal notranslate"><span class="pre">.mtl</span></code> with Renaissance material definitions) and direct <strong>IngeTrazo 0.6.0 Python scripts</strong>:</p>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">geometor.polyhedra.model3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Solid3D</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">geometor.polyhedra.operators</span><span class="w"> </span><span class="kn">import</span> <span class="n">vacuate</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">geometor.polyhedra.platonic</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_platonic_solids</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">geometor.polyhedra.render</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_ingetrazo_script</span><span class="p">,</span> <span class="n">export_obj_mtl</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+        <span class="n">solids_raw</span> <span class="o">=</span> <span class="n">get_platonic_solids</span><span class="p">()</span>
+        <span class="n">dodec</span> <span class="o">=</span> <span class="n">Solid3D</span><span class="o">.</span><span class="n">from_regular_solid</span><span class="p">(</span><span class="n">solids_raw</span><span class="p">[</span><span class="s2">"dodecahedron"</span><span class="p">])</span>
+        <span class="n">dodec_vac</span> <span class="o">=</span> <span class="n">vacuate</span><span class="p">(</span><span class="n">dodec</span><span class="p">)</span>
+
+        <span class="c1"># Export CAD Wavefront OBJ/MTL</span>
+        <span class="n">export_obj_mtl</span><span class="p">(</span><span class="n">dodec_vac</span><span class="p">,</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"demos/exports/dodecahedron_vacuum.obj"</span><span class="p">))</span>
+
+        <span class="c1"># Export executable IngeTrazo scene script</span>
+        <span class="n">export_ingetrazo_script</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">dodec</span><span class="p">,</span> <span class="n">dodec_vac</span><span class="p">],</span>
+            <span class="n">Path</span><span class="p">(</span><span class="s2">"demos/exports/build_ingetrazo_polyhedra.py"</span><span class="p">),</span>
+        <span class="p">)</span>
+        </pre></div>
+        </div>
+        <p>IngeTrazo CAD scripts can be executed directly inside the user’s live parametric CAD session using the <strong>IngeTrazo MCP Server</strong> (<code class="docutils literal notranslate"><span class="pre">call_mcp_tool(ServerName=&quot;ingetrazo&quot;,</span> <span class="pre">ToolName=&quot;run_python&quot;,</span> <span class="pre">...)</span></code>), allowing agents to construct, inspect, and screenshot polyhedral CAD models programmatically.</p>
+        </section>
+        <section class="level-3" id="target-4-blender-5-x-studio-renderer">
+        <h3>Target 4: Blender 5.x Studio Renderer<a class="headerlink" href="#target-4-blender-5-x-studio-renderer" title="Link to this heading">¶</a></h3>
+        <p>For photorealistic publication renders and animations, <code class="docutils literal notranslate"><span class="pre">export_blender_script</span></code> emits a self-contained Python script tailored for modern Blender 5.x:</p>
+        <ul class="simple">
+        <li><p>Configures a dedicated <code class="docutils literal notranslate"><span class="pre">GEOMETOR_Polyhedra</span></code> collection.</p></li>
+        <li><p>Builds multi-layer polyhedral meshes with correct vertex normals and face winding.</p></li>
+        <li><p>Instantiates calibrated <strong>Principled BSDF materials</strong>:
+        - <strong>Italian Boxwood</strong>: Warm, sunlit diffuse tone with subtle micro-roughness.
+        - <strong>Alabaster</strong>: Translucent parchment stone with soft specular highlights.
+        - <strong>Walnut</strong>: Deep shadowed cavities for interior hollow frames.
+        - <strong>Gold</strong>: Metallic golden highlights for stellation apices.</p></li>
+        <li><p>Sets up high-key studio lighting with key, fill, and rim lights, and orients an orthographic/perspective camera with depth of field.</p></li>
+        </ul>
+        <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">geometor.polyhedra.render</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_blender_script</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+        <span class="c1"># Generate Blender 5.x studio script</span>
+        <span class="n">export_blender_script</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">tet</span><span class="p">,</span> <span class="n">cube</span><span class="p">,</span> <span class="n">octa</span><span class="p">,</span> <span class="n">ico</span><span class="p">,</span> <span class="n">dodec</span><span class="p">],</span>
+            <span class="n">Path</span><span class="p">(</span><span class="s2">"demos/exports/build_blender_polyhedra.py"</span><span class="p">),</span>
+            <span class="n">spacing</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+        <span class="p">)</span>
+        </pre></div>
+        </div>
+        <p>The generated script can be executed headlessly via <code class="docutils literal notranslate"><span class="pre">blender</span> <span class="pre">--background</span> <span class="pre">--python</span> <span class="pre">demos/exports/build_blender_polyhedra.py</span></code> to produce publication-grade renders.</p>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../leonardo/icosahedron_dodecahedron.html" title="Leonardo Plates: Icosahedron, Dodecahedron &amp; Vigintisex Basium (Tabulae XXI–XXXVI)">&larr; <span class="nav-label">Leonardo Plates: Icosahedron, Dodecahedron & Vigintisex Basium (Tabulae XXI–XXXVI)</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../modules/index.html" title="Modules"><span class="nav-label">Modules</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../modules/index.html"  >Modules</a></li>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+        <li><a href="../log/index.html"  >Log</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=c09f211d"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

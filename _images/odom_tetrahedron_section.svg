@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480" class="euclid-graphic" data-graphic-id="odom_tetrahedron_section">
+  <style>
+    .euclid-graphic {
+      background-color: transparent;
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .geom-poly {
+      fill: #0284c7;
+      fill-opacity: 0.08;
+      stroke: #0284c7;
+      stroke-width: 1.6;
+      stroke-linejoin: round;
+    }
+    .geom-circle {
+      stroke: #64748b;
+      stroke-width: 1.2;
+      stroke-dasharray: 4 3;
+      fill: none;
+    }
+    .geom-seg {
+      stroke: #0284c7;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .geom-gold-major {
+      stroke: #d4af37;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .geom-gold-minor {
+      stroke: #c2410c;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .geom-point {
+      fill: #0f172a;
+      stroke: #ffffff;
+      stroke-width: 1.2;
+    }
+    .geom-label {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      fill: #0f172a;
+    }
+    @media (prefers-color-scheme: dark) {
+      .geom-poly { fill: #38bdf8; fill-opacity: 0.12; stroke: #38bdf8; }
+      .geom-seg { stroke: #38bdf8; }
+      .geom-gold-major { stroke: #fbbf24; }
+      .geom-gold-minor { stroke: #ea580c; }
+      .geom-point { fill: #f8fafc; stroke: #0f172a; }
+      .geom-label { fill: #f8fafc; }
+      .geom-circle { stroke: #94a3b8; }
+    }
+    html[data-theme="dark"] .geom-poly { fill: #38bdf8; fill-opacity: 0.12; stroke: #38bdf8; }
+    html[data-theme="dark"] .geom-seg { stroke: #38bdf8; }
+    html[data-theme="dark"] .geom-gold-major { stroke: #fbbf24; }
+    html[data-theme="dark"] .geom-gold-minor { stroke: #ea580c; }
+    html[data-theme="dark"] .geom-point { fill: #f8fafc; stroke: #0f172a; }
+    html[data-theme="dark"] .geom-label { fill: #f8fafc; }
+    html[data-theme="dark"] .geom-circle { stroke: #94a3b8; }
+  </style>
+  <defs />
+  <g id="polygons">
+  </g>
+  <g id="circles">
+    <circle cx="260.00" cy="240.00" r="182.40" class="geom-circle" data-ref="( A B )" />
+  </g>
+  <g id="segments">
+    <path d="M 260.00 57.60 L 181.02 194.40 L 102.04 331.20" class="geom-seg" data-ref="/ B C /" data-type="segment" />
+    <path d="M 102.04 331.20 L 260.00 331.20 L 417.96 331.20" class="geom-seg" data-ref="/ C D /" data-type="segment" />
+    <path d="M 417.96 331.20 L 338.98 194.40 L 260.00 57.60" class="geom-seg" data-ref="/ D B /" data-type="segment" />
+    <path d="M 181.02 194.40 L 260.00 194.40 L 338.98 194.40" class="geom-gold-major" data-ref="/ E F /" data-type="segment" />
+    <path d="M 338.98 194.40 L 387.79 194.40 L 436.61 194.40" class="geom-gold-minor" data-ref="/ F H /" data-type="segment" />
+    <path d="M 83.39 194.40 L 132.21 194.40 L 181.02 194.40" class="geom-gold-minor" data-ref="/ G E /" data-type="segment" />
+  </g>
+  <g id="points">
+    <circle cx="260.00" cy="240.00" r="3.2" class="geom-point" data-ref="A" data-type="point" />
+    <circle cx="260.00" cy="57.60" r="3.2" class="geom-point" data-ref="B" data-type="point" />
+    <circle cx="102.04" cy="331.20" r="3.2" class="geom-point" data-ref="C" data-type="point" />
+    <circle cx="417.96" cy="331.20" r="3.2" class="geom-point" data-ref="D" data-type="point" />
+    <circle cx="181.02" cy="194.40" r="3.2" class="geom-point" data-ref="E" data-type="point" />
+    <circle cx="338.98" cy="194.40" r="3.2" class="geom-point" data-ref="F" data-type="point" />
+    <circle cx="83.39" cy="194.40" r="3.2" class="geom-point" data-ref="G" data-type="point" />
+    <circle cx="436.61" cy="194.40" r="3.2" class="geom-point" data-ref="H" data-type="point" />
+  </g>
+  <g id="labels">
+    <text x="266.00" y="234.00" class="geom-label" data-ref="A">A</text>
+    <text x="266.00" y="51.60" class="geom-label" data-ref="B">B</text>
+    <text x="108.04" y="325.20" class="geom-label" data-ref="C">C</text>
+    <text x="423.96" y="325.20" class="geom-label" data-ref="D">D</text>
+    <text x="187.02" y="188.40" class="geom-label" data-ref="E">E</text>
+    <text x="344.98" y="188.40" class="geom-label" data-ref="F">F</text>
+    <text x="89.39" y="188.40" class="geom-label" data-ref="G">G</text>
+    <text x="442.61" y="188.40" class="geom-label" data-ref="H">H</text>
+  </g>
+</svg>

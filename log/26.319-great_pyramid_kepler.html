@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kepler, Squaring the Circle &amp; the Great Pyramid (v0.3.0) &mdash; GEOMETOR • polyhedra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=ec8980ef" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c80139d2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../platonic/index.html"  >Platonic Solids</a>
+        </li>
+        <li>
+          <a href="../golden/index.html"  >Golden Proportions</a>
+        </li>
+        <li>
+          <a href="../leonardo/index.html"  >Leonardo Plates</a>
+        </li>
+        <li>
+          <a href="../pyramid/index.html"  >Great Pyramid</a>
+        </li>
+        <li>
+          <a href="../pipeline/index.html"  >3D Pipeline</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../index.html">GEOMETOR • polyhedra</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="index.html">Log</a>
+            <span class="book-crumb-sep">/</span>
+            <span class="book-badge canonical-badge">2026-11-15</span>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="index.html" title="Log">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="26.319-model3d_golden_codex.html" title="Model3D, Golden Proportions &amp; Leonardo Codex (v0.2.0)"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="kepler-squaring-the-circle-the-great-pyramid-v0-3-0">
+        <h1>Kepler, Squaring the Circle &amp; the Great Pyramid (v0.3.0)<a class="headerlink" href="#kepler-squaring-the-circle-the-great-pyramid-v0-3-0" title="Link to this heading">¶</a></h1>
+        <p>Added the dedicated <strong>Great Pyramid</strong> symbolic module (<a class="reference internal" href="../modules/api/geometor/polyhedra/pyramid/index.html#module-geometor.polyhedra.pyramid" title="geometor.polyhedra.pyramid"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geometor.polyhedra.pyramid</span></code></a>), interactive 3D studio scene, and four-chapter Book Codex (<code class="docutils literal notranslate"><span class="pre">docsrc/pyramid/</span></code>):</p>
+        <ul class="simple">
+        <li><p><strong>Four Canonical Pyramid Profiles</strong> (<a class="reference internal" href="../modules/api/geometor/polyhedra/pyramid/index.html#geometor.polyhedra.pyramid.PyramidModelProfile" title="geometor.polyhedra.pyramid.PyramidModelProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">PyramidModelProfile</span></code></a>): Exact symbolic profiles over <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{\phi})\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\pi)\)</span>, and <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> comparing the <strong>Kepler Golden Pyramid</strong> (<span class="math notranslate nohighlight">\(h = \sqrt{\phi}\)</span>, <span class="math notranslate nohighlight">\(s = \phi\)</span>), <strong>True Circle-Quadrature Pyramid</strong> (<span class="math notranslate nohighlight">\(h = 4/\pi\)</span>), <strong>Old Kingdom 14:11 Seked Pyramid</strong> (280 / 220 Royal Cubits, <span class="math notranslate nohighlight">\(\pi \approx 22/7\)</span>), and <strong>Regular Half-Octahedron</strong> (<span class="math notranslate nohighlight">\(h = \sqrt{2}\)</span>).</p></li>
+        <li><p><strong>Certified Symbolic Theorems</strong>: Proved 11 exact identities in SymPy, including Herodotus’s area law (<span class="math notranslate nohighlight">\(A_{\text{face}} = h^2 = \phi\)</span>), the continuous golden surface progression (<span class="math notranslate nohighlight">\(A_{\text{base}} : A_{\text{lateral}} : A_{\text{total}} = 1 : \phi : \phi^2\)</span>), the Icosahedron circumradius bridge (<span class="math notranslate nohighlight">\(Q_{\text{edge}} = \phi + 2 = Q_{\text{out}}(\text{Icosahedron})\)</span>), and pure <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span> / <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> Rational Trigonometry dihedral spreads (<span class="math notranslate nohighlight">\(3\phi - 4\)</span> and <span class="math notranslate nohighlight">\(85848/100489\)</span>).</p></li>
+        <li><p><strong>2D Compass Constructions &amp; 3D Interactive Studio</strong>: Built exact 2D <code class="docutils literal notranslate"><span class="pre">geometor.model.Model</span></code> constructions for the 1597 Kepler Right Triangle and the Squaring-the-Circle / Earth–Moon (<span class="math notranslate nohighlight">\(3/11 \approx \sqrt{\phi} - 1\)</span>) Cosmogram, paired with 6 <code class="docutils literal notranslate"><span class="pre">.euclid-graphic</span></code> SVGs and the live <code class="docutils literal notranslate"><span class="pre">great_pyramid_kepler</span></code> 3D canvas studio.</p></li>
+        </ul>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+
+        <div class="meta">
+          <span class="date">2026-11-15</span>
+        </div>
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="index.html" title="Log">&larr; <span class="nav-label">Log</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../index.html">GEOMETOR • polyhedra</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="26.319-model3d_golden_codex.html" title="Model3D, Golden Proportions &amp; Leonardo Codex (v0.2.0)"><span class="nav-label">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="#" class="is-active" aria-current="page" aria-selected="true">Kepler, Squaring the Circle & the Great Pyramid (v0.3.0)</a></li>
+        <li><a href="26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=e259d695"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=3d481e31"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

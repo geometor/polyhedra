@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Squaring the Circle &amp; the Earth–Moon Cosmogram &mdash; Kepler, Squaring the Circle &amp; the Great Pyramid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=ec8980ef" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c80139d2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../platonic/index.html"  >Platonic Solids</a>
+        </li>
+        <li>
+          <a href="../golden/index.html"  >Golden Proportions</a>
+        </li>
+        <li>
+          <a href="../leonardo/index.html"  >Leonardo Plates</a>
+        </li>
+        <li>
+          <a href="index.html" class="is-active" aria-selected="true" >Great Pyramid</a>
+        </li>
+        <li>
+          <a href="../pipeline/index.html"  >3D Pipeline</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="index.html">Kepler, Squaring the Circle & the Great Pyramid</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="kepler_triangle.html" title="The 1597 Kepler Right Triangle &amp; Golden Surface Harmony">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="seked_and_octahedron.html" title="Egyptian Seked Mensuration, 3D Spreads &amp; Polyhedral Relatives"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="squaring-the-circle-the-earthmoon-cosmogram">
+        <h1>Squaring the Circle &amp; the Earth–Moon Cosmogram<a class="headerlink" href="#squaring-the-circle-the-earthmoon-cosmogram" title="Link to this heading">¶</a></h1>
+        <p><em>Perimeter Quadrature · The Golden-Pi Algebraic Bridge · Lindemann’s Theorem · The Canonical Cosmogram</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>Circulus quadratur per lineas rectas quando invenitur quadratum aequale circulo dato.</em></p>
+        <p><em>The circle is squared by straight lines when a square is found equal in area to a given circle.</em></p>
+        <p class="attribution">—<strong>Nicholas of Cusa</strong>, <em>De Docta Ignorantia</em> (1440)</p>
+        </div></blockquote>
+        <section class="level-2" id="perimeter-quadrature-circling-the-square">
+        <h2>Perimeter Quadrature: Circling the Square<a class="headerlink" href="#perimeter-quadrature-circling-the-square" title="Link to this heading">¶</a></h2>
+        <p>In classical Greek mathematics, the problem of <strong>squaring the circle</strong> (<em>tetragonismos</em>) sought the Euclidean straightedge-and-compass construction of a square whose area equals that of a given circle.</p>
+        <p>In monumental architecture, however, the problem naturally presented itself in its <strong>perimeter dual</strong> form, often called <em>circling the square</em>:</p>
+        <div class="admonition important">
+        <p class="admonition-title">Important</p>
+        <p><strong>The Perimeter Quadrature Enunciation</strong>:</p>
+        <p><em>To construct a square pyramid whose square base perimeter equals the circumference of a circle whose radius is the pyramid’s vertical height.</em></p>
+        </div>
+        <p>Let the square pyramid have half-base <span class="math notranslate nohighlight">\(a\)</span> (base side <span class="math notranslate nohighlight">\(2a\)</span>) and apex height <span class="math notranslate nohighlight">\(h\)</span>:</p>
+        <ul class="simple">
+        <li><p>Base perimeter: <span class="math notranslate nohighlight">\(P_{\text{base}} = 4 \times (2a) = 8a\)</span>.</p></li>
+        <li><p>Apex circle circumference: <span class="math notranslate nohighlight">\(C_{\text{apex}} = 2\pi h\)</span>.</p></li>
+        </ul>
+        <p>Equating the perimeter of the base to the circumference of the circle:</p>
+        <div class="math notranslate nohighlight">
+        \[8a = 2\pi h \iff \frac{h}{a} = \frac{4}{\pi} \approx 1.273239544735163\]</div>
+        <p>Normalized to unit half-base <span class="math notranslate nohighlight">\(a = 1\)</span>, the base perimeter is <span class="math notranslate nohighlight">\(8\)</span> and the quadrature height is exactly <span class="math notranslate nohighlight">\(h = \frac{4}{\pi}\)</span>.</p>
+        </section>
+        <section class="level-2" id="the-goldenpi-algebraic-bridge-4">
+        <h2>The Golden–Pi Algebraic Bridge: π ≈ 4 / √φ<a class="headerlink" href="#the-goldenpi-algebraic-bridge-4" title="Link to this heading">¶</a></h2>
+        <p>When the Great Pyramid is modeled as the <strong>Kepler Golden Pyramid</strong>, the vertical height is not <span class="math notranslate nohighlight">\(4/\pi\)</span>, but <span class="math notranslate nohighlight">\(h = \sqrt{\phi}\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[h = \sqrt{\phi} = \sqrt{\frac{1 + \sqrt{5}}{2}} \approx 1.272019649514069\]</div>
+        <p>Equating the Kepler apex circle circumference to the square base perimeter <span class="math notranslate nohighlight">\(8\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[2 \pi_{\phi} \sqrt{\phi} = 8 \iff \pi_{\phi} = \frac{4}{\sqrt{\phi}}\]</div>
+        <p>Evaluating this exact closed form:</p>
+        <div class="math notranslate nohighlight">
+        \[\pi_{\phi} = \frac{4}{\sqrt{\phi}} = 4 \times \sqrt{\phi - 1} = 4 \times \sqrt{\frac{\sqrt{5} - 1}{2}} \approx 3.144605511029694\]</div>
+        <p>Comparing <span class="math notranslate nohighlight">\(\pi_{\phi}\)</span> with the true transcendental value <span class="math notranslate nohighlight">\(\pi \approx 3.141592653589793\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[\Delta \pi = \pi_{\phi} - \pi \approx +0.003012857 \qquad (+0.0959\%)\]</div>
+        <div class="admonition note">
+        <p class="admonition-title">Note</p>
+        <p><strong>Architectural Scale at Giza</strong>:</p>
+        <p>In the actual monument of Khufu, the half-base is <span class="math notranslate nohighlight">\(a = 220\)</span> Royal Cubits (<span class="math notranslate nohighlight">\(\approx 115.18\text{ m}\)</span> or <span class="math notranslate nohighlight">\(4535\text{ inches}\)</span>).</p>
+        <p>The discrepancy between the Kepler Golden height (<span class="math notranslate nohighlight">\(220 \times \sqrt{\phi} \approx 279.84\)</span> cubits) and the True <span class="math notranslate nohighlight">\(\pi\)</span> Quadrature height (<span class="math notranslate nohighlight">\(220 \times \frac{4}{\pi} \approx 280.11\)</span> cubits) is:</p>
+        <div class="math notranslate nohighlight">
+        \[\Delta h = 280.11 - 279.84 = 0.27 \text{ Royal Cubits} \approx 5.6 \text{ inches } (14.2\text{ cm})\]</div>
+        <p>Over a colossal limestone monument rising over 480 feet in the air, this difference is less than <span class="math notranslate nohighlight">\(0.1\%\)</span> of the structure’s height—well within the quarrying, thermal expansion, and settlement tolerances of Old Kingdom masonry!</p>
+        </div>
+        </section>
+        <section class="level-2" id="archimedes-22-7-and-the-egyptian-seked-bridge">
+        <h2>Archimedes’ 22/7 and the Egyptian Seked Bridge<a class="headerlink" href="#archimedes-22-7-and-the-egyptian-seked-bridge" title="Link to this heading">¶</a></h2>
+        <p>In the Old Kingdom Egyptian design, heights and setbacks were specified using integers of Royal Cubits, palms, and digits. The Great Pyramid was erected with:</p>
+        <div class="math notranslate nohighlight">
+        \[\text{Half-Base: } a = 220 \text{ Royal Cubits}, \qquad \text{Height: } h = 280 \text{ Royal Cubits}\]</div>
+        <p>The ratio of height to half-base is the rational fraction:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{h}{a} = \frac{280}{220} = \frac{14}{11} \approx 1.272727272727273\]</div>
+        <p>Substituting <span class="math notranslate nohighlight">\(h/a = 14/11\)</span> into the perimeter quadrature condition <span class="math notranslate nohighlight">\(2\pi (h/a) = 8\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[2 \pi_{\text{seked}} \left(\frac{14}{11}\right) = 8 \iff \pi_{\text{seked}} = \frac{8 \times 11}{2 \times 14} = \frac{44}{14} = \frac{22}{7} \approx 3.142857142857143\]</div>
+        <p>This is none other than <strong>Archimedes’ upper rational bound for :math:`pi`</strong> (<em>Measurement of a Circle</em>, Prop. 3, c. 250 BCE)!</p>
+        <p>The discrepancy with true <span class="math notranslate nohighlight">\(\pi\)</span> is:</p>
+        <div class="math notranslate nohighlight">
+        \[\Delta \pi = \frac{22}{7} - \pi \approx +0.001264489 \qquad (+0.0402\%)\]</div>
+        <p>With <span class="math notranslate nohighlight">\(\pi = 22/7\)</span>, the perimeter quadrature of the Egyptian pyramid is <strong>100% exact over :math:`mathbb{Q}`</strong>:</p>
+        <div class="math notranslate nohighlight">
+        \[2 \times \frac{22}{7} \times \frac{14}{11} = 2 \times \frac{2}{1} \times \frac{2}{1} = 8 \equiv P_{\text{base}}\]</div>
+        </section>
+        <section class="level-2" id="area-quadrature-vs-ferdinand-von-lindemann-s-theorem-1882">
+        <h2>Area Quadrature vs. Ferdinand von Lindemann’s Theorem (1882)<a class="headerlink" href="#area-quadrature-vs-ferdinand-von-lindemann-s-theorem-1882" title="Link to this heading">¶</a></h2>
+        <p>For over two millennia, mathematicians sought an exact Euclidean straightedge-and-compass construction to square the circle.</p>
+        <p>In 1882, German mathematician <strong>Ferdinand von Lindemann</strong> resolved the ancient quest:</p>
+        <ol class="arabic simple">
+        <li><p><strong>Lindemann–Weierstrass Theorem</strong>:
+        If <span class="math notranslate nohighlight">\(\alpha_1, \dots, \alpha_n\)</span> are distinct algebraic numbers, then <span class="math notranslate nohighlight">\(e^{\alpha_1}, \dots, e^{\alpha_n}\)</span> are linearly independent over the algebraic numbers.</p></li>
+        <li><p>Since <span class="math notranslate nohighlight">\(e^{i\pi} + 1 = 0\)</span> (Euler’s identity), if <span class="math notranslate nohighlight">\(\pi\)</span> were algebraic, <span class="math notranslate nohighlight">\(i\pi\)</span> would be algebraic, and <span class="math notranslate nohighlight">\(e^{i\pi} = -1\)</span> could not be algebraic, a contradiction. Hence, <strong>:math:`pi` is transcendental</strong>.</p></li>
+        <li><p>By Wantzel’s theorem (1837), any point constructible by Euclidean compass and straightedge must have coordinates in a tower of quadratic field extensions over <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>. Constructible numbers are necessarily algebraic.</p></li>
+        <li><p>Since <span class="math notranslate nohighlight">\(\pi\)</span> is transcendental, <span class="math notranslate nohighlight">\(\sqrt{\pi}\)</span> is transcendental, and <strong>exact Euclidean circle squaring is impossible</strong>.</p></li>
+        </ol>
+        </section>
+        <section class="level-2" id="constructible-radical-approximations-in-q-1-4">
+        <h2>Constructible Radical Approximations in Q(φ^(1/4))<a class="headerlink" href="#constructible-radical-approximations-in-q-1-4" title="Link to this heading">¶</a></h2>
+        <p>While exact quadrature is impossible over <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>, the Golden Pyramid provides an extraordinarily accurate <strong>constructible radical approximation</strong>.</p>
+        <p>Recall the golden perimeter quadrature constant:</p>
+        <div class="math notranslate nohighlight">
+        \[\pi_{\phi} = \frac{4}{\sqrt{\phi}}\]</div>
+        <p>To square a unit circle (<span class="math notranslate nohighlight">\(\text{Area} = \pi \approx \pi_{\phi}\)</span>), we seek a square whose side <span class="math notranslate nohighlight">\(S\)</span> satisfies:</p>
+        <div class="math notranslate nohighlight">
+        \[S^2 = \pi_{\phi} = \frac{4}{\sqrt{\phi}} \implies S = \frac{2}{\phi^{1/4}} = 2 \phi^{-1/4}\]</div>
+        <p>Because <span class="math notranslate nohighlight">\(\phi = \frac{1 + \sqrt{5}}{2}\)</span> is constructible, its fourth root <span class="math notranslate nohighlight">\(\phi^{1/4}\)</span> is constructible by taking two successive Euclidean geometric means (Euclid VI.13)!</p>
+        <p>Evaluating <span class="math notranslate nohighlight">\(S\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[S = \frac{2}{(1.6180339887...)^{1/4}} \approx \frac{2}{1.1278386} \approx 1.7733036\]</div>
+        <p>The area of this constructible square is:</p>
+        <div class="math notranslate nohighlight">
+        \[S^2 = \frac{4}{\sqrt{\phi}} \approx 3.1446055\]</div>
+        <p>Comparing with the true area of the unit circle <span class="math notranslate nohighlight">\(\pi \approx 3.1415927\)</span>:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{S^2}{\pi} = \frac{3.1446055}{3.1415927} \approx 1.000959 \implies 99.904\% \text{ accuracy}\]</div>
+        <p>Thus, two Euclidean compass-and-straightedge operations produce a square whose area squares the circle to within less than one-tenth of one percent!</p>
+        </section>
+        <section class="level-2" id="the-earthmoon-tangent-cosmogram-2d-model">
+        <h2>The Earth–Moon Tangent Cosmogram (2D Model)<a class="headerlink" href="#the-earthmoon-tangent-cosmogram-2d-model" title="Link to this heading">¶</a></h2>
+        <p>The perimeter quadrature of the Great Pyramid gives rise to the celebrated <strong>Earth–Moon Cosmogram</strong>, formalizing an ancient geometric canon uniting terrestrial and lunar dimensions in a single planar layout:</p>
+        <figure class="align-center" id="id1">
+        <img alt="2D Earth-Moon Cosmogram and Great Pyramid Circle Squaring" src="../_images/pyramid_squaring_circle_2d.svg" />
+        <figcaption>
+        <p><span class="caption-text"><em>The 2D Earth–Moon Cosmogram: square base of side :math:`2` (perimeter :math:`8`), meridian triangle of apex :math:`S(0, sqrt{phi})`, inscribed Earth circle (:math:`r_E = 1`), and tangent Moon circle (:math:`r_M = sqrt{phi} - 1 approx 3/11`).</em></span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <p>The model, constructed in <code class="docutils literal notranslate"><span class="pre">geometor.polyhedra.pyramid.build_pyramid_squaring_circle_model</span></code>, comprises:</p>
+        <ol class="arabic">
+        <li><p><strong>The Square Base</strong>:
+        Four corners <span class="math notranslate nohighlight">\(SW(-1, -1)\)</span>, <span class="math notranslate nohighlight">\(SE(1, -1)\)</span>, <span class="math notranslate nohighlight">\(NE(1, 1)\)</span>, and <span class="math notranslate nohighlight">\(NW(-1, 1)\)</span>.
+        Side length: <span class="math notranslate nohighlight">\(2\)</span>. Perimeter: <span class="math notranslate nohighlight">\(8\)</span>. Area: <span class="math notranslate nohighlight">\(4\)</span>.</p></li>
+        <li><p><strong>The Inscribed Earth Circle</strong>:
+        Centered at origin <span class="math notranslate nohighlight">\(O(0, 0)\)</span> with radius:</p>
+        <div class="math notranslate nohighlight">
+        \[r_E = 1\]</div>
+        <p>Tangent to the four sides of the square at <span class="math notranslate nohighlight">\((0, 1)\)</span>, <span class="math notranslate nohighlight">\((1, 0)\)</span>, <span class="math notranslate nohighlight">\((0, -1)\)</span>, and <span class="math notranslate nohighlight">\((-1, 0)\)</span>.</p>
+        </li>
+        <li><p><strong>The Meridian Pyramid Triangle</strong>:
+        Base spanning from <span class="math notranslate nohighlight">\(W(-1, 0)\)</span> to <span class="math notranslate nohighlight">\(E(1, 0)\)</span> with vertical height <span class="math notranslate nohighlight">\(h\)</span>. Apex at <span class="math notranslate nohighlight">\(S(0, h)\)</span>.</p></li>
+        <li><p><strong>The Tangent Moon Circle</strong>:
+        Centered at the pyramid apex <span class="math notranslate nohighlight">\(S(0, h)\)</span> and tangent to the Earth circle at the North Pole <span class="math notranslate nohighlight">\(T(0, 1)\)</span>.
+        Its radius is the apex elevation above the unit circle:</p>
+        <div class="math notranslate nohighlight">
+        \[r_M = h - 1\]</div>
+        </li>
+        </ol>
+        </section>
+        <section class="level-2" id="geophysical-fidelity-the-3-11-terrestrial-lunar-ratio">
+        <h2>Geophysical Fidelity: The 3/11 Terrestrial-Lunar Ratio<a class="headerlink" href="#geophysical-fidelity-the-3-11-terrestrial-lunar-ratio" title="Link to this heading">¶</a></h2>
+        <p>Evaluating the ratio of the Moon’s radius to the Earth’s radius across the geometric models reveals an uncanny correspondence with actual astronomical measurements:</p>
+        <ol class="arabic">
+        <li><p><strong>In the Egyptian Seked Model (:math:`h = 14/11`)</strong>:</p>
+        <div class="math notranslate nohighlight">
+        \[r_M = \frac{14}{11} - 1 = \frac{3}{11} \implies \frac{r_M}{r_E} = \frac{3}{11} = 0.272727...\]</div>
+        </li>
+        <li><p><strong>In the Kepler Golden Model (:math:`h = sqrt{phi}`)</strong>:</p>
+        <div class="math notranslate nohighlight">
+        \[r_M = \sqrt{\phi} - 1 \approx 1.2720196 - 1 = 0.2720196...\]</div>
+        </li>
+        <li><p><strong>In Actual Geophysical Measurements (NASA Planetary Fact Sheet)</strong>:
+        - Mean volumetric radius of the Earth: <span class="math notranslate nohighlight">\(R_{\text{Earth}} = 6371.0 \text{ km}\)</span>.
+        - Mean volumetric radius of the Moon: <span class="math notranslate nohighlight">\(R_{\text{Moon}} = 1737.4 \text{ km}\)</span>.</p>
+        <p>Calculating the true planetary ratio:</p>
+        <div class="math notranslate nohighlight">
+        \[\frac{R_{\text{Moon}}}{R_{\text{Earth}}} = \frac{1737.4}{6371.0} \approx \mathbf{0.2727044}\]</div>
+        </li>
+        </ol>
+        <div class="admonition important">
+        <p class="admonition-title">Important</p>
+        <p><strong>The Seked 3/11 Astronomical Coincidence</strong>:</p>
+        <div class="math notranslate nohighlight">
+        \[\left| \frac{3}{11} - \frac{R_{\text{Moon}}}{R_{\text{Earth}}} \right| = |0.2727273 - 0.2727044| = 0.0000229 \qquad (0.0084\%)\]</div>
+        <p>The simple Old Kingdom integer ratio <span class="math notranslate nohighlight">\(\mathbf{3 : 11}\)</span> matches the true volumetric radius ratio of Moon to Earth with <strong>99.9916% accuracy</strong>!</p>
+        </div>
+        <ol class="arabic" start="4">
+        <li><p><strong>The Cosmic Quadrature Orbit</strong>:
+        Draw the circle centered at Earth’s center <span class="math notranslate nohighlight">\((0, 0)\)</span> whose radius passes through the Moon’s center <span class="math notranslate nohighlight">\(S(0, 14)\)</span>:
+        Radius <span class="math notranslate nohighlight">\(R = r_E + r_M = 11 + 3 = 14\)</span>.</p>
+        <p>Its circumference, using Archimedes’ <span class="math notranslate nohighlight">\(\pi = 22/7\)</span>, is:</p>
+        <div class="math notranslate nohighlight">
+        \[C_{\text{lunar orbit}} = 2 \times \frac{22}{7} \times 14 = 2 \times 22 \times 2 = 88 \text{ units}\]</div>
+        <p>Now calculate the perimeter of the square circumscribing the Earth (side <span class="math notranslate nohighlight">\(2 r_E = 2 \times 11 = 22\)</span>):</p>
+        <div class="math notranslate nohighlight">
+        \[P_{\text{Earth square}} = 4 \times 22 = 88 \text{ units}\]</div>
+        </li>
+        </ol>
+        <div class="math notranslate nohighlight">
+        \[C_{\text{lunar orbit}} = P_{\text{Earth square}} = 88\]</div>
+        <p>The circle passing through the center of the Moon has a circumference equal to the perimeter of the square enclosing the Earth. Thus, the Earth and Moon together materialize the ancient squaring of the circle in the heavens.</p>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="kepler_triangle.html" title="The 1597 Kepler Right Triangle &amp; Golden Surface Harmony">&larr; <span class="nav-label">The 1597 Kepler Right Triangle & Golden Surface Harmony</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="index.html">Kepler, Squaring the Circle & the Great Pyramid</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="seked_and_octahedron.html" title="Egyptian Seked Mensuration, 3D Spreads &amp; Polyhedral Relatives"><span class="nav-label">Egyptian Seked Mensuration, 3D Spreads & Polyhedral Relatives</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-great_pyramid_kepler.html">Kepler, Squaring the Circle & the Great Pyramid (v0.3.0)</a></li>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=e259d695"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=3d481e31"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

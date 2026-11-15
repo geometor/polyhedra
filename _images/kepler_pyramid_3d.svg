@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" width="560" height="480" class="euclid-graphic" data-graphic-id="kepler_pyramid_3d">
+  <style>
+    .euclid-graphic {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .poly-stroke {
+      stroke: #1e3a8a;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .poly-hidden {
+      stroke: #94a3b8;
+      stroke-dasharray: 3 3;
+      stroke-width: 1.0;
+      opacity: 0.5;
+      fill: none;
+    }
+    .poly-gold {
+      fill: #f59e0b;
+      fill-opacity: 0.30;
+      stroke: #b45309;
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+    }
+    @media (prefers-color-scheme: dark) {
+      .poly-stroke {
+        stroke: #93c5fd;
+      }
+      .poly-hidden {
+        stroke: #64748b;
+        opacity: 0.6;
+      }
+    }
+    html[data-theme="dark"] .poly-stroke {
+      stroke: #93c5fd;
+    }
+    html[data-theme="dark"] .poly-hidden {
+      stroke: #64748b;
+      opacity: 0.6;
+    }
+  </style>
+  <defs />
+  <g id="hidden-edges">
+    <line x1="251.53" y1="199.52" x2="67.20" y2="297.25" class="poly-hidden" />
+    <line x1="492.80" y1="261.29" x2="251.53" y2="199.52" class="poly-hidden" />
+    <line x1="251.53" y1="199.52" x2="286.92" y2="90.31" class="poly-hidden" />
+  </g>
+  <g id="faces">
+    <polygon points="286.92,278.69 423.05,318.61 286.92,90.31" class="poly-gold" data-type="golden-polygon" data-gold-idx="0" />
+    <polygon points="336.55,389.69 492.80,261.29 286.92,90.31" fill="#548eaa" fill-opacity="0.22" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="pyramid" data-face-idx="1" />
+    <polygon points="67.20,297.25 336.55,389.69 286.92,90.31" fill="#548eaa" fill-opacity="0.22" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="pyramid" data-face-idx="4" />
+  </g>
+</svg>

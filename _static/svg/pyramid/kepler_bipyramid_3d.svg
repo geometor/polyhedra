@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" width="560" height="480" class="euclid-graphic" data-graphic-id="kepler_bipyramid_3d">
+  <style>
+    .euclid-graphic {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .poly-stroke {
+      stroke: #1e3a8a;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .poly-hidden {
+      stroke: #94a3b8;
+      stroke-dasharray: 3 3;
+      stroke-width: 1.0;
+      opacity: 0.5;
+      fill: none;
+    }
+    .poly-gold {
+      fill: #f59e0b;
+      fill-opacity: 0.30;
+      stroke: #b45309;
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+    }
+    @media (prefers-color-scheme: dark) {
+      .poly-stroke {
+        stroke: #93c5fd;
+      }
+      .poly-hidden {
+        stroke: #64748b;
+        opacity: 0.6;
+      }
+    }
+    html[data-theme="dark"] .poly-stroke {
+      stroke: #93c5fd;
+    }
+    html[data-theme="dark"] .poly-hidden {
+      stroke: #64748b;
+      opacity: 0.6;
+    }
+  </style>
+  <defs />
+  <g id="hidden-edges">
+    <line x1="492.80" y1="236.32" x2="251.89" y2="178.84" class="poly-hidden" />
+    <line x1="251.89" y1="178.84" x2="287.13" y2="61.19" class="poly-hidden" />
+    <line x1="251.89" y1="178.84" x2="67.20" y2="269.97" class="poly-hidden" />
+    <line x1="251.89" y1="178.84" x2="287.13" y2="418.81" class="poly-hidden" />
+  </g>
+  <g id="faces">
+    <polygon points="337.06,357.05 492.80,236.32 251.89,178.84 67.20,269.97" class="poly-gold" data-type="golden-polygon" data-gold-idx="0" />
+    <polygon points="423.55,290.01 287.13,61.19 168.44,220.02 287.13,418.81" class="poly-gold" data-type="golden-polygon" data-gold-idx="1" />
+    <polygon points="492.80,236.32 337.06,357.05 287.13,418.81" fill="#548eaa" fill-opacity="0.22" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="pyramid" data-face-idx="4" />
+    <polygon points="337.06,357.05 67.20,269.97 287.13,418.81" fill="#548eaa" fill-opacity="0.22" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="pyramid" data-face-idx="7" />
+    <polygon points="337.06,357.05 492.80,236.32 287.13,61.19" fill="#548eaa" fill-opacity="0.22" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="pyramid" data-face-idx="0" />
+    <polygon points="67.20,269.97 337.06,357.05 287.13,61.19" fill="#548eaa" fill-opacity="0.22" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="pyramid" data-face-idx="3" />
+  </g>
+</svg>

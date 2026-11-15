@@ -1,5 +1,5 @@
 :navigation: header
-:order: 4
+:order: 5
 :nav_title: 3D Pipeline
 :layout: book
 :title: 3D Symbolic Infrastructure & Multi-Engine Pipeline

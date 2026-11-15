@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>geometor.polyhedra.pyramid &mdash; GEOMETOR • polyhedra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=ec8980ef" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=c80139d2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../../../_static/favicon.ico" />
+</head>
+
+<body class="book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html">
+        <img src="../../../../../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../../../../platonic/index.html"  >Platonic Solids</a>
+        </li>
+        <li>
+          <a href="../../../../../golden/index.html"  >Golden Proportions</a>
+        </li>
+        <li>
+          <a href="../../../../../leonardo/index.html"  >Leonardo Plates</a>
+        </li>
+        <li>
+          <a href="../../../../../pyramid/index.html"  >Great Pyramid</a>
+        </li>
+        <li>
+          <a href="../../../../../pipeline/index.html"  >3D Pipeline</a>
+        </li>
+        <li>
+          <a href="../../../../../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../../../../index.html" class="is-active" aria-selected="true" >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../../../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../../../../index.html">GEOMETOR • polyhedra</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Breadcrumbs">
+            <a class="book-crumb-link" href="../../../../index.html">Modules</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../platonic/index.html" title="geometor.polyhedra.platonic">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../render/index.html" title="geometor.polyhedra.render"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content" role="main">
+        <section class="level-1" id="module-geometor.polyhedra.pyramid">
+        <span id="geometor-polyhedra-pyramid"></span><h1>geometor.polyhedra.pyramid<a class="headerlink" href="#module-geometor.polyhedra.pyramid" title="Link to this heading">¶</a></h1>
+        <p>Exact symbolic geometry of the Great Pyramid, Kepler triangle, and circle quadrature.</p>
+        <p>Provides 100% exact algebraic models over Q, Q(phi), Q(sqrt(phi)), and Q(pi) for:</p>
+        <ul class="simple">
+        <li><p>The Great Pyramid architectural profiles (Kepler Golden, Pi-Quadrature, Seked 14:11,
+        and Half-Octahedron).</p></li>
+        <li><p>Certified exact algebraic identities connecting the Kepler Pyramid, Herodotus’s area law,
+        phi harmonics, and the regular icosahedron.</p></li>
+        <li><p>3D Solid3D manifold builders (Kepler Pyramid, Seked Pyramid, and Golden Square Bipyramid).</p></li>
+        <li><p>2D geometor.model constructions (Kepler Right Triangle and Squaring the Circle Cosmogram).</p></li>
+        </ul>
+        <section class="level-2" id="attributes">
+        <h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.SQRT_PHI" title="geometor.polyhedra.pyramid.SQRT_PHI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SQRT_PHI</span></code></a></p></td>
+        <td><p></p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="classes">
+        <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.PyramidModelProfile" title="geometor.polyhedra.pyramid.PyramidModelProfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyramidModelProfile</span></code></a></p></td>
+        <td><p>Exact symbolic specification of a Great Pyramid architectural or geometric model.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="functions">
+        <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+        <table class="autosummary longtable docutils align-default">
+        <tbody>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.get_great_pyramid_profiles" title="geometor.polyhedra.pyramid.get_great_pyramid_profiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_great_pyramid_profiles</span></code></a>() → dict[str, PyramidModelProfile]</p></td>
+        <td><p>Returns mapping of canonical Great Pyramid model profiles.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.get_great_pyramid_profile" title="geometor.polyhedra.pyramid.get_great_pyramid_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_great_pyramid_profile</span></code></a>(slug) → PyramidModelProfile</p></td>
+        <td><p>Retrieves a single Great Pyramid model profile by slug.</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.verify_kepler_pyramid_identities" title="geometor.polyhedra.pyramid.verify_kepler_pyramid_identities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verify_kepler_pyramid_identities</span></code></a>() → dict[str, tuple[sympy.Expr, sympy.Expr]]</p></td>
+        <td><p>Certifies the eleven foundational exact identities of the Great Pyramid models.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.build_kepler_pyramid_solid" title="geometor.polyhedra.pyramid.build_kepler_pyramid_solid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_kepler_pyramid_solid</span></code></a>(*[, center_origin]) → geometor.polyhedra.model3d.primitives.Solid3D</p></td>
+        <td><p>Constructs the exact 3D Solid3D model of the Kepler Golden Pyramid over Q(sqrt(phi)).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.build_seked_pyramid_solid" title="geometor.polyhedra.pyramid.build_seked_pyramid_solid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_seked_pyramid_solid</span></code></a>(*[, royal_cubits, center_origin]) → geometor.polyhedra.model3d.primitives.Solid3D</p></td>
+        <td><p>Constructs the exact 3D Solid3D model of the Seked 14:11 Khufu Pyramid.</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.build_kepler_bipyramid_solid" title="geometor.polyhedra.pyramid.build_kepler_bipyramid_solid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_kepler_bipyramid_solid</span></code></a>() → geometor.polyhedra.model3d.primitives.Solid3D</p></td>
+        <td><p>Constructs the exact 3D Golden Square Bipyramid over Q(sqrt(phi)).</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.build_kepler_triangle_model" title="geometor.polyhedra.pyramid.build_kepler_triangle_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_kepler_triangle_model</span></code></a>() → tuple[geometor.model.Model, dict[str, sympy.Expr]]</p></td>
+        <td><p>Constructs the exact 2D Kepler Right Triangle model over Q(sqrt(phi)).</p></td>
+        </tr>
+        <tr class="row-even"><td><p><a class="reference internal" href="#geometor.polyhedra.pyramid.build_pyramid_squaring_circle_model" title="geometor.polyhedra.pyramid.build_pyramid_squaring_circle_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_pyramid_squaring_circle_model</span></code></a>() → tuple[geometor.model.Model, dict[str, sympy.Expr]]</p></td>
+        <td><p>Constructs the Great Pyramid Squaring the Circle &amp; Earth-Moon Cosmogram in 2D.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="module-contents">
+        <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+        <dl class="py data">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.SQRT_PHI">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">SQRT_PHI</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.SQRT_PHI" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py class">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile">
+        <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">PyramidModelProfile</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile" title="Link to this definition">¶</a></dt>
+        <dd><p>Exact symbolic specification of a Great Pyramid architectural or geometric model.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Variables<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>slug</strong> – Unique identifier (‘kepler_golden’, ‘pi_quadrature’, ‘seked_14_11’, ‘half_octahedron’).</p></li>
+        <li><p><strong>title</strong> – Descriptive human-readable title.</p></li>
+        <li><p><strong>historical_source</strong> – Primary source or historical citation.</p></li>
+        <li><p><strong>half_base</strong> – Exact half-base length (unit baseline = 1).</p></li>
+        <li><p><strong>height</strong> – Exact vertical apex height h above base.</p></li>
+        <li><p><strong>apothem</strong> – Exact face altitude (slant height) s = sqrt(half_base^2 + height^2).</p></li>
+        <li><p><strong>lateral_edge</strong> – Exact edge length from base corner to apex.</p></li>
+        <li><p><strong>base_perimeter</strong> – Exact perimeter of square base (8 * half_base).</p></li>
+        <li><p><strong>apex_circle_circumference</strong> – Exact circumference 2 * pi * height.</p></li>
+        <li><p><strong>base_area</strong> – Exact base area (4 * half_base^2).</p></li>
+        <li><p><strong>face_area</strong> – Exact area of one triangular lateral face (half_base * apothem).</p></li>
+        <li><p><strong>lateral_area</strong> – Exact total lateral area of the four triangular faces (4 * face_area).</p></li>
+        <li><p><strong>total_area</strong> – Exact total surface area (base_area + lateral_area).</p></li>
+        <li><p><strong>volume</strong> – Exact solid volume (1/3 * base_area * height).</p></li>
+        <li><p><strong>slope_spread</strong> – Exact Rational Trigonometry face slope spread sin^2(alpha) = h^2 / s^2.</p></li>
+        <li><p><strong>adjacent_dihedral_spread</strong> – Exact spread between normals of adjacent lateral faces.</p></li>
+        <li><p><strong>opposite_apex_spread</strong> – Exact spread between opposite meridian apothems.</p></li>
+        </ul>
+        </dd>
+        </dl>
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.slug">
+        <span class="sig-name descname"><span class="pre">slug</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.slug" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.title">
+        <span class="sig-name descname"><span class="pre">title</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.title" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.historical_source">
+        <span class="sig-name descname"><span class="pre">historical_source</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.historical_source" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.half_base">
+        <span class="sig-name descname"><span class="pre">half_base</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.half_base" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.height">
+        <span class="sig-name descname"><span class="pre">height</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.height" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.apothem">
+        <span class="sig-name descname"><span class="pre">apothem</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.apothem" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.lateral_edge">
+        <span class="sig-name descname"><span class="pre">lateral_edge</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.lateral_edge" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.base_perimeter">
+        <span class="sig-name descname"><span class="pre">base_perimeter</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.base_perimeter" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.apex_circle_circumference">
+        <span class="sig-name descname"><span class="pre">apex_circle_circumference</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.apex_circle_circumference" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.base_area">
+        <span class="sig-name descname"><span class="pre">base_area</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.base_area" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.face_area">
+        <span class="sig-name descname"><span class="pre">face_area</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.face_area" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.lateral_area">
+        <span class="sig-name descname"><span class="pre">lateral_area</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.lateral_area" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.total_area">
+        <span class="sig-name descname"><span class="pre">total_area</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.total_area" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.volume">
+        <span class="sig-name descname"><span class="pre">volume</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.volume" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.slope_spread">
+        <span class="sig-name descname"><span class="pre">slope_spread</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.slope_spread" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.adjacent_dihedral_spread">
+        <span class="sig-name descname"><span class="pre">adjacent_dihedral_spread</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.adjacent_dihedral_spread" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py attribute">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.opposite_apex_spread">
+        <span class="sig-name descname"><span class="pre">opposite_apex_spread</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">sympy.Expr</span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.opposite_apex_spread" title="Link to this definition">¶</a></dt>
+        <dd></dd></dl>
+
+        <dl class="py method">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.PyramidModelProfile.__post_init__">
+        <span class="sig-name descname"><span class="pre">__post_init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.PyramidModelProfile.__post_init__" title="Link to this definition">¶</a></dt>
+        <dd><p>Validates that all symbolic parameters contain no floats or sp.Float atoms.</p>
+        </dd></dl>
+
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.get_great_pyramid_profiles">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">get_great_pyramid_profiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#geometor.polyhedra.pyramid.PyramidModelProfile" title="geometor.polyhedra.pyramid.PyramidModelProfile"><span class="pre">PyramidModelProfile</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.get_great_pyramid_profiles" title="Link to this definition">¶</a></dt>
+        <dd><p>Returns mapping of canonical Great Pyramid model profiles.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Mapping of slug identifiers to PyramidModelProfile specifications.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.get_great_pyramid_profile">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">get_great_pyramid_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#geometor.polyhedra.pyramid.PyramidModelProfile" title="geometor.polyhedra.pyramid.PyramidModelProfile"><span class="pre">PyramidModelProfile</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.get_great_pyramid_profile" title="Link to this definition">¶</a></dt>
+        <dd><p>Retrieves a single Great Pyramid model profile by slug.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>slug</strong> – Unique identifier (‘kepler_golden’, ‘pi_quadrature’, ‘seked_14_11’, ‘half_octahedron’).</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Corresponding PyramidModelProfile.</p>
+        </dd>
+        <dt class="field-odd">Raises<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>KeyError</strong> – If slug is not recognized.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.verify_kepler_pyramid_identities">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">verify_kepler_pyramid_identities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.verify_kepler_pyramid_identities" title="Link to this definition">¶</a></dt>
+        <dd><p>Certifies the eleven foundational exact identities of the Great Pyramid models.</p>
+        <p>Certifies Herodotus’s area law, Kepler’s right triangle geometric progression,
+        golden ratio area ratios, the icosahedron circumquadrance bridge, Rational
+        Trigonometry slope and dihedral spreads, and Rhind Papyrus Seked 14:11 relations.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Mapping of identity names to exact (lhs, rhs) pairs where
+        sp.simplify(lhs - rhs) == 0.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.build_kepler_pyramid_solid">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">build_kepler_pyramid_solid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.build_kepler_pyramid_solid" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the exact 3D Solid3D model of the Kepler Golden Pyramid over Q(sqrt(phi)).</p>
+        <p>When center_origin is False (default), the square base rests on z = 0 with corners
+        (±1, ±1, 0) and apex at (0, 0, sqrt(phi)).
+        When center_origin is True, the Z coordinates are shifted downward by h/4 = sqrt(phi)/4
+        so that the centroid is at (0, 0, 0), placing the origin strictly inside the solid.
+        This guarantees is_outward_oriented(), vacuate(), and polar_dual() behave as valid 3D manifolds.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><p><strong>center_origin</strong> – If True, shifts vertices along Z by -h/4 to center the solid.</p>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact symbolic Solid3D instance.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.build_seked_pyramid_solid">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">build_seked_pyramid_solid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">royal_cubits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.build_seked_pyramid_solid" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the exact 3D Solid3D model of the Seked 14:11 Khufu Pyramid.</p>
+        <p>When royal_cubits is True, half-base is 220 and height is 280 (base 440 x 440 cubits,
+        height 280 cubits).
+        When royal_cubits is False (default), unit half-base 1 and height 14/11 are used.
+        When center_origin is True, vertices are shifted along Z by -h/4 so the origin
+        is at the solid’s interior centroid.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Parameters<span class="colon">:</span></dt>
+        <dd class="field-odd"><ul class="simple">
+        <li><p><strong>royal_cubits</strong> – If True, uses historical Khufu dimensions (220, 280 cubits).</p></li>
+        <li><p><strong>center_origin</strong> – If True, shifts vertices along Z by -h/4 to center the solid.</p></li>
+        </ul>
+        </dd>
+        <dt class="field-even">Returns<span class="colon">:</span></dt>
+        <dd class="field-even"><p>Exact symbolic Solid3D instance.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.build_kepler_bipyramid_solid">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">build_kepler_bipyramid_solid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../model3d/primitives/index.html#geometor.polyhedra.model3d.primitives.Solid3D" title="geometor.polyhedra.model3d.primitives.Solid3D"><span class="pre">geometor.polyhedra.model3d.primitives.Solid3D</span></a></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.build_kepler_bipyramid_solid" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the exact 3D Golden Square Bipyramid over Q(sqrt(phi)).</p>
+        <p>Formed by reflecting the Kepler Golden Pyramid across its square base z = 0,
+        producing an 8-faced convex polyhedron with 6 vertices:
+        (±1, ±1, 0), (0, 0, sqrt(phi)), and (0, 0, -sqrt(phi)).</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Exact symbolic Solid3D instance centered at (0, 0, 0).</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.build_kepler_triangle_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">build_kepler_triangle_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.build_kepler_triangle_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the exact 2D Kepler Right Triangle model over Q(sqrt(phi)).</p>
+        <p>Constructs unit base O(0, 0), A(1, 0), W(-1, 0), midpoint E(1/2, 0),
+        north point N(0, 1), golden section point P(phi, 0), midpoint K((phi - 1)/2, 0),
+        Thales circle cutting positive Y-axis at B(0, sqrt(phi)), Kepler Right Triangle
+        OAB, and altitude foot H dividing hypotenuse AB into golden major BH = 1
+        and minor HA = phi - 1 = 1/phi.</p>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of (Model, metrics_dict) with certified exact SymPy quadrances.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        <dl class="py function">
+        <dt class="sig sig-object py" id="geometor.polyhedra.pyramid.build_pyramid_squaring_circle_model">
+        <span class="sig-prename descclassname"><span class="pre">geometor.polyhedra.pyramid.</span></span><span class="sig-name descname"><span class="pre">build_pyramid_squaring_circle_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">geometor.model.Model</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sympy.Expr</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#geometor.polyhedra.pyramid.build_pyramid_squaring_circle_model" title="Link to this definition">¶</a></dt>
+        <dd><p>Constructs the Great Pyramid Squaring the Circle &amp; Earth-Moon Cosmogram in 2D.</p>
+        <p>Constructs:</p>
+        <ul class="simple">
+        <li><p>Base square corners SW(-1, -1), SE(1, -1), NE(1, 1), NW(-1, 1) of side 2,
+        perimeter 8, and area 4.</p></li>
+        <li><p>Meridian pyramid triangle on base W(-1, 0) to E(1, 0) with apex S(0, sqrt(phi)).</p></li>
+        <li><p>Apex circle centered at O(0, 0) passing through S(0, sqrt(phi)) with radius
+        R = sqrt(phi) and circumference 2 * pi * sqrt(phi) ≈ 8.</p></li>
+        <li><p>Inscribed Earth circle centered at O(0, 0) passing through T(0, 1) and E(1, 0)
+        tangent to the square of side 2 (radius 1).</p></li>
+        <li><p>Tangent Moon circle centered at apex S(0, sqrt(phi)) tangent to the Earth circle
+        at T(0, 1) with radius sqrt(phi) - 1 ≈ 3/11.</p></li>
+        </ul>
+        <dl class="field-list simple">
+        <dt class="field-odd">Returns<span class="colon">:</span></dt>
+        <dd class="field-odd"><p>Tuple of (Model, metrics_dict) certifying exact symbolic circle-squaring metrics.</p>
+        </dd>
+        </dl>
+        </dd></dl>
+
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../platonic/index.html" title="geometor.polyhedra.platonic">&larr; <span class="nav-label">geometor.polyhedra.platonic</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../../../../index.html">GEOMETOR • polyhedra</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../render/index.html" title="geometor.polyhedra.render"><span class="nav-label">geometor.polyhedra.render</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../../../log/26.319-great_pyramid_kepler.html">Kepler, Squaring the Circle & the Great Pyramid (v0.3.0)</a></li>
+        <li><a href="../../../../../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../../../../../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../../../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../../../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../../../_static/documentation_options.js?v=e259d695"></script>
+  <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script src="../../../../../_static/js/polyhedra_3d_codex.js?v=3d481e31"></script>
+  <script src="../../../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

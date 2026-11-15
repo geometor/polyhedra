@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kepler, Squaring the Circle &amp; the Great Pyramid &mdash; Kepler, Squaring the Circle &amp; the Great Pyramid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/styles.css?v=ec8980ef" />
+  <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c80139d2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../platonic/index.html"  >Platonic Solids</a>
+        </li>
+        <li>
+          <a href="../golden/index.html"  >Golden Proportions</a>
+        </li>
+        <li>
+          <a href="../leonardo/index.html"  >Leonardo Plates</a>
+        </li>
+        <li>
+          <a href="#" class="is-active" aria-selected="true" aria-current="page">Great Pyramid</a>
+        </li>
+        <li>
+          <a href="../pipeline/index.html"  >3D Pipeline</a>
+        </li>
+        <li>
+          <a href="../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="#">Kepler, Squaring the Circle & the Great Pyramid</a>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../leonardo/icosahedron_dodecahedron.html" title="Leonardo Plates: Icosahedron, Dodecahedron &amp; Vigintisex Basium (Tabulae XXI–XXXVI)">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="kepler_triangle.html" title="The 1597 Kepler Right Triangle &amp; Golden Surface Harmony"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="kepler-squaring-the-circle-the-great-pyramid">
+        <h1>Kepler, Squaring the Circle &amp; the Great Pyramid<a class="headerlink" href="#kepler-squaring-the-circle-the-great-pyramid" title="Link to this heading">¶</a></h1>
+        <p><em>The 1597 Kepler Right Triangle · Circle Quadrature · Old Kingdom 14:11 Seked &amp; Polyhedral Duality</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>Geometria duo habet thesauros magnos: alterum est theorema Pythagorae, alterum sectio aequa ac media proportione. Primum auro comparare possumus, secundum gemmae pretiosae.</em></p>
+        <p><em>Geometry has two great treasures: one is the Theorem of Pythagoras, the other the division of a line into extreme and mean ratio. The first we may compare to a measure of gold, the second we may name a precious jewel.</em></p>
+        <p class="attribution">—<strong>Johannes Kepler</strong>, <em>Epistola ad Michaelem Mästlinum</em> (Prague, October 1597)</p>
+        </div></blockquote>
+        <blockquote class="epigraph">
+        <div><p><em>καὶ τῆς ποιήσεως τῆς πυραμίδος… ἑκάστης δὲ τῶν τεσσάρων πλευρῶν εἶναι τὸ ὕψος ὀκτὼ πλέθρα, ἐούσης τετραγώνου, καὶ τὸ εὖρος ἴσον.</em></p>
+        <p><em>The pyramid was built such that the square on its vertical height equals the surface of each of its triangular faces, the base being square and four-sided.</em></p>
+        <p class="attribution">—<strong>Herodotus of Halicarnassus</strong>, <em>Histories</em> II.124 (c. 440 BCE)</p>
+        </div></blockquote>
+        <section class="level-2" id="the-geometry-of-the-great-pyramid">
+        <h2>The Geometry of the Great Pyramid<a class="headerlink" href="#the-geometry-of-the-great-pyramid" title="Link to this heading">¶</a></h2>
+        <p>Across the history of architecture, mathematics, and cosmology, no monument has provoked deeper geometrical inquiry than the <strong>Great Pyramid of Giza</strong> (the Pyramid of Khufu, Fourth Dynasty, c. 2570 BCE).</p>
+        <p>In the <strong>GEOMETOR</strong> symbolic framework, the Great Pyramid is investigated not through speculative numerology, but through <strong>exact algebraic geometry over certified field extensions</strong>:</p>
+        <ul class="simple">
+        <li><p>The quadratic field <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{5}) = \mathbb{Q}(\phi)\)</span> of the Divine Proportion <span class="math notranslate nohighlight">\(\phi = \frac{1 + \sqrt{5}}{2}\)</span>;</p></li>
+        <li><p>The quartic field <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{\phi})\)</span> generated by Kepler’s right triangle polynomial <span class="math notranslate nohighlight">\(x^4 - x^2 - 1 = 0\)</span>;</p></li>
+        <li><p>The rational field <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> governing the Old Kingdom Egyptian <em>seked</em> ratio <span class="math notranslate nohighlight">\(14 : 11\)</span> recorded in the Rhind Mathematical Papyrus;</p></li>
+        <li><p>The transcendental perimeter quadrature relation <span class="math notranslate nohighlight">\(h/a = 4/\pi\)</span>.</p></li>
+        </ul>
+        <p>These four profiles converge upon nearly identical profiles within a fractional variance of less than one part in a thousand (<span class="math notranslate nohighlight">\(&lt; 0.1\%\)</span>), uniting the Pythagorean theorem, the golden ratio, circle quadrature, and polyhedral duality.</p>
+        </section>
+        <section class="level-2" id="interactive-3d-great-pyramid-circle-quadrature-studio">
+        <h2>Interactive 3D Great Pyramid &amp; Circle Quadrature Studio<a class="headerlink" href="#interactive-3d-great-pyramid-circle-quadrature-studio" title="Link to this heading">¶</a></h2>
+        <p>The interactive studio below mounts the exact symbolic engine of <code class="docutils literal notranslate"><span class="pre">geometor.polyhedra</span></code>. Use the preset buttons and parameter sliders to inspect the four geometric profiles and toggle internal geometrical armatures in real time:</p>
+        <div class="polyhedra-3d-mount" data-scene="great_pyramid_kepler"></div><div class="admonition note">
+        <p class="admonition-title">Note</p>
+        <p><strong>Interactive Codex Controls</strong>:</p>
+        <ul class="simple">
+        <li><p><strong>Four Profile Presets</strong>:
+        - <strong>Kepler φ</strong> (<span class="math notranslate nohighlight">\(h = \sqrt{\phi} \approx 1.2720\)</span>): Golden ratio apothem <span class="math notranslate nohighlight">\(s = \phi\)</span> and Herodotus area equality <span class="math notranslate nohighlight">\(A_{\text{face}} = h^2\)</span>.
+        - <strong>Seked 14:11</strong> (<span class="math notranslate nohighlight">\(h = 14/11 \approx 1.2727\)</span>): Khufu’s historical Old Kingdom design (<span class="math notranslate nohighlight">\(280 \times 220\)</span> Royal Cubits, Seked <span class="math notranslate nohighlight">\(5\frac{1}{2}\)</span> palms).
+        - <strong>True π Quadrature</strong> (<span class="math notranslate nohighlight">\(h = 4/\pi \approx 1.2732\)</span>): Exact base perimeter circle quadrature (<span class="math notranslate nohighlight">\(2\pi h = 8\)</span>).
+        - <strong>Half-Octahedron</strong> (<span class="math notranslate nohighlight">\(h = \sqrt{2} \approx 1.4142\)</span>): Equilateral triangular faces (<span class="math notranslate nohighlight">\(s = \sqrt{3}\)</span>) from Platonic solid geometry.</p></li>
+        <li><p><strong>Continuous Height Slider</strong>: Drag <span class="math notranslate nohighlight">\(h \in [1.000, 1.600]\)</span> to observe dynamic deformation of dihedral angles and perimeter error.</p></li>
+        <li><p><strong>Kepler Meridian Triangle (1, √φ, φ)</strong>: Toggles the luminous gold interior right triangle spanning the base center, baseline midpoint, and apex.</p></li>
+        <li><p><strong>Squaring the Circle (2πh = 8)</strong>: Renders the horizontal base quadrature circle and vertical meridian quadrature circle (<span class="math notranslate nohighlight">\(R = h\)</span>).</p></li>
+        <li><p><strong>Earth &amp; Moon Cosmogram</strong>: Mounts the inscribed Earth sphere (<span class="math notranslate nohighlight">\(r_E = 1\)</span>) and tangent polar Moon sphere (<span class="math notranslate nohighlight">\(r_M = h - 1 \approx 3/11\)</span>).</p></li>
+        <li><p><strong>Vacuum Frame</strong>: Generates Leonardo da Vinci’s hollow wooden timber frame (<em>Pyramis Quadrata Vacua</em>, genus <span class="math notranslate nohighlight">\(g = 4\)</span>).</p></li>
+        <li><p><strong>Golden Bipyramid</strong>: Reflects the pyramid downward across the square base <span class="math notranslate nohighlight">\(z = 0\)</span> to produce the 8-faced golden octahedroid.</p></li>
+        <li><p><strong>Live Telemetry</strong>: Real-time readout of face slope angle <span class="math notranslate nohighlight">\(\alpha\)</span>, apothem <span class="math notranslate nohighlight">\(s\)</span>, perimeter discrepancy, and face area vs. <span class="math notranslate nohighlight">\(h^2\)</span>.</p></li>
+        </ul>
+        </div>
+        </section>
+        <section class="level-2" id="master-comparison-of-the-four-square-pyramid-models">
+        <h2>Master Comparison of the Four Square-Pyramid Models<a class="headerlink" href="#master-comparison-of-the-four-square-pyramid-models" title="Link to this heading">¶</a></h2>
+        <p>To isolate structural invariants, all models are normalized to unit half-base <span class="math notranslate nohighlight">\(a = 1\)</span> (base side <span class="math notranslate nohighlight">\(2a = 2\)</span>, base perimeter <span class="math notranslate nohighlight">\(P_{\text{base}} = 8\)</span>, base area <span class="math notranslate nohighlight">\(A_{\text{base}} = 4\)</span>):</p>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 18.0%" />
+        <col style="width: 16.0%" />
+        <col style="width: 14.0%" />
+        <col style="width: 14.0%" />
+        <col style="width: 13.0%" />
+        <col style="width: 13.0%" />
+        <col style="width: 12.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Model Profile</p></th>
+        <th class="head"><p>Vertical Height <span class="math notranslate nohighlight">\(h\)</span></p></th>
+        <th class="head"><p>Apothem <span class="math notranslate nohighlight">\(s\)</span></p></th>
+        <th class="head"><p>Lateral Edge <span class="math notranslate nohighlight">\(e\)</span></p></th>
+        <th class="head"><p>Slope Spread <span class="math notranslate nohighlight">\(s_{\text{slope}}\)</span></p></th>
+        <th class="head"><p>Slope Angle <span class="math notranslate nohighlight">\(\alpha\)</span></p></th>
+        <th class="head"><p>Dihedral Spread</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Kepler Golden</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\sqrt{\phi} \approx 1.27202\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\phi \approx 1.61803\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\sqrt{\phi + 2} \approx 1.90211\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\phi^{-1} \approx 0.61803\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(51^\circ 49' 38''\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(3\phi - 4 \approx 0.85410\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Seked 14:11</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{14}{11} \approx 1.27273\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{\sqrt{317}}{11} \approx 1.61859\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{\sqrt{438}}{11} \approx 1.90258\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{196}{317} \approx 0.61830\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(51^\circ 50' 34''\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{85848}{100489} \approx 0.85430\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>True π Quadrature</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{4}{\pi} \approx 1.27324\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\sqrt{1 + \frac{16}{\pi^2}} \approx 1.61899\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\sqrt{2 + \frac{16}{\pi^2}} \approx 1.90293\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{16}{\pi^2 + 16} \approx 0.61849\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(51^\circ 51' 14''\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{32(\pi^2 + 8)}{(\pi^2 + 16)^2} \approx 0.85445\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Half-Octahedron</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\sqrt{2} \approx 1.41421\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\sqrt{3} \approx 1.73205\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(2.00000\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{2}{3} \approx 0.66667\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(54^\circ 44' 08''\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{8}{9} \approx 0.88889\)</span></p></td>
+        </tr>
+        </tbody>
+        </table>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 16.0%" />
+        <col style="width: 18.0%" />
+        <col style="width: 22.0%" />
+        <col style="width: 20.0%" />
+        <col style="width: 24.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Model Profile</p></th>
+        <th class="head"><p>Apex Circle <span class="math notranslate nohighlight">\(2\pi h\)</span></p></th>
+        <th class="head"><p>Perimeter Discrepancy <span class="math notranslate nohighlight">\(2\pi h - 8\)</span></p></th>
+        <th class="head"><p>Face Area <span class="math notranslate nohighlight">\(A_{\text{face}}\)</span> vs. <span class="math notranslate nohighlight">\(h^2\)</span></p></th>
+        <th class="head"><p>Primary Invariant</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Kepler Golden</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(2\pi\sqrt{\phi} \approx 7.99235\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(-0.00765\)</span> (<span class="math notranslate nohighlight">\(-0.0957\%\)</span>)</p></td>
+        <td><p><span class="math notranslate nohighlight">\(\phi \equiv \phi\)</span> (Identical)</p></td>
+        <td><p><span class="math notranslate nohighlight">\(A_{\text{face}} = h^2 \iff 1 + \phi = \phi^2\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Seked 14:11</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\frac{28\pi}{11} \approx 7.99680\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(-0.00320\)</span> (<span class="math notranslate nohighlight">\(-0.0400\%\)</span> / <span class="math notranslate nohighlight">\(0\%\)</span> at <span class="math notranslate nohighlight">\(\pi = \frac{22}{7}\)</span>)</p></td>
+        <td><p><span class="math notranslate nohighlight">\(1.61859\)</span> vs. <span class="math notranslate nohighlight">\(1.61983\)</span> (<span class="math notranslate nohighlight">\(-0.08\%\)</span>)</p></td>
+        <td><p><span class="math notranslate nohighlight">\(2 \times \frac{22}{7} \times \frac{14}{11} = 8\)</span> (Exact rational)</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>True π Quadrature</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(8.00000\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(0.00000\)</span> (<span class="math notranslate nohighlight">\(0.0000\%\)</span> Exact)</p></td>
+        <td><p><span class="math notranslate nohighlight">\(1.61899\)</span> vs. <span class="math notranslate nohighlight">\(1.62114\)</span> (<span class="math notranslate nohighlight">\(-0.13\%\)</span>)</p></td>
+        <td><p><span class="math notranslate nohighlight">\(2\pi h = P_{\text{base}} \iff h = \frac{4}{\pi}\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Half-Octahedron</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(2\pi\sqrt{2} \approx 8.88577\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(+0.88577\)</span> (<span class="math notranslate nohighlight">\(+11.072\%\)</span>)</p></td>
+        <td><p><span class="math notranslate nohighlight">\(\sqrt{3} \approx 1.732\)</span> vs. <span class="math notranslate nohighlight">\(2.000\)</span> (<span class="math notranslate nohighlight">\(-13.4\%\)</span>)</p></td>
+        <td><p>Regular equilateral faces: <span class="math notranslate nohighlight">\(\{3, 4\}\)</span> half</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="perspective-projections-elemental-solid-leonardo-vacuum-frame">
+        <h2>Perspective Projections: Elemental Solid &amp; Leonardo Vacuum Frame<a class="headerlink" href="#perspective-projections-elemental-solid-leonardo-vacuum-frame" title="Link to this heading">¶</a></h2>
+        <p>The 3D solid manifold of the Kepler Pyramid is rendered below in two Renaissance graphic traditions: the solid chiaroscuro projection highlighting the internal golden meridian right triangle, and Leonardo da Vinci’s hollow timber frame (<em>pyramis vacua</em>):</p>
+        <figure class="align-center" id="id1">
+        <img alt="Kepler Golden Pyramid 3D Elemental Projection" src="../_images/kepler_pyramid_3d.svg" />
+        <figcaption>
+        <p><span class="caption-text"><em>The 3D Kepler Golden Pyramid with internal meridian right triangle :math:`(0, 0, -h/4) to (1, 0, -h/4) to (0, 0, 3h/4)` rendered in luminous gold.</em></span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <figure class="align-center" id="id2">
+        <img alt="Kepler Golden Pyramid Leonardo Vacuum Frame" src="../_images/kepler_pyramid_vacuum.svg" />
+        <figcaption>
+        <p><span class="caption-text"><em>The Leonardo Vacuum Frame of the Kepler Pyramid (Pyramis Quadrata Vacua, genus :math:`g = 4`, aperture :math:`3/4`, shell thickness :math:`7/8`).</em></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </section>
+        <section class="level-2" id="structure-of-the-great-pyramid-codex">
+        <h2>Structure of the Great Pyramid Codex<a class="headerlink" href="#structure-of-the-great-pyramid-codex" title="Link to this heading">¶</a></h2>
+        <p>This monograph develops the geometry of the Great Pyramid across three rigorous thematic treatises:</p>
+        <ol class="arabic simple">
+        <li><p><strong>The Kepler Right Triangle &amp; Golden Surface Harmony</strong>:
+        Euclidean compass-and-straightedge synthesis, Herodotus’s area law, the golden progression of pyramid surface areas, and the circumradius bridge to the Platonic icosahedron.</p></li>
+        <li><p><strong>Squaring the Circle &amp; the Earth–Moon Cosmogram</strong>:
+        Perimeter quadrature, the algebraic bridge between <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(\sqrt{\phi}\)</span>, Lindemann’s transcendence theorem, and the astronomical Earth–Moon tangent cosmogram.</p></li>
+        <li><p><strong>Egyptian Seked Mensuration, 3D Spreads &amp; Polyhedral Relatives</strong>:
+        The Old Kingdom Royal Cubit and Rhind Papyrus Seked <span class="math notranslate nohighlight">\(14:11\)</span>, exact 3D Rational Trigonometry dihedral and apex spreads, the 2D star net, Leonardo’s <em>pyramis vacua</em>, and the Golden Square Bipyramid.</p></li>
+        </ol>
+        <div class="toctree-wrapper compound">
+        <ul>
+        <li class="toctree-l1"><a class="reference internal" href="kepler_triangle.html">The 1597 Kepler Right Triangle &amp; Golden Surface Harmony</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="kepler_triangle.html#kepler-s-two-treasures-the-quartic-field-extension">Kepler’s Two Treasures &amp; the Quartic Field Extension</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="kepler_triangle.html#step-by-step-compass-and-straightedge-euclidean-construction">Step-by-Step Compass and Straightedge Euclidean Construction</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="kepler_triangle.html#exact-altitude-division-golden-major-and-minor-on-the-hypotenuse">Exact Altitude Division: Golden Major and Minor on the Hypotenuse</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="kepler_triangle.html#the-herodotustaylorrober-face-area-law">The Herodotus–Taylor–Röber Face Area Law</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="kepler_triangle.html#the-continuous-golden-surface-chain-1-2">The Continuous Golden Surface Chain: 1 : φ : φ²</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="kepler_triangle.html#the-icosahedron-circumradius-bridge-over-q">The Icosahedron Circumradius Bridge over Q(φ)</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="squaring_the_circle.html">Squaring the Circle &amp; the Earth–Moon Cosmogram</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="squaring_the_circle.html#perimeter-quadrature-circling-the-square">Perimeter Quadrature: Circling the Square</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="squaring_the_circle.html#the-goldenpi-algebraic-bridge-4">The Golden–Pi Algebraic Bridge: π ≈ 4 / √φ</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="squaring_the_circle.html#archimedes-22-7-and-the-egyptian-seked-bridge">Archimedes’ 22/7 and the Egyptian Seked Bridge</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="squaring_the_circle.html#area-quadrature-vs-ferdinand-von-lindemann-s-theorem-1882">Area Quadrature vs. Ferdinand von Lindemann’s Theorem (1882)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="squaring_the_circle.html#constructible-radical-approximations-in-q-1-4">Constructible Radical Approximations in Q(φ^(1/4))</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="squaring_the_circle.html#the-earthmoon-tangent-cosmogram-2d-model">The Earth–Moon Tangent Cosmogram (2D Model)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="squaring_the_circle.html#geophysical-fidelity-the-3-11-terrestrial-lunar-ratio">Geophysical Fidelity: The 3/11 Terrestrial-Lunar Ratio</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="seked_and_octahedron.html">Egyptian Seked Mensuration, 3D Spreads &amp; Polyhedral Relatives</a><ul>
+        <li class="toctree-l2"><a class="reference internal" href="seked_and_octahedron.html#the-old-kingdom-royal-cubit-rhind-mathematical-papyrus">The Old Kingdom Royal Cubit &amp; Rhind Mathematical Papyrus</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="seked_and_octahedron.html#flinders-petrie-s-1883-survey-and-the-historical-seked-512">Flinders Petrie’s 1883 Survey and the Historical Seked 5½</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="seked_and_octahedron.html#exact-3d-rational-trigonometry-of-square-pyramids">Exact 3D Rational Trigonometry of Square Pyramids</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="seked_and_octahedron.html#the-unfolded-2d-star-net-of-the-golden-pyramid">The Unfolded 2D Star Net of the Golden Pyramid</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="seked_and_octahedron.html#leonardo-da-vinci-s-pyramis-quadrata-vacua-genus-g-4">Leonardo da Vinci’s Pyramis Quadrata Vacua (Genus g = 4)</a></li>
+        <li class="toctree-l2"><a class="reference internal" href="seked_and_octahedron.html#the-golden-square-bipyramid-vs-the-regular-octahedron">The Golden Square Bipyramid vs. The Regular Octahedron</a></li>
+        </ul>
+        </li>
+        </ul>
+        </div>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../leonardo/icosahedron_dodecahedron.html" title="Leonardo Plates: Icosahedron, Dodecahedron &amp; Vigintisex Basium (Tabulae XXI–XXXVI)">&larr; <span class="nav-label">Leonardo Plates: Icosahedron, Dodecahedron & Vigintisex Basium (Tabulae XXI–XXXVI)</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="#">Kepler, Squaring the Circle & the Great Pyramid</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="kepler_triangle.html" title="The 1597 Kepler Right Triangle &amp; Golden Surface Harmony"><span class="nav-label">The 1597 Kepler Right Triangle & Golden Surface Harmony</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../log/26.319-great_pyramid_kepler.html">Kepler, Squaring the Circle & the Great Pyramid (v0.3.0)</a></li>
+        <li><a href="../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../types/log.html">log</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../_static/documentation_options.js?v=e259d695"></script>
+  <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../_static/js/polyhedra_3d_codex.js?v=3d481e31"></script>
+  <script src="../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

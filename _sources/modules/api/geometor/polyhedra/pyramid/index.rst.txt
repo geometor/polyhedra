@@ -1,0 +1,259 @@
+geometor.polyhedra.pyramid
+==========================
+
+.. py:module:: geometor.polyhedra.pyramid
+
+.. autoapi-nested-parse::
+
+   Exact symbolic geometry of the Great Pyramid, Kepler triangle, and circle quadrature.
+
+   Provides 100% exact algebraic models over Q, Q(phi), Q(sqrt(phi)), and Q(pi) for:
+
+   - The Great Pyramid architectural profiles (Kepler Golden, Pi-Quadrature, Seked 14:11,
+     and Half-Octahedron).
+   - Certified exact algebraic identities connecting the Kepler Pyramid, Herodotus's area law,
+     phi harmonics, and the regular icosahedron.
+   - 3D Solid3D manifold builders (Kepler Pyramid, Seked Pyramid, and Golden Square Bipyramid).
+   - 2D geometor.model constructions (Kepler Right Triangle and Squaring the Circle Cosmogram).
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   geometor.polyhedra.pyramid.SQRT_PHI
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.polyhedra.pyramid.PyramidModelProfile
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.pyramid.get_great_pyramid_profiles
+   geometor.polyhedra.pyramid.get_great_pyramid_profile
+   geometor.polyhedra.pyramid.verify_kepler_pyramid_identities
+   geometor.polyhedra.pyramid.build_kepler_pyramid_solid
+   geometor.polyhedra.pyramid.build_seked_pyramid_solid
+   geometor.polyhedra.pyramid.build_kepler_bipyramid_solid
+   geometor.polyhedra.pyramid.build_kepler_triangle_model
+   geometor.polyhedra.pyramid.build_pyramid_squaring_circle_model
+
+
+Module Contents
+---------------
+
+.. py:data:: SQRT_PHI
+   :type:  sympy.Expr
+
+.. py:class:: PyramidModelProfile
+
+   Exact symbolic specification of a Great Pyramid architectural or geometric model.
+
+   :ivar slug: Unique identifier ('kepler_golden', 'pi_quadrature', 'seked_14_11', 'half_octahedron').
+   :ivar title: Descriptive human-readable title.
+   :ivar historical_source: Primary source or historical citation.
+   :ivar half_base: Exact half-base length (unit baseline = 1).
+   :ivar height: Exact vertical apex height h above base.
+   :ivar apothem: Exact face altitude (slant height) s = sqrt(half_base^2 + height^2).
+   :ivar lateral_edge: Exact edge length from base corner to apex.
+   :ivar base_perimeter: Exact perimeter of square base (8 * half_base).
+   :ivar apex_circle_circumference: Exact circumference 2 * pi * height.
+   :ivar base_area: Exact base area (4 * half_base^2).
+   :ivar face_area: Exact area of one triangular lateral face (half_base * apothem).
+   :ivar lateral_area: Exact total lateral area of the four triangular faces (4 * face_area).
+   :ivar total_area: Exact total surface area (base_area + lateral_area).
+   :ivar volume: Exact solid volume (1/3 * base_area * height).
+   :ivar slope_spread: Exact Rational Trigonometry face slope spread sin^2(alpha) = h^2 / s^2.
+   :ivar adjacent_dihedral_spread: Exact spread between normals of adjacent lateral faces.
+   :ivar opposite_apex_spread: Exact spread between opposite meridian apothems.
+
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: historical_source
+      :type:  str
+
+
+   .. py:attribute:: half_base
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: height
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: apothem
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: lateral_edge
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: base_perimeter
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: apex_circle_circumference
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: base_area
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: face_area
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: lateral_area
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: total_area
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: volume
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: slope_spread
+      :type:  sympy.Expr
+
+
+   .. py:attribute:: adjacent_dihedral_spread
+      :type:  sympy.Expr | None
+
+
+   .. py:attribute:: opposite_apex_spread
+      :type:  sympy.Expr
+
+
+   .. py:method:: __post_init__() -> None
+
+      Validates that all symbolic parameters contain no floats or sp.Float atoms.
+
+
+
+.. py:function:: get_great_pyramid_profiles() -> dict[str, PyramidModelProfile]
+
+   Returns mapping of canonical Great Pyramid model profiles.
+
+   :returns: Mapping of slug identifiers to PyramidModelProfile specifications.
+
+
+.. py:function:: get_great_pyramid_profile(slug: str) -> PyramidModelProfile
+
+   Retrieves a single Great Pyramid model profile by slug.
+
+   :param slug: Unique identifier ('kepler_golden', 'pi_quadrature', 'seked_14_11', 'half_octahedron').
+
+   :returns: Corresponding PyramidModelProfile.
+
+   :raises KeyError: If slug is not recognized.
+
+
+.. py:function:: verify_kepler_pyramid_identities() -> dict[str, tuple[sympy.Expr, sympy.Expr]]
+
+   Certifies the eleven foundational exact identities of the Great Pyramid models.
+
+   Certifies Herodotus's area law, Kepler's right triangle geometric progression,
+   golden ratio area ratios, the icosahedron circumquadrance bridge, Rational
+   Trigonometry slope and dihedral spreads, and Rhind Papyrus Seked 14:11 relations.
+
+   :returns: Mapping of identity names to exact (lhs, rhs) pairs where
+             sp.simplify(lhs - rhs) == 0.
+
+
+.. py:function:: build_kepler_pyramid_solid(*, center_origin: bool = False) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs the exact 3D Solid3D model of the Kepler Golden Pyramid over Q(sqrt(phi)).
+
+   When center_origin is False (default), the square base rests on z = 0 with corners
+   (±1, ±1, 0) and apex at (0, 0, sqrt(phi)).
+   When center_origin is True, the Z coordinates are shifted downward by h/4 = sqrt(phi)/4
+   so that the centroid is at (0, 0, 0), placing the origin strictly inside the solid.
+   This guarantees is_outward_oriented(), vacuate(), and polar_dual() behave as valid 3D manifolds.
+
+   :param center_origin: If True, shifts vertices along Z by -h/4 to center the solid.
+
+   :returns: Exact symbolic Solid3D instance.
+
+
+.. py:function:: build_seked_pyramid_solid(*, royal_cubits: bool = False, center_origin: bool = False) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs the exact 3D Solid3D model of the Seked 14:11 Khufu Pyramid.
+
+   When royal_cubits is True, half-base is 220 and height is 280 (base 440 x 440 cubits,
+   height 280 cubits).
+   When royal_cubits is False (default), unit half-base 1 and height 14/11 are used.
+   When center_origin is True, vertices are shifted along Z by -h/4 so the origin
+   is at the solid's interior centroid.
+
+   :param royal_cubits: If True, uses historical Khufu dimensions (220, 280 cubits).
+   :param center_origin: If True, shifts vertices along Z by -h/4 to center the solid.
+
+   :returns: Exact symbolic Solid3D instance.
+
+
+.. py:function:: build_kepler_bipyramid_solid() -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs the exact 3D Golden Square Bipyramid over Q(sqrt(phi)).
+
+   Formed by reflecting the Kepler Golden Pyramid across its square base z = 0,
+   producing an 8-faced convex polyhedron with 6 vertices:
+   (±1, ±1, 0), (0, 0, sqrt(phi)), and (0, 0, -sqrt(phi)).
+
+   :returns: Exact symbolic Solid3D instance centered at (0, 0, 0).
+
+
+.. py:function:: build_kepler_triangle_model() -> tuple[geometor.model.Model, dict[str, sympy.Expr]]
+
+   Constructs the exact 2D Kepler Right Triangle model over Q(sqrt(phi)).
+
+   Constructs unit base O(0, 0), A(1, 0), W(-1, 0), midpoint E(1/2, 0),
+   north point N(0, 1), golden section point P(phi, 0), midpoint K((phi - 1)/2, 0),
+   Thales circle cutting positive Y-axis at B(0, sqrt(phi)), Kepler Right Triangle
+   OAB, and altitude foot H dividing hypotenuse AB into golden major BH = 1
+   and minor HA = phi - 1 = 1/phi.
+
+   :returns: Tuple of (Model, metrics_dict) with certified exact SymPy quadrances.
+
+
+.. py:function:: build_pyramid_squaring_circle_model() -> tuple[geometor.model.Model, dict[str, sympy.Expr]]
+
+   Constructs the Great Pyramid Squaring the Circle & Earth-Moon Cosmogram in 2D.
+
+   Constructs:
+
+   - Base square corners SW(-1, -1), SE(1, -1), NE(1, 1), NW(-1, 1) of side 2,
+     perimeter 8, and area 4.
+   - Meridian pyramid triangle on base W(-1, 0) to E(1, 0) with apex S(0, sqrt(phi)).
+   - Apex circle centered at O(0, 0) passing through S(0, sqrt(phi)) with radius
+     R = sqrt(phi) and circumference 2 * pi * sqrt(phi) ≈ 8.
+   - Inscribed Earth circle centered at O(0, 0) passing through T(0, 1) and E(1, 0)
+     tangent to the square of side 2 (radius 1).
+   - Tangent Moon circle centered at apex S(0, sqrt(phi)) tangent to the Earth circle
+     at T(0, 1) with radius sqrt(phi) - 1 ≈ 3/11.
+
+   :returns: Tuple of (Model, metrics_dict) certifying exact symbolic circle-squaring metrics.
+
+

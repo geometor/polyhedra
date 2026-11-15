@@ -1,7 +1,5 @@
 :layout: book
 :title: Kepler's Triacontahedron & Odom's Section
-:book_title: Kepler's Triacontahedron & Odom's Section
-:book_subtitle: Kepler Strena (1611) · Thirty Golden Rhombi · George Odom's Golden Theorem (1983)
 
 ==========================================
 Kepler's Triacontahedron & Odom's Section

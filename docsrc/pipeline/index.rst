@@ -1,6 +1,9 @@
+:navigation: header
+:order: 4
+:nav_title: 3D Pipeline
 :layout: book
 :title: 3D Symbolic Infrastructure & Multi-Engine Pipeline
-:book_title: Polyhedra: Platonic Solids & Divine Proportion
+:book_title: 3D Symbolic Infrastructure & Multi-Engine Pipeline
 :book_subtitle: Exact Symbolic 3D Modeling, Conway/Pacioli Operators, and Multi-Target Export Architecture
 
 ==================================================

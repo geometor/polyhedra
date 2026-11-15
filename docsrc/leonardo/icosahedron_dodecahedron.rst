@@ -1,7 +1,5 @@
 :layout: book
 :title: Leonardo Plates: Icosahedron, Dodecahedron & Vigintisex Basium (Tabulae XXI–XXXVI)
-:book_title: Polyhedra: Platonic Solids & Divine Proportion
-:book_subtitle: Dedicated Gallery & Exact Symbolic Reconstruction of Folios 0231–0261
 
 ===================================================================================
 Leonardo Plates: Icosahedron, Dodecahedron & Vigintisex Basium (Tabulae XXI–XXXVI)

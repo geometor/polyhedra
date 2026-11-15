@@ -1,7 +1,5 @@
 :layout: book
 :title: Golden Division of the Octahedron
-:book_title: Golden Division of the Octahedron
-:book_subtitle: Inscribing the Regular Icosahedron · Continuous Morphism · Cuboctahedron to Icosahedron
 
 =================================
 Golden Division of the Octahedron

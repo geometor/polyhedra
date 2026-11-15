@@ -1,11 +1,14 @@
+:navigation: header
+:order: 2
+:nav_title: Golden Proportions
 :layout: book
 :title: Golden Proportions in Polyhedra
 :book_title: Golden Proportions in Polyhedra
 :book_subtitle: Exact Symbolic Geometry · Divine Proportion Invariants · Keplerian Compounds
 
-==============================
+===============================
 Golden Proportions in Polyhedra
-==============================
+===============================
 
 *Exact Algebraic Embeddings of the Divine Proportion across Regular and Dual Solids*
 

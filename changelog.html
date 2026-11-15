@@ -6,12 +6,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog &mdash; Polyhedra: Platonic Solids &amp; Divine Proportion</title>
+  <title>Changelog &mdash; GEOMETOR • polyhedra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="_static/css/styles.css?v=8713e751" />
+  <link rel="stylesheet" type="text/css" href="_static/css/styles.css?v=99410eb1" />
   <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
   <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=a0b65bc5" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
@@ -21,7 +21,7 @@
   <link rel="icon" href="_static/favicon.ico" />
 </head>
 
-<body class="is-book-page book-theme-classical-serif">
+<body class="book-theme-classical-serif">
   <header>
     <div class="logo">
       <a href="index.html">
@@ -37,6 +37,24 @@
       <input type="checkbox" id="nav-Header-toggle" >
       <label for="nav-Header-toggle" >Header</label>
       <ul>
+        <li>
+          <a href="platonic/index.html"  >Platonic Solids</a>
+        </li>
+        <li>
+          <a href="golden/index.html"  >Golden Proportions</a>
+        </li>
+        <li>
+          <a href="leonardo/index.html"  >Leonardo Plates</a>
+        </li>
+        <li>
+          <a href="pipeline/index.html"  >3D Pipeline</a>
+        </li>
+        <li>
+          <a href="log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="modules/index.html"  >Modules</a>
+        </li>
       </ul>
     </nav>
     <div class="motto"></div>
@@ -48,7 +66,7 @@
           <div class="book-header-identity">
             <a class="book-portal-link" href="index.html" title="Return to Project Portal">&larr; polyhedra</a>
             <span class="book-header-sep">/</span>
-            <a class="book-title-link" href="index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+            <a class="book-title-link" href="index.html">GEOMETOR • polyhedra</a>
           </div>
         </div>
         <div class="book-header-nav">
@@ -58,15 +76,20 @@
           <div class="book-nav-center">
           </div>
           <div class="book-nav-next">
-            <a class="book-nav-btn" href="log/index.html" title="Log"><span class="nav-label">Next</span> &rarr;</a>
           </div>
         </div>
       </header>
-      <div class="content body book-content folio-book-page" role="main">
+      <div class="content body book-content" role="main">
         <section class="level-1" id="changelog">
         <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
         <section class="level-2" id="id1">
-        <h2>0.2.0 (2026-11-15)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+        <h2>0.2.1 (2026-11-15)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+        <ul class="simple">
+        <li><p>Configured top-level header navigation menus (<code class="docutils literal notranslate"><span class="pre">Platonic</span> <span class="pre">Solids</span></code>, <code class="docutils literal notranslate"><span class="pre">Golden</span> <span class="pre">Proportions</span></code>, <code class="docutils literal notranslate"><span class="pre">Leonardo</span> <span class="pre">Plates</span></code>, <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">Pipeline</span></code>, <code class="docutils literal notranslate"><span class="pre">Log</span></code>, <code class="docutils literal notranslate"><span class="pre">Modules</span></code>) with active section highlighting and clean Book Codex breadcrumb inheritance across all child chapters.</p></li>
+        </ul>
+        </section>
+        <section class="level-2" id="id2">
+        <h2>0.2.0 (2026-11-15)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
         <ul class="simple">
         <li><p>Added exact 3D symbolic modeling kernel <a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#module-geometor.polyhedra.model3d" title="geometor.polyhedra.model3d"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geometor.polyhedra.model3d</span></code></a> (<a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#geometor.polyhedra.model3d.Point3D" title="geometor.polyhedra.model3d.Point3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point3D</span></code></a>, <a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#geometor.polyhedra.model3d.Vector3D" title="geometor.polyhedra.model3d.Vector3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector3D</span></code></a>, <a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#geometor.polyhedra.model3d.Line3D" title="geometor.polyhedra.model3d.Line3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Line3D</span></code></a>, <a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#geometor.polyhedra.model3d.Plane3D" title="geometor.polyhedra.model3d.Plane3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plane3D</span></code></a>, <a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#geometor.polyhedra.model3d.Sphere3D" title="geometor.polyhedra.model3d.Sphere3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sphere3D</span></code></a>, <a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#geometor.polyhedra.model3d.Solid3D" title="geometor.polyhedra.model3d.Solid3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solid3D</span></code></a>) plus 2D Dimensional Bridge (<a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#geometor.polyhedra.model3d.slice_solid_to_model" title="geometor.polyhedra.model3d.slice_solid_to_model"><code class="xref py py-func docutils literal notranslate"><span class="pre">slice_solid_to_model()</span></code></a> and <a class="reference internal" href="modules/api/geometor/polyhedra/model3d/index.html#geometor.polyhedra.model3d.unfold_net_2d" title="geometor.polyhedra.model3d.unfold_net_2d"><code class="xref py py-func docutils literal notranslate"><span class="pre">unfold_net_2d()</span></code></a>).</p></li>
         <li><p>Implemented exact Conway/Pacioli/Leonardo polyhedral operators in <a class="reference internal" href="modules/api/geometor/polyhedra/operators/index.html#module-geometor.polyhedra.operators" title="geometor.polyhedra.operators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geometor.polyhedra.operators</span></code></a>: <a class="reference internal" href="modules/api/geometor/polyhedra/operators/index.html#geometor.polyhedra.operators.vacuate" title="geometor.polyhedra.operators.vacuate"><code class="xref py py-func docutils literal notranslate"><span class="pre">vacuate()</span></code></a> (genus <span class="math notranslate nohighlight">\(g = F - 1\)</span> hollow wooden manifold), <a class="reference internal" href="modules/api/geometor/polyhedra/operators/index.html#geometor.polyhedra.operators.rectify" title="geometor.polyhedra.operators.rectify"><code class="xref py py-func docutils literal notranslate"><span class="pre">rectify()</span></code></a>, <a class="reference internal" href="modules/api/geometor/polyhedra/operators/index.html#geometor.polyhedra.operators.truncate" title="geometor.polyhedra.operators.truncate"><code class="xref py py-func docutils literal notranslate"><span class="pre">truncate()</span></code></a>, <a class="reference internal" href="modules/api/geometor/polyhedra/operators/index.html#geometor.polyhedra.operators.elevate" title="geometor.polyhedra.operators.elevate"><code class="xref py py-func docutils literal notranslate"><span class="pre">elevate()</span></code></a> (equilateral stellations including <em>Stella Octangula</em>), and <a class="reference internal" href="modules/api/geometor/polyhedra/operators/index.html#geometor.polyhedra.operators.polar_dual" title="geometor.polyhedra.operators.polar_dual"><code class="xref py py-func docutils literal notranslate"><span class="pre">polar_dual()</span></code></a>.</p></li>
@@ -75,8 +98,8 @@
         <li><p>Authored 15 dedicated <cite>:layout: book</cite> codex pages across <cite>docsrc/platonic/</cite>, <cite>docsrc/golden/</cite>, <cite>docsrc/leonardo/</cite> (with 38 curated 1509 Leonardo da Vinci woodcut plates), and <cite>docsrc/pipeline/</cite>.</p></li>
         </ul>
         </section>
-        <section class="level-2" id="id2">
-        <h2>0.1.0 (2026-11-14)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+        <section class="level-2" id="id3">
+        <h2>0.1.0 (2026-11-14)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
         <ul class="simple">
         <li><p>Initial release of <code class="docutils literal notranslate"><span class="pre">geometor-polyhedra</span></code> (v0.1.0) strictly adhering to GEOMETOR exact symbolic standards (zero <code class="docutils literal notranslate"><span class="pre">float</span></code> / <code class="docutils literal notranslate"><span class="pre">sp.Float</span></code>).</p></li>
         <li><p>Implemented exact symbolic Platonic solids registry in <a class="reference internal" href="modules/api/geometor/polyhedra/platonic/index.html#module-geometor.polyhedra.platonic" title="geometor.polyhedra.platonic"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geometor.polyhedra.platonic</span></code></a> (<a class="reference internal" href="modules/api/geometor/polyhedra/platonic/index.html#geometor.polyhedra.platonic.RegularSolid" title="geometor.polyhedra.platonic.RegularSolid"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegularSolid</span></code></a>) with all 5 regular solids (Tetrahedron, Hexahedron, Octahedron, Icosahedron, Dodecahedron) over <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span>.</p></li>
@@ -97,10 +120,9 @@
             <a class="book-nav-btn" href="modules/api/geometor/polyhedra/render/svg3d/index.html" title="geometor.polyhedra.render.svg3d">&larr; <span class="nav-label">geometor.polyhedra.render.svg3d</span></a>
           </div>
           <div class="book-nav-center">
-            <a class="book-toc-link" href="index.html">Polyhedra: Platonic Solids & Divine Proportion</a>
+            <a class="book-toc-link" href="index.html">GEOMETOR • polyhedra</a>
           </div>
           <div class="book-nav-next">
-            <a class="book-nav-btn" href="log/index.html" title="Log"><span class="nav-label">Log</span> &rarr;</a>
           </div>
         </div>
       </footer>
@@ -142,9 +164,7 @@
   <footer>
     <div class="footer-nav">
       <ul>
-        <li><a href="modules/index.html"  >Modules</a></li>
         <li><a href="#" class="is-active" aria-selected="true" aria-current="page">Changelog</a></li>
-        <li><a href="log/index.html"  >Log</a></li>
       </ul>
     </div>
     <hr />
@@ -157,7 +177,7 @@
 
   <script src="_static/jquery.js?v=5d32c60e"></script>
   <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="_static/documentation_options.js?v=938c9ccc"></script>
+  <script src="_static/documentation_options.js?v=37f418d5"></script>
   <script src="_static/doctools.js?v=fd6eb6e6"></script>
   <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="_static/js/collection_controls.js?v=b6b5297a"></script>

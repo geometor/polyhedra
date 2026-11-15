@@ -1,7 +1,10 @@
+:navigation: header
+:order: 3
+:nav_title: Leonardo Plates
 :layout: book
 :title: Leonardo da Vinci's Polyhedral Plates (1509)
-:book_title: Polyhedra: Platonic Solids & Divine Proportion
-:book_subtitle: The Sixty Woodcut Plates of Luca Pacioli's De Divina Proportione
+:book_title: Leonardo da Vinci's Polyhedral Plates (1509)
+:book_subtitle: The Sixty Woodcut Plates of Luca Pacioli's De Divina Proportione & Exact Corpora Vacua
 
 =============================================
 Leonardo da Vinci's Polyhedral Plates (1509)

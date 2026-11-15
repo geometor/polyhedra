@@ -1,7 +1,5 @@
 :layout: book
 :title: Golden Rectangles of the Icosahedron
-:book_title: Golden Rectangles of the Icosahedron
-:book_subtitle: Three Mutually Orthogonal Golden Rectangles · Euclid XIII.16 · Principal Meridian Hexagon
 
 ====================================
 Golden Rectangles of the Icosahedron

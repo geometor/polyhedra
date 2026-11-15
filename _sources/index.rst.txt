@@ -1,13 +1,10 @@
-:layout: book
-:title: Polyhedra
-:book_title: Polyhedra: Platonic Solids & Divine Proportion
-:book_subtitle: Exact Symbolic 3D Geometry · Rational Trigonometry · Leonardo da Vinci Plates (1509)
+:title: GEOMETOR • polyhedra
 
 =========
 polyhedra
 =========
 
-*Exact Symbolic Platonic Solids, 3D Rational Trigonometry, and Leonardo da Vinci's Polyhedral Woodcuts*
+*Exact Symbolic Platonic Solids, Golden Proportions, 3D Rational Trigonometry, and Leonardo da Vinci's Polyhedral Woodcuts*
 
 .. epigraph::
 
@@ -20,9 +17,9 @@ polyhedra
 Overview
 --------
 
-**GEOMETOR Polyhedra** (``geometor-polyhedra``) models three-dimensional constructive geometry and regular solids in **100% exact symbolic algebra** (zero floating-point approximations) using `SymPy <https://www.sympy.org/>`_ and `geometor.model`.
+**GEOMETOR Polyhedra** (``geometor-polyhedra``) models three-dimensional constructive geometry and regular solids in **100% exact symbolic algebra** (zero floating-point approximations) using `SymPy <https://www.sympy.org/>`_ and ``geometor.model``.
 
-Grounding its algebraic foundations in Euclid's *Elements* Book XIII, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509), and Norman Wildberger's Rational Trigonometry, this codex unites classical geometric scholarship with symbolic computation over :math:`\mathbb{Z}` and :math:`\mathbb{Q}(\phi)` (:math:`\phi = \frac{1 + \sqrt{5}}{2}`).
+Grounding its algebraic foundations in Euclid's *Elements* Book XIII, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509), Johannes Kepler's *Strena* (1611), and Norman Wildberger's Rational Trigonometry, this edition unites classical geometric scholarship with symbolic computation over :math:`\mathbb{Z}` and :math:`\mathbb{Q}(\phi)` (:math:`\phi = \frac{1 + \sqrt{5}}{2}`).
 
 Interactive 3D Polyhedra Explorer
 ---------------------------------
@@ -93,15 +90,11 @@ The Five Platonic Solids
      - $4/5$
      - $\frac{4\phi+3}{15}$
 
-Codex Contents
---------------
+Book Codices & Architecture
+---------------------------
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Polyhedra Canon
-
-   platonic/index
-   golden/index
-   leonardo/index
-   pipeline/index
-
+* :doc:`platonic/index` — Dedicated monographs for the :doc:`Tetrahedron <platonic/tetrahedron>`, :doc:`Hexahedron <platonic/hexahedron>`, :doc:`Octahedron <platonic/octahedron>`, :doc:`Icosahedron <platonic/icosahedron>`, and :doc:`Dodecahedron <platonic/dodecahedron>`, with Euclid Book XIII constructions, pure rational dihedral spreads, interactive 3D solids, and non-overlapping 2D unfolded nets.
+* :doc:`golden/index` — Six certified Golden Ratio ($\phi$) theorems across 3D polyhedra and 2D cross-sections: :doc:`Golden Rectangles of the Icosahedron <golden/golden_rectangles>`, :doc:`Golden Division of the Octahedron <golden/octahedron_icosahedron>`, :doc:`Euclid XIII.17 & the Five Cubes in the Dodecahedron <golden/dodecahedron_five_cubes>`, and :doc:`Kepler's Rhombic Triacontahedron & Odom's Tetrahedron Section <golden/rhombic_triacontahedron_odom>`.
+* :doc:`leonardo/index` — Side-by-side Digital Scriptorium study of 38 original 1509 woodcut plates by **Leonardo da Vinci** (:doc:`Tabulae I–XX <leonardo/tetrahedron_cube_octahedron>` and :doc:`Tabulae XXI–XXXVI <leonardo/icosahedron_dodecahedron>`) paired with exact genus $g = F - 1$ *Corpora Vacua* reconstructions.
+* :doc:`pipeline/index` — Architecture of ``geometor.polyhedra.model3d``, Conway/Pacioli operators (``vacuate``, ``rectify``, ``truncate``, ``elevate``, ``polar_dual``), and multi-engine exports to 2D SVG, HTML5 3D Canvas, **IngeTrazo 0.6.0**, and **Blender 5.x**.
+* :doc:`modules/index` · :doc:`log/index` · :doc:`changelog` — Symbolic Python API reference, research log, and release history.

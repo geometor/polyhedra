@@ -6,10 +6,10 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 ## 1. Purpose & Guiding Principles
 
-`geometor-polyhedra` (`v0.2.0`) provides the 3D symbolic modeling kernel, polyhedral operator algebra, Golden Ratio theorem suite, and multi-engine visualization pipeline for the GEOMETOR ecosystem:
+`geometor-polyhedra` (`v0.3.0`) provides the 3D symbolic modeling kernel, polyhedral operator algebra, Golden Ratio theorem suite, Great Pyramid / Kepler / Circle-Quadrature synthesis, and multi-engine visualization pipeline for the GEOMETOR ecosystem:
 
-- **100% Exact Symbolic Precision**: All vertices, face normals, edge midpoints, face centroids, sphere quadrances, Conway/Leonardo operators, and 2D cross-sections are modeled symbolically over $\mathbb{Z}$, $\mathbb{Q}(\phi)$ ($\phi = \frac{1+\sqrt{5}}{2}$), and closed-form radical extensions. Zero `float` or `sp.Float` approximations in symbolic geometry (`.evalf()` is confined strictly to `render/` projection/export layers and cyclic sorting).
-- **Euclidean & Scriptorium Lineage**: Direct alignment with Euclid's *Elements* Book XIII (`G.592`–`G.600`), Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509 woodcuts by Leonardo da Vinci), and Johannes Kepler's *Strena* (1611) and *Harmonices Mundi* (1619).
+- **100% Exact Symbolic Precision**: All vertices, face normals, edge midpoints, face centroids, sphere quadrances, Conway/Leonardo operators, Great Pyramid profiles, and 2D cross-sections are modeled symbolically over $\mathbb{Z}$, $\mathbb{Q}(\phi)$ ($\phi = \frac{1+\sqrt{5}}{2}$), $\mathbb{Q}(\sqrt{\phi})$, and closed-form radical extensions. Zero `float` or `sp.Float` approximations in symbolic geometry (`.evalf()` is confined strictly to `render/` projection/export layers and cyclic sorting).
+- **Euclidean & Scriptorium Lineage**: Direct alignment with Euclid's *Elements* Book XIII (`G.592`–`G.600`), the Rhind Mathematical Papyrus, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509 woodcuts by Leonardo da Vinci), and Johannes Kepler's 1597 *Epistola ad Mästlinum*, *Strena* (1611), and *Harmonices Mundi* (1619).
 - **Rational Trigonometry Invariants**: Pure rational dihedral spreads across all five regular solids:
   - Tetrahedron $\{3,3\}$: $s = 8/9$
   - Hexahedron $\{4,3\}$: $s = 1$
@@ -21,13 +21,14 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 ## 2. Package Architecture (`src/geometor/polyhedra/`)
 
-- [`__init__.py`](src/geometor/polyhedra/__init__.py): Public exports and `__version__ = "0.2.0"`.
+- [`__init__.py`](src/geometor/polyhedra/__init__.py): Public exports and `__version__ = "0.3.0"`.
 - [`platonic.py`](src/geometor/polyhedra/platonic.py): Exact symbolic seed kernel (`RegularSolid`, `PHI`, `PHI_INV`, all 5 regular solids, Leonardo plate concordance, and 3D Rational Trigonometry helpers).
 - [`model3d/`](src/geometor/polyhedra/model3d/):
   - [`primitives.py`](src/geometor/polyhedra/model3d/primitives.py): Exact zero-float `Vector3D`, `Point3D`, `Line3D`, `Plane3D`, `Sphere3D`, and `Solid3D`.
   - [`bridge.py`](src/geometor/polyhedra/model3d/bridge.py): Dimensional bridge `slice_solid_to_model` ($\text{3D} \to \text{2D}$ `geometor.model.Model`) and `unfold_net_2d` (non-overlapping spanning-tree 2D nets).
 - [`operators.py`](src/geometor/polyhedra/operators.py): Exact symbolic `Solid3D -> Solid3D` operators: `vacuate` (Leonardo's hollow *Corpora Vacua*, genus $g = F - 1$), `rectify` (*Abscisum*), `truncate`, `elevate` (*Elevatum*), and `polar_dual`.
 - [`golden.py`](src/geometor/polyhedra/golden.py): Six certified Golden Polyhedra theorems (`GoldenPolyhedronTheorem`) and builders (`build_icosahedron_golden_rectangles`, `build_octahedron_golden_icosahedron`, `build_dodecahedron_five_cubes`, `build_rhombic_triacontahedron_golden`, `build_odom_tetrahedron_section_model`, `build_icosahedron_meridian_model`, `build_pentagon_cross_section_model`) integrated with `geometor.divine`.
+- [`pyramid.py`](src/geometor/polyhedra/pyramid.py): Exact symbolic Great Pyramid, 1597 Kepler Right Triangle $(1, \sqrt{\phi}, \phi)$, Squaring-the-Circle ($8 = 2\pi h$, $\pi_{\phi} = 4/\sqrt{\phi}$), Earth–Moon $11:3$ Cosmogram, and Old Kingdom $14:11$ Seked models (`PyramidModelProfile`, `verify_kepler_pyramid_identities`, 3D `Solid3D` & 2D `Model` builders).
 - [`render/`](src/geometor/polyhedra/render/):
   - [`svg3d.py`](src/geometor/polyhedra/render/svg3d.py): Theme-adaptive `.euclid-graphic` SVG generators (`render_solid_svg`, `render_net_svg`, `render_model2d_svg`).
   - [`exporters.py`](src/geometor/polyhedra/render/exporters.py): Wavefront `.obj`/`.mtl` exporter plus standalone **IngeTrazo 0.6.0** and **Blender 5.x (`bpy`)** studio script generators (`demos/exports/`).
@@ -39,10 +40,11 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 Compiled as a self-contained `:layout: book` codex via `publish build` (zero modifications required in `photon-platform/publish`):
 
-- [`docsrc/_static/js/polyhedra_3d_codex.js`](docsrc/_static/js/polyhedra_3d_codex.js): Zero-dependency interactive HTML5 `<canvas>` 3D viewer (`data-solid` and `data-scene` modes with live *Vacuum* aperture $\mu$ morphing, $\tau \in (0,1)$ Octahedron-to-Icosahedron edge division, and 5-Cube compound toggles).
+- [`docsrc/_static/js/polyhedra_3d_codex.js`](docsrc/_static/js/polyhedra_3d_codex.js): Zero-dependency interactive HTML5 `<canvas>` 3D viewer (`data-solid` and `data-scene` modes, including `great_pyramid_kepler`).
 - [`docsrc/platonic/`](docsrc/platonic/): Overview + 5 dedicated Platonic solid monographs.
 - [`docsrc/golden/`](docsrc/golden/): Overview + 4 dedicated Golden Proportions monographs.
 - [`docsrc/leonardo/`](docsrc/leonardo/): 38 curated 1509 Leonardo woodcuts (`Tabulae I–XXXVI`) paired side-by-side with exact symbolic reconstructions.
+- [`docsrc/pyramid/`](docsrc/pyramid/): Overview + 3 dedicated monographs on the Kepler Right Triangle, Squaring the Circle / Earth–Moon Cosmogram, and Egyptian $14:11$ Seked & Octahedral Spreads.
 - [`docsrc/pipeline/`](docsrc/pipeline/): 3D symbolic architecture and multi-engine pipeline documentation.
 
 ---

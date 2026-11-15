@@ -1,3 +1,10 @@
+0.3.0 (2026-11-15)
+------------------
+
+- Added :mod:`geometor.polyhedra.pyramid` implementing exact symbolic models over :math:`\mathbb{Q}(\sqrt{\phi})`, :math:`\mathbb{Q}(\pi)`, and :math:`\mathbb{Q}` for the **Great Pyramid**, **1597 Kepler Right Triangle** :math:`(1, \sqrt{\phi}, \phi)`, **Squaring the Circle** (:math:`8 = 2\pi h`, :math:`\pi_{\phi} = 4/\sqrt{\phi}`, :math:`\pi_{22/7} = 22/7`), **Earth–Moon 11:3 Cosmogram**, and **Old Kingdom 14:11 Seked** mensuration.
+- Certified 11 exact algebraic identities (:func:`~geometor.polyhedra.pyramid.verify_kepler_pyramid_identities`), including the Herodotus area law (:math:`A_{\text{face}} = h^2 = \phi`), continuous golden surface chain (:math:`A_{\text{base}} : A_{\text{lateral}} : A_{\text{total}} = 1 : \phi : \phi^2`), Icosahedron circumradius edge bridge (:math:`Q_{\text{edge}} = \phi + 2`), and pure :math:`\mathbb{Q}(\phi)` / :math:`\mathbb{Q}` dihedral spreads (:math:`3\phi - 4` and :math:`85848/100489`).
+- Added 3D ``Solid3D`` builders (:func:`~geometor.polyhedra.pyramid.build_kepler_pyramid_solid`, :func:`~geometor.polyhedra.pyramid.build_seked_pyramid_solid`, :func:`~geometor.polyhedra.pyramid.build_kepler_bipyramid_solid`), 2D ``geometor.model.Model`` constructions (:func:`~geometor.polyhedra.pyramid.build_kepler_triangle_model`, :func:`~geometor.polyhedra.pyramid.build_pyramid_squaring_circle_model`), interactive 3D scene ``data-scene="great_pyramid_kepler"``, 6 ``.euclid-graphic`` SVGs, and the dedicated ``Great Pyramid`` Book Codex monograph (`docsrc/pyramid/`).
+
 0.2.1 (2026-11-15)
 ------------------
 

@@ -1,3 +1,10 @@
+0.4.3 (2026-11-15)
+------------------
+
+- Added universal **Dual** and **Golden φ** buttons across all 26 interactive ``data-solid`` 3D studios:
+  - **Dual** (`buildFaceCenterDual`): Constructs the exact inscribed **Face-Center Dual** whose vertices are the centroids of every side (rendering depth-cued cyan dual edges and 3D cyan vertex spheres right at the side centers, certifying the self-dual Regular Tetrahedron inside itself).
+  - **Golden φ** (`buildGoldenOverlay`): Renders vertex-exact :math:`1 : \phi` **Golden Rectangles** and :math:`\phi : 1` **Golden Sections** (24k gold major segments, coral-rose minor segments, and 3D rose-gold section pearls, including George Odom's Tetrahedron circumcircle golden section, the 12 golden-divided Octahedron edges, Cube face-flush golden rectangles, pentagonal pentagram sections, and Kepler pyramid apothem altitudes).
+
 0.4.2 (2026-11-15)
 ------------------
 

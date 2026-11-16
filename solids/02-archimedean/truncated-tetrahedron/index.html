@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-content_root="../../../">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P-02.01 · Truncated Tetrahedron &mdash; Catalog of Polyhedra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Fira+Sans+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=ea5fcf70" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/styles.css?v=ec8980ef" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+  <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=f6b31482" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../_static/css/print.css" type="text/css" media="print" />
+  <link rel="icon" href="../../../_static/favicon.ico" />
+</head>
+
+<body class="is-book-page book-theme-classical-serif">
+  <header>
+    <div class="logo">
+      <a href="../../../index.html">
+        <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+      </a>
+      <div class="org-repo">
+        <span class="org">GEOMETOR</span>
+        •
+        <span class="repo">polyhedra</span>
+      </div>
+    </div>
+    <nav aria-label="Header">
+      <input type="checkbox" id="nav-Header-toggle" >
+      <label for="nav-Header-toggle" >Header</label>
+      <ul>
+        <li>
+          <a href="../../index.html" class="is-active" aria-selected="true" >Solids</a>
+        </li>
+        <li>
+          <a href="../../../golden/index.html"  >Golden Proportions</a>
+        </li>
+        <li>
+          <a href="../../../leonardo/index.html"  >Leonardo Plates</a>
+        </li>
+        <li>
+          <a href="../../../pyramid/index.html"  >Great Pyramid</a>
+        </li>
+        <li>
+          <a href="../../../pipeline/index.html"  >3D Pipeline</a>
+        </li>
+        <li>
+          <a href="../../../log/index.html"  >Log</a>
+        </li>
+        <li>
+          <a href="../../../modules/index.html"  >Modules</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="motto"></div>
+  </header>
+  <main class="book-main">
+    <article class="book-layout book-reading-pane" data-canonical-id="P-02.01">
+      <header class="book-header">
+        <div class="book-header-bar">
+          <div class="book-header-identity">
+            <a class="book-portal-link" href="../../../index.html" title="Return to Project Portal">&larr; polyhedra</a>
+            <span class="book-header-sep">/</span>
+            <a class="book-title-link" href="../../index.html">Catalog of Polyhedra</a>
+          </div>
+          <div class="book-header-breadcrumbs book-header-badges" role="navigation" aria-label="Book Breadcrumbs">
+            <a class="book-crumb-link" href="../index.html">P-02 · Archimedean & Abscisa Solids</a>
+            <span class="book-crumb-sep">/</span>
+            <span class="book-badge canonical-badge">P-02.01</span>
+          </div>
+        </div>
+        <div class="book-header-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../index.html" title="P-02 · Archimedean &amp; Abscisa Solids">&larr; <span class="nav-label">Prev</span></a>
+          </div>
+          <div class="book-nav-center">
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../cuboctahedron/index.html" title="P-02.02 · Cuboctahedron"><span class="nav-label">Next</span> &rarr;</a>
+          </div>
+        </div>
+      </header>
+      <div class="content body book-content folio-book-page" role="main">
+        <section class="level-1" id="p-02-01-truncated-tetrahedron">
+        <h1>P-02.01 · Truncated Tetrahedron<a class="headerlink" href="#p-02-01-truncated-tetrahedron" title="Link to this heading">¶</a></h1>
+        <p><em>Tetrahedron Abscisum · Field: :math:`mathbb{Q}` · Symmetry: :math:`T_d` (order 24) · Convex · Archimedes of Syracuse</em></p>
+        <blockquote class="epigraph">
+        <div><p><em>Tetrahedron abscisum fit per abscisionem quatuor angulorum solidorum regularis tetraedri ad tertiam partem uniuscuiusque costae.</em></p>
+        <p><em>The truncated tetrahedron is made by cutting away the four solid angles of the regular tetrahedron at the third part of each edge.</em></p>
+        <p class="attribution">—<strong>Luca Pacioli</strong>, <em>De Divina Proportione</em>, Cap. XXVII (Venice, 1509)</p>
+        </div></blockquote>
+        <div class="enunciation">The <strong>Truncated Tetrahedron</strong> (<em>Tetrahedron Abscisum</em>) is the simplest Archimedean semi-regular polyhedron, formed by cutting off the four corners of a regular tetrahedron at one-third of its edge length (<span class="math notranslate nohighlight">\(t = 1/3\)</span>). Bounded by 4 equilateral triangles and 4 regular hexagons with 12 vertices and 18 edges, every vertex is surrounded identically by one triangle and two hexagons (<span class="math notranslate nohighlight">\(3 \cdot 6^2\)</span>).</div>
+        <figure class="photon-picture photon-svg">
+            <svg class="euclid-graphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480" data-graphic-id="truncated-tetrahedron" data-svg-scope="s-5c2df0ec">
+          <style>
+            svg[data-svg-scope="s-5c2df0ec"] { font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif }
+            svg[data-svg-scope="s-5c2df0ec"] .poly-stroke { stroke: #1e3a8a; stroke-linejoin: round; stroke-linecap: round }
+            svg[data-svg-scope="s-5c2df0ec"] .poly-hidden { stroke: #94a3b8; stroke-dasharray: 3 3; stroke-width: 1.0; opacity: 0.5; fill: none }
+            svg[data-svg-scope="s-5c2df0ec"] .poly-gold { fill: #f59e0b; fill-opacity: 0.30; stroke: #b45309; stroke-width: 2.5; stroke-linejoin: round }
+            body:not(.light-mode):not([data-theme="light"]) svg[data-svg-scope="s-5c2df0ec"] .poly-stroke { stroke: #93c5fd }
+            body:not(.light-mode):not([data-theme="light"]) svg[data-svg-scope="s-5c2df0ec"] .poly-hidden { stroke: #64748b; opacity: 0.6 }
+            svg[data-svg-scope="s-5c2df0ec"] html[data-theme="dark"] .poly-stroke { stroke: #93c5fd }
+            svg[data-svg-scope="s-5c2df0ec"] html[data-theme="dark"] .poly-hidden { stroke: #64748b; opacity: 0.6 }
+          </style>
+          <defs />
+          <g id="hidden-edges">
+            <line x1="271.03" y1="422.40" x2="236.68" y2="345.78" class="poly-hidden" />
+            <line x1="288.42" y1="221.16" x2="236.68" y2="345.78" class="poly-hidden" />
+            <line x1="381.05" y1="143.41" x2="288.42" y2="221.16" class="poly-hidden" />
+            <line x1="440.13" y1="192.38" x2="381.05" y2="143.41" class="poly-hidden" />
+            <line x1="288.42" y1="221.16" x2="152.67" y2="232.67" class="poly-hidden" />
+            <line x1="152.67" y1="232.67" x2="79.87" y2="164.25" class="poly-hidden" />
+            <line x1="381.05" y1="143.41" x2="335.50" y2="57.60" class="poly-hidden" />
+            <line x1="236.68" y1="345.78" x2="152.67" y2="232.67" class="poly-hidden" />
+          </g>
+          <g id="faces">
+            <polygon points="79.87,164.25 92.30,220.62 166.73,65.96" fill="#828dc6" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="truncation" data-face-idx="7" />
+            <polygon points="203.10,370.88 271.03,422.40 382.08,350.23" fill="#6f79aa" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="truncation" data-face-idx="5" />
+            <polygon points="335.50,57.60 166.73,65.96 92.30,220.62 203.10,370.88 382.08,350.23 440.13,192.38" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="1" />
+          </g>
+        </svg>
+        </figure>
+        <section class="level-2" id="interactive-3d-solid-vacuum-studio">
+        <h2>Interactive 3D Solid &amp; Vacuum Studio<a class="headerlink" href="#interactive-3d-solid-vacuum-studio" title="Link to this heading">¶</a></h2>
+        <div class="polyhedra-3d-mount" data-solid="truncated-tetrahedron"></div><div class="admonition note">
+        <p class="admonition-title">Note</p>
+        <p><strong>Interactive Codex Controls</strong>:</p>
+        <ul class="simple">
+        <li><p><strong>Orbit &amp; Inspect</strong>: Click and drag to orbit in three dimensions. Scroll or pinch to zoom.</p></li>
+        <li><p><strong>Variant Toggle</strong>: Switch between Leonardo da Vinci’s <em>Vacuum</em> (open wooden beam lattice), <em>Solidum</em> (opaque planar facets), and <em>Platonic Origin</em> (regular tetrahedron).</p></li>
+        <li><p><strong>Aperture Slider</strong>: Scrub the wooden beam aperture parameter <span class="math notranslate nohighlight">\(\mu \in [0.10, 0.45]\)</span> to inspect Leonardo’s interior hexagonal joinery.</p></li>
+        <li><p><strong>Perspective Snap</strong>: Reset camera to Leonardo da Vinci’s canonical 1509 woodcut vantage point.</p></li>
+        </ul>
+        </div>
+        </section>
+        <section class="level-2" id="machine-verified-symbolic-certificate">
+        <h2>Machine-Verified Symbolic Certificate<a class="headerlink" href="#machine-verified-symbolic-certificate" title="Link to this heading">¶</a></h2>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 35.0%" />
+        <col style="width: 30.0%" />
+        <col style="width: 35.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Mathematical Invariant</p></th>
+        <th class="head"><p>Exact Symbolic Value</p></th>
+        <th class="head"><p>Geometric Interpretation</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p><strong>Catalog Identifier</strong></p></td>
+        <td><p><code class="docutils literal notranslate"><span class="pre">P-02.01</span></code></p></td>
+        <td><p>Family 02 (Archimedean Solids), Solid 01</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Algebraic Number Field</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></p></td>
+        <td><p>Pure rational field</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Topology</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\((V=12, E=18, F=8)\)</span></p></td>
+        <td><p>Euler characteristic <span class="math notranslate nohighlight">\(\chi = 12 - 18 + 8 = 2\)</span></p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Face Composition</strong></p></td>
+        <td><p>4 equilateral triangles + 4 regular hexagons</p></td>
+        <td><p>Vertex figure <span class="math notranslate nohighlight">\(3 \cdot 6^2\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Exact Edge Quadrance</strong> <span class="math notranslate nohighlight">\(Q_E\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(8/9\)</span></p></td>
+        <td><p>Edge length <span class="math notranslate nohighlight">\(s = \frac{2\sqrt{2}}{3}\)</span> (<span class="math notranslate nohighlight">\(1/3\)</span> of tetrahedron edge)</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Exact Circumquadrance</strong> <span class="math notranslate nohighlight">\(Q_{\text{out}}\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(11/9\)</span></p></td>
+        <td><p>Circumradius <span class="math notranslate nohighlight">\(R = \frac{\sqrt{11}}{3}\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Primary Dihedral Spread</strong> <span class="math notranslate nohighlight">\(s\)</span></p></td>
+        <td><p><span class="math notranslate nohighlight">\(8/9\)</span></p></td>
+        <td><p>Hexagon-to-triangle dihedral spread: identical to regular tetrahedron</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Vacuum Manifold</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\((V=96, E=216, F=108)\)</span></p></td>
+        <td><p>Genus <span class="math notranslate nohighlight">\(g = F - 1 = 7\)</span>, <span class="math notranslate nohighlight">\(\chi = -12\)</span></p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Polar Dual</strong></p></td>
+        <td><p>Triakis Tetrahedron</p></td>
+        <td><p>Catalan solid with 12 isosceles triangular faces</p></td>
+        </tr>
+        <tr class="row-odd"><td><p><strong>Symmetry Group</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(T_d\)</span> (order 24)</p></td>
+        <td><p>Full tetrahedral chiral and reflection group</p></td>
+        </tr>
+        <tr class="row-even"><td><p><strong>Historical Canon</strong></p></td>
+        <td><p>Archimedes of Syracuse; Heron <em>Definitiones</em></p></td>
+        <td><p>Pacioli <em>De Divina Proportione</em> Cap. XXVII; Tabulae III–IIII</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="exact-coordinate-representative-ledger-algebraic-construction">
+        <h2>Exact Coordinate Representative Ledger &amp; Algebraic Construction<a class="headerlink" href="#exact-coordinate-representative-ledger-algebraic-construction" title="Link to this heading">¶</a></h2>
+        <section class="level-3" id="canonical-rational-coordinates">
+        <h3>Canonical Rational Coordinates<a class="headerlink" href="#canonical-rational-coordinates" title="Link to this heading">¶</a></h3>
+        <p>Generated by applying the exact corner truncation operator <code class="docutils literal notranslate"><span class="pre">truncate(solid,</span> <span class="pre">t=1/3)</span></code> to the canonical regular tetrahedron over <span class="math notranslate nohighlight">\(\mathbb{Z}^3\)</span>:</p>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 20.0%" />
+        <col style="width: 40.0%" />
+        <col style="width: 40.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Vertex Index</p></th>
+        <th class="head"><p>Exact Symbolic Coordinates $(x, y, z)$</p></th>
+        <th class="head"><p>Circumquadrance $Q_{\text{out}}$</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><p>$V_0, V_1$</p></td>
+        <td><p>$(1, 1/3, 1/3), \; (1, -1/3, -1/3)$</p></td>
+        <td><p>$1 + 1/9 + 1/9 = 11/9$</p></td>
+        </tr>
+        <tr class="row-odd"><td><p>$V_2, V_3$</p></td>
+        <td><p>$(1/3, 1, 1/3), \; (-1/3, 1, -1/3)$</p></td>
+        <td><p>$1/9 + 1 + 1/9 = 11/9$</p></td>
+        </tr>
+        <tr class="row-even"><td><p>$V_4, V_5$</p></td>
+        <td><p>$(1/3, 1/3, 1), \; (-1/3, -1/3, 1)$</p></td>
+        <td><p>$1/9 + 1/9 + 1 = 11/9$</p></td>
+        </tr>
+        <tr class="row-odd"><td><p>$V_6, V_7$</p></td>
+        <td><p>$(1/3, -1/3, -1), \; (-1/3, 1/3, -1)$</p></td>
+        <td><p>$1/9 + 1/9 + 1 = 11/9$</p></td>
+        </tr>
+        <tr class="row-even"><td><p>$V_8, V_9$</p></td>
+        <td><p>$(1/3, -1, -1/3), \; (-1/3, -1, 1/3)$</p></td>
+        <td><p>$1/9 + 1 + 1/9 = 11/9$</p></td>
+        </tr>
+        <tr class="row-odd"><td><p>$V_{10}, V_{11}$</p></td>
+        <td><p>$(-1, 1/3, -1/3), \; (-1, -1/3, 1/3)$</p></td>
+        <td><p>$1 + 1/9 + 1/9 = 11/9$</p></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>The 18 edges have uniform rational quadrance <span class="math notranslate nohighlight">\(Q_E = 8/9\)</span>, proving that all faces are regular equilateral triangles and regular hexagons.</p>
+        </section>
+        </section>
+        <section class="level-2" id="leonardo-da-vinci-s-1509-woodcuts-corpus-vacuum-reconstruction">
+        <h2>Leonardo da Vinci’s 1509 Woodcuts &amp; Corpus Vacuum Reconstruction<a class="headerlink" href="#leonardo-da-vinci-s-1509-woodcuts-corpus-vacuum-reconstruction" title="Link to this heading">¶</a></h2>
+        <p>In Luca Pacioli’s <em>De Divina Proportione</em> (1509), Leonardo da Vinci rendered the truncated tetrahedron in Tabulae III and IIII as <em>Tetrahedron Abscisum Solidum</em> and <em>Tetrahedron Abscisum Vacuum</em>.</p>
+        <figure class="align-center" id="id1">
+        <a class="reference internal image-reference" href="../../../_images/truncated-tetrahedron_vacuum.svg"><img alt="Exact Symbolic Reconstruction of Truncated Tetrahedron Planum Vacuum" src="../../../_images/truncated-tetrahedron_vacuum.svg" style="width: 70%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><em>Exact Symbolic Reconstruction</em>: Open wooden framework (<span class="math notranslate nohighlight">\(\mu = 0.25\)</span>) of genus <span class="math notranslate nohighlight">\(g = 7\)</span> and Euler characteristic <span class="math notranslate nohighlight">\(\chi = -12\)</span>.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        <table class="docutils align-default">
+        <colgroup>
+        <col style="width: 50.0%" />
+        <col style="width: 50.0%" />
+        </colgroup>
+        <thead>
+        <tr class="row-odd"><th class="head"><p>Leonardo da Vinci (1509 Woodcut)</p></th>
+        <th class="head"><p>Classical Designation &amp; Codex Study</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="row-even"><td><figure class="align-default" id="id2">
+        <a class="reference internal image-reference" href="../../../_images/0191.g1.png"><img alt="Leonardo da Vinci Tabula III Folio 0191 - Tetrahedron Abscisum Solidum" src="../../../_images/0191.g1.png" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Tabula III (Folio 0191)</strong>: <em>Tetrahedron Abscisum Solidum</em></span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        <td><p>Detailed codex analysis in <a class="reference internal" href="../../../leonardo/tabula-03-04-tetrahedron-abscisum.html"><span class="doc">Tabulae III–IIII: Tetrahedron Abscisum</span></a>.
+        Opaque semi-regular body with hexagonal and triangular facets.</p></td>
+        </tr>
+        <tr class="row-odd"><td><figure class="align-default" id="id3">
+        <a class="reference internal image-reference" href="../../../_images/0193.g1.png"><img alt="Leonardo da Vinci Tabula IIII Folio 0193 - Tetrahedron Abscisum Vacuum" src="../../../_images/0193.g1.png" style="width: 100%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><strong>Tabula IIII (Folio 0193)</strong>: <em>Tetrahedron Abscisum Vacuum</em></span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </td>
+        <td><p>Detailed codex analysis in <a class="reference internal" href="../../../leonardo/tabula-03-04-tetrahedron-abscisum.html"><span class="doc">Tabulae III–IIII: Tetrahedron Abscisum</span></a>.
+        Open wooden framework displaying internal hexagonal corridors and triangular windows.</p></td>
+        </tr>
+        </tbody>
+        </table>
+        </section>
+        <section class="level-2" id="unfolded-2d-papercraft-net">
+        <h2>Unfolded 2D Papercraft Net<a class="headerlink" href="#unfolded-2d-papercraft-net" title="Link to this heading">¶</a></h2>
+        <p>The truncated tetrahedron unfolds into the Euclidean plane along 11 cut edges into a symmetrical planar net of four hexagons and four triangles:</p>
+        <figure class="align-center" id="id4">
+        <a class="reference internal image-reference" href="../../../_images/truncated-tetrahedron_net.svg"><img alt="2D Unfolded Net of the Truncated Tetrahedron" src="../../../_images/truncated-tetrahedron_net.svg" style="width: 70%;" />
+        </a>
+        <figcaption>
+        <p><span class="caption-text"><em>2D Dihedral-Hinge Unfolding</em>: Four regular hexagons and four equilateral triangles joined along seven internal hinges (dashed lines) and twenty-two boundary cut edges (solid lines).</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+        </figcaption>
+        </figure>
+        </section>
+        </section>
+
+      </div>
+      <footer class="book-footer">
+
+        <div class="meta">
+          <span class="category">
+            <a href="../../../categories/02-archimedean.html">02-archimedean</a>
+          </span>
+          <span class="tags">
+            <a href="../../../tags/archimedean.html">archimedean</a>
+            <a href="../../../tags/truncation.html">truncation</a>
+            <a href="../../../tags/tetrahedron.html">tetrahedron</a>
+            <a href="../../../tags/pacioli.html">pacioli</a>
+            <a href="../../../tags/semi-regular.html">semi-regular</a>
+          </span>
+        </div>
+        <div class="book-footer-ornament">&#10086;</div>
+        <div class="book-footer-nav">
+          <div class="book-nav-prev">
+            <a class="book-nav-btn" href="../index.html" title="P-02 · Archimedean &amp; Abscisa Solids">&larr; <span class="nav-label">P-02 · Archimedean & Abscisa Solids</span></a>
+          </div>
+          <div class="book-nav-center">
+            <a class="book-toc-link" href="../../index.html">Catalog of Polyhedra</a>
+          </div>
+          <div class="book-nav-next">
+            <a class="book-nav-btn" href="../cuboctahedron/index.html" title="P-02.02 · Cuboctahedron"><span class="nav-label">P-02.02 · Cuboctahedron</span> &rarr;</a>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+  <div class="asides">
+    <aside class="aside-search">
+      <h3>Search</h3>
+      <div id="searchbox" role="search">
+        <form id="rtd-search-form" class="wy-form search-form" action="../../../search.html" method="get">
+          <div class="search-field">
+            <input type="search" name="q" placeholder="Search docs..." aria-label="Search docs" autocomplete="off" />
+            <button type="submit" class="search-submit" aria-label="Search" title="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </div>
+    </aside>
+    <aside class="aside-recent-logs">
+      <h3>Recent Logs</h3>
+      <ul>
+        <li><a href="../../../log/26.319-polyhedra_collections.html">One Polyhedron Per Page & Collection Architecture (v0.4.0)</a></li>
+        <li><a href="../../../log/26.319-great_pyramid_kepler.html">Kepler, Squaring the Circle & the Great Pyramid (v0.3.0)</a></li>
+        <li><a href="../../../log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
+        <li><a href="../../../log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="../../../tags/aether.html">aether</a></li>
+        <li><a href="../../../tags/air.html">air</a></li>
+        <li><a href="../../../tags/archimedean.html">archimedean</a></li>
+        <li><a href="../../../tags/archimedean-solids.html">archimedean-solids</a></li>
+        <li><a href="../../../tags/bipyramid.html">bipyramid</a></li>
+        <li><a href="../../../tags/buckyball.html">buckyball</a></li>
+        <li><a href="../../../tags/catalan.html">catalan</a></li>
+        <li><a href="../../../tags/catalan-solids.html">catalan-solids</a></li>
+        <li><a href="../../../tags/compound.html">compound</a></li>
+        <li><a href="../../../tags/continuous-morphism.html">continuous-morphism</a></li>
+        <li><a href="../../../tags/cube.html">cube</a></li>
+        <li><a href="../../../tags/cuboctahedron.html">cuboctahedron</a></li>
+        <li><a href="../../../tags/cuboctahedron-elevatum.html">cuboctahedron-elevatum</a></li>
+        <li><a href="../../../tags/decagon.html">decagon</a></li>
+        <li><a href="../../../tags/deltahedron.html">deltahedron</a></li>
+        <li><a href="../../../tags/dodecahedron.html">dodecahedron</a></li>
+        <li><a href="../../../tags/dodecahedron-abscisum.html">dodecahedron-abscisum</a></li>
+        <li><a href="../../../tags/dodecahedron-elevatum.html">dodecahedron-elevatum</a></li>
+        <li><a href="../../../tags/earth.html">earth</a></li>
+        <li><a href="../../../tags/earth-moon-cosmogram.html">earth-moon-cosmogram</a></li>
+        <li><a href="../../../tags/egyptian.html">egyptian</a></li>
+        <li><a href="../../../tags/elevated.html">elevated</a></li>
+        <li><a href="../../../tags/elevated-solids.html">elevated-solids</a></li>
+        <li><a href="../../../tags/euclid.html">euclid</a></li>
+        <li><a href="../../../tags/fire.html">fire</a></li>
+        <li><a href="../../../tags/five-cubes.html">five-cubes</a></li>
+        <li><a href="../../../tags/fullerene.html">fullerene</a></li>
+        <li><a href="../../../tags/giza.html">giza</a></li>
+        <li><a href="../../../tags/golden-bipyramid.html">golden-bipyramid</a></li>
+        <li><a href="../../../tags/golden-ratio.html">golden-ratio</a></li>
+        <li><a href="../../../tags/golden-rectangles.html">golden-rectangles</a></li>
+        <li><a href="../../../tags/great-pyramid.html">great-pyramid</a></li>
+        <li><a href="../../../tags/herodotus.html">herodotus</a></li>
+        <li><a href="../../../tags/hexahedron.html">hexahedron</a></li>
+        <li><a href="../../../tags/hexahedron-abscisum.html">hexahedron-abscisum</a></li>
+        <li><a href="../../../tags/hexahedron-elevatum.html">hexahedron-elevatum</a></li>
+        <li><a href="../../../tags/icosahedron.html">icosahedron</a></li>
+        <li><a href="../../../tags/icosahedron-cap.html">icosahedron-cap</a></li>
+        <li><a href="../../../tags/icosahedron-elevatum.html">icosahedron-elevatum</a></li>
+        <li><a href="../../../tags/icosidodecahedron.html">icosidodecahedron</a></li>
+        <li><a href="../../../tags/icosidodecahedron-elevatum.html">icosidodecahedron-elevatum</a></li>
+        <li><a href="../../../tags/j2.html">j2</a></li>
+        <li><a href="../../../tags/johnson.html">johnson</a></li>
+        <li><a href="../../../tags/johnson-solids.html">johnson-solids</a></li>
+        <li><a href="../../../tags/kepler.html">kepler</a></li>
+        <li><a href="../../../tags/kepler-triangle.html">kepler-triangle</a></li>
+        <li><a href="../../../tags/khufu.html">khufu</a></li>
+        <li><a href="../../../tags/leonardo.html">leonardo</a></li>
+        <li><a href="../../../tags/leonardo-vacuum.html">leonardo-vacuum</a></li>
+        <li><a href="../../../tags/midsphere.html">midsphere</a></li>
+        <li><a href="../../../tags/octagon.html">octagon</a></li>
+        <li><a href="../../../tags/octahedral.html">octahedral</a></li>
+        <li><a href="../../../tags/octahedron.html">octahedron</a></li>
+        <li><a href="../../../tags/octahedron-abscisum.html">octahedron-abscisum</a></li>
+        <li><a href="../../../tags/octahedron-elevatum.html">octahedron-elevatum</a></li>
+        <li><a href="../../../tags/odom-theorem.html">odom-theorem</a></li>
+        <li><a href="../../../tags/pacioli.html">pacioli</a></li>
+        <li><a href="../../../tags/pentagon.html">pentagon</a></li>
+        <li><a href="../../../tags/pentagonal-pyramid.html">pentagonal-pyramid</a></li>
+        <li><a href="../../../tags/pentakis.html">pentakis</a></li>
+        <li><a href="../../../tags/pentakis-dodecahedron.html">pentakis-dodecahedron</a></li>
+        <li><a href="../../../tags/perimeter-quadrature.html">perimeter-quadrature</a></li>
+        <li><a href="../../../tags/permutohedron.html">permutohedron</a></li>
+        <li><a href="../../../tags/phi.html">phi</a></li>
+        <li><a href="../../../tags/pi.html">pi</a></li>
+        <li><a href="../../../tags/platonic.html">platonic</a></li>
+        <li><a href="../../../tags/platonic-solids.html">platonic-solids</a></li>
+        <li><a href="../../../tags/polar-dual.html">polar-dual</a></li>
+        <li><a href="../../../tags/pyramid.html">pyramid</a></li>
+        <li><a href="../../../tags/pyramids.html">pyramids</a></li>
+        <li><a href="../../../tags/pyramis-penthagona.html">pyramis-penthagona</a></li>
+        <li><a href="../../../tags/pyramis-quadrangula.html">pyramis-quadrangula</a></li>
+        <li><a href="../../../tags/quartic-field.html">quartic-field</a></li>
+        <li><a href="../../../tags/quasi-regular.html">quasi-regular</a></li>
+        <li><a href="../../../tags/rational.html">rational</a></li>
+        <li><a href="../../../tags/rational-trigonometry.html">rational-trigonometry</a></li>
+        <li><a href="../../../tags/rectification.html">rectification</a></li>
+        <li><a href="../../../tags/regular.html">regular</a></li>
+        <li><a href="../../../tags/rhombic-triacontahedron.html">rhombic-triacontahedron</a></li>
+        <li><a href="../../../tags/rhombicuboctahedron.html">rhombicuboctahedron</a></li>
+        <li><a href="../../../tags/rhombus.html">rhombus</a></li>
+        <li><a href="../../../tags/royal-cubit.html">royal-cubit</a></li>
+        <li><a href="../../../tags/seked.html">seked</a></li>
+        <li><a href="../../../tags/semi-regular.html">semi-regular</a></li>
+        <li><a href="../../../tags/simplex.html">simplex</a></li>
+        <li><a href="../../../tags/solidum.html">solidum</a></li>
+        <li><a href="../../../tags/space-filling.html">space-filling</a></li>
+        <li><a href="../../../tags/sqrt2.html">sqrt2</a></li>
+        <li><a href="../../../tags/square-pyramid.html">square-pyramid</a></li>
+        <li><a href="../../../tags/squaring-circle.html">squaring-circle</a></li>
+        <li><a href="../../../tags/stella-octangula.html">stella-octangula</a></li>
+        <li><a href="../../../tags/stellation.html">stellation</a></li>
+        <li><a href="../../../tags/tetrahedron.html">tetrahedron</a></li>
+        <li><a href="../../../tags/tetrahedron-abscisum.html">tetrahedron-abscisum</a></li>
+        <li><a href="../../../tags/tetrahedron-elevatum.html">tetrahedron-elevatum</a></li>
+        <li><a href="../../../tags/tetrakis.html">tetrakis</a></li>
+        <li><a href="../../../tags/tetrakis-hexahedron.html">tetrakis-hexahedron</a></li>
+        <li><a href="../../../tags/triakis.html">triakis</a></li>
+        <li><a href="../../../tags/triakis-icosahedron.html">triakis-icosahedron</a></li>
+        <li><a href="../../../tags/triakis-tetrahedron.html">triakis-tetrahedron</a></li>
+        <li><a href="../../../tags/truncated-icosahedron.html">truncated-icosahedron</a></li>
+        <li><a href="../../../tags/truncated-octahedron.html">truncated-octahedron</a></li>
+        <li><a href="../../../tags/truncated-tetrahedron.html">truncated-tetrahedron</a></li>
+        <li><a href="../../../tags/truncation.html">truncation</a></li>
+        <li><a href="../../../tags/vacuum.html">vacuum</a></li>
+        <li><a href="../../../tags/vigintisex-basium.html">vigintisex-basium</a></li>
+        <li><a href="../../../tags/water.html">water</a></li>
+        <li><a href="../../../tags/woodcut.html">woodcut</a></li>
+        <li><a href="../../../tags/zonohedron.html">zonohedron</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-categories">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="../../../categories/01-platonic.html">01-platonic</a></li>
+        <li><a href="../../../categories/02-archimedean.html">02-archimedean</a></li>
+        <li><a href="../../../categories/03-catalan.html">03-catalan</a></li>
+        <li><a href="../../../categories/04-elevated.html">04-elevated</a></li>
+        <li><a href="../../../categories/05-pyramids.html">05-pyramids</a></li>
+        <li><a href="../../../categories/archimedean.html">archimedean</a></li>
+        <li><a href="../../../categories/elevated.html">elevated</a></li>
+        <li><a href="../../../categories/golden-proportions.html">golden-proportions</a></li>
+        <li><a href="../../../categories/great-pyramid.html">great-pyramid</a></li>
+        <li><a href="../../../categories/leonardo-1509.html">leonardo-1509</a></li>
+        <li><a href="../../../categories/platonic.html">platonic</a></li>
+        <li><a href="../../../categories/pyramids.html">pyramids</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-types">
+      <h3>Types</h3>
+      <ul>
+        <li><a href="../../../types/family.html">family</a></li>
+        <li><a href="../../../types/log.html">log</a></li>
+        <li><a href="../../../types/plate.html">plate</a></li>
+        <li><a href="../../../types/solid.html">solid</a></li>
+        <li><a href="../../../types/theorem.html">theorem</a></li>
+        <li><a href="../../../types/treatise.html">treatise</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="../../../changelog.html"  >Changelog</a></li>
+      </ul>
+    </div>
+    <hr />
+    <div role="contentinfo">
+      <p>
+        &copy; Copyright 2026 · GEOMETOR.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+  <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+  <script src="../../../_static/documentation_options.js?v=6c02275b"></script>
+  <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+  <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  <script src="../../../_static/js/collection_controls.js?v=b6b5297a"></script>
+  <script src="../../../_static/js/geometor_interactive.js?v=b2892320"></script>
+  <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <script src="../../../_static/js/polyhedra_3d_codex.js?v=33b74bc9"></script>
+  <script src="../../../_static/js/search_highlight.js"></script>
+
+</body>
+</html>

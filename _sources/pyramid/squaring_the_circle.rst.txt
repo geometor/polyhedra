@@ -1,5 +1,12 @@
 :layout: book
+:type: treatise
+:order: 2
 :title: Squaring the Circle & the Earth–Moon Cosmogram
+:featured_image: _static/svg/pyramid/pyramid_squaring_circle_2d.svg
+:featured_image_alt: Squaring the Circle & Great Pyramid Perimeter Quadrature
+:categories: great-pyramid
+:tags: squaring-circle, perimeter-quadrature, golden-ratio, pi, earth-moon-cosmogram
+:excerpt: The Great Pyramid as the architectural solution to circling the square: perimeter quadrature (h/a = 4/pi), the golden-pi bridge pi approx 4/sqrt(phi), and the Earth-Moon tangent cosmogram.
 
 ==============================================
 Squaring the Circle & the Earth–Moon Cosmogram
@@ -14,6 +21,10 @@ Squaring the Circle & the Earth–Moon Cosmogram
    *The circle is squared by straight lines when a square is found equal in area to a given circle.*
 
    — **Nicholas of Cusa**, *De Docta Ignorantia* (1440)
+
+.. enunciation::
+
+   The Great Pyramid of Giza embodies the perimeter dual of squaring the circle: constructing a square pyramid whose square base perimeter equals the circumference of a circle whose radius is the pyramid's vertical height (:math:`8a = 2\pi h \iff h/a = 4/\pi`). Under the Kepler Golden Pyramid profile (:math:`h = \sqrt{\phi}`), this relation yields the celebrated algebraic approximation :math:`\pi \approx 4/\sqrt{\phi} \approx 3.1446` (:math:`< 0.1\%` discrepancy), geometrically realizing the astronomical Earth–Moon tangent cosmogram.
 
 Perimeter Quadrature: Circling the Square
 -----------------------------------------
@@ -267,3 +278,10 @@ Evaluating the ratio of the Moon's radius to the Earth's radius across the geome
    C_{\text{lunar orbit}} = P_{\text{Earth square}} = 88
 
 The circle passing through the center of the Moon has a circumference equal to the perimeter of the square enclosing the Earth. Thus, the Earth and Moon together materialize the ancient squaring of the circle in the heavens.
+
+Canonical Solid Codex
+---------------------
+
+For the complete interactive 3D model, exact symbolic coordinates, face normals, and dihedral angles, consult the canonical pyramid codex:
+
+- :doc:`Kepler Golden Pyramid </solids/05-pyramids/kepler-pyramid/index>`

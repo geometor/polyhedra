@@ -1,0 +1,268 @@
+geometor.polyhedra.catalog
+==========================
+
+.. py:module:: geometor.polyhedra.catalog
+
+.. autoapi-nested-parse::
+
+   Exact symbolic catalog and registry of the 26 canonical polyhedra.
+
+   Provides canonical specifications, historical metadata, exact Rational Trigonometry
+   invariants, and 3D manifold builders across five thematic families:
+
+   - ``01-platonic``: The Five Regular Convex Polyhedra of Plato and Euclid.
+   - ``02-archimedean``: Semi-Regular Truncations and Rectifications.
+   - ``03-catalan``: Face-Transitive Polar Duals of Archimedean Solids.
+   - ``04-elevated``: Pacioli & Leonardo da Vinci's Equilateral Stellations (*Corpora Elevata*).
+   - ``05-pyramids``: Great Pyramid Profiles, Kepler Harmonics, and Johnson Caps.
+
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   geometor.polyhedra.catalog.PolyhedronFamily
+   geometor.polyhedra.catalog.PolyhedronEntry
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   geometor.polyhedra.catalog.build_rhombicuboctahedron_solid
+   geometor.polyhedra.catalog.build_pentagonal_pyramid_solid
+   geometor.polyhedra.catalog.build_catalog_solid
+   geometor.polyhedra.catalog.get_polyhedra_families
+   geometor.polyhedra.catalog.get_polyhedra_catalog
+   geometor.polyhedra.catalog.get_polyhedron_entry
+
+
+Module Contents
+---------------
+
+.. py:class:: PolyhedronFamily
+
+   Specification of a thematic polyhedral family in the catalog.
+
+   :ivar slug: Unique identifier ('01-platonic', '02-archimedean', etc.).
+   :ivar order: Order index in catalog (1..5).
+   :ivar title: Descriptive title of the family.
+   :ivar subtitle: Scholarly subtitle.
+   :ivar summary: Mathematical and historical summary.
+
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: order
+      :type:  int
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: subtitle
+      :type:  str
+
+
+   .. py:attribute:: summary
+      :type:  str
+
+
+.. py:class:: PolyhedronEntry
+
+   Exact symbolic catalog entry for a polyhedral manifold.
+
+   :ivar slug: Short lowercase identifier.
+   :ivar canonical_id: Canonical catalog code ('P-01.01' .. 'P-05.04').
+   :ivar family: Family slug.
+   :ivar order: Order index within family.
+   :ivar title: Standard English title.
+   :ivar latin_name: Classical Latin designation.
+   :ivar subtitle: Descriptive subtitle.
+   :ivar enunciation: Crisp geometric definition.
+   :ivar number_field: Algebraic number field in LaTeX.
+   :ivar symmetry_group: Full symmetry point group and order.
+   :ivar is_convex: Whether the solid is convex.
+   :ivar dual_slug: Polar dual slug or descriptive name.
+   :ivar historical_source: Primary literature citation.
+   :ivar leonardo_plates: Tuples of (tabula_roman, folio_id, latin_caption).
+   :ivar tags: Categorical search and indexing tags.
+   :ivar vertices_count: Number of vertices (V).
+   :ivar edges_count: Number of edges (E).
+   :ivar faces_count: Number of faces (F).
+   :ivar face_summary: Description of constituent polygon faces.
+   :ivar edge_quadrances: Sorted unique exact edge quadrances.
+   :ivar vertex_quadrances: Sorted unique exact vertex quadrances from origin.
+   :ivar primary_dihedral_spread: Exact dihedral spread between adjacent faces.
+   :ivar vacuum_genus: Topological genus of the hollow vacuate manifold (F - 1).
+
+
+
+   .. py:attribute:: slug
+      :type:  str
+
+
+   .. py:attribute:: canonical_id
+      :type:  str
+
+
+   .. py:attribute:: family
+      :type:  str
+
+
+   .. py:attribute:: order
+      :type:  int
+
+
+   .. py:attribute:: title
+      :type:  str
+
+
+   .. py:attribute:: latin_name
+      :type:  str
+
+
+   .. py:attribute:: subtitle
+      :type:  str
+
+
+   .. py:attribute:: enunciation
+      :type:  str
+
+
+   .. py:attribute:: number_field
+      :type:  str
+
+
+   .. py:attribute:: symmetry_group
+      :type:  str
+
+
+   .. py:attribute:: is_convex
+      :type:  bool
+
+
+   .. py:attribute:: dual_slug
+      :type:  str | None
+
+
+   .. py:attribute:: historical_source
+      :type:  str
+
+
+   .. py:attribute:: leonardo_plates
+      :type:  tuple[tuple[str, str, str], ...]
+
+
+   .. py:attribute:: tags
+      :type:  tuple[str, ...]
+
+
+   .. py:attribute:: vertices_count
+      :type:  int
+
+
+   .. py:attribute:: edges_count
+      :type:  int
+
+
+   .. py:attribute:: faces_count
+      :type:  int
+
+
+   .. py:attribute:: face_summary
+      :type:  str
+
+
+   .. py:attribute:: edge_quadrances
+      :type:  tuple[sympy.Expr, ...]
+
+
+   .. py:attribute:: vertex_quadrances
+      :type:  tuple[sympy.Expr, ...]
+
+
+   .. py:attribute:: primary_dihedral_spread
+      :type:  sympy.Expr | None
+
+
+   .. py:attribute:: vacuum_genus
+      :type:  int
+
+
+   .. py:method:: __post_init__() -> None
+
+      Validates exact algebraic parameters.
+
+
+
+.. py:function:: build_rhombicuboctahedron_solid() -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs Leonardo's 26-Base Body (Vigintisex Basium, Rhombicuboctahedron).
+
+   Generates the exact Archimedean rhombicuboctahedron over Q(sqrt(2)) with 24 vertices,
+   48 edges of uniform quadrance 4, and 26 faces (6 axial squares, 12 chamfer squares,
+   and 8 octant equilateral triangles).
+
+   :returns: Exact symbolic Solid3D instance centered at the origin.
+
+
+.. py:function:: build_pentagonal_pyramid_solid(*, center_origin: bool = True) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs the exact equilateral Regular Pentagonal Pyramid (Johnson Solid J2).
+
+   Constructed directly from the 6-vertex icosahedral cap of Euclid Elements XIII.16
+   and Leonardo da Vinci's Tabulae LI–LII over Q(phi).
+
+   :param center_origin: If True (default), translates vertices by -C so the centroid
+                         is at (0, 0, 0), placing the origin strictly inside the solid for
+                         manifold orientation and vacuation. If False, retains raw icosahedral
+                         coordinates.
+
+   :returns: Exact symbolic Solid3D instance.
+
+
+.. py:function:: build_catalog_solid(slug: str) -> geometor.polyhedra.model3d.primitives.Solid3D
+
+   Constructs an exact 3D solid for any of the 26 canonical polyhedra.
+
+   :param slug: Canonical identifier for one of the 26 cataloged solids.
+
+   :returns: Exact Solid3D instance.
+
+   :raises KeyError: If slug is not recognized.
+
+
+.. py:function:: get_polyhedra_families() -> dict[str, PolyhedronFamily]
+
+   Retrieves all five polyhedral families mapped by slug.
+
+   :returns: Dictionary mapping family slugs ('01-platonic' .. '05-pyramids')
+             to PolyhedronFamily instances.
+
+
+.. py:function:: get_polyhedra_catalog() -> dict[str, PolyhedronEntry]
+
+   Retrieves all 26 canonical polyhedra mapped by slug.
+
+   :returns: Dictionary mapping solid slug to PolyhedronEntry instances.
+
+
+.. py:function:: get_polyhedron_entry(slug: str) -> PolyhedronEntry
+
+   Retrieves a single polyhedron entry by slug name.
+
+   :param slug: Standard slug identifier ('tetrahedron', 'rhombicuboctahedron', etc.).
+
+   :returns: Corresponding PolyhedronEntry instance.
+
+   :raises KeyError: If slug is not recognized.
+
+

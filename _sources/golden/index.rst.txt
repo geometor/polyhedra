@@ -18,7 +18,7 @@ Golden Proportions in Polyhedra
 
    *The very same correspondence of the divine proportion shapes both the body of twenty pentagonal bases and the body of twelve triangular bases.*
 
-   — :person:`Luca Pacioli`, *De Divina Proportione*, Cap. XXVII (Venice, 1509)
+   — **Luca Pacioli**, *De Divina Proportione*, Cap. XXVII (Venice, 1509)
 
 The Golden Ratio in Three Dimensions
 ------------------------------------
@@ -101,13 +101,9 @@ The ``geometor.polyhedra.golden`` module implements and algebraically certifies 
      - Euclid *Elements* XIII.8
      - :math:`Q_{\text{diag}} / Q_{\text{side}} = \phi^2`
 
-Codex Sections
---------------
+Golden Polyhedra Theorems
+-------------------------
 
-.. toctree::
-   :maxdepth: 2
-
-   golden_rectangles
-   octahedron_icosahedron
-   dodecahedron_five_cubes
-   rhombic_triacontahedron_odom
+.. collection::
+   :type: theorem
+   :sort: order

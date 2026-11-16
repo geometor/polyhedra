@@ -7,8 +7,9 @@ geometor.polyhedra.cli
 
    Command-line interface for geometor.polyhedra.
 
-   Provides rich terminal tables displaying the five Platonic solids, their
-   exact symbolic invariants, and Leonardo da Vinci's Pacioli woodcut plates.
+   Provides rich terminal tables displaying the 26 canonical polyhedra across five
+   thematic families, exact symbolic Rational Trigonometry invariants, and Leonardo
+   da Vinci's Pacioli woodcut plates.
 
 
 

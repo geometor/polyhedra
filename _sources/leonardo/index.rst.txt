@@ -18,7 +18,7 @@ Leonardo da Vinci's Polyhedral Plates (1509)
 
    *...by the hand of our own Leonardo da Vinci the Florentine, who in painting, perspective, architecture, and music has laboured with the highest praise, and who with his own hand has constructed and figured all these solids and others...*
 
-   — :person:`Luca Pacioli`, *De Divina Proportione*, Cap. I & Cap. XXIII (Venice, 1509)
+   — **Luca Pacioli**, *De Divina Proportione*, Cap. I & Cap. XXIII (Venice, 1509)
 
 Historical & Artistic Context
 ------------------------------
@@ -171,10 +171,10 @@ Topological Invariants of the Platonic Vacua
      - $-36$
      - **19**
 
-Leonardo Plate Concordance (Tabulae I–XXXVI)
---------------------------------------------
+Leonardo Plate Concordance (Tabulae I–LII)
+------------------------------------------
 
-The following concordance correlates all thirty-six principal polyhedral plates of Leonardo da Vinci from the 1509 Paganini edition with their high-resolution folio scans, Latin inscriptions, and modern geometric designations:
+The following concordance correlates all forty principal polyhedral plates of Leonardo da Vinci from the 1509 Paganini edition with their high-resolution folio scans, Latin inscriptions, and modern geometric designations:
 
 .. list-table::
    :header-rows: 1
@@ -365,14 +365,32 @@ The following concordance correlates all thirty-six principal polyhedral plates 
      - Tabula XXXVI
      - Folio 0261
      - *Vigintisex Basium Planum Vacuum*
+   * - **Pyramis Quadrangula**
+     - solida (Square Pyramid)
+     - Tabula XLVII
+     - Folio 0283
+     - *Pyramis Laterata Quadrangula Solida*
+   * -
+     - vacua ($g=4$)
+     - Tabula XLVIII
+     - Folio 0287
+     - *Pyramis Laterata Quadrangula Vacua*
+   * - **Pyramis Penthagona**
+     - solida ($J_2$)
+     - Tabula LI
+     - Folio 0293
+     - *Pyramis Laterata Penthagona Solida*
+   * -
+     - vacua ($g=5$)
+     - Tabula LII
+     - Folio 0295
+     - *Pyramis Laterata Penthagona Vacua*
 
 .. [1] In Paganini's 1509 edition, folios 0213 and 0215 were used for the Vitruvian architectural column plates (*Colonna Corinta, Jonica e Pulvinata*), placing Tabula XIIII on Folio 0217.
 
-Monographic Galleries
----------------------
+Leonardo Plate Collection (20 Paired Woodcut Studies)
+-----------------------------------------------------
 
-.. toctree::
-   :maxdepth: 2
-
-   tetrahedron_cube_octahedron
-   icosahedron_dodecahedron
+.. collection::
+   :type: plate
+   :sort: order

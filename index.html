@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=ea5fcf70" />
   <link rel="stylesheet" type="text/css" href="_static/css/styles.css?v=ec8980ef" />
   <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
-  <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=c80139d2" />
+  <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=f6b31482" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -38,7 +38,7 @@
       <label for="nav-Header-toggle" >Header</label>
       <ul>
         <li>
-          <a href="platonic/index.html"  >Platonic Solids</a>
+          <a href="solids/index.html"  >Solids</a>
         </li>
         <li>
           <a href="golden/index.html"  >Golden Proportions</a>
@@ -76,116 +76,81 @@
           <div class="book-nav-center">
           </div>
           <div class="book-nav-next">
-            <a class="book-nav-btn" href="platonic/index.html" title="The Five Platonic Solids"><span class="nav-label">Next</span> &rarr;</a>
+            <a class="book-nav-btn" href="solids/index.html" title="Catalog of Polyhedra"><span class="nav-label">Next</span> &rarr;</a>
           </div>
         </div>
       </header>
       <div class="content body book-content" role="main">
         <section class="level-1" id="polyhedra">
         <h1>polyhedra<a class="headerlink" href="#polyhedra" title="Link to this heading">¶</a></h1>
-        <p><em>Exact Symbolic Platonic Solids, Golden Proportions, 3D Rational Trigonometry, and Leonardo da Vinci’s Polyhedral Woodcuts</em></p>
+        <p><em>Exact Symbolic Polyhedra Catalog, Golden Proportions, 3D Rational Trigonometry, and Leonardo da Vinci’s 1509 Woodcuts</em></p>
         <blockquote class="epigraph">
         <div><p><em>Quinque corpora regularia sunt: tetraedron, exaedron sive cubus, octaedron, icosaedron, et dodecaedron. Quorum quodlibet intra sphaeram comprehendi potest.</em></p>
         <p><em>There are five regular solids: the tetrahedron, hexahedron or cube, octahedron, icosahedron, and dodecahedron. Every one of them can be comprehended within a sphere.</em></p>
-        <p class="attribution">—<span class="person-ref" data-person="luca-pacioli" title="Person: luca-pacioli">Luca Pacioli</span>, <em>De Divina Proportione</em> (Venice, 1509)</p>
+        <p class="attribution">—<strong>Luca Pacioli</strong>, <em>De Divina Proportione</em> (Venice, 1509)</p>
         </div></blockquote>
         <section class="level-2" id="overview">
         <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
-        <p><strong>GEOMETOR Polyhedra</strong> (<code class="docutils literal notranslate"><span class="pre">geometor-polyhedra</span></code>) models three-dimensional constructive geometry and regular solids in <strong>100% exact symbolic algebra</strong> (zero floating-point approximations) using <a class="reference external" href="https://www.sympy.org/">SymPy</a> and <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code>.</p>
-        <p>Grounding its algebraic foundations in Euclid’s <em>Elements</em> Book XIII, Plato’s <em>Timaeus</em>, Luca Pacioli’s <em>De Divina Proportione</em> (1509), Johannes Kepler’s <em>Strena</em> (1611), and Norman Wildberger’s Rational Trigonometry, this edition unites classical geometric scholarship with symbolic computation over <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span> (<span class="math notranslate nohighlight">\(\phi = \frac{1 + \sqrt{5}}{2}\)</span>).</p>
+        <p><strong>GEOMETOR Polyhedra</strong> (<code class="docutils literal notranslate"><span class="pre">geometor-polyhedra</span></code>) models three-dimensional constructive geometry and canonical polyhedra in <strong>100% exact symbolic algebra</strong> (zero floating-point approximations) using <a class="reference external" href="https://www.sympy.org/">SymPy</a> and <code class="docutils literal notranslate"><span class="pre">geometor.model</span></code>.</p>
+        <p>Grounding its algebraic foundations in Euclid’s <em>Elements</em> Book XIII, Plato’s <em>Timaeus</em>, Luca Pacioli’s <em>De Divina Proportione</em> (1509), Johannes Kepler’s <em>Strena</em> (1611), and Norman Wildberger’s Rational Trigonometry, this edition catalogs <strong>26 exact symbolic solids across 5 geometric families</strong>—each on its own dedicated monograph page powered by interactive 3D HTML5 <code class="docutils literal notranslate"><span class="pre">&lt;canvas&gt;</span></code> viewports, theme-adaptive <code class="docutils literal notranslate"><span class="pre">.euclid-graphic</span></code> SVGs, and <code class="docutils literal notranslate"><span class="pre">photon-platform/publish</span></code> collections.</p>
         </section>
         <section class="level-2" id="interactive-3d-polyhedra-explorer">
         <h2>Interactive 3D Polyhedra Explorer<a class="headerlink" href="#interactive-3d-polyhedra-explorer" title="Link to this heading">¶</a></h2>
         <div class="polyhedra-3d-mount" data-solid="dodecahedron" data-initial-variant="vacuum"></div></section>
-        <section class="level-2" id="the-five-platonic-solids">
-        <h2>The Five Platonic Solids<a class="headerlink" href="#the-five-platonic-solids" title="Link to this heading">¶</a></h2>
+        <section class="level-2" id="the-five-polyhedral-families-26-canonical-solids">
+        <h2>The Five Polyhedral Families (26 Canonical Solids)<a class="headerlink" href="#the-five-polyhedral-families-26-canonical-solids" title="Link to this heading">¶</a></h2>
         <table class="docutils align-default">
         <colgroup>
-        <col style="width: 16.0%" />
+        <col style="width: 22.0%" />
         <col style="width: 10.0%" />
-        <col style="width: 10.0%" />
-        <col style="width: 8.0%" />
-        <col style="width: 8.0%" />
-        <col style="width: 8.0%" />
-        <col style="width: 12.0%" />
-        <col style="width: 14.0%" />
-        <col style="width: 14.0%" />
+        <col style="width: 24.0%" />
+        <col style="width: 44.0%" />
         </colgroup>
         <thead>
-        <tr class="row-odd"><th class="head"><p>Solid</p></th>
-        <th class="head"><p>Greek</p></th>
-        <th class="head"><p>Element</p></th>
-        <th class="head"><p>$\{p, q\}$</p></th>
-        <th class="head"><p>$V$</p></th>
-        <th class="head"><p>$E$</p></th>
-        <th class="head"><p>$F$</p></th>
-        <th class="head"><p>Spread</p></th>
-        <th class="head"><p>$Q_{\text{in}} / Q_{\text{out}}$</p></th>
+        <tr class="row-odd"><th class="head"><p>Family Collection</p></th>
+        <th class="head"><p>Solids</p></th>
+        <th class="head"><p>Exact Algebraic Fields</p></th>
+        <th class="head"><p>Representative Polyhedra</p></th>
         </tr>
         </thead>
         <tbody>
-        <tr class="row-even"><td><p><a class="reference internal" href="platonic/tetrahedron.html"><span class="doc">Tetrahedron</span></a></p></td>
-        <td><p>Τετράεδρον</p></td>
-        <td><p>Fire</p></td>
-        <td><p>$\{3, 3\}$</p></td>
-        <td><p>4</p></td>
-        <td><p>6</p></td>
-        <td><p>4</p></td>
-        <td><p>$8/9$</p></td>
-        <td><p>$1/9$</p></td>
+        <tr class="row-even"><td><p><a class="reference internal" href="solids/01-platonic/index.html"><span class="doc">Platonic Solids</span></a></p></td>
+        <td><p><strong>5</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span></p></td>
+        <td><p><a class="reference internal" href="solids/01-platonic/tetrahedron/index.html"><span class="doc">Tetrahedron</span></a> · <a class="reference internal" href="solids/01-platonic/hexahedron/index.html"><span class="doc">Hexahedron</span></a> · <a class="reference internal" href="solids/01-platonic/octahedron/index.html"><span class="doc">Octahedron</span></a> · <a class="reference internal" href="solids/01-platonic/icosahedron/index.html"><span class="doc">Icosahedron</span></a> · <a class="reference internal" href="solids/01-platonic/dodecahedron/index.html"><span class="doc">Dodecahedron</span></a></p></td>
         </tr>
-        <tr class="row-odd"><td><p><a class="reference internal" href="platonic/hexahedron.html"><span class="doc">Hexahedron (Cube)</span></a></p></td>
-        <td><p>Ἑξάεδρον</p></td>
-        <td><p>Earth</p></td>
-        <td><p>$\{4, 3\}$</p></td>
-        <td><p>8</p></td>
-        <td><p>12</p></td>
-        <td><p>6</p></td>
-        <td><p>$1$</p></td>
-        <td><p>$1/3$</p></td>
+        <tr class="row-odd"><td><p><a class="reference internal" href="solids/02-archimedean/index.html"><span class="doc">Archimedean &amp; Abscisa</span></a></p></td>
+        <td><p><strong>8</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{2})\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span></p></td>
+        <td><p><a class="reference internal" href="solids/02-archimedean/cuboctahedron/index.html"><span class="doc">Cuboctahedron</span></a> · <a class="reference internal" href="solids/02-archimedean/truncated-octahedron/index.html"><span class="doc">Truncated Octahedron</span></a> · <a class="reference internal" href="solids/02-archimedean/rhombicuboctahedron/index.html"><span class="doc">Rhombicuboctahedron</span></a> · <a class="reference internal" href="solids/02-archimedean/icosidodecahedron/index.html"><span class="doc">Icosidodecahedron</span></a> · <a class="reference internal" href="solids/02-archimedean/truncated-icosahedron/index.html"><span class="doc">Truncated Icosahedron</span></a></p></td>
         </tr>
-        <tr class="row-even"><td><p><a class="reference internal" href="platonic/octahedron.html"><span class="doc">Octahedron</span></a></p></td>
-        <td><p>Ὀκτάεδρον</p></td>
-        <td><p>Air</p></td>
-        <td><p>$\{3, 4\}$</p></td>
-        <td><p>6</p></td>
-        <td><p>12</p></td>
-        <td><p>8</p></td>
-        <td><p>$8/9$</p></td>
-        <td><p>$1/3$</p></td>
+        <tr class="row-even"><td><p><a class="reference internal" href="solids/03-catalan/index.html"><span class="doc">Catalan Duals</span></a></p></td>
+        <td><p><strong>2</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span></p></td>
+        <td><p><a class="reference internal" href="solids/03-catalan/rhombic-dodecahedron/index.html"><span class="doc">Rhombic Dodecahedron</span></a> · <a class="reference internal" href="solids/03-catalan/rhombic-triacontahedron/index.html"><span class="doc">Rhombic Triacontahedron</span></a></p></td>
         </tr>
-        <tr class="row-odd"><td><p><a class="reference internal" href="platonic/icosahedron.html"><span class="doc">Icosahedron</span></a></p></td>
-        <td><p>Εἰκοσάεδρον</p></td>
-        <td><p>Water</p></td>
-        <td><p>$\{3, 5\}$</p></td>
-        <td><p>12</p></td>
-        <td><p>30</p></td>
-        <td><p>20</p></td>
-        <td><p>$4/9$</p></td>
-        <td><p>$\frac{4\phi+3}{15}$</p></td>
+        <tr class="row-odd"><td><p><a class="reference internal" href="solids/04-elevated/index.html"><span class="doc">Elevated &amp; Stellated</span></a></p></td>
+        <td><p><strong>7</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{2})\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi, \sqrt{6})\)</span></p></td>
+        <td><p><a class="reference internal" href="solids/04-elevated/stella-octangula/index.html"><span class="doc">Stella Octangula</span></a> · <a class="reference internal" href="solids/04-elevated/tetrahedron-elevatum/index.html"><span class="doc">Tetrahedron Elevatum</span></a> · <a class="reference internal" href="solids/04-elevated/icosahedron-elevatum/index.html"><span class="doc">Icosahedron Elevatum</span></a> · <a class="reference internal" href="solids/04-elevated/dodecahedron-elevatum/index.html"><span class="doc">Dodecahedron Elevatum</span></a></p></td>
         </tr>
-        <tr class="row-even"><td><p><a class="reference internal" href="platonic/dodecahedron.html"><span class="doc">Dodecahedron</span></a></p></td>
-        <td><p>Δωδεκάεδρον</p></td>
-        <td><p>Aether</p></td>
-        <td><p>$\{5, 3\}$</p></td>
-        <td><p>20</p></td>
-        <td><p>30</p></td>
-        <td><p>12</p></td>
-        <td><p>$4/5$</p></td>
-        <td><p>$\frac{4\phi+3}{15}$</p></td>
+        <tr class="row-even"><td><p><a class="reference internal" href="solids/05-pyramids/index.html"><span class="doc">Pyramids &amp; Bipyramids</span></a></p></td>
+        <td><p><strong>4</strong></p></td>
+        <td><p><span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\phi)\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}(\sqrt{\phi})\)</span></p></td>
+        <td><p><a class="reference internal" href="solids/05-pyramids/kepler-pyramid/index.html"><span class="doc">Kepler Golden Pyramid</span></a> · <a class="reference internal" href="solids/05-pyramids/seked-pyramid/index.html"><span class="doc">Seked 14:11 Great Pyramid</span></a> · <a class="reference internal" href="solids/05-pyramids/golden-bipyramid/index.html"><span class="doc">Golden Square Bipyramid</span></a> · <a class="reference internal" href="solids/05-pyramids/pentagonal-pyramid/index.html"><span class="doc">Regular Pentagonal Pyramid</span></a></p></td>
         </tr>
         </tbody>
         </table>
         </section>
-        <section class="level-2" id="book-codices-architecture">
-        <h2>Book Codices &amp; Architecture<a class="headerlink" href="#book-codices-architecture" title="Link to this heading">¶</a></h2>
+        <section class="level-2" id="book-codices-collections">
+        <h2>Book Codices &amp; Collections<a class="headerlink" href="#book-codices-collections" title="Link to this heading">¶</a></h2>
         <ul class="simple">
-        <li><p><a class="reference internal" href="platonic/index.html"><span class="doc">The Five Platonic Solids</span></a> — Dedicated monographs for the <a class="reference internal" href="platonic/tetrahedron.html"><span class="doc">Tetrahedron</span></a>, <a class="reference internal" href="platonic/hexahedron.html"><span class="doc">Hexahedron</span></a>, <a class="reference internal" href="platonic/octahedron.html"><span class="doc">Octahedron</span></a>, <a class="reference internal" href="platonic/icosahedron.html"><span class="doc">Icosahedron</span></a>, and <a class="reference internal" href="platonic/dodecahedron.html"><span class="doc">Dodecahedron</span></a>, with Euclid Book XIII constructions, pure rational dihedral spreads, interactive 3D solids, and non-overlapping 2D unfolded nets.</p></li>
-        <li><p><a class="reference internal" href="golden/index.html"><span class="doc">Golden Proportions in Polyhedra</span></a> — Six certified Golden Ratio ($\phi$) theorems across 3D polyhedra and 2D cross-sections: <a class="reference internal" href="golden/golden_rectangles.html"><span class="doc">Golden Rectangles of the Icosahedron</span></a>, <a class="reference internal" href="golden/octahedron_icosahedron.html"><span class="doc">Golden Division of the Octahedron</span></a>, <a class="reference internal" href="golden/dodecahedron_five_cubes.html"><span class="doc">Euclid XIII.17 &amp; the Five Cubes in the Dodecahedron</span></a>, and <a class="reference internal" href="golden/rhombic_triacontahedron_odom.html"><span class="doc">Kepler’s Rhombic Triacontahedron &amp; Odom’s Tetrahedron Section</span></a>.</p></li>
-        <li><p><a class="reference internal" href="leonardo/index.html"><span class="doc">Leonardo da Vinci’s Polyhedral Plates (1509)</span></a> — Side-by-side Digital Scriptorium study of 38 original 1509 woodcut plates by <strong>Leonardo da Vinci</strong> (<a class="reference internal" href="leonardo/tetrahedron_cube_octahedron.html"><span class="doc">Tabulae I–XX</span></a> and <a class="reference internal" href="leonardo/icosahedron_dodecahedron.html"><span class="doc">Tabulae XXI–XXXVI</span></a>) paired with exact genus $g = F - 1$ <em>Corpora Vacua</em> reconstructions.</p></li>
-        <li><p><a class="reference internal" href="pyramid/index.html"><span class="doc">Kepler, Squaring the Circle &amp; the Great Pyramid</span></a> — Exact symbolic synthesis of <strong>Kepler, Squaring the Circle &amp; the Great Pyramid</strong>: <a class="reference internal" href="pyramid/kepler_triangle.html"><span class="doc">The 1597 Kepler Right Triangle &amp; Herodotus Area Law</span></a> ($1, \sqrt{\phi}, \phi$; $A_{\text{face}} = h^2 = \phi$), <a class="reference internal" href="pyramid/squaring_the_circle.html"><span class="doc">Squaring the Circle &amp; the Earth–Moon Cosmogram</span></a> ($8 = 2\pi h$, $\pi_{\phi} = 4/\sqrt{\phi}$, $r_M/r_E = 3/11$), and <a class="reference internal" href="pyramid/seked_and_octahedron.html"><span class="doc">Egyptian 14:11 Seked Mensuration &amp; Golden Bipyramid Spreads</span></a>.</p></li>
+        <li><p><a class="reference internal" href="solids/index.html"><span class="doc">Catalog of Polyhedra</span></a> — <strong>Master Polyhedra Catalog (26 Solids, One Polyhedron Per Page)</strong> organized into 5 collection families with inline SVG cards, interactive 3D <em>Solidum</em> / <em>Vacuum</em> studios, unfolded 2D nets, and <a class="reference internal" href="solids/comparative_table.html"><span class="doc">Master Comparative Ledger</span></a>.</p></li>
+        <li><p><a class="reference internal" href="golden/index.html"><span class="doc">Golden Proportions in Polyhedra</span></a> — Collection of certified Golden Ratio (<span class="math notranslate nohighlight">\(\phi\)</span>) theorems across 3D polyhedra and 2D cross-sections: <a class="reference internal" href="golden/golden_rectangles.html"><span class="doc">Golden Rectangles of the Icosahedron</span></a>, <a class="reference internal" href="golden/octahedron_icosahedron.html"><span class="doc">Golden Division of the Octahedron</span></a>, <a class="reference internal" href="golden/dodecahedron_five_cubes.html"><span class="doc">Euclid XIII.17 &amp; the Five Cubes in the Dodecahedron</span></a>, <a class="reference internal" href="golden/rhombic_triacontahedron.html"><span class="doc">Kepler’s Rhombic Triacontahedron</span></a>, and <a class="reference internal" href="golden/odom_tetrahedron_section.html"><span class="doc">Odom’s Tetrahedron Section</span></a>.</p></li>
+        <li><p><a class="reference internal" href="leonardo/index.html"><span class="doc">Leonardo da Vinci’s Polyhedral Plates (1509)</span></a> — Visual museum collection of <strong>20 paired 1509 woodcut folio studies</strong> by <strong>Leonardo da Vinci</strong> from Luca Pacioli’s <em>De Divina Proportione</em>, paired with exact genus <span class="math notranslate nohighlight">\(g = F - 1\)</span> <em>Corpora Vacua</em> proofs.</p></li>
+        <li><p><a class="reference internal" href="pyramid/index.html"><span class="doc">Kepler, Squaring the Circle &amp; the Great Pyramid</span></a> — Collection of treatises on <strong>Kepler, Squaring the Circle &amp; the Great Pyramid</strong>: <a class="reference internal" href="pyramid/kepler_triangle.html"><span class="doc">The 1597 Kepler Right Triangle</span></a> (<span class="math notranslate nohighlight">\(1, \sqrt{\phi}, \phi\)</span>; <span class="math notranslate nohighlight">\(A_{\text{face}} = h^2 = \phi\)</span>), <a class="reference internal" href="pyramid/squaring_the_circle.html"><span class="doc">Squaring the Circle &amp; the Earth–Moon Cosmogram</span></a> (<span class="math notranslate nohighlight">\(8 = 2\pi h\)</span>, <span class="math notranslate nohighlight">\(\pi_{\phi} = 4/\sqrt{\phi}\)</span>, <span class="math notranslate nohighlight">\(r_M/r_E = 3/11\)</span>), and <a class="reference internal" href="pyramid/seked_and_octahedron.html"><span class="doc">Egyptian 14:11 Seked Mensuration &amp; Polyhedral Spreads</span></a>.</p></li>
         <li><p><a class="reference internal" href="pipeline/index.html"><span class="doc">3D Symbolic Infrastructure &amp; Multi-Engine Pipeline</span></a> — Architecture of <code class="docutils literal notranslate"><span class="pre">geometor.polyhedra.model3d</span></code>, Conway/Pacioli operators (<code class="docutils literal notranslate"><span class="pre">vacuate</span></code>, <code class="docutils literal notranslate"><span class="pre">rectify</span></code>, <code class="docutils literal notranslate"><span class="pre">truncate</span></code>, <code class="docutils literal notranslate"><span class="pre">elevate</span></code>, <code class="docutils literal notranslate"><span class="pre">polar_dual</span></code>), and multi-engine exports to 2D SVG, HTML5 3D Canvas, <strong>IngeTrazo 0.6.0</strong>, and <strong>Blender 5.x</strong>.</p></li>
-        <li><p><a class="reference internal" href="modules/index.html"><span class="doc">Modules</span></a> · <a class="reference internal" href="log/index.html"><span class="doc">Log</span></a> · <a class="reference internal" href="changelog.html"><span class="doc">Changelog</span></a> — Symbolic Python API reference, research log, and release history.</p></li>
+        <li><p><a class="reference internal" href="modules/index.html"><span class="doc">Modules</span></a> · <a class="reference internal" href="log/index.html"><span class="doc">Log</span></a> · <a class="reference internal" href="changelog.html"><span class="doc">Changelog</span></a> — Symbolic Python API reference, research log collection, and release history.</p></li>
         </ul>
         <div class="toctree-wrapper compound">
         </div>
@@ -202,7 +167,7 @@
             <a class="book-toc-link" href="#">GEOMETOR • polyhedra</a>
           </div>
           <div class="book-nav-next">
-            <a class="book-nav-btn" href="platonic/index.html" title="The Five Platonic Solids"><span class="nav-label">The Five Platonic Solids</span> &rarr;</a>
+            <a class="book-nav-btn" href="solids/index.html" title="Catalog of Polyhedra"><span class="nav-label">Catalog of Polyhedra</span> &rarr;</a>
           </div>
         </div>
       </footer>
@@ -230,15 +195,152 @@
     <aside class="aside-recent-logs">
       <h3>Recent Logs</h3>
       <ul>
+        <li><a href="log/26.319-polyhedra_collections.html">One Polyhedron Per Page & Collection Architecture (v0.4.0)</a></li>
         <li><a href="log/26.319-great_pyramid_kepler.html">Kepler, Squaring the Circle & the Great Pyramid (v0.3.0)</a></li>
         <li><a href="log/26.319-model3d_golden_codex.html">Model3D, Golden Proportions & Leonardo Codex (v0.2.0)</a></li>
         <li><a href="log/26.318-init_polyhedra.html">Initialize geometor-polyhedra</a></li>
       </ul>
     </aside>
+    <aside class="aside-tags">
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="tags/aether.html">aether</a></li>
+        <li><a href="tags/air.html">air</a></li>
+        <li><a href="tags/archimedean.html">archimedean</a></li>
+        <li><a href="tags/archimedean-solids.html">archimedean-solids</a></li>
+        <li><a href="tags/bipyramid.html">bipyramid</a></li>
+        <li><a href="tags/buckyball.html">buckyball</a></li>
+        <li><a href="tags/catalan.html">catalan</a></li>
+        <li><a href="tags/catalan-solids.html">catalan-solids</a></li>
+        <li><a href="tags/compound.html">compound</a></li>
+        <li><a href="tags/continuous-morphism.html">continuous-morphism</a></li>
+        <li><a href="tags/cube.html">cube</a></li>
+        <li><a href="tags/cuboctahedron.html">cuboctahedron</a></li>
+        <li><a href="tags/cuboctahedron-elevatum.html">cuboctahedron-elevatum</a></li>
+        <li><a href="tags/decagon.html">decagon</a></li>
+        <li><a href="tags/deltahedron.html">deltahedron</a></li>
+        <li><a href="tags/dodecahedron.html">dodecahedron</a></li>
+        <li><a href="tags/dodecahedron-abscisum.html">dodecahedron-abscisum</a></li>
+        <li><a href="tags/dodecahedron-elevatum.html">dodecahedron-elevatum</a></li>
+        <li><a href="tags/earth.html">earth</a></li>
+        <li><a href="tags/earth-moon-cosmogram.html">earth-moon-cosmogram</a></li>
+        <li><a href="tags/egyptian.html">egyptian</a></li>
+        <li><a href="tags/elevated.html">elevated</a></li>
+        <li><a href="tags/elevated-solids.html">elevated-solids</a></li>
+        <li><a href="tags/euclid.html">euclid</a></li>
+        <li><a href="tags/fire.html">fire</a></li>
+        <li><a href="tags/five-cubes.html">five-cubes</a></li>
+        <li><a href="tags/fullerene.html">fullerene</a></li>
+        <li><a href="tags/giza.html">giza</a></li>
+        <li><a href="tags/golden-bipyramid.html">golden-bipyramid</a></li>
+        <li><a href="tags/golden-ratio.html">golden-ratio</a></li>
+        <li><a href="tags/golden-rectangles.html">golden-rectangles</a></li>
+        <li><a href="tags/great-pyramid.html">great-pyramid</a></li>
+        <li><a href="tags/herodotus.html">herodotus</a></li>
+        <li><a href="tags/hexahedron.html">hexahedron</a></li>
+        <li><a href="tags/hexahedron-abscisum.html">hexahedron-abscisum</a></li>
+        <li><a href="tags/hexahedron-elevatum.html">hexahedron-elevatum</a></li>
+        <li><a href="tags/icosahedron.html">icosahedron</a></li>
+        <li><a href="tags/icosahedron-cap.html">icosahedron-cap</a></li>
+        <li><a href="tags/icosahedron-elevatum.html">icosahedron-elevatum</a></li>
+        <li><a href="tags/icosidodecahedron.html">icosidodecahedron</a></li>
+        <li><a href="tags/icosidodecahedron-elevatum.html">icosidodecahedron-elevatum</a></li>
+        <li><a href="tags/j2.html">j2</a></li>
+        <li><a href="tags/johnson.html">johnson</a></li>
+        <li><a href="tags/johnson-solids.html">johnson-solids</a></li>
+        <li><a href="tags/kepler.html">kepler</a></li>
+        <li><a href="tags/kepler-triangle.html">kepler-triangle</a></li>
+        <li><a href="tags/khufu.html">khufu</a></li>
+        <li><a href="tags/leonardo.html">leonardo</a></li>
+        <li><a href="tags/leonardo-vacuum.html">leonardo-vacuum</a></li>
+        <li><a href="tags/midsphere.html">midsphere</a></li>
+        <li><a href="tags/octagon.html">octagon</a></li>
+        <li><a href="tags/octahedral.html">octahedral</a></li>
+        <li><a href="tags/octahedron.html">octahedron</a></li>
+        <li><a href="tags/octahedron-abscisum.html">octahedron-abscisum</a></li>
+        <li><a href="tags/octahedron-elevatum.html">octahedron-elevatum</a></li>
+        <li><a href="tags/odom-theorem.html">odom-theorem</a></li>
+        <li><a href="tags/pacioli.html">pacioli</a></li>
+        <li><a href="tags/pentagon.html">pentagon</a></li>
+        <li><a href="tags/pentagonal-pyramid.html">pentagonal-pyramid</a></li>
+        <li><a href="tags/pentakis.html">pentakis</a></li>
+        <li><a href="tags/pentakis-dodecahedron.html">pentakis-dodecahedron</a></li>
+        <li><a href="tags/perimeter-quadrature.html">perimeter-quadrature</a></li>
+        <li><a href="tags/permutohedron.html">permutohedron</a></li>
+        <li><a href="tags/phi.html">phi</a></li>
+        <li><a href="tags/pi.html">pi</a></li>
+        <li><a href="tags/platonic.html">platonic</a></li>
+        <li><a href="tags/platonic-solids.html">platonic-solids</a></li>
+        <li><a href="tags/polar-dual.html">polar-dual</a></li>
+        <li><a href="tags/pyramid.html">pyramid</a></li>
+        <li><a href="tags/pyramids.html">pyramids</a></li>
+        <li><a href="tags/pyramis-penthagona.html">pyramis-penthagona</a></li>
+        <li><a href="tags/pyramis-quadrangula.html">pyramis-quadrangula</a></li>
+        <li><a href="tags/quartic-field.html">quartic-field</a></li>
+        <li><a href="tags/quasi-regular.html">quasi-regular</a></li>
+        <li><a href="tags/rational.html">rational</a></li>
+        <li><a href="tags/rational-trigonometry.html">rational-trigonometry</a></li>
+        <li><a href="tags/rectification.html">rectification</a></li>
+        <li><a href="tags/regular.html">regular</a></li>
+        <li><a href="tags/rhombic-triacontahedron.html">rhombic-triacontahedron</a></li>
+        <li><a href="tags/rhombicuboctahedron.html">rhombicuboctahedron</a></li>
+        <li><a href="tags/rhombus.html">rhombus</a></li>
+        <li><a href="tags/royal-cubit.html">royal-cubit</a></li>
+        <li><a href="tags/seked.html">seked</a></li>
+        <li><a href="tags/semi-regular.html">semi-regular</a></li>
+        <li><a href="tags/simplex.html">simplex</a></li>
+        <li><a href="tags/solidum.html">solidum</a></li>
+        <li><a href="tags/space-filling.html">space-filling</a></li>
+        <li><a href="tags/sqrt2.html">sqrt2</a></li>
+        <li><a href="tags/square-pyramid.html">square-pyramid</a></li>
+        <li><a href="tags/squaring-circle.html">squaring-circle</a></li>
+        <li><a href="tags/stella-octangula.html">stella-octangula</a></li>
+        <li><a href="tags/stellation.html">stellation</a></li>
+        <li><a href="tags/tetrahedron.html">tetrahedron</a></li>
+        <li><a href="tags/tetrahedron-abscisum.html">tetrahedron-abscisum</a></li>
+        <li><a href="tags/tetrahedron-elevatum.html">tetrahedron-elevatum</a></li>
+        <li><a href="tags/tetrakis.html">tetrakis</a></li>
+        <li><a href="tags/tetrakis-hexahedron.html">tetrakis-hexahedron</a></li>
+        <li><a href="tags/triakis.html">triakis</a></li>
+        <li><a href="tags/triakis-icosahedron.html">triakis-icosahedron</a></li>
+        <li><a href="tags/triakis-tetrahedron.html">triakis-tetrahedron</a></li>
+        <li><a href="tags/truncated-icosahedron.html">truncated-icosahedron</a></li>
+        <li><a href="tags/truncated-octahedron.html">truncated-octahedron</a></li>
+        <li><a href="tags/truncated-tetrahedron.html">truncated-tetrahedron</a></li>
+        <li><a href="tags/truncation.html">truncation</a></li>
+        <li><a href="tags/vacuum.html">vacuum</a></li>
+        <li><a href="tags/vigintisex-basium.html">vigintisex-basium</a></li>
+        <li><a href="tags/water.html">water</a></li>
+        <li><a href="tags/woodcut.html">woodcut</a></li>
+        <li><a href="tags/zonohedron.html">zonohedron</a></li>
+      </ul>
+    </aside>
+    <aside class="aside-categories">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="categories/01-platonic.html">01-platonic</a></li>
+        <li><a href="categories/02-archimedean.html">02-archimedean</a></li>
+        <li><a href="categories/03-catalan.html">03-catalan</a></li>
+        <li><a href="categories/04-elevated.html">04-elevated</a></li>
+        <li><a href="categories/05-pyramids.html">05-pyramids</a></li>
+        <li><a href="categories/archimedean.html">archimedean</a></li>
+        <li><a href="categories/elevated.html">elevated</a></li>
+        <li><a href="categories/golden-proportions.html">golden-proportions</a></li>
+        <li><a href="categories/great-pyramid.html">great-pyramid</a></li>
+        <li><a href="categories/leonardo-1509.html">leonardo-1509</a></li>
+        <li><a href="categories/platonic.html">platonic</a></li>
+        <li><a href="categories/pyramids.html">pyramids</a></li>
+      </ul>
+    </aside>
     <aside class="aside-types">
       <h3>Types</h3>
       <ul>
+        <li><a href="types/family.html">family</a></li>
         <li><a href="types/log.html">log</a></li>
+        <li><a href="types/plate.html">plate</a></li>
+        <li><a href="types/solid.html">solid</a></li>
+        <li><a href="types/theorem.html">theorem</a></li>
+        <li><a href="types/treatise.html">treatise</a></li>
       </ul>
     </aside>
   </div>
@@ -258,14 +360,14 @@
 
   <script src="_static/jquery.js?v=5d32c60e"></script>
   <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-  <script src="_static/documentation_options.js?v=e259d695"></script>
+  <script src="_static/documentation_options.js?v=6c02275b"></script>
   <script src="_static/doctools.js?v=fd6eb6e6"></script>
   <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
   <script src="_static/js/collection_controls.js?v=b6b5297a"></script>
   <script src="_static/js/geometor_interactive.js?v=b2892320"></script>
   <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"], ["$", "$"]], "displayMath": [["\\[", "\\]"], ["$$", "$$"]]}}</script>
   <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-  <script src="_static/js/polyhedra_3d_codex.js?v=3d481e31"></script>
+  <script src="_static/js/polyhedra_3d_codex.js?v=33b74bc9"></script>
   <script src="_static/js/search_highlight.js"></script>
 
 </body>

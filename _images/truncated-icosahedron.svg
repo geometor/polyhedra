@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480" class="euclid-graphic" data-graphic-id="truncated-icosahedron">
+  <style>
+    .euclid-graphic {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .poly-stroke {
+      stroke: #1e3a8a;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .poly-hidden {
+      stroke: #94a3b8;
+      stroke-dasharray: 3 3;
+      stroke-width: 1.0;
+      opacity: 0.5;
+      fill: none;
+    }
+    .poly-gold {
+      fill: #f59e0b;
+      fill-opacity: 0.30;
+      stroke: #b45309;
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+    }
+    @media (prefers-color-scheme: dark) {
+      .poly-stroke {
+        stroke: #93c5fd;
+      }
+      .poly-hidden {
+        stroke: #64748b;
+        opacity: 0.6;
+      }
+    }
+    html[data-theme="dark"] .poly-stroke {
+      stroke: #93c5fd;
+    }
+    html[data-theme="dark"] .poly-hidden {
+      stroke: #64748b;
+      opacity: 0.6;
+    }
+  </style>
+  <defs />
+  <g id="hidden-edges">
+    <line x1="253.87" y1="67.71" x2="187.60" y2="89.13" class="poly-hidden" />
+    <line x1="187.60" y1="89.13" x2="143.50" y2="103.29" class="poly-hidden" />
+    <line x1="284.90" y1="57.60" x2="253.87" y2="67.71" class="poly-hidden" />
+    <line x1="360.93" y1="102.42" x2="398.78" y2="156.47" class="poly-hidden" />
+    <line x1="398.78" y1="156.47" x2="374.77" y2="196.51" class="poly-hidden" />
+    <line x1="374.77" y1="196.51" x2="318.46" y2="185.59" class="poly-hidden" />
+    <line x1="282.27" y1="136.84" x2="318.46" y2="185.59" class="poly-hidden" />
+    <line x1="300.71" y1="93.95" x2="282.27" y2="136.84" class="poly-hidden" />
+    <line x1="360.93" y1="102.42" x2="300.71" y2="93.95" class="poly-hidden" />
+    <line x1="398.78" y1="156.47" x2="435.79" y2="195.48" class="poly-hidden" />
+    <line x1="360.93" y1="102.42" x2="355.96" y2="80.82" class="poly-hidden" />
+    <line x1="282.27" y1="136.84" x2="222.30" y2="155.58" class="poly-hidden" />
+    <line x1="222.30" y1="155.58" x2="174.76" y2="133.95" class="poly-hidden" />
+    <line x1="187.60" y1="89.13" x2="174.76" y2="133.95" class="poly-hidden" />
+    <line x1="300.71" y1="93.95" x2="253.87" y2="67.71" class="poly-hidden" />
+    <line x1="345.68" y1="359.75" x2="381.16" y2="370.36" class="poly-hidden" />
+    <line x1="246.39" y1="407.75" x2="276.56" y2="422.40" class="poly-hidden" />
+    <line x1="282.33" y1="377.50" x2="246.39" y2="407.75" class="poly-hidden" />
+    <line x1="282.33" y1="377.50" x2="345.68" y2="359.75" class="poly-hidden" />
+    <line x1="246.39" y1="407.75" x2="179.33" y2="388.88" class="poly-hidden" />
+    <line x1="179.33" y1="388.88" x2="155.27" y2="341.10" class="poly-hidden" />
+    <line x1="194.70" y1="315.56" x2="155.27" y2="341.10" class="poly-hidden" />
+    <line x1="255.05" y1="333.13" x2="194.70" y2="315.56" class="poly-hidden" />
+    <line x1="282.33" y1="377.50" x2="255.05" y2="333.13" class="poly-hidden" />
+    <line x1="297.84" y1="290.64" x2="281.59" y2="232.30" class="poly-hidden" />
+    <line x1="281.59" y1="232.30" x2="318.46" y2="185.59" class="poly-hidden" />
+    <line x1="393.13" y1="257.63" x2="374.77" y2="196.51" class="poly-hidden" />
+    <line x1="352.99" y1="305.00" x2="393.13" y2="257.63" class="poly-hidden" />
+    <line x1="352.99" y1="305.00" x2="297.84" y2="290.64" class="poly-hidden" />
+    <line x1="393.13" y1="257.63" x2="431.03" y2="261.13" class="poly-hidden" />
+    <line x1="352.99" y1="305.00" x2="345.68" y2="359.75" class="poly-hidden" />
+    <line x1="194.70" y1="315.56" x2="179.28" y2="255.31" class="poly-hidden" />
+    <line x1="223.34" y1="214.55" x2="179.28" y2="255.31" class="poly-hidden" />
+    <line x1="281.59" y1="232.30" x2="223.34" y2="214.55" class="poly-hidden" />
+    <line x1="297.84" y1="290.64" x2="255.05" y2="333.13" class="poly-hidden" />
+    <line x1="88.68" y1="285.25" x2="112.65" y2="291.94" class="poly-hidden" />
+    <line x1="155.27" y1="341.10" x2="112.65" y2="291.94" class="poly-hidden" />
+    <line x1="159.91" y1="389.67" x2="179.33" y2="388.88" class="poly-hidden" />
+    <line x1="179.28" y1="255.31" x2="129.98" y2="238.49" class="poly-hidden" />
+    <line x1="126.35" y1="176.06" x2="129.98" y2="238.49" class="poly-hidden" />
+    <line x1="174.76" y1="133.95" x2="126.35" y2="176.06" class="poly-hidden" />
+    <line x1="222.30" y1="155.58" x2="223.34" y2="214.55" class="poly-hidden" />
+    <line x1="103.82" y1="160.74" x2="126.35" y2="176.06" class="poly-hidden" />
+    <line x1="112.65" y1="291.94" x2="129.98" y2="238.49" class="poly-hidden" />
+  </g>
+  <g id="faces">
+    <polygon points="435.79,195.48 436.68,180.71 432.11,241.16 426.84,314.08 426.67,319.00 431.03,261.13" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="16" />
+    <polygon points="348.52,402.66 381.16,370.36 426.67,319.00 426.84,314.08 375.24,369.19" fill="#6f79aa" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="truncation" data-face-idx="29" />
+    <polygon points="167.74,95.36 143.50,103.29 103.82,160.74 83.32,216.25 103.40,217.09 148.45,153.39" fill="#739bc7" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="12" />
+    <polygon points="83.32,216.25 88.68,285.25 111.55,334.96 122.41,295.64 103.40,217.09" fill="#717bac" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="truncation" data-face-idx="27" />
+    <polygon points="276.56,422.40 348.52,402.66 375.24,369.19 322.85,354.21 241.62,377.09 222.60,411.59" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="14" />
+    <polygon points="284.90,57.60 243.49,70.88 278.26,112.37 358.80,138.11 394.51,119.72 355.96,80.82" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="0" />
+    <polygon points="222.60,411.59 241.62,377.09 189.77,315.50 122.41,295.64 111.55,334.96 159.91,389.67" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="13" />
+    <polygon points="382.87,218.14 432.11,241.16 436.68,180.71 394.51,119.72 358.80,138.11" fill="#6f79aa" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="truncation" data-face-idx="28" />
+    <polygon points="322.85,354.21 375.24,369.19 426.84,314.08 432.11,241.16 382.87,218.14 324.91,276.02" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="17" />
+    <polygon points="167.74,95.36 148.45,153.39 217.77,166.89 278.26,112.37 243.49,70.88" fill="#6f79aa" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="truncation" data-face-idx="22" />
+    <polygon points="148.45,153.39 103.40,217.09 122.41,295.64 189.77,315.50 240.27,250.56 217.77,166.89" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="10" />
+    <polygon points="240.27,250.56 189.77,315.50 241.62,377.09 322.85,354.21 324.91,276.02" fill="#6f79aa" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="truncation" data-face-idx="25" />
+    <polygon points="217.77,166.89 240.27,250.56 324.91,276.02 382.87,218.14 358.80,138.11 278.26,112.37" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="11" />
+  </g>
+</svg>

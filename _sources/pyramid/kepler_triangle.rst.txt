@@ -1,5 +1,12 @@
 :layout: book
+:type: treatise
+:order: 1
 :title: The 1597 Kepler Right Triangle & Golden Surface Harmony
+:featured_image: _static/svg/pyramid/kepler_triangle_2d.svg
+:featured_image_alt: The 1597 Kepler Right Triangle (1, √φ, φ)
+:categories: great-pyramid
+:tags: kepler-triangle, golden-ratio, great-pyramid, herodotus, quartic-field
+:excerpt: Johannes Kepler's 1597 right triangle with sides in geometric progression (1, √φ, φ) synthesizing the Pythagorean theorem and the golden ratio, governing the surface geometry of the Great Pyramid.
 
 =======================================================
 The 1597 Kepler Right Triangle & Golden Surface Harmony
@@ -14,6 +21,10 @@ The 1597 Kepler Right Triangle & Golden Surface Harmony
    *If in a right-angled triangle the sides are in continuous geometric progression, the square on the altitude equals the rectangle under the hypotenuse and the difference between the hypotenuse and the base.*
 
    — **Johannes Kepler**, *Epistola ad Michaelem Mästlinum* (October 1597)
+
+.. enunciation::
+
+   In October 1597, Johannes Kepler synthesized the Pythagorean Theorem (:math:`a^2 + b^2 = c^2`) and the Divine Proportion (:math:`1 + \phi = \phi^2`) into a singular right-angled triangle whose sides form a continuous geometric progression :math:`(1, \sqrt{\phi}, \phi)`. When this triangle serves as the meridian cross-section of a square pyramid, the square on the vertical height equals the area of each triangular face (:math:`A_{\text{face}} = h^2`), fulfilling Herodotus's ancient architectural enunciation over the quartic number field :math:`\mathbb{Q}(\sqrt{\phi})`.
 
 Kepler's Two Treasures & the Quartic Field Extension
 ----------------------------------------------------
@@ -314,3 +325,10 @@ In Cartesian 3-space, place the Kepler Golden Pyramid with base corners at :math
       e = \sqrt{\phi + 2} \approx 1.902113032590307
 
    This exact symbolic identity is certified in ``geometor.polyhedra.pyramid.verify_kepler_pyramid_identities()``.
+
+Canonical Solid Codex
+---------------------
+
+For the complete interactive 3D model, exact symbolic coordinates over :math:`\mathbb{Q}(\sqrt{\phi})`, face normals, and dihedral angles, consult the canonical pyramid codex:
+
+- :doc:`Kepler Golden Pyramid </solids/05-pyramids/kepler-pyramid/index>`

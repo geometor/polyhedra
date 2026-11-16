@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480" class="euclid-graphic" data-graphic-id="pentagonal-pyramid">
+  <style>
+    .euclid-graphic {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .poly-stroke {
+      stroke: #1e3a8a;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .poly-hidden {
+      stroke: #94a3b8;
+      stroke-dasharray: 3 3;
+      stroke-width: 1.0;
+      opacity: 0.5;
+      fill: none;
+    }
+    .poly-gold {
+      fill: #f59e0b;
+      fill-opacity: 0.30;
+      stroke: #b45309;
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+    }
+    @media (prefers-color-scheme: dark) {
+      .poly-stroke {
+        stroke: #93c5fd;
+      }
+      .poly-hidden {
+        stroke: #64748b;
+        opacity: 0.6;
+      }
+    }
+    html[data-theme="dark"] .poly-stroke {
+      stroke: #93c5fd;
+    }
+    html[data-theme="dark"] .poly-hidden {
+      stroke: #64748b;
+      opacity: 0.6;
+    }
+  </style>
+  <defs />
+  <g id="hidden-edges">
+    <line x1="311.82" y1="142.01" x2="247.53" y2="284.93" class="poly-hidden" />
+    <line x1="311.82" y1="142.01" x2="457.60" y2="337.99" class="poly-hidden" />
+  </g>
+  <g id="faces">
+    <polygon points="146.36,221.50 62.40,219.36 247.53,284.93 457.60,337.99 450.62,313.51" fill="#6385ab" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="base" data-face-idx="0" />
+    <polygon points="311.82,142.01 62.40,219.36 146.36,221.50" fill="#6ab3d5" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="pyramid" data-face-idx="1" />
+    <polygon points="311.82,142.01 146.36,221.50 450.62,313.51" fill="#548eaa" fill-opacity="0.88" stroke="#1e3a8a" stroke-width="1.3" class="poly-stroke" data-face-role="pyramid" data-face-idx="5" />
+  </g>
+</svg>

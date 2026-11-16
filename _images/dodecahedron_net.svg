@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420" class="euclid-graphic" data-graphic-id="dodecahedron_net">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420" class="euclid-graphic" data-graphic-id="dodecahedron-net">
   <style>
     .euclid-graphic {
-      background-color: transparent;
       font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
     }
     .net-face {

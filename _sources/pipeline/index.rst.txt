@@ -18,7 +18,7 @@
 
    *Just as a point is the beginning of a line, a line of a surface, and a surface of a body: so also the science of body presupposes the science of surfaces, this of lines, and this of points.*
 
-   — :person:`St. Thomas Aquinas`, *In De Caelo et Mundo*, Lib. I, Lect. 2
+   — **St. Thomas Aquinas**, *In De Caelo et Mundo*, Lib. I, Lect. 2
 
 The core design mandate of **GEOMETOR Polyhedra** is absolute mathematical truth: **100% exact symbolic algebra over algebraic number fields** :math:`\mathbb{Q}(\phi, \sqrt{d})`, with zero floating-point approximations.
 

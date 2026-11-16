@@ -75,6 +75,44 @@
     return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
   }
 
+  // Extract unique undirected edges from faces
+  function getEdgesFromFaces(faces) {
+    const edgeMap = new Map();
+    const edges = [];
+    faces.forEach((f, fIdx) => {
+      const len = f.length;
+      for (let i = 0; i < len; i++) {
+        const a = f[i];
+        const b = f[(i + 1) % len];
+        const key = a < b ? `${a}_${b}` : `${b}_${a}`;
+        if (!edgeMap.has(key)) {
+          edgeMap.set(key, edges.length);
+          edges.push({ a, b, faces: [fIdx] });
+        } else {
+          edges[edgeMap.get(key)].faces.push(fIdx);
+        }
+      }
+    });
+    return { edges, edgeMap };
+  }
+
+  // Auto-Scale Normalization: normalizes bounding radius cleanly to visual target (~1.80)
+  function normalizeSolid(solid, targetRadius = 1.80) {
+    let maxR = 0;
+    solid.vertices.forEach(v => {
+      const r = vMag(v);
+      if (r > maxR) maxR = r;
+    });
+    if (maxR > 1e-6) {
+      const scale = targetRadius / maxR;
+      solid.vertices = solid.vertices.map(v => vScale(v, scale));
+      if (solid.parentSolid) {
+        solid.parentSolid.vertices = solid.parentSolid.vertices.map(v => vScale(v, scale));
+      }
+    }
+    return solid;
+  }
+
   // --- Platonic Solid Base Generators ---
   function getTetrahedron() {
     const s = 1.25;
@@ -132,8 +170,6 @@
       [1, PHI, 0], [-1, PHI, 0], [1, -PHI, 0], [-1, -PHI, 0]
     ];
     const vertices = raw.map(v => vScale(v, s));
-
-    // Derive 20 equilateral triangular faces with CCW outward normals
     const faces = [];
     for (let i = 0; i < 12; i++) {
       for (let j = i + 1; j < 12; j++) {
@@ -174,7 +210,6 @@
     ];
     const vertices = rawDodeca.map(v => vScale(v, s));
 
-    // Construct 12 pentagonal faces using dual icosahedron directions
     const faces = [];
     for (let ic = 0; ic < rawIco.length; ic++) {
       const dir = vNorm(rawIco[ic]);
@@ -182,7 +217,6 @@
       scored.sort((a, b) => b.dot - a.dot);
       const top5 = scored.slice(0, 5).map(x => x.idx);
 
-      // Centroid of face
       const c = top5.reduce((acc, idx) => vAdd(acc, vScale(vertices[idx], 0.2)), [0, 0, 0]);
       let u = Math.abs(dir[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
       const uDotD = vDot(u, dir);
@@ -201,38 +235,594 @@
     return { name: 'dodecahedron', title: 'Dodecahedron', element: 'Aether', vertices, faces, color: PAL.aether };
   }
 
-  function getPlatonicSolid(name) {
-    switch (name.toLowerCase()) {
-      case 'tetrahedron': return getTetrahedron();
-      case 'hexahedron':
-      case 'cube': return getHexahedron();
-      case 'octahedron': return getOctahedron();
-      case 'icosahedron': return getIcosahedron();
-      case 'dodecahedron': return getDodecahedron();
-      default: return getIcosahedron();
+  // --- Truncation & Rectification Helpers ---
+  function truncateSolid(base, ratio, name, title) {
+    const { vertices, faces } = base;
+    const { edges } = getEdgesFromFaces(faces);
+    const cutMap = new Map();
+    const newVertices = [];
+
+    function getCutIdx(u, v) {
+      const key = `${u}_${v}`;
+      if (cutMap.has(key)) return cutMap.get(key);
+      const pt = vLerp(vertices[u], vertices[v], ratio);
+      const idx = newVertices.length;
+      newVertices.push(pt);
+      cutMap.set(key, idx);
+      return idx;
     }
+
+    const newFaces = [];
+    const faceRoles = [];
+
+    // 1. Base face 2k-gons
+    faces.forEach(f => {
+      const k = f.length;
+      const poly = [];
+      for (let i = 0; i < k; i++) {
+        const u = f[i];
+        const v = f[(i + 1) % k];
+        poly.push(getCutIdx(u, v));
+        poly.push(getCutIdx(v, u));
+      }
+      const p0 = newVertices[poly[0]], p1 = newVertices[poly[1]], p2 = newVertices[poly[2]];
+      const c = poly.reduce((acc, idx) => vAdd(acc, vScale(newVertices[idx], 1 / poly.length)), [0, 0, 0]);
+      const norm = vCross(vSub(p1, p0), vSub(p2, p0));
+      if (vDot(norm, c) < 0) poly.reverse();
+      newFaces.push(poly);
+      faceRoles.push('base');
+    });
+
+    // 2. Vertex truncation q-gons
+    for (let u = 0; u < vertices.length; u++) {
+      const neighbors = [];
+      edges.forEach(e => {
+        if (e.a === u) neighbors.push(e.b);
+        else if (e.b === u) neighbors.push(e.a);
+      });
+      const norm = vNorm(vertices[u]);
+      const cutIndices = neighbors.map(w => ({
+        idx: getCutIdx(u, w),
+        pt: newVertices[getCutIdx(u, w)]
+      }));
+      const c = cutIndices.reduce((acc, x) => vAdd(acc, vScale(x.pt, 1 / cutIndices.length)), [0, 0, 0]);
+      let uAxis = Math.abs(norm[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
+      uAxis = vNorm(vSub(uAxis, vScale(norm, vDot(uAxis, norm))));
+      const vAxis = vCross(norm, uAxis);
+
+      cutIndices.sort((a, b) => {
+        const da = vSub(a.pt, c);
+        const db = vSub(b.pt, c);
+        return Math.atan2(vDot(da, vAxis), vDot(da, uAxis)) - Math.atan2(vDot(db, vAxis), vDot(db, uAxis));
+      });
+      const poly = cutIndices.map(x => x.idx);
+      const p0 = newVertices[poly[0]], p1 = newVertices[poly[1]], p2 = newVertices[poly[2]];
+      const n = vCross(vSub(p1, p0), vSub(p2, p0));
+      if (vDot(n, norm) < 0) poly.reverse();
+      newFaces.push(poly);
+      faceRoles.push('truncation');
+    }
+
+    return {
+      name: name || ('truncated-' + base.name),
+      title: title || ('Truncated ' + base.title),
+      vertices: newVertices,
+      faces: newFaces,
+      faceRoles
+    };
   }
 
-  // Extract unique undirected edges from faces
-  function getEdgesFromFaces(faces) {
-    const edgeMap = new Map();
-    const edges = [];
-    faces.forEach((f, fIdx) => {
-      const len = f.length;
-      for (let i = 0; i < len; i++) {
+  function rectifySolid(base, name, title) {
+    const { vertices, faces } = base;
+    const { edges, edgeMap } = getEdgesFromFaces(faces);
+    const newVertices = edges.map(e => vScale(vAdd(vertices[e.a], vertices[e.b]), 0.5));
+    const newFaces = [];
+    const faceRoles = [];
+
+    // 1. Face truncations
+    faces.forEach(f => {
+      const k = f.length;
+      const poly = [];
+      for (let i = 0; i < k; i++) {
         const a = f[i];
-        const b = f[(i + 1) % len];
+        const b = f[(i + 1) % k];
         const key = a < b ? `${a}_${b}` : `${b}_${a}`;
-        if (!edgeMap.has(key)) {
-          edgeMap.set(key, edges.length);
-          edges.push({ a, b, faces: [fIdx] });
-        } else {
-          edges[edgeMap.get(key)].faces.push(fIdx);
-        }
+        poly.push(edgeMap.get(key));
+      }
+      const p0 = newVertices[poly[0]], p1 = newVertices[poly[1]], p2 = newVertices[poly[2]];
+      const c = poly.reduce((acc, idx) => vAdd(acc, vScale(newVertices[idx], 1 / poly.length)), [0, 0, 0]);
+      const norm = vCross(vSub(p1, p0), vSub(p2, p0));
+      if (vDot(norm, c) < 0) poly.reverse();
+      newFaces.push(poly);
+      faceRoles.push('base');
+    });
+
+    // 2. Vertex truncations
+    for (let u = 0; u < vertices.length; u++) {
+      const incidentEdgeIndices = [];
+      edges.forEach((e, eIdx) => {
+        if (e.a === u || e.b === u) incidentEdgeIndices.push(eIdx);
+      });
+      const norm = vNorm(vertices[u]);
+      const c = incidentEdgeIndices.reduce((acc, idx) => vAdd(acc, vScale(newVertices[idx], 1 / incidentEdgeIndices.length)), [0, 0, 0]);
+      let uAxis = Math.abs(norm[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
+      uAxis = vNorm(vSub(uAxis, vScale(norm, vDot(uAxis, norm))));
+      const vAxis = vCross(norm, uAxis);
+
+      incidentEdgeIndices.sort((a, b) => {
+        const da = vSub(newVertices[a], c);
+        const db = vSub(newVertices[b], c);
+        return Math.atan2(vDot(da, vAxis), vDot(da, uAxis)) - Math.atan2(vDot(db, vAxis), vDot(db, uAxis));
+      });
+      const poly = incidentEdgeIndices;
+      const p0 = newVertices[poly[0]], p1 = newVertices[poly[1]], p2 = newVertices[poly[2]];
+      const n = vCross(vSub(p1, p0), vSub(p2, p0));
+      if (vDot(n, norm) < 0) poly.reverse();
+      newFaces.push(poly);
+      faceRoles.push('truncation');
+    }
+
+    return {
+      name: name || ('rectified-' + base.name),
+      title: title || ('Rectified ' + base.title),
+      vertices: newVertices,
+      faces: newFaces,
+      faceRoles
+    };
+  }
+
+  function getRhombicuboctahedron() {
+    const xi = 1 + Math.SQRT2;
+    const rawVerts = [];
+    const signs = [-1, 1];
+
+    const basePerms = [
+      (s1, s2, s3) => [s1, s2, s3 * xi],
+      (s1, s2, s3) => [s1, s2 * xi, s3],
+      (s1, s2, s3) => [s1 * xi, s2, s3]
+    ];
+
+    basePerms.forEach(perm => {
+      signs.forEach(s1 => {
+        signs.forEach(s2 => {
+          signs.forEach(s3 => {
+            rawVerts.push(perm(s1, s2, s3));
+          });
+        });
+      });
+    });
+
+    const vertices = rawVerts;
+    const faces = [];
+    const faceRoles = [];
+
+    function addFace(indices, role) {
+      const pts = indices.map(i => vertices[i]);
+      const c = pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / pts.length)), [0, 0, 0]);
+      const norm = vNorm(c);
+      let uAxis = Math.abs(norm[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
+      uAxis = vNorm(vSub(uAxis, vScale(norm, vDot(uAxis, norm))));
+      const vAxis = vCross(norm, uAxis);
+
+      indices.sort((a, b) => {
+        const da = vSub(vertices[a], c);
+        const db = vSub(vertices[b], c);
+        return Math.atan2(vDot(da, vAxis), vDot(da, uAxis)) - Math.atan2(vDot(db, vAxis), vDot(db, uAxis));
+      });
+
+      const p0 = vertices[indices[0]], p1 = vertices[indices[1]], p2 = vertices[indices[2]];
+      const n = vCross(vSub(p1, p0), vSub(p2, p0));
+      if (vDot(n, norm) < 0) indices.reverse();
+      faces.push(indices);
+      faceRoles.push(role);
+    }
+
+    // 6 Axial Squares
+    [-xi, xi].forEach(val => {
+      const sq = [];
+      vertices.forEach((v, idx) => { if (Math.abs(v[2] - val) < 1e-4) sq.push(idx); });
+      addFace(sq, 'axial_square');
+    });
+    [-xi, xi].forEach(val => {
+      const sq = [];
+      vertices.forEach((v, idx) => { if (Math.abs(v[1] - val) < 1e-4) sq.push(idx); });
+      addFace(sq, 'axial_square');
+    });
+    [-xi, xi].forEach(val => {
+      const sq = [];
+      vertices.forEach((v, idx) => { if (Math.abs(v[0] - val) < 1e-4) sq.push(idx); });
+      addFace(sq, 'axial_square');
+    });
+
+    // 8 Octant Triangles
+    signs.forEach(sx => {
+      signs.forEach(sy => {
+        signs.forEach(sz => {
+          const tri = [];
+          vertices.forEach((v, idx) => {
+            if (Math.sign(v[0]) === sx && Math.sign(v[1]) === sy && Math.sign(v[2]) === sz) {
+              tri.push(idx);
+            }
+          });
+          if (tri.length === 3) addFace(tri, 'octant_triangle');
+        });
+      });
+    });
+
+    // 12 Chamfer Squares
+    signs.forEach(sx => {
+      signs.forEach(sy => {
+        const sq = [];
+        vertices.forEach((v, idx) => {
+          if (Math.sign(v[0]) === sx && Math.sign(v[1]) === sy && Math.abs(Math.abs(v[2]) - 1) < 1e-4) {
+            sq.push(idx);
+          }
+        });
+        if (sq.length === 4) addFace(sq, 'chamfer_square');
+      });
+    });
+    signs.forEach(sy => {
+      signs.forEach(sz => {
+        const sq = [];
+        vertices.forEach((v, idx) => {
+          if (Math.sign(v[1]) === sy && Math.sign(v[2]) === sz && Math.abs(Math.abs(v[0]) - 1) < 1e-4) {
+            sq.push(idx);
+          }
+        });
+        if (sq.length === 4) addFace(sq, 'chamfer_square');
+      });
+    });
+    signs.forEach(sz => {
+      signs.forEach(sx => {
+        const sq = [];
+        vertices.forEach((v, idx) => {
+          if (Math.sign(v[2]) === sz && Math.sign(v[0]) === sx && Math.abs(Math.abs(v[1]) - 1) < 1e-4) {
+            sq.push(idx);
+          }
+        });
+        if (sq.length === 4) addFace(sq, 'chamfer_square');
+      });
+    });
+
+    return {
+      name: 'rhombicuboctahedron',
+      title: 'Rhombicuboctahedron',
+      vertices,
+      faces,
+      faceRoles
+    };
+  }
+
+  // --- Polar Dual Solid Generator (Catalan Duals) ---
+  function polarDualSolid(base, name, title) {
+    const { vertices, faces } = base;
+    const { edges } = getEdgesFromFaces(faces);
+
+    let rMidSqSum = 0;
+    edges.forEach(e => {
+      const mid = vScale(vAdd(vertices[e.a], vertices[e.b]), 0.5);
+      rMidSqSum += vDot(mid, mid);
+    });
+    const rMidSq = edges.length > 0 ? (rMidSqSum / edges.length) : 1.5;
+
+    const dualVertices = faces.map(f => {
+      const pts = f.map(idx => vertices[idx]);
+      const c = pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / pts.length)), [0, 0, 0]);
+      const cSq = vDot(c, c);
+      return cSq > 1e-6 ? vScale(c, rMidSq / cSq) : [0, 0, 0];
+    });
+
+    const dualFaces = [];
+    const faceRoles = [];
+
+    for (let u = 0; u < vertices.length; u++) {
+      const incidentFaceIndices = [];
+      faces.forEach((f, fIdx) => {
+        if (f.includes(u)) incidentFaceIndices.push(fIdx);
+      });
+
+      const norm = vNorm(vertices[u]);
+      const c = incidentFaceIndices.reduce((acc, fIdx) => vAdd(acc, vScale(dualVertices[fIdx], 1 / incidentFaceIndices.length)), [0, 0, 0]);
+      let uAxis = Math.abs(norm[0]) < 0.9 ? [1, 0, 0] : [0, 1, 0];
+      uAxis = vNorm(vSub(uAxis, vScale(norm, vDot(uAxis, norm))));
+      const vAxis = vCross(norm, uAxis);
+
+      incidentFaceIndices.sort((a, b) => {
+        const da = vSub(dualVertices[a], c);
+        const db = vSub(dualVertices[b], c);
+        return Math.atan2(vDot(da, vAxis), vDot(da, uAxis)) - Math.atan2(vDot(db, vAxis), vDot(db, uAxis));
+      });
+
+      const poly = incidentFaceIndices;
+      const p0 = dualVertices[poly[0]], p1 = dualVertices[poly[1]], p2 = dualVertices[poly[2]];
+      const n = vCross(vSub(p1, p0), vSub(p2, p0));
+      if (vDot(n, norm) < 0) poly.reverse();
+      dualFaces.push(poly);
+      faceRoles.push('rhombus');
+    }
+
+    return {
+      name: name || ('dual-' + base.name),
+      title: title || ('Dual of ' + base.title),
+      vertices: dualVertices,
+      faces: dualFaces,
+      faceRoles,
+      dualOf: base.title,
+      color: [234, 179, 8] // Warm golden amber for Catalan duals
+    };
+  }
+
+  // --- Leonardo & Kepler Elevated Solid Generator ---
+  function elevateSolid(base, name, title) {
+    const { vertices, faces } = base;
+    const newVertices = [...vertices.map(v => [...v])];
+    const newFaces = [];
+    const faceRoles = [];
+
+    faces.forEach((f, fIdx) => {
+      const k = f.length;
+      const pts = f.map(idx => vertices[idx]);
+      const c = pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / k)), [0, 0, 0]);
+      let norm = vCross(vSub(pts[1], pts[0]), vSub(pts[2], pts[0]));
+      norm = vNorm(norm);
+      if (vDot(norm, c) < 0) norm = vScale(norm, -1);
+
+      const s = vMag(vSub(pts[1], pts[0]));
+      let h;
+      if (k === 3) {
+        h = s * Math.sqrt(6) / 3;
+      } else if (k === 4) {
+        h = s * Math.SQRT2 / 2;
+      } else if (k === 5) {
+        h = s * Math.sqrt((5 - Math.sqrt(5)) / 10);
+      } else {
+        h = s * 0.5;
+      }
+
+      const apex = vAdd(c, vScale(norm, h));
+      const apexIdx = newVertices.length;
+      newVertices.push(apex);
+
+      for (let j = 0; j < k; j++) {
+        const u = f[j];
+        const v = f[(j + 1) % k];
+        const tri = [u, v, apexIdx];
+        const p0 = newVertices[tri[0]], p1 = newVertices[tri[1]], p2 = newVertices[tri[2]];
+        const triNorm = vCross(vSub(p1, p0), vSub(p2, p0));
+        const triCenter = vScale(vAdd(vAdd(p0, p1), p2), 1 / 3);
+        if (vDot(triNorm, triCenter) < 0) tri.reverse();
+        newFaces.push(tri);
+        faceRoles.push('elevated_pyramid');
       }
     });
-    return { edges, edgeMap };
+
+    return {
+      name: name || ('elevated-' + base.name),
+      title: title || (base.title + ' Elevatum'),
+      vertices: newVertices,
+      faces: newFaces,
+      faceRoles,
+      parentSolid: base,
+      color: [217, 119, 6] // Amber bronze for elevated stellation pyramids
+    };
   }
+
+  // --- Canonical Pyramids & Bipyramids ---
+  function getPyramid(h, name, title) {
+    const yBase = -h * 0.25;
+    const yApex = h * 0.75;
+    const vertices = [
+      [ 1, yBase,  1],
+      [-1, yBase,  1],
+      [-1, yBase, -1],
+      [ 1, yBase, -1],
+      [ 0, yApex,  0]
+    ];
+    const faces = [
+      [0, 1, 2, 3], // Base (normal pointing down -Y)
+      [0, 4, 1],    // South
+      [3, 4, 0],    // East
+      [2, 4, 3],    // North
+      [1, 4, 2]     // West
+    ];
+    return {
+      name,
+      title,
+      vertices,
+      faces,
+      h,
+      color: [234, 214, 184] // Sunlit Giza limestone
+    };
+  }
+
+  function getGoldenBipyramid() {
+    const h = Math.sqrt(PHI);
+    const vertices = [
+      [ 1,  0,  1],
+      [-1,  0,  1],
+      [-1,  0, -1],
+      [ 1,  0, -1],
+      [ 0,  h,  0],
+      [ 0, -h,  0]
+    ];
+    const faces = [
+      [0, 4, 1], [3, 4, 0], [2, 4, 3], [1, 4, 2],
+      [1, 5, 0], [0, 5, 3], [3, 5, 2], [2, 5, 1]
+    ];
+    return {
+      name: 'golden-bipyramid',
+      title: 'Golden Bipyramid',
+      vertices,
+      faces,
+      h,
+      color: [245, 158, 11] // Radiant gold
+    };
+  }
+
+  function getPentagonalPyramid() {
+    const s = 2.0;
+    const R5 = s / (2 * Math.sin(Math.PI / 5));
+    const h = s * Math.sqrt((5 - Math.sqrt(5)) / 10);
+    const yBase = -h / 6;
+    const yApex = 5 * h / 6;
+
+    const vertices = [];
+    for (let k = 0; k < 5; k++) {
+      const angle = (k * 2 * Math.PI) / 5;
+      vertices.push([R5 * Math.cos(angle), yBase, R5 * Math.sin(angle)]);
+    }
+    vertices.push([0, yApex, 0]); // Apex is index 5
+
+    const faces = [
+      [0, 1, 2, 3, 4], // Base pentagon (normal pointing down -Y)
+      [1, 0, 5],
+      [2, 1, 5],
+      [3, 2, 5],
+      [4, 3, 5],
+      [0, 4, 5]
+    ];
+    return {
+      name: 'pentagonal-pyramid',
+      title: 'Pentagonal Pyramid (J₂)',
+      vertices,
+      faces,
+      h,
+      s,
+      R5,
+      color: [168, 85, 247] // Aether / violet
+    };
+  }
+
+  // --- Solid Categorization & Master Registry ---
+  function getSolidCategory(rawSlug) {
+    const slug = (rawSlug || '').trim().toLowerCase().replace(/_/g, '-');
+    const platonic = ['tetrahedron', 'hexahedron', 'cube', 'octahedron', 'icosahedron', 'dodecahedron'];
+    const archimedean = [
+      'truncated-tetrahedron', 'cuboctahedron', 'truncated-hexahedron',
+      'truncated-octahedron', 'rhombicuboctahedron', 'icosidodecahedron',
+      'truncated-icosahedron', 'truncated-dodecahedron'
+    ];
+    const catalan = ['rhombic-dodecahedron', 'rhombic-triacontahedron'];
+    const elevated = [
+      'tetrahedron-elevatum', 'hexahedron-elevatum', 'stella-octangula',
+      'icosahedron-elevatum', 'dodecahedron-elevatum',
+      'cuboctahedron-elevatum', 'icosidodecahedron-elevatum'
+    ];
+    const pyramid = ['kepler-pyramid', 'seked-pyramid', 'golden-bipyramid', 'pentagonal-pyramid'];
+
+    if (platonic.includes(slug)) return 'platonic';
+    if (archimedean.includes(slug)) return 'archimedean';
+    if (catalan.includes(slug)) return 'catalan';
+    if (elevated.includes(slug)) return 'elevated';
+    if (pyramid.includes(slug)) return 'pyramid';
+    return 'unknown';
+  }
+
+  function getSolid(rawSlug) {
+    const slug = (rawSlug || '').trim().toLowerCase().replace(/_/g, '-');
+    let solid = null;
+
+    switch (slug) {
+      // 1. Platonic Solids
+      case 'tetrahedron':
+        solid = getTetrahedron();
+        break;
+      case 'hexahedron':
+      case 'cube':
+        solid = getHexahedron();
+        break;
+      case 'octahedron':
+        solid = getOctahedron();
+        break;
+      case 'icosahedron':
+        solid = getIcosahedron();
+        break;
+      case 'dodecahedron':
+        solid = getDodecahedron();
+        break;
+
+      // 2. Archimedean & Abscisa Solids
+      case 'truncated-tetrahedron':
+        solid = truncateSolid(getTetrahedron(), 1/3, 'truncated-tetrahedron', 'Truncated Tetrahedron');
+        break;
+      case 'cuboctahedron':
+        solid = rectifySolid(getHexahedron(), 'cuboctahedron', 'Cuboctahedron');
+        break;
+      case 'truncated-hexahedron':
+        solid = truncateSolid(getHexahedron(), 1 - Math.SQRT2 / 2, 'truncated-hexahedron', 'Truncated Hexahedron');
+        break;
+      case 'truncated-octahedron':
+        solid = truncateSolid(getOctahedron(), 1/3, 'truncated-octahedron', 'Truncated Octahedron');
+        break;
+      case 'rhombicuboctahedron':
+        solid = getRhombicuboctahedron();
+        break;
+      case 'icosidodecahedron':
+        solid = rectifySolid(getDodecahedron(), 'icosidodecahedron', 'Icosidodecahedron');
+        break;
+      case 'truncated-icosahedron':
+        solid = truncateSolid(getIcosahedron(), 1/3, 'truncated-icosahedron', 'Truncated Icosahedron');
+        break;
+      case 'truncated-dodecahedron':
+        solid = truncateSolid(getDodecahedron(), (3 - PHI) / 5, 'truncated-dodecahedron', 'Truncated Dodecahedron');
+        break;
+
+      // 3. Catalan Duals
+      case 'rhombic-dodecahedron':
+        solid = polarDualSolid(rectifySolid(getHexahedron()), 'rhombic-dodecahedron', 'Rhombic Dodecahedron');
+        break;
+      case 'rhombic-triacontahedron':
+        solid = polarDualSolid(rectifySolid(getDodecahedron()), 'rhombic-triacontahedron', 'Rhombic Triacontahedron');
+        break;
+
+      // 4. Leonardo & Kepler Elevated Solids
+      case 'tetrahedron-elevatum':
+        solid = elevateSolid(getTetrahedron(), 'tetrahedron-elevatum', 'Tetrahedron Elevatum');
+        break;
+      case 'hexahedron-elevatum':
+        solid = elevateSolid(getHexahedron(), 'hexahedron-elevatum', 'Hexahedron Elevatum');
+        break;
+      case 'stella-octangula':
+        solid = elevateSolid(getOctahedron(), 'stella-octangula', 'Stella Octangula');
+        break;
+      case 'icosahedron-elevatum':
+        solid = elevateSolid(getIcosahedron(), 'icosahedron-elevatum', 'Icosahedron Elevatum');
+        break;
+      case 'dodecahedron-elevatum':
+        solid = elevateSolid(getDodecahedron(), 'dodecahedron-elevatum', 'Dodecahedron Elevatum');
+        break;
+      case 'cuboctahedron-elevatum':
+        solid = elevateSolid(rectifySolid(getHexahedron()), 'cuboctahedron-elevatum', 'Cuboctahedron Elevatum');
+        break;
+      case 'icosidodecahedron-elevatum':
+        solid = elevateSolid(rectifySolid(getDodecahedron()), 'icosidodecahedron-elevatum', 'Icosidodecahedron Elevatum');
+        break;
+
+      // 5. Canonical Pyramids & Bipyramids
+      case 'kepler-pyramid':
+        solid = getPyramid(Math.sqrt(PHI), 'kepler-pyramid', 'Kepler Pyramid');
+        break;
+      case 'seked-pyramid':
+        solid = getPyramid(14 / 11, 'seked-pyramid', 'Seked 14:11 Pyramid');
+        break;
+      case 'golden-bipyramid':
+        solid = getGoldenBipyramid();
+        break;
+      case 'pentagonal-pyramid':
+        solid = getPentagonalPyramid();
+        break;
+
+      default:
+        solid = getIcosahedron();
+    }
+
+    return normalizeSolid(solid, 1.80);
+  }
+
+  function getPlatonicSolid(name) {
+    return getSolid(name);
+  }
+
 
   // --- Procedural Polyhedral Variants ---
 
@@ -242,12 +832,26 @@
     const polygons = faces.map(f => {
       const pts = f.map(idx => vertices[idx]);
       const c = pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / pts.length)), [0, 0, 0]);
-      const norm = vNorm(vCross(vSub(pts[1], pts[0]), vSub(pts[2], pts[0])));
+      let norm = vNorm(vCross(vSub(pts[1], pts[0]), vSub(pts[2], pts[0])));
+      if (vDot(norm, c) < 0) norm = vScale(norm, -1);
+
+      let faceCol = color;
+      if (!faceCol) {
+        const k = f.length;
+        if (k === 3) faceCol = [56, 189, 248];       // Air / Sky (Triangles)
+        else if (k === 4) faceCol = [245, 158, 11];  // Gold / Earth (Squares)
+        else if (k === 5) faceCol = [168, 85, 247];  // Aether / Violet (Pentagons)
+        else if (k === 6) faceCol = [37, 99, 235];   // Sapphire / Lapis (Hexagons)
+        else if (k === 8) faceCol = [16, 185, 129];  // Emerald (Octagons)
+        else if (k === 10) faceCol = [225, 29, 72];  // Ruby (Decagons)
+        else faceCol = [217, 119, 6];                // Amber Bronze
+      }
+
       return {
         pts,
         centroid: c,
         norm,
-        baseColor: color,
+        baseColor: faceCol,
         type: 'face',
         wireColor: '#1e293b'
       };
@@ -258,7 +862,7 @@
       E: getEdgesFromFaces(faces).edges.length,
       F: faces.length,
       genus: 0,
-      label: 'Solidum (Opaque Faceted Faces)'
+      label: `${base.title} in Solidum`
     };
   }
 
@@ -279,7 +883,8 @@
       const k = f.length;
       const faceVerts = f.map(idx => vertices[idx]);
       const cFace = faceVerts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / k)), [0, 0, 0]);
-      const faceNorm = vNorm(vCross(vSub(faceVerts[1], faceVerts[0]), vSub(faceVerts[2], faceVerts[0])));
+      let faceNorm = vNorm(vCross(vSub(faceVerts[1], faceVerts[0]), vSub(faceVerts[2], faceVerts[0])));
+      if (vDot(faceNorm, cFace) < 0) faceNorm = vScale(faceNorm, -1);
 
       // Outer aperture vertices
       const wOut = faceVerts.map(v => vLerp(v, cFace, mu));
@@ -533,21 +1138,29 @@
     return { lines, pols, labels };
   }
 
-  function getPolarDualWireframe(solidName, base) {
+  function getPolarDualWireframe(solidNameOrBase, maybeBase) {
+    const base = maybeBase || (typeof solidNameOrBase === 'object' ? solidNameOrBase : getSolid(solidNameOrBase));
     const lines = [];
     const { vertices, faces } = base;
+    const { edges } = getEdgesFromFaces(faces);
+
+    // Dynamic midsphere radius squared from edge midpoints
+    let rMidSqSum = 0;
+    edges.forEach(e => {
+      const mid = vScale(vAdd(vertices[e.a], vertices[e.b]), 0.5);
+      rMidSqSum += vDot(mid, mid);
+    });
+    const rMidSq = edges.length > 0 ? (rMidSqSum / edges.length) : 1.5;
 
     // Face centers become dual vertices
     const dualVerts = faces.map(f => {
       const pts = f.map(idx => vertices[idx]);
       const c = pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / pts.length)), [0, 0, 0]);
-      // Normalize to reciprocal radius
-      const mag = vMag(c);
-      return vScale(c, (1.25 * 1.25) / (mag * mag));
+      const cSq = vDot(c, c);
+      return cSq > 1e-6 ? vScale(c, rMidSq / cSq) : [0, 0, 0];
     });
 
     // Dual edges connect adjacent face centroids
-    const { edges } = getEdgesFromFaces(faces);
     edges.forEach(e => {
       if (e.faces.length === 2) {
         lines.push({
@@ -560,6 +1173,92 @@
     });
 
     return lines;
+  }
+
+  function getParentCoreWireframe(elevatedSolid) {
+    const lines = [];
+    if (!elevatedSolid || !elevatedSolid.parentSolid) return lines;
+    const parent = elevatedSolid.parentSolid;
+    const { edges } = getEdgesFromFaces(parent.faces);
+    edges.forEach(e => {
+      lines.push({
+        pts: [parent.vertices[e.a], parent.vertices[e.b]],
+        color: '#f59e0b',
+        width: 2.2,
+        dashed: false
+      });
+    });
+    return lines;
+  }
+
+  function getPyramidGoldenOverlay(solid) {
+    const lines = [];
+    const pols = [];
+    const labels = [];
+    const slug = solid.name;
+
+    if (slug === 'kepler-pyramid') {
+      const h = solid.h || Math.sqrt(PHI);
+      const yBase = -h * 0.25;
+      const yApex = h * 0.75;
+      const O = [0, yBase, 0];
+      const ME = [1, yBase, 0];
+      const A = [0, yApex, 0];
+      const MW = [-1, yBase, 0];
+
+      pols.push({
+        pts: [O, ME, A],
+        color: 'rgba(245, 158, 11, 0.35)',
+        stroke: '#f59e0b',
+        width: 2.6
+      });
+      lines.push({ pts: [MW, A], color: 'rgba(245, 158, 11, 0.45)', width: 1.4, dashed: true });
+      lines.push({ pts: [MW, O], color: 'rgba(245, 158, 11, 0.45)', width: 1.4, dashed: true });
+
+      const d = 0.12;
+      lines.push({ pts: [[d, yBase, 0], [d, yBase + d, 0]], color: '#f59e0b', width: 1.6 });
+      lines.push({ pts: [[d, yBase + d, 0], [0, yBase + d, 0]], color: '#f59e0b', width: 1.6 });
+
+      labels.push({ pos: [0.5, yBase - 0.15, 0], text: 'a = 1.000', color: '#f59e0b' });
+      labels.push({ pos: [-0.25, (yBase + yApex) * 0.5, 0], text: 'h = √φ ≈ 1.272', color: '#f59e0b' });
+      labels.push({ pos: [0.65, (yBase + yApex) * 0.5, 0], text: 's = φ ≈ 1.618 ✨', color: '#fbbf24' });
+    } else if (slug === 'seked-pyramid') {
+      const h = solid.h || (14 / 11);
+      const yBase = -h * 0.25;
+      const yApex = h * 0.75;
+      const O = [0, yBase, 0];
+      const ME = [1, yBase, 0];
+      const A = [0, yApex, 0];
+      const MW = [-1, yBase, 0];
+
+      pols.push({
+        pts: [O, ME, A],
+        color: 'rgba(16, 185, 129, 0.30)',
+        stroke: '#10b981',
+        width: 2.4
+      });
+      lines.push({ pts: [MW, A], color: 'rgba(16, 185, 129, 0.45)', width: 1.4, dashed: true });
+      labels.push({ pos: [0.5, yBase - 0.15, 0], text: 'Run = 220', color: '#10b981' });
+      labels.push({ pos: [-0.25, (yBase + yApex) * 0.5, 0], text: 'Rise = 280 (14:11)', color: '#10b981' });
+    } else if (slug === 'golden-bipyramid') {
+      const h = solid.h || Math.sqrt(PHI);
+      pols.push({
+        pts: [[1, 0, 0], [0, h, 0], [-1, 0, 0], [0, -h, 0]],
+        color: 'rgba(245, 158, 11, 0.28)',
+        stroke: '#f59e0b',
+        width: 2.4
+      });
+      labels.push({ pos: [0, h + 0.18, 0], text: 'Apex +√φ', color: '#f59e0b' });
+      labels.push({ pos: [0, -h - 0.18, 0], text: 'Apex -√φ', color: '#f59e0b' });
+    } else if (slug === 'pentagonal-pyramid') {
+      const baseVerts = [0, 1, 2, 3, 4].map(idx => solid.vertices[idx]);
+      [[0, 2], [0, 3], [1, 3], [1, 4], [2, 4]].forEach(([a, b]) => {
+        lines.push({ pts: [baseVerts[a], baseVerts[b]], color: '#f59e0b', width: 1.8, dashed: true });
+      });
+      labels.push({ pos: [0, solid.vertices[5][1] + 0.18, 0], text: 'Apex J₂', color: '#38bdf8' });
+    }
+
+    return { lines, pols, labels };
   }
 
   // --- Dedicated Scene Generators ---
@@ -958,9 +1657,9 @@
   class PolyhedraWidget {
     constructor(container) {
       this.container = container;
-      this.solidName = container.getAttribute('data-solid') || '';
-      this.sceneName = container.getAttribute('data-scene') || '';
-      this.variant = container.getAttribute('data-initial-variant') || 'solidum';
+      this.solidName = (container.getAttribute('data-solid') || '').trim().toLowerCase();
+      this.sceneName = (container.getAttribute('data-scene') || '').trim();
+      this.variant = (container.getAttribute('data-initial-variant') || 'solidum').trim().toLowerCase();
 
       // State
       this.mu = 0.62;                  // Vacuum aperture ratio
@@ -968,6 +1667,8 @@
       this.shellOpacity = 0.35;        // Icosa shell opacity
       this.showGoldenOverlay = false;
       this.showDual = false;
+      this.showParentCore = true;      // Parent Core Wireframe for elevated solids
+      this.showDiagonals = true;       // φ Rhombus Diagonals for rhombic-triacontahedron
       this.autoOrbit = true;
       this.activeCubes = [true, true, true, true, true];
       this.showRoofWedge = false;
@@ -1006,9 +1707,27 @@
       let subtitle = 'Drag to orbit • Scroll to zoom • Interactive Platonic & Golden Structure';
 
       if (this.solidName) {
-        const solid = getPlatonicSolid(this.solidName);
-        title = `REGULAR ${solid.title.toUpperCase()} • ELEMENT OF ${solid.element.toUpperCase()}`;
-        subtitle = 'Leonardo da Vinci 1509 Codex • Exact Symbolic Geometry';
+        const solid = getSolid(this.solidName);
+        const cat = getSolidCategory(this.solidName);
+        if (cat === 'platonic') {
+          title = `REGULAR ${solid.title.toUpperCase()} • ELEMENT OF ${(solid.element || 'FIRE').toUpperCase()}`;
+          subtitle = 'Leonardo da Vinci 1509 Codex • Exact Symbolic Geometry';
+        } else if (cat === 'archimedean') {
+          title = `ARCHIMEDEAN ${solid.title.toUpperCase()}`;
+          subtitle = 'Archimedean Semi-Regular Solid • Leonardo da Vinci 1509 Codex • Exact Symbolic Geometry';
+        } else if (cat === 'catalan') {
+          title = `CATALAN ${solid.title.toUpperCase()}`;
+          subtitle = `Dual of Archimedean ${solid.dualOf || 'Solid'} • Exact Symbolic Geometry`;
+        } else if (cat === 'elevated') {
+          title = `${solid.title.toUpperCase()}`;
+          subtitle = 'Leonardo da Vinci 1509 Elevatum • Luca Pacioli De Divina Proportione';
+        } else if (cat === 'pyramid') {
+          title = `CANONICAL ${solid.title.toUpperCase()}`;
+          subtitle = 'Golden Proportions & Classical Geometry • Exact Symbolic Modeling';
+        } else {
+          title = solid.title.toUpperCase();
+          subtitle = 'Polyhedral Model • Exact Symbolic Geometry';
+        }
       } else if (this.sceneName === 'icosa_golden_rects') {
         title = 'INTERACTIVE 3D • THREE ORTHOGONAL GOLDEN RECTANGLES (1:φ)';
         subtitle = 'Euclid XIII.16 • 3 Intersecting Rectangles Generating the 12 Vertices of the Regular Icosahedron';
@@ -1077,13 +1796,26 @@
       sliderWrap.innerHTML = '';
 
       if (this.solidName) {
+        const cat = getSolidCategory(this.solidName);
+
         // Variant Switchers
-        const variants = [
-          ['solidum', 'Solidum'],
-          ['vacuum', 'Vacuum (Leonardo)'],
-          ['abscisum', 'Abscisum'],
-          ['elevatum', 'Elevatum']
-        ];
+        const variants = cat === 'platonic'
+          ? [
+              ['solidum', 'Solidum'],
+              ['vacuum', 'Vacuum (Leonardo)'],
+              ['abscisum', 'Abscisum'],
+              ['elevatum', 'Elevatum']
+            ]
+          : [
+              ['solidum', 'Solidum'],
+              ['vacuum', 'Vacuum (Leonardo)']
+            ];
+
+        // Ensure this.variant is valid for this solid
+        if (!variants.some(([k]) => k === this.variant)) {
+          this.variant = 'solidum';
+        }
+
         variants.forEach(([vKey, vLabel]) => {
           const btn = document.createElement('button');
           btn.className = `polyhedra-btn ${this.variant === vKey ? 'active' : ''}`;
@@ -1098,23 +1830,81 @@
         });
 
         // Overlay Toggles
-        const togGold = document.createElement('button');
-        togGold.className = `polyhedra-btn ${this.showGoldenOverlay ? 'active' : ''}`;
-        togGold.textContent = 'φ Golden Structure';
-        togGold.addEventListener('click', () => {
-          this.showGoldenOverlay = !this.showGoldenOverlay;
-          togGold.classList.toggle('active', this.showGoldenOverlay);
-        });
-        togGroup.appendChild(togGold);
+        if (cat === 'platonic') {
+          const togGold = document.createElement('button');
+          togGold.className = `polyhedra-btn ${this.showGoldenOverlay ? 'active' : ''}`;
+          togGold.textContent = 'φ Golden Structure';
+          togGold.addEventListener('click', () => {
+            this.showGoldenOverlay = !this.showGoldenOverlay;
+            togGold.classList.toggle('active', this.showGoldenOverlay);
+          });
+          togGroup.appendChild(togGold);
 
-        const togDual = document.createElement('button');
-        togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
-        togDual.textContent = 'Polar Dual';
-        togDual.addEventListener('click', () => {
-          this.showDual = !this.showDual;
-          togDual.classList.toggle('active', this.showDual);
-        });
-        togGroup.appendChild(togDual);
+          const togDual = document.createElement('button');
+          togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
+          togDual.textContent = 'Polar Dual';
+          togDual.addEventListener('click', () => {
+            this.showDual = !this.showDual;
+            togDual.classList.toggle('active', this.showDual);
+          });
+          togGroup.appendChild(togDual);
+        } else if (cat === 'archimedean') {
+          const togDual = document.createElement('button');
+          togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
+          togDual.textContent = 'Polar Dual';
+          togDual.addEventListener('click', () => {
+            this.showDual = !this.showDual;
+            togDual.classList.toggle('active', this.showDual);
+          });
+          togGroup.appendChild(togDual);
+        } else if (cat === 'catalan') {
+          const togDual = document.createElement('button');
+          togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
+          togDual.textContent = 'Polar Dual';
+          togDual.addEventListener('click', () => {
+            this.showDual = !this.showDual;
+            togDual.classList.toggle('active', this.showDual);
+          });
+          togGroup.appendChild(togDual);
+
+          if (this.solidName === 'rhombic-triacontahedron') {
+            const togDiags = document.createElement('button');
+            togDiags.className = `polyhedra-btn ${this.showDiagonals ? 'active' : ''}`;
+            togDiags.textContent = 'φ Rhombus Diagonals';
+            togDiags.addEventListener('click', () => {
+              this.showDiagonals = !this.showDiagonals;
+              togDiags.classList.toggle('active', this.showDiagonals);
+            });
+            togGroup.appendChild(togDiags);
+          }
+        } else if (cat === 'elevated') {
+          const togCore = document.createElement('button');
+          togCore.className = `polyhedra-btn ${this.showParentCore ? 'active' : ''}`;
+          togCore.textContent = 'Parent Core Wireframe';
+          togCore.addEventListener('click', () => {
+            this.showParentCore = !this.showParentCore;
+            togCore.classList.toggle('active', this.showParentCore);
+          });
+          togGroup.appendChild(togCore);
+        } else if (cat === 'pyramid') {
+          const togDual = document.createElement('button');
+          togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
+          togDual.textContent = 'Polar Dual';
+          togDual.addEventListener('click', () => {
+            this.showDual = !this.showDual;
+            togDual.classList.toggle('active', this.showDual);
+          });
+          togGroup.appendChild(togDual);
+
+          const togGold = document.createElement('button');
+          togGold.className = `polyhedra-btn ${this.showGoldenOverlay ? 'active' : ''}`;
+          togGold.textContent = 'φ Meridian / Golden Overlay';
+          togGold.addEventListener('click', () => {
+            this.showGoldenOverlay = !this.showGoldenOverlay;
+            togGold.classList.toggle('active', this.showGoldenOverlay);
+          });
+          togGroup.appendChild(togGold);
+        }
 
         const togSpin = document.createElement('button');
         togSpin.className = `polyhedra-btn ${this.autoOrbit ? 'active' : ''}`;
@@ -1581,7 +2371,7 @@
       const baseScale = Math.min(w, h) * 0.38;
 
       if (this.solidName) {
-        this.renderPlatonicSolid(renderQueue, w, h, baseScale);
+        this.renderSolid(renderQueue, w, h, baseScale);
       } else if (this.sceneName === 'icosa_golden_rects') {
         this.renderSceneIcosaGoldenRects(renderQueue, w, h, baseScale);
       } else if (this.sceneName === 'octa_to_icosa') {
@@ -1605,13 +2395,14 @@
 
     // --- Scene Renderers ---
 
-    renderPlatonicSolid(q, w, h, sc) {
-      const base = getPlatonicSolid(this.solidName);
+    renderSolid(q, w, h, sc) {
+      const base = getSolid(this.solidName);
+      const cat = getSolidCategory(this.solidName);
 
       if (this.variant === 'solidum') {
         const mesh = buildSolidumMesh(base);
         this.eulerEl.textContent = `V = ${mesh.V} • E = ${mesh.E} • F = ${mesh.F} • χ = 2`;
-        this.statusEl.textContent = `${base.title} in Solidum — Opaque Faceted Geometry`;
+        this.statusEl.textContent = `${base.title} in Solidum — Opaque Faceted Renaissance Geometry`;
 
         mesh.polygons.forEach(p => {
           const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
@@ -1693,7 +2484,9 @@
           });
         });
       } else if (this.variant === 'elevatum') {
-        const mesh = buildElevatumMesh(base);
+        const elevSolid = elevateSolid(base);
+        normalizeSolid(elevSolid, 1.80);
+        const mesh = buildSolidumMesh(elevSolid);
         this.eulerEl.textContent = `V = ${mesh.V} • E = ${mesh.E} • F = ${mesh.F} • χ = 2`;
         this.statusEl.textContent = `${base.title} Elevatum — Outward Pyramidal Stellation on All Faces`;
 
@@ -1720,59 +2513,112 @@
 
       // Overlays
       if (this.showGoldenOverlay) {
-        const overlay = getGoldenOverlay(this.solidName, base);
-        overlay.pols.forEach(p => {
-          const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
-          const avgZ = projPts.reduce((acc, pt) => acc + pt[2], 0) / projPts.length;
-          q.push({
-            z: avgZ - 0.05,
-            draw: ctx => {
-              ctx.beginPath();
-              projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
-              ctx.closePath();
-              ctx.fillStyle = p.color;
-              ctx.fill();
-              ctx.strokeStyle = p.stroke;
-              ctx.lineWidth = p.width;
-              ctx.stroke();
-            }
+        if (cat === 'platonic') {
+          const overlay = getGoldenOverlay(this.solidName, base);
+          overlay.pols.forEach(p => {
+            const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
+            const avgZ = projPts.reduce((acc, pt) => acc + pt[2], 0) / projPts.length;
+            q.push({
+              z: avgZ - 0.05,
+              draw: ctx => {
+                ctx.beginPath();
+                projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
+                ctx.closePath();
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                ctx.strokeStyle = p.stroke;
+                ctx.lineWidth = p.width;
+                ctx.stroke();
+              }
+            });
           });
-        });
 
-        overlay.lines.forEach(l => {
-          const p1 = this.cam.project(l.pts[0], w, h, sc);
-          const p2 = this.cam.project(l.pts[1], w, h, sc);
-          q.push({
-            z: (p1[2] + p2[2]) * 0.5 - 0.08,
-            draw: ctx => {
-              ctx.beginPath();
-              if (l.dashed) ctx.setLineDash([5, 4]);
-              ctx.moveTo(p1[0], p1[1]);
-              ctx.lineTo(p2[0], p2[1]);
-              ctx.strokeStyle = l.color;
-              ctx.lineWidth = l.width;
-              ctx.stroke();
-              if (l.dashed) ctx.setLineDash([]);
-            }
+          overlay.lines.forEach(l => {
+            const p1 = this.cam.project(l.pts[0], w, h, sc);
+            const p2 = this.cam.project(l.pts[1], w, h, sc);
+            q.push({
+              z: (p1[2] + p2[2]) * 0.5 - 0.08,
+              draw: ctx => {
+                ctx.beginPath();
+                if (l.dashed) ctx.setLineDash([5, 4]);
+                ctx.moveTo(p1[0], p1[1]);
+                ctx.lineTo(p2[0], p2[1]);
+                ctx.strokeStyle = l.color;
+                ctx.lineWidth = l.width;
+                ctx.stroke();
+                if (l.dashed) ctx.setLineDash([]);
+              }
+            });
           });
-        });
 
-        overlay.labels.forEach(lb => {
-          const p = this.cam.project(lb.pos, w, h, sc);
-          q.push({
-            z: p[2] - 0.15,
-            draw: ctx => {
-              ctx.font = '700 12px sans-serif';
-              ctx.textAlign = 'center';
-              ctx.fillStyle = lb.color || '#f59e0b';
-              ctx.fillText(lb.text, p[0], p[1]);
-            }
+          overlay.labels.forEach(lb => {
+            const p = this.cam.project(lb.pos, w, h, sc);
+            q.push({
+              z: p[2] - 0.15,
+              draw: ctx => {
+                ctx.font = '700 12px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = lb.color || '#f59e0b';
+                ctx.fillText(lb.text, p[0], p[1]);
+              }
+            });
           });
-        });
+        } else if (cat === 'pyramid') {
+          const overlay = getPyramidGoldenOverlay(base);
+          overlay.pols.forEach(p => {
+            const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
+            const avgZ = projPts.reduce((acc, pt) => acc + pt[2], 0) / projPts.length;
+            q.push({
+              z: avgZ - 0.05,
+              draw: ctx => {
+                ctx.beginPath();
+                projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
+                ctx.closePath();
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                ctx.strokeStyle = p.stroke;
+                ctx.lineWidth = p.width;
+                ctx.stroke();
+              }
+            });
+          });
+
+          overlay.lines.forEach(l => {
+            const p1 = this.cam.project(l.pts[0], w, h, sc);
+            const p2 = this.cam.project(l.pts[1], w, h, sc);
+            q.push({
+              z: (p1[2] + p2[2]) * 0.5 - 0.08,
+              draw: ctx => {
+                ctx.beginPath();
+                if (l.dashed) ctx.setLineDash([5, 4]);
+                ctx.moveTo(p1[0], p1[1]);
+                ctx.lineTo(p2[0], p2[1]);
+                ctx.strokeStyle = l.color;
+                ctx.lineWidth = l.width;
+                ctx.stroke();
+                if (l.dashed) ctx.setLineDash([]);
+              }
+            });
+          });
+
+          overlay.labels.forEach(lb => {
+            const p = this.cam.project(lb.pos, w, h, sc);
+            q.push({
+              z: p[2] - 0.15,
+              draw: ctx => {
+                ctx.font = '700 12px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = lb.color || '#f59e0b';
+                ctx.fillText(lb.text, p[0], p[1]);
+              }
+            });
+          });
+        }
       }
 
-      if (this.showDual) {
-        const dualLines = getPolarDualWireframe(this.solidName, base);
+      // Polar dual wireframe (convex solids only)
+      if (this.showDual && cat !== 'elevated') {
+        const dualLines = getPolarDualWireframe(base);
         dualLines.forEach(l => {
           const p1 = this.cam.project(l.pts[0], w, h, sc);
           const p2 = this.cam.project(l.pts[1], w, h, sc);
@@ -1791,6 +2637,76 @@
           });
         });
       }
+
+      // Parent core wireframe (for elevated solids)
+      if (this.showParentCore && cat === 'elevated' && base.parentSolid) {
+        const coreLines = getParentCoreWireframe(base);
+        coreLines.forEach(l => {
+          const p1 = this.cam.project(l.pts[0], w, h, sc);
+          const p2 = this.cam.project(l.pts[1], w, h, sc);
+          q.push({
+            z: (p1[2] + p2[2]) * 0.5 - 0.06,
+            draw: ctx => {
+              ctx.beginPath();
+              ctx.moveTo(p1[0], p1[1]);
+              ctx.lineTo(p2[0], p2[1]);
+              ctx.strokeStyle = l.color;
+              ctx.lineWidth = l.width;
+              ctx.stroke();
+            }
+          });
+        });
+      }
+
+      // Rhombus Diagonals (for rhombic-triacontahedron)
+      if (this.showDiagonals && (this.solidName === 'rhombic-triacontahedron' || base.name === 'rhombic-triacontahedron')) {
+        base.faces.forEach(f => {
+          if (f.length === 4) {
+            const v0 = base.vertices[f[0]];
+            const v1 = base.vertices[f[1]];
+            const v2 = base.vertices[f[2]];
+            const v3 = base.vertices[f[3]];
+            const d02 = vMag(vSub(v2, v0));
+            const d13 = vMag(vSub(v3, v1));
+            const longPts = d02 > d13 ? [v0, v2] : [v1, v3];
+            const shortPts = d02 > d13 ? [v1, v3] : [v0, v2];
+
+            const pL1 = this.cam.project(longPts[0], w, h, sc);
+            const pL2 = this.cam.project(longPts[1], w, h, sc);
+            q.push({
+              z: (pL1[2] + pL2[2]) * 0.5 - 0.05,
+              draw: ctx => {
+                ctx.beginPath();
+                ctx.moveTo(pL1[0], pL1[1]);
+                ctx.lineTo(pL2[0], pL2[1]);
+                ctx.strokeStyle = '#f59e0b';
+                ctx.lineWidth = 2.0;
+                ctx.stroke();
+              }
+            });
+
+            const pS1 = this.cam.project(shortPts[0], w, h, sc);
+            const pS2 = this.cam.project(shortPts[1], w, h, sc);
+            q.push({
+              z: (pS1[2] + pS2[2]) * 0.5 - 0.05,
+              draw: ctx => {
+                ctx.beginPath();
+                ctx.setLineDash([4, 4]);
+                ctx.moveTo(pS1[0], pS1[1]);
+                ctx.lineTo(pS2[0], pS2[1]);
+                ctx.strokeStyle = '#38bdf8';
+                ctx.lineWidth = 1.6;
+                ctx.stroke();
+                ctx.setLineDash([]);
+              }
+            });
+          }
+        });
+      }
+    }
+
+    renderPlatonicSolid(q, w, h, sc) {
+      this.renderSolid(q, w, h, sc);
     }
 
     renderSceneIcosaGoldenRects(q, w, h, sc) {
@@ -2430,10 +3346,28 @@
     mounts.forEach(el => new PolyhedraWidget(el));
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPolyhedraMounts);
-  } else {
-    initPolyhedraMounts();
+  // Expose global registry for programmatic access & external widgets
+  if (typeof window !== 'undefined') {
+    window.GEOMETOR_POLYHEDRA = {
+      getSolid,
+      getSolidCategory,
+      PolyhedraWidget,
+      initPolyhedraMounts,
+      buildSolidumMesh,
+      buildVacuumMesh,
+      buildAbscisumMesh,
+      buildElevatumMesh
+    };
+  }
+
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPolyhedraMounts);
+    } else {
+      initPolyhedraMounts();
+    }
   }
 
 })();
+
+

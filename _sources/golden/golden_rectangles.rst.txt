@@ -1,5 +1,12 @@
 :layout: book
+:type: theorem
+:order: 1
 :title: Golden Rectangles of the Icosahedron
+:featured_image: _static/svg/golden/icosa_golden_rects.svg
+:featured_image_alt: Three Mutually Orthogonal Golden Rectangles in the Icosahedron
+:categories: golden-proportions
+:tags: phi, golden-ratio, icosahedron, golden-rectangles, euclid
+:excerpt: The twelve vertices of the regular icosahedron span three mutually perpendicular golden rectangles of aspect ratio 1 : phi, whose diagonals form the circumdiameter of the solid.
 
 ====================================
 Golden Rectangles of the Icosahedron
@@ -13,7 +20,11 @@ Golden Rectangles of the Icosahedron
 
    *To construct an icosahedron within a sphere, and comprehend it by the surface of the sphere, like the preceding bodies; and to show that the side of the icosahedron is the irrational line called minor.*
 
-   — :person:`Euclid of Alexandria`, *Elements* Book XIII, Proposition 16
+   — **Euclid of Alexandria**, *Elements* Book XIII, Proposition 16
+
+.. enunciation::
+
+   The twelve vertices of the regular icosahedron :math:`\{3, 5\}` partition into three congruent, mutually orthogonal golden rectangles centered at the origin, each having aspect ratio :math:`1 : \phi`. The six short edges form six edges of the icosahedron, while the long edges cross the solid's interior. Every circumradius satisfies :math:`Q_{\text{out}} = \phi + 2`, and the vertical side of each rectangle divides the equatorial radius in extreme and mean ratio.
 
 Interactive 3D Codex
 --------------------
@@ -160,3 +171,10 @@ Let :math:`O = (0, 0)` be the center of the icosahedron, and :math:`H = (1, 0)` 
       \frac{Q(O, F)}{Q(O, H)} = \frac{\phi^2}{1} = \phi^2, \quad \frac{Q(O, H)}{Q(H, F)} = \frac{1}{\phi^{-2}} = \phi^2
 
 Thus, the vertical side of the golden rectangle divides the equatorial radius :math:`OF` in exact extreme and mean ratio.
+
+Canonical Solid Codex
+---------------------
+
+For the complete interactive 3D model, exact symbolic coordinates over :math:`\mathbb{Q}(\phi)`, face normals, and dihedral angles, consult the canonical solid codex:
+
+- :doc:`Regular Icosahedron </solids/01-platonic/icosahedron/index>`

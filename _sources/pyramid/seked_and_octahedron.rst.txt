@@ -1,5 +1,12 @@
 :layout: book
+:type: treatise
+:order: 3
 :title: Egyptian Seked Mensuration, 3D Spreads & Polyhedral Relatives
+:featured_image: _static/svg/pyramid/kepler_bipyramid_3d.svg
+:featured_image_alt: Egyptian Seked 14:11 & Golden Square Bipyramid
+:categories: great-pyramid
+:tags: seked, royal-cubit, rational-trigonometry, leonardo-vacuum, golden-bipyramid
+:excerpt: The Egyptian Royal Cubit and Rhind Papyrus Seked 5 1/2 (14:11), exact Rational Trigonometry spreads, Leonardo's vacuate timber frame, and the Golden Square Bipyramid.
 
 =============================================================
 Egyptian Seked Mensuration, 3D Spreads & Polyhedral Relatives
@@ -12,6 +19,10 @@ Egyptian Seked Mensuration, 3D Spreads & Polyhedral Relatives
    *If a pyramid is 250 cubits high and the side of its base 360 cubits long, what is its seked? Take 1/2 of 360, it makes 180. Multiply 180 by 7, it makes 1260. Divide 1260 by 250, it makes 5 1/25 palms. This is its seked.*
 
    — **Ahmes the Scribe**, *Rhind Mathematical Papyrus* (c. 1550 BCE), Problem 56
+
+.. enunciation::
+
+   Old Kingdom Egyptian architecture formalized pyramid inclination not via degrees, but through the **seked** (:math:`\text{sqd}`): the horizontal setback in palms per vertical rise of one Royal Cubit (7 palms). For the Great Pyramid of Khufu, the historical blueprint of 280 cubits height by 220 cubits half-base yields the exact rational seked :math:`5\frac{1}{2}` palms (:math:`14 : 11`), converging with Kepler's Golden Pyramid within 0.05% and reflecting across the square base into the 8-faced Golden Square Bipyramid.
 
 The Old Kingdom Royal Cubit & Rhind Mathematical Papyrus
 --------------------------------------------------------
@@ -294,3 +305,11 @@ Both solids share the octahedroid combinatorial graph :math:`K_{2,2,2}` (6 verti
      - :math:`\mathbb{Q}(\sqrt{\phi})`
 
 The Regular Octahedron represents maximal spherical symmetry with equilateral faces; the Golden Square Bipyramid represents the unique polyhedral embedding where every face apothem is the Divine Proportion :math:`\phi`, unifying Egyptian monumentality with Platonic solid geometry.
+
+Canonical Solid Codex
+---------------------
+
+For interactive 3D models, exact symbolic coordinates, face normals, and dihedral angles, consult the canonical pyramid codices:
+
+- :doc:`Seked Great Pyramid </solids/05-pyramids/seked-pyramid/index>`
+- :doc:`Golden Square Bipyramid </solids/05-pyramids/golden-bipyramid/index>`

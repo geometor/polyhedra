@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480" class="euclid-graphic" data-graphic-id="seked-pyramid-vac">
+  <style>
+    .euclid-graphic {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .poly-stroke {
+      stroke: #2b2116;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .poly-hidden {
+      stroke: #94a3b8;
+      stroke-dasharray: 3 3;
+      stroke-width: 1.0;
+      opacity: 0.5;
+      fill: none;
+    }
+    .poly-gold {
+      fill: #f59e0b;
+      fill-opacity: 0.30;
+      stroke: #b45309;
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+    }
+    @media (prefers-color-scheme: dark) {
+      .poly-stroke {
+        stroke: #e8dec8;
+      }
+      .poly-hidden {
+        stroke: #64748b;
+        opacity: 0.6;
+      }
+    }
+    html[data-theme="dark"] .poly-stroke {
+      stroke: #e8dec8;
+    }
+    html[data-theme="dark"] .poly-hidden {
+      stroke: #64748b;
+      opacity: 0.6;
+    }
+  </style>
+  <defs />
+  <g id="hidden-edges">
+  </g>
+  <g id="faces">
+    <polygon points="421.94,245.64 248.72,207.67 250.80,211.02 403.58,244.74" fill="#9e8864" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="window_reveal" data-face-idx="23" />
+    <polygon points="232.81,214.11 434.95,259.50 403.58,244.74 250.80,211.02" fill="#5d4b30" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="22" />
+    <polygon points="434.95,259.50 232.81,214.11 240.65,227.85 394.15,263.30" fill="#685435" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="7" />
+    <polygon points="88.59,291.83 232.81,214.11 224.85,213.11 117.06,270.47" fill="#5d4b30" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="31" />
+    <polygon points="219.53,210.00 95.38,275.13 117.06,270.47 224.85,213.11" fill="#a38d67" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="window_reveal" data-face-idx="32" />
+    <polygon points="232.81,214.11 88.59,291.83 134.52,287.55 240.65,227.85" fill="#685435" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="4" />
+    <polygon points="267.63,120.44 232.81,214.11 250.80,211.02 279.07,142.03" fill="#5d4b30" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="25" />
+    <polygon points="246.52,130.25 219.53,210.00 224.85,213.11 249.22,144.04" fill="#8d7a59" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="window_reveal" data-face-idx="38" />
+    <polygon points="232.81,214.11 267.63,120.44 249.22,144.04 224.85,213.11" fill="#5d4b30" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="37" />
+    <polygon points="434.95,259.50 267.63,120.44 279.07,142.03 403.58,244.74" fill="#5d4b30" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="28" />
+    <polygon points="457.60,262.40 267.63,102.80 289.23,137.85 433.68,257.95" fill="#a19986" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="outer_frame" data-face-idx="15" />
+    <polygon points="433.68,257.95 289.23,137.85 286.41,150.93 413.44,255.53" fill="#877556" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="window_reveal" data-face-idx="17" />
+    <polygon points="267.63,120.44 88.59,291.83 117.06,270.47 249.22,144.04" fill="#5d4b30" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="34" />
+    <polygon points="314.43,357.10 434.95,259.50 394.15,263.30 301.29,334.07" fill="#685435" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="10" />
+    <polygon points="267.63,102.80 62.40,299.70 98.32,289.15 254.05,140.20" fill="#a19986" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="outer_frame" data-face-idx="45" />
+    <polygon points="254.05,140.20 98.32,289.15 120.17,282.56 255.83,153.05" fill="#877556" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="window_reveal" data-face-idx="47" />
+    <polygon points="331.00,340.66 433.68,257.95 413.44,255.53 322.08,326.22" fill="#8a7858" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="window_reveal" data-face-idx="14" />
+    <polygon points="322.34,377.20 457.60,262.40 433.68,257.95 331.00,340.66" fill="#a19986" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="outer_frame" data-face-idx="12" />
+    <polygon points="88.59,291.83 314.43,357.10 301.29,334.07 134.52,287.55" fill="#685435" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="inner_frame" data-face-idx="1" />
+    <polygon points="98.32,289.15 292.88,344.76 289.31,329.64 120.17,282.56" fill="#907c5b" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="window_reveal" data-face-idx="41" />
+    <polygon points="62.40,299.70 322.34,377.20 292.88,344.76 98.32,289.15" fill="#a19986" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="outer_frame" data-face-idx="39" />
+    <polygon points="292.88,344.76 254.05,140.20 255.83,153.05 289.31,329.64" fill="#9c8763" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="window_reveal" data-face-idx="44" />
+    <polygon points="267.63,102.80 322.34,377.20 331.00,340.66 289.23,137.85" fill="#a19986" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="outer_frame" data-face-idx="18" />
+    <polygon points="322.34,377.20 267.63,102.80 254.05,140.20 292.88,344.76" fill="#a19986" stroke="#2b2116" stroke-width="1.2" class="poly-stroke" data-face-role="outer_frame" data-face-idx="42" />
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+:date: 2026-11-15
+:type: log
+:summary: Reorganized the entire Book Codex into a 26-solid one-polyhedron-per-page catalog across 5 geometric families powered by publish collections, inline SVG cards, and universal 3D Solidum/Vacuum viewports.
+
+One Polyhedron Per Page & Collection Architecture (v0.4.0)
+==========================================================
+
+Reorganized ``geometor-polyhedra`` around a canonical **one-polyhedron-per-page** architecture driven throughout by ``photon-platform/publish`` ``.. collection::`` directives:
+
+- **26 Exact Symbolic Polyhedra** (:mod:`geometor.polyhedra.catalog`): Unified registry spanning **5 Platonic**, **8 Archimedean & Abscisa** (including the uniform :math:`\mathbb{Q}(\phi)` Truncated Dodecahedron at :math:`t = (3 - \phi)/5` and :math:`\mathbb{Q}(\sqrt{2})` 26-Base Rhombicuboctahedron), **2 Catalan Duals** (Rhombic Dodecahedron and Golden Rhombic Triacontahedron), **7 Leonardo/Kepler Elevated Solids** (including pure-:math:`\mathbb{Z}` *Stella Octangula* and pure-:math:`\mathbb{Q}` *Tetrahedron Elevatum*), and **4 Canonical Pyramids & Bipyramids** (Kepler Golden Pyramid, Seked 14:11 Great Pyramid, Golden Square Bipyramid, and pure-:math:`\mathbb{Q}(\phi)` Regular Pentagonal Pyramid :math:`J_2`).
+- **Collection-Driven Book Codex** (``docsrc/solids/``, ``docsrc/leonardo/``, ``docsrc/golden/``, ``docsrc/pyramid/``): Every polyhedron now resides in its own dedicated directory ``docsrc/solids/<family>/<slug>/`` with co-located ``.euclid-graphic`` SVGs inlined into interactive **Cards / Banners / List** collection grids, accompanied by **20 atomized Leonardo Tabula-Pair folio pages**, **5 Golden Proportion theorem pages**, and **3 Great Pyramid treatises**.
+- **Universal 26-Solid Interactive 3D Engine** (``polyhedra_3d_codex.js``): Extended ``data-solid="<slug>"`` to render all 26 polyhedra in both *Solidum* and *Vacuum* (hollow mitered wooden manifold, genus :math:`g = F - 1`) modes with live aperture control and polar dual overlays.

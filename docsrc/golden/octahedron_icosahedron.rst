@@ -1,5 +1,12 @@
 :layout: book
+:type: theorem
+:order: 2
 :title: Golden Division of the Octahedron
+:featured_image: _static/svg/golden/octa_to_icosa.svg
+:featured_image_alt: Golden Division of the Octahedron to Regular Icosahedron
+:categories: golden-proportions
+:tags: phi, golden-ratio, octahedron, icosahedron, pacioli, continuous-morphism
+:excerpt: Dividing the twelve directed edges of an octahedron in extreme and mean ratio yields the exact twelve vertices of the regular icosahedron, mapping a continuous morphism from the cuboctahedron to the icosahedron.
 
 =================================
 Golden Division of the Octahedron
@@ -13,7 +20,11 @@ Golden Division of the Octahedron
 
    *To produce an icosahedron from an octahedron: for if each side of the octahedron is divided according to the proportion having a mean and two extremes, the points of division constitute the vertices of the icosahedron.*
 
-   — :person:`Luca Pacioli`, *De Divina Proportione*, Cap. LV (Venice, 1509)
+   — **Luca Pacioli**, *De Divina Proportione*, Cap. LV (Venice, 1509)
+
+.. enunciation::
+
+   If each of the twelve edges of a regular octahedron of scale :math:`\phi^2` is directed cyclically and divided in extreme and mean ratio (:math:`1 : \phi`), the twelve division points constitute the exact twelve vertices of the regular icosahedron :math:`\{3, 5\}`. As the division parameter varies from :math:`\tau = 1/2` to :math:`\tau = \phi^{-1}`, the solid smoothly morphs from the Archimedean cuboctahedron into the regular icosahedron.
 
 Interactive 3D Morphism Codex
 -----------------------------
@@ -132,3 +143,11 @@ As :math:`\tau` varies, the twelve points :math:`P(\tau)` trace a continuous 1-p
   The division points collapse into the six original vertices of the octahedron.
 
 This remarkable kinematic transformation demonstrates that the regular icosahedron is the unique twisted, chiral equilibrium of the regular octahedron governed by the divine proportion.
+
+Canonical Solid Codex
+---------------------
+
+For interactive 3D models, exact symbolic coordinates over :math:`\mathbb{Q}` and :math:`\mathbb{Q}(\phi)`, face normals, and dihedral angles, consult the canonical solid codices:
+
+- :doc:`Regular Octahedron </solids/01-platonic/octahedron/index>`
+- :doc:`Regular Icosahedron </solids/01-platonic/icosahedron/index>`

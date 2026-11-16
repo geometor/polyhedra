@@ -1,11 +1,21 @@
 """GEOMETOR Polyhedra.
 
-Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry in
-SymPy, Rational Trigonometry, and the GEOMETOR Digital Scriptorium.
+Exact symbolic Platonic, Archimedean, Catalan, and Keplerian polyhedral
+geometry in SymPy, Rational Trigonometry, and the GEOMETOR Digital Scriptorium.
 """
 
 from __future__ import annotations
 
+from geometor.polyhedra.catalog import (
+    PolyhedronEntry,
+    PolyhedronFamily,
+    build_catalog_solid,
+    build_pentagonal_pyramid_solid,
+    build_rhombicuboctahedron_solid,
+    get_polyhedra_catalog,
+    get_polyhedra_families,
+    get_polyhedron_entry,
+)
 from geometor.polyhedra.golden import (
     GoldenPolyhedronTheorem,
     build_dodecahedron_five_cubes,
@@ -68,7 +78,7 @@ from geometor.polyhedra.render import (
     render_solid_svg,
 )
 
-__version__: str = "0.3.0"
+__version__: str = "0.4.0"
 
 __all__: list[str] = [
     "GoldenPolyhedronTheorem",
@@ -77,6 +87,8 @@ __all__: list[str] = [
     "PHI_INV",
     "Plane3D",
     "Point3D",
+    "PolyhedronEntry",
+    "PolyhedronFamily",
     "PyramidModelProfile",
     "RegularSolid",
     "SQRT_PHI",
@@ -84,6 +96,7 @@ __all__: list[str] = [
     "Sphere3D",
     "Vector3D",
     "__version__",
+    "build_catalog_solid",
     "build_dodecahedron_five_cubes",
     "build_icosahedron_golden_rectangles",
     "build_icosahedron_meridian_model",
@@ -93,8 +106,10 @@ __all__: list[str] = [
     "build_octahedron_golden_icosahedron",
     "build_odom_tetrahedron_section_model",
     "build_pentagon_cross_section_model",
+    "build_pentagonal_pyramid_solid",
     "build_pyramid_squaring_circle_model",
     "build_rhombic_triacontahedron_golden",
+    "build_rhombicuboctahedron_solid",
     "build_seked_pyramid_solid",
     "cross_3d",
     "dihedral_spread_3d",
@@ -110,6 +125,9 @@ __all__: list[str] = [
     "get_great_pyramid_profiles",
     "get_platonic_solid",
     "get_platonic_solids",
+    "get_polyhedra_catalog",
+    "get_polyhedra_families",
+    "get_polyhedron_entry",
     "polar_dual",
     "quadrance_3d",
     "rectify",

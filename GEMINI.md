@@ -21,8 +21,9 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 ## 2. Package Architecture (`src/geometor/polyhedra/`)
 
-- [`__init__.py`](src/geometor/polyhedra/__init__.py): Public exports and `__version__ = "0.3.0"`.
+- [`__init__.py`](src/geometor/polyhedra/__init__.py): Public exports and `__version__ = "0.4.0"`.
 - [`platonic.py`](src/geometor/polyhedra/platonic.py): Exact symbolic seed kernel (`RegularSolid`, `PHI`, `PHI_INV`, all 5 regular solids, Leonardo plate concordance, and 3D Rational Trigonometry helpers).
+- [`catalog.py`](src/geometor/polyhedra/catalog.py): Canonical 26-solid, 5-family exact symbolic registry (`PolyhedronFamily`, `PolyhedronEntry`, `get_polyhedra_catalog`, `build_rhombicuboctahedron_solid`, `build_pentagonal_pyramid_solid`).
 - [`model3d/`](src/geometor/polyhedra/model3d/):
   - [`primitives.py`](src/geometor/polyhedra/model3d/primitives.py): Exact zero-float `Vector3D`, `Point3D`, `Line3D`, `Plane3D`, `Sphere3D`, and `Solid3D`.
   - [`bridge.py`](src/geometor/polyhedra/model3d/bridge.py): Dimensional bridge `slice_solid_to_model` ($\text{3D} \to \text{2D}$ `geometor.model.Model`) and `unfold_net_2d` (non-overlapping spanning-tree 2D nets).
@@ -38,13 +39,13 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 ## 3. Book Codex (`docsrc/`)
 
-Compiled as a self-contained `:layout: book` codex via `publish build` (zero modifications required in `photon-platform/publish`):
+Compiled as a self-contained `:layout: book` codex driven by `photon-platform/publish` `.. collection::` directives:
 
-- [`docsrc/_static/js/polyhedra_3d_codex.js`](docsrc/_static/js/polyhedra_3d_codex.js): Zero-dependency interactive HTML5 `<canvas>` 3D viewer (`data-solid` and `data-scene` modes, including `great_pyramid_kepler`).
-- [`docsrc/platonic/`](docsrc/platonic/): Overview + 5 dedicated Platonic solid monographs.
-- [`docsrc/golden/`](docsrc/golden/): Overview + 4 dedicated Golden Proportions monographs.
-- [`docsrc/leonardo/`](docsrc/leonardo/): 38 curated 1509 Leonardo woodcuts (`Tabulae I–XXXVI`) paired side-by-side with exact symbolic reconstructions.
-- [`docsrc/pyramid/`](docsrc/pyramid/): Overview + 3 dedicated monographs on the Kepler Right Triangle, Squaring the Circle / Earth–Moon Cosmogram, and Egyptian $14:11$ Seked & Octahedral Spreads.
+- [`docsrc/_static/js/polyhedra_3d_codex.js`](docsrc/_static/js/polyhedra_3d_codex.js): Zero-dependency interactive HTML5 `<canvas>` 3D viewer supporting all 26 `data-solid` slugs in *Solidum* and *Vacuum* modes plus 5 `data-scene` studios.
+- [`docsrc/solids/`](docsrc/solids/): Master 5-family `.. collection::` hub (`01-platonic/`, `02-archimedean/`, `03-catalan/`, `04-elevated/`, `05-pyramids/`) with **26 dedicated one-polyhedron-per-page monographs** (`solids/<family>/<slug>/index.rst`) and co-located `.euclid-graphic` SVGs.
+- [`docsrc/golden/`](docsrc/golden/): Collection of 5 dedicated Golden Proportions theorem pages.
+- [`docsrc/leonardo/`](docsrc/leonardo/): Collection of 20 paired 1509 Leonardo woodcut folio studies (`Tabulae I–LII`).
+- [`docsrc/pyramid/`](docsrc/pyramid/): Collection of 3 dedicated Great Pyramid & Circle Quadrature treatises.
 - [`docsrc/pipeline/`](docsrc/pipeline/): 3D symbolic architecture and multi-engine pipeline documentation.
 
 ---

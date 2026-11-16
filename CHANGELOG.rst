@@ -1,3 +1,11 @@
+0.4.0 (2026-11-15)
+------------------
+
+- Added :mod:`geometor.polyhedra.catalog` cataloging **26 exact symbolic polyhedra across 5 geometric families** (``01-platonic``, ``02-archimedean``, ``03-catalan``, ``04-elevated``, ``05-pyramids``), including :func:`~geometor.polyhedra.catalog.build_rhombicuboctahedron_solid` (*Vigintisex Basium* over :math:`\mathbb{Q}(\sqrt{2})`), :func:`~geometor.polyhedra.catalog.build_pentagonal_pyramid_solid` (Johnson Solid :math:`J_2` / Euclid XIII.16 icosahedral cap over :math:`\mathbb{Q}(\phi)`), and uniform Truncated Dodecahedron at :math:`t = (3 - \phi)/5 \in \mathbb{Q}(\phi)`.
+- Reorganized the entire Book Codex into a **one-polyhedron-per-page** architecture (``docsrc/solids/<family>/<slug>/index.rst``) powered by ``photon-platform/publish`` ``.. collection::`` grids (Cards / Banners / List switcher, inline ``.euclid-graphic`` SVG thumbnails, and automatic ``/types/``, ``/categories/``, and ``/tags/`` taxonomy pages), accompanied by a 26-solid :doc:`Master Comparative Ledger <solids/comparative_table>`.
+- Atomized ``docsrc/leonardo/`` into **20 individual Tabula-Pair folio studies** (adding Folios ``0283``/``0287`` for the Quadrangular Pyramid and ``0293``/``0295`` for the Pentagonal Pyramid), split ``docsrc/golden/`` into 5 single-theorem collection pages, and upgraded ``docsrc/pyramid/`` to ``.. collection::``.
+- Extended ``polyhedra_3d_codex.js`` so ``data-solid="<slug>"`` natively renders all 26 cataloged polyhedra in both *Solidum* and *Vacuum* (genus :math:`g = F - 1` hollow wooden frame) modes with live aperture control and polar dual wireframes.
+
 0.3.0 (2026-11-15)
 ------------------
 

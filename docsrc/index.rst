@@ -4,7 +4,7 @@
 polyhedra
 =========
 
-*Exact Symbolic Platonic Solids, Golden Proportions, 3D Rational Trigonometry, and Leonardo da Vinci's Polyhedral Woodcuts*
+*Exact Symbolic Polyhedra Catalog, Golden Proportions, 3D Rational Trigonometry, and Leonardo da Vinci's 1509 Woodcuts*
 
 .. epigraph::
 
@@ -12,14 +12,14 @@ polyhedra
 
    *There are five regular solids: the tetrahedron, hexahedron or cube, octahedron, icosahedron, and dodecahedron. Every one of them can be comprehended within a sphere.*
 
-   — :person:`Luca Pacioli`, *De Divina Proportione* (Venice, 1509)
+   — **Luca Pacioli**, *De Divina Proportione* (Venice, 1509)
 
 Overview
 --------
 
-**GEOMETOR Polyhedra** (``geometor-polyhedra``) models three-dimensional constructive geometry and regular solids in **100% exact symbolic algebra** (zero floating-point approximations) using `SymPy <https://www.sympy.org/>`_ and ``geometor.model``.
+**GEOMETOR Polyhedra** (``geometor-polyhedra``) models three-dimensional constructive geometry and canonical polyhedra in **100% exact symbolic algebra** (zero floating-point approximations) using `SymPy <https://www.sympy.org/>`_ and ``geometor.model``.
 
-Grounding its algebraic foundations in Euclid's *Elements* Book XIII, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509), Johannes Kepler's *Strena* (1611), and Norman Wildberger's Rational Trigonometry, this edition unites classical geometric scholarship with symbolic computation over :math:`\mathbb{Z}` and :math:`\mathbb{Q}(\phi)` (:math:`\phi = \frac{1 + \sqrt{5}}{2}`).
+Grounding its algebraic foundations in Euclid's *Elements* Book XIII, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509), Johannes Kepler's *Strena* (1611), and Norman Wildberger's Rational Trigonometry, this edition catalogs **26 exact symbolic solids across 5 geometric families**—each on its own dedicated monograph page powered by interactive 3D HTML5 ``<canvas>`` viewports, theme-adaptive ``.euclid-graphic`` SVGs, and ``photon-platform/publish`` collections.
 
 Interactive 3D Polyhedra Explorer
 ---------------------------------
@@ -28,74 +28,44 @@ Interactive 3D Polyhedra Explorer
 
    <div class="polyhedra-3d-mount" data-solid="dodecahedron" data-initial-variant="vacuum"></div>
 
-The Five Platonic Solids
-------------------------
+The Five Polyhedral Families (26 Canonical Solids)
+--------------------------------------------------
 
 .. list-table::
    :header-rows: 1
-   :widths: 16 10 10 8 8 8 12 14 14
+   :widths: 22 10 24 44
 
-   * - Solid
-     - Greek
-     - Element
-     - $\{p, q\}$
-     - $V$
-     - $E$
-     - $F$
-     - Spread
-     - $Q_{\text{in}} / Q_{\text{out}}$
-   * - :doc:`platonic/tetrahedron`
-     - Τετράεδρον
-     - Fire
-     - $\{3, 3\}$
-     - 4
-     - 6
-     - 4
-     - $8/9$
-     - $1/9$
-   * - :doc:`platonic/hexahedron`
-     - Ἑξάεδρον
-     - Earth
-     - $\{4, 3\}$
-     - 8
-     - 12
-     - 6
-     - $1$
-     - $1/3$
-   * - :doc:`platonic/octahedron`
-     - Ὀκτάεδρον
-     - Air
-     - $\{3, 4\}$
-     - 6
-     - 12
-     - 8
-     - $8/9$
-     - $1/3$
-   * - :doc:`platonic/icosahedron`
-     - Εἰκοσάεδρον
-     - Water
-     - $\{3, 5\}$
-     - 12
-     - 30
-     - 20
-     - $4/9$
-     - $\frac{4\phi+3}{15}$
-   * - :doc:`platonic/dodecahedron`
-     - Δωδεκάεδρον
-     - Aether
-     - $\{5, 3\}$
-     - 20
-     - 30
-     - 12
-     - $4/5$
-     - $\frac{4\phi+3}{15}$
+   * - Family Collection
+     - Solids
+     - Exact Algebraic Fields
+     - Representative Polyhedra
+   * - :doc:`Platonic Solids <solids/01-platonic/index>`
+     - **5**
+     - :math:`\mathbb{Z}`, :math:`\mathbb{Q}(\phi)`
+     - :doc:`Tetrahedron <solids/01-platonic/tetrahedron/index>` · :doc:`Hexahedron <solids/01-platonic/hexahedron/index>` · :doc:`Octahedron <solids/01-platonic/octahedron/index>` · :doc:`Icosahedron <solids/01-platonic/icosahedron/index>` · :doc:`Dodecahedron <solids/01-platonic/dodecahedron/index>`
+   * - :doc:`Archimedean & Abscisa <solids/02-archimedean/index>`
+     - **8**
+     - :math:`\mathbb{Q}`, :math:`\mathbb{Q}(\sqrt{2})`, :math:`\mathbb{Q}(\phi)`
+     - :doc:`Cuboctahedron <solids/02-archimedean/cuboctahedron/index>` · :doc:`Truncated Octahedron <solids/02-archimedean/truncated-octahedron/index>` · :doc:`Rhombicuboctahedron <solids/02-archimedean/rhombicuboctahedron/index>` · :doc:`Icosidodecahedron <solids/02-archimedean/icosidodecahedron/index>` · :doc:`Truncated Icosahedron <solids/02-archimedean/truncated-icosahedron/index>`
+   * - :doc:`Catalan Duals <solids/03-catalan/index>`
+     - **2**
+     - :math:`\mathbb{Q}`, :math:`\mathbb{Q}(\phi)`
+     - :doc:`Rhombic Dodecahedron <solids/03-catalan/rhombic-dodecahedron/index>` · :doc:`Rhombic Triacontahedron <solids/03-catalan/rhombic-triacontahedron/index>`
+   * - :doc:`Elevated & Stellated <solids/04-elevated/index>`
+     - **7**
+     - :math:`\mathbb{Z}`, :math:`\mathbb{Q}`, :math:`\mathbb{Q}(\sqrt{2})`, :math:`\mathbb{Q}(\phi, \sqrt{6})`
+     - :doc:`Stella Octangula <solids/04-elevated/stella-octangula/index>` · :doc:`Tetrahedron Elevatum <solids/04-elevated/tetrahedron-elevatum/index>` · :doc:`Icosahedron Elevatum <solids/04-elevated/icosahedron-elevatum/index>` · :doc:`Dodecahedron Elevatum <solids/04-elevated/dodecahedron-elevatum/index>`
+   * - :doc:`Pyramids & Bipyramids <solids/05-pyramids/index>`
+     - **4**
+     - :math:`\mathbb{Q}`, :math:`\mathbb{Q}(\phi)`, :math:`\mathbb{Q}(\sqrt{\phi})`
+     - :doc:`Kepler Golden Pyramid <solids/05-pyramids/kepler-pyramid/index>` · :doc:`Seked 14:11 Great Pyramid <solids/05-pyramids/seked-pyramid/index>` · :doc:`Golden Square Bipyramid <solids/05-pyramids/golden-bipyramid/index>` · :doc:`Regular Pentagonal Pyramid <solids/05-pyramids/pentagonal-pyramid/index>`
 
-Book Codices & Architecture
----------------------------
+Book Codices & Collections
+--------------------------
 
-* :doc:`platonic/index` — Dedicated monographs for the :doc:`Tetrahedron <platonic/tetrahedron>`, :doc:`Hexahedron <platonic/hexahedron>`, :doc:`Octahedron <platonic/octahedron>`, :doc:`Icosahedron <platonic/icosahedron>`, and :doc:`Dodecahedron <platonic/dodecahedron>`, with Euclid Book XIII constructions, pure rational dihedral spreads, interactive 3D solids, and non-overlapping 2D unfolded nets.
-* :doc:`golden/index` — Six certified Golden Ratio ($\phi$) theorems across 3D polyhedra and 2D cross-sections: :doc:`Golden Rectangles of the Icosahedron <golden/golden_rectangles>`, :doc:`Golden Division of the Octahedron <golden/octahedron_icosahedron>`, :doc:`Euclid XIII.17 & the Five Cubes in the Dodecahedron <golden/dodecahedron_five_cubes>`, and :doc:`Kepler's Rhombic Triacontahedron & Odom's Tetrahedron Section <golden/rhombic_triacontahedron_odom>`.
-* :doc:`leonardo/index` — Side-by-side Digital Scriptorium study of 38 original 1509 woodcut plates by **Leonardo da Vinci** (:doc:`Tabulae I–XX <leonardo/tetrahedron_cube_octahedron>` and :doc:`Tabulae XXI–XXXVI <leonardo/icosahedron_dodecahedron>`) paired with exact genus $g = F - 1$ *Corpora Vacua* reconstructions.
-* :doc:`pyramid/index` — Exact symbolic synthesis of **Kepler, Squaring the Circle & the Great Pyramid**: :doc:`The 1597 Kepler Right Triangle & Herodotus Area Law <pyramid/kepler_triangle>` ($1, \sqrt{\phi}, \phi$; $A_{\text{face}} = h^2 = \phi$), :doc:`Squaring the Circle & the Earth–Moon Cosmogram <pyramid/squaring_the_circle>` ($8 = 2\pi h$, $\pi_{\phi} = 4/\sqrt{\phi}$, $r_M/r_E = 3/11$), and :doc:`Egyptian 14:11 Seked Mensuration & Golden Bipyramid Spreads <pyramid/seked_and_octahedron>`.
+* :doc:`solids/index` — **Master Polyhedra Catalog (26 Solids, One Polyhedron Per Page)** organized into 5 collection families with inline SVG cards, interactive 3D *Solidum* / *Vacuum* studios, unfolded 2D nets, and :doc:`Master Comparative Ledger <solids/comparative_table>`.
+* :doc:`golden/index` — Collection of certified Golden Ratio (:math:`\phi`) theorems across 3D polyhedra and 2D cross-sections: :doc:`Golden Rectangles of the Icosahedron <golden/golden_rectangles>`, :doc:`Golden Division of the Octahedron <golden/octahedron_icosahedron>`, :doc:`Euclid XIII.17 & the Five Cubes in the Dodecahedron <golden/dodecahedron_five_cubes>`, :doc:`Kepler's Rhombic Triacontahedron <golden/rhombic_triacontahedron>`, and :doc:`Odom's Tetrahedron Section <golden/odom_tetrahedron_section>`.
+* :doc:`leonardo/index` — Visual museum collection of **20 paired 1509 woodcut folio studies** by **Leonardo da Vinci** from Luca Pacioli's *De Divina Proportione*, paired with exact genus :math:`g = F - 1` *Corpora Vacua* proofs.
+* :doc:`pyramid/index` — Collection of treatises on **Kepler, Squaring the Circle & the Great Pyramid**: :doc:`The 1597 Kepler Right Triangle <pyramid/kepler_triangle>` (:math:`1, \sqrt{\phi}, \phi`; :math:`A_{\text{face}} = h^2 = \phi`), :doc:`Squaring the Circle & the Earth–Moon Cosmogram <pyramid/squaring_the_circle>` (:math:`8 = 2\pi h`, :math:`\pi_{\phi} = 4/\sqrt{\phi}`, :math:`r_M/r_E = 3/11`), and :doc:`Egyptian 14:11 Seked Mensuration & Polyhedral Spreads <pyramid/seked_and_octahedron>`.
 * :doc:`pipeline/index` — Architecture of ``geometor.polyhedra.model3d``, Conway/Pacioli operators (``vacuate``, ``rectify``, ``truncate``, ``elevate``, ``polar_dual``), and multi-engine exports to 2D SVG, HTML5 3D Canvas, **IngeTrazo 0.6.0**, and **Blender 5.x**.
-* :doc:`modules/index` · :doc:`log/index` · :doc:`changelog` — Symbolic Python API reference, research log, and release history.
+* :doc:`modules/index` · :doc:`log/index` · :doc:`changelog` — Symbolic Python API reference, research log collection, and release history.

@@ -78,7 +78,7 @@ from geometor.polyhedra.render import (
     render_solid_svg,
 )
 
-__version__: str = "0.4.0"
+__version__: str = "0.4.1"
 
 __all__: list[str] = [
     "GoldenPolyhedronTheorem",

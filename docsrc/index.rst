@@ -26,7 +26,7 @@ Interactive 3D Polyhedra Explorer
 
 .. raw:: html
 
-   <div class="polyhedra-3d-mount" data-solid="dodecahedron" data-initial-variant="vacuum"></div>
+   <div class="polyhedra-3d-mount" data-solid="dodecahedron" data-mode="frame"></div>
 
 The Five Polyhedral Families (26 Canonical Solids)
 --------------------------------------------------
@@ -43,7 +43,7 @@ The Five Polyhedral Families (26 Canonical Solids)
      - **5**
      - :math:`\mathbb{Z}`, :math:`\mathbb{Q}(\phi)`
      - :doc:`Tetrahedron <solids/01-platonic/tetrahedron/index>` · :doc:`Hexahedron <solids/01-platonic/hexahedron/index>` · :doc:`Octahedron <solids/01-platonic/octahedron/index>` · :doc:`Icosahedron <solids/01-platonic/icosahedron/index>` · :doc:`Dodecahedron <solids/01-platonic/dodecahedron/index>`
-   * - :doc:`Archimedean & Abscisa <solids/02-archimedean/index>`
+   * - :doc:`Archimedean Solids <solids/02-archimedean/index>`
      - **8**
      - :math:`\mathbb{Q}`, :math:`\mathbb{Q}(\sqrt{2})`, :math:`\mathbb{Q}(\phi)`
      - :doc:`Cuboctahedron <solids/02-archimedean/cuboctahedron/index>` · :doc:`Truncated Octahedron <solids/02-archimedean/truncated-octahedron/index>` · :doc:`Rhombicuboctahedron <solids/02-archimedean/rhombicuboctahedron/index>` · :doc:`Icosidodecahedron <solids/02-archimedean/icosidodecahedron/index>` · :doc:`Truncated Icosahedron <solids/02-archimedean/truncated-icosahedron/index>`

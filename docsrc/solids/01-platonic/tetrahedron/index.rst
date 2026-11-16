@@ -28,8 +28,8 @@ P-01.01 · Tetrahedron
 .. picture:: tetrahedron.svg
    :alt: Regular Tetrahedron
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 
@@ -37,13 +37,11 @@ Interactive 3D Solid & Vacuum Studio
 
 .. note::
 
-   **Interactive Codex Controls**:
-   
-   - **Orbit & Inspect**: Click and drag to orbit in three dimensions. Scroll or pinch to zoom.
-   - **Variant Toggle**: Switch seamlessly between Leonardo da Vinci's *Vacuum* (open-lattice wooden beams), *Solidum* (opaque planar facets), *Abscisum* (truncated tetrahedron), and *Elevatum* (triacontahedron stellations).
-   - **Aperture Slider**: Scrub the wooden beam aperture parameter :math:`\mu \in [0.10, 0.45]` to inspect Leonardo's interior joinery.
-   - **Structural Overlays**: Toggle the **Golden Ratio** structure and **Polar Dual** (self-dual inverted tetrahedron).
-   - **Perspective Snap**: Reset camera to Leonardo da Vinci's canonical 1509 woodcut vantage point.
+   **Interactive Studio Controls**:
+
+   - **Display Modes**: Switch between **Surfaces** (studio-lit polygonal facets), **Wireframe** (depth-cued structural edges), and **Frame** (mitered hollow beam manifold).
+   - **Opacity & Aperture Sliders**: Adjust surface transparency from ``0%`` to ``100%`` in **Surfaces** and **Frame** modes, and tune the window **Aperture** in **Frame** mode.
+   - **Vertices & Overlays**: Toggle **Vertices** to display 3D points at all polyhedral corners, along with structural overlays and camera presets (**Perspective**, **Isometric**, **Front**, **Top**).
 
 Machine-Verified Symbolic Certificate
 -------------------------------------

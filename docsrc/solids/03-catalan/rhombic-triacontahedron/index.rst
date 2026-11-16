@@ -22,8 +22,8 @@ P-03.02 · Rhombic Triacontahedron
 .. picture:: rhombic-triacontahedron.svg
    :alt: Rhombic Triacontahedron
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 
@@ -83,8 +83,8 @@ For deep harmonic proofs and George Odom sections, consult:
 
 - :doc:`Rhombic Triacontahedron in the Golden Canon </golden/rhombic_triacontahedron>`
 
-Leonardo da Vinci's Woodcuts & Corpus Vacuum Reconstruction
------------------------------------------------------------
+Hollow Frame Manifold
+---------------------
 
 .. figure:: rhombic-triacontahedron_vacuum.svg
    :align: center

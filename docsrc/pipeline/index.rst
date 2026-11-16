@@ -253,12 +253,12 @@ Embedded directly into Sphinx Book Codices via lightweight HTML mounts:
 
 .. code-block:: html
 
-   <div class="polyhedra-3d-mount" data-solid="icosahedron" data-initial-variant="vacuum"></div>
+   <div class="polyhedra-3d-mount" data-solid="icosahedron" data-mode="frame"></div>
 
 The client-side engine (``polyhedra_3d_codex.js``) initializes automatically on document load:
-- Quaternion trackball rotation with smooth damping and momentum coasting.
-- Interactive controls for aperture width :math:`\mu` and shell scaling :math:`\lambda`.
-- Golden ratio diagnostic toggles (Euclidean 5-cubes compound, internal golden rectangles, circumscribed spheres).
+- Camera-locked 3-point studio lighting with smooth pointer orbit and wheel zoom.
+- Unified **Surfaces**, **Wireframe**, and **Frame** display modes with a continuous surface **Opacity** slider, **Aperture** frame control, and 3D **Vertices** sphere toggles.
+- Golden ratio diagnostic overlays (Euclidean 5-cubes compound, internal golden rectangles, and polar dual wireframes).
 
 Target 3: IngeTrazo 0.6.0 CAD & Live MCP Bridge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

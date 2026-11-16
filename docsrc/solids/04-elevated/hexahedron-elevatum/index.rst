@@ -22,8 +22,8 @@ P-04.02 · Hexahedron Elevatum
 .. picture:: hexahedron-elevatum.svg
    :alt: Hexahedron Elevatum
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

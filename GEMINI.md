@@ -6,7 +6,7 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 ## 1. Purpose & Guiding Principles
 
-`geometor-polyhedra` (`v0.3.0`) provides the 3D symbolic modeling kernel, polyhedral operator algebra, Golden Ratio theorem suite, Great Pyramid / Kepler / Circle-Quadrature synthesis, and multi-engine visualization pipeline for the GEOMETOR ecosystem:
+`geometor-polyhedra` (`v0.4.1`) provides the 3D symbolic modeling kernel, polyhedral operator algebra, Golden Ratio theorem suite, Great Pyramid / Kepler / Circle-Quadrature synthesis, and multi-engine visualization pipeline for the GEOMETOR ecosystem:
 
 - **100% Exact Symbolic Precision**: All vertices, face normals, edge midpoints, face centroids, sphere quadrances, Conway/Leonardo operators, Great Pyramid profiles, and 2D cross-sections are modeled symbolically over $\mathbb{Z}$, $\mathbb{Q}(\phi)$ ($\phi = \frac{1+\sqrt{5}}{2}$), $\mathbb{Q}(\sqrt{\phi})$, and closed-form radical extensions. Zero `float` or `sp.Float` approximations in symbolic geometry (`.evalf()` is confined strictly to `render/` projection/export layers and cyclic sorting).
 - **Euclidean & Scriptorium Lineage**: Direct alignment with Euclid's *Elements* Book XIII (`G.592`–`G.600`), the Rhind Mathematical Papyrus, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509 woodcuts by Leonardo da Vinci), and Johannes Kepler's 1597 *Epistola ad Mästlinum*, *Strena* (1611), and *Harmonices Mundi* (1619).
@@ -21,7 +21,7 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 ## 2. Package Architecture (`src/geometor/polyhedra/`)
 
-- [`__init__.py`](src/geometor/polyhedra/__init__.py): Public exports and `__version__ = "0.4.0"`.
+- [`__init__.py`](src/geometor/polyhedra/__init__.py): Public exports and `__version__ = "0.4.1"`.
 - [`platonic.py`](src/geometor/polyhedra/platonic.py): Exact symbolic seed kernel (`RegularSolid`, `PHI`, `PHI_INV`, all 5 regular solids, Leonardo plate concordance, and 3D Rational Trigonometry helpers).
 - [`catalog.py`](src/geometor/polyhedra/catalog.py): Canonical 26-solid, 5-family exact symbolic registry (`PolyhedronFamily`, `PolyhedronEntry`, `get_polyhedra_catalog`, `build_rhombicuboctahedron_solid`, `build_pentagonal_pyramid_solid`).
 - [`model3d/`](src/geometor/polyhedra/model3d/):
@@ -41,7 +41,7 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 Compiled as a self-contained `:layout: book` codex driven by `photon-platform/publish` `.. collection::` directives:
 
-- [`docsrc/_static/js/polyhedra_3d_codex.js`](docsrc/_static/js/polyhedra_3d_codex.js): Zero-dependency interactive HTML5 `<canvas>` 3D viewer supporting all 26 `data-solid` slugs in *Solidum* and *Vacuum* modes plus 5 `data-scene` studios.
+- [`docsrc/_static/js/polyhedra_3d_codex.js`](docsrc/_static/js/polyhedra_3d_codex.js): Zero-dependency interactive HTML5 `<canvas>` 3D studio supporting all 26 `data-solid` slugs in **Surfaces**, **Wireframe**, and **Frame** modes with camera-locked 3-point studio lighting, continuous **Opacity** slider, 3D **Vertices** toggles, and 5 `data-scene` studios.
 - [`docsrc/solids/`](docsrc/solids/): Master 5-family `.. collection::` hub (`01-platonic/`, `02-archimedean/`, `03-catalan/`, `04-elevated/`, `05-pyramids/`) with **26 dedicated one-polyhedron-per-page monographs** (`solids/<family>/<slug>/index.rst`) and co-located `.euclid-graphic` SVGs.
 - [`docsrc/golden/`](docsrc/golden/): Collection of 5 dedicated Golden Proportions theorem pages.
 - [`docsrc/leonardo/`](docsrc/leonardo/): Collection of 20 paired 1509 Leonardo woodcut folio studies (`Tabulae I–LII`).

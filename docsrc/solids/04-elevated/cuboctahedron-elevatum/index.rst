@@ -22,8 +22,8 @@ P-04.06 · Cuboctahedron Elevatum
 .. picture:: cuboctahedron-elevatum.svg
    :alt: Cuboctahedron Elevatum
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

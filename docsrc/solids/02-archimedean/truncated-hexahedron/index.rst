@@ -30,8 +30,8 @@ P-02.03 · Truncated Hexahedron
 .. picture:: truncated-hexahedron.svg
    :alt: Truncated Hexahedron
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 
@@ -39,12 +39,11 @@ Interactive 3D Solid & Vacuum Studio
 
 .. note::
 
-   **Interactive Codex Controls**:
-   
-   - **Orbit & Inspect**: Click and drag to orbit in three dimensions. Scroll or pinch to zoom.
-   - **Variant Toggle**: Switch between *Vacuum* (open wooden beam lattice), *Solidum* (opaque planar facets), and *Dual* (the Triakis Octahedron).
-   - **Aperture Slider**: Scrub the wooden beam aperture parameter :math:`\mu \in [0.10, 0.45]` to inspect the interior octagonal corridors.
-   - **Perspective Snap**: Align camera to canonical isometric orientation.
+   **Interactive Studio Controls**:
+
+   - **Display Modes**: Switch between **Surfaces** (studio-lit polygonal facets), **Wireframe** (depth-cued structural edges), and **Frame** (mitered hollow beam manifold).
+   - **Opacity & Aperture Sliders**: Adjust surface transparency from ``0%`` to ``100%`` in **Surfaces** and **Frame** modes, and tune the window **Aperture** in **Frame** mode.
+   - **Vertices & Overlays**: Toggle **Vertices** to display 3D points at all polyhedral corners, along with structural overlays and camera presets (**Perspective**, **Isometric**, **Front**, **Top**).
 
 Machine-Verified Symbolic Certificate
 -------------------------------------
@@ -123,8 +122,8 @@ Every vertex has exact circumquadrance:
 
 The 36 edges have uniform quadrance :math:`Q_E = 12 - 8\sqrt{2}`, confirming that the 6 octagons are regular Euclidean 8-gons.
 
-Corpus Vacuum Reconstruction
-----------------------------
+Hollow Frame Manifold
+---------------------
 
 The hollow armillary representation reveals the deep internal symmetry between the orthogonal octagonal windows and triangular corner bevels:
 

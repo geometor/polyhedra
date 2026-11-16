@@ -1,3 +1,8 @@
+0.4.2 (2026-11-15)
+------------------
+
+- Set **Wireframe** display mode and 3D **Vertices** spheres as the default initial view across all 26 interactive ``data-solid`` viewports (ordered ``Wireframe`` · ``Surfaces`` · ``Frame``), while allowing explicit ``data-mode`` and ``data-vertices="false"`` overrides.
+
 0.4.1 (2026-11-15)
 ------------------
 

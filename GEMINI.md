@@ -6,7 +6,7 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 ## 1. Purpose & Guiding Principles
 
-`geometor-polyhedra` (`v0.4.1`) provides the 3D symbolic modeling kernel, polyhedral operator algebra, Golden Ratio theorem suite, Great Pyramid / Kepler / Circle-Quadrature synthesis, and multi-engine visualization pipeline for the GEOMETOR ecosystem:
+`geometor-polyhedra` (`v0.4.2`) provides the 3D symbolic modeling kernel, polyhedral operator algebra, Golden Ratio theorem suite, Great Pyramid / Kepler / Circle-Quadrature synthesis, and multi-engine visualization pipeline for the GEOMETOR ecosystem:
 
 - **100% Exact Symbolic Precision**: All vertices, face normals, edge midpoints, face centroids, sphere quadrances, Conway/Leonardo operators, Great Pyramid profiles, and 2D cross-sections are modeled symbolically over $\mathbb{Z}$, $\mathbb{Q}(\phi)$ ($\phi = \frac{1+\sqrt{5}}{2}$), $\mathbb{Q}(\sqrt{\phi})$, and closed-form radical extensions. Zero `float` or `sp.Float` approximations in symbolic geometry (`.evalf()` is confined strictly to `render/` projection/export layers and cyclic sorting).
 - **Euclidean & Scriptorium Lineage**: Direct alignment with Euclid's *Elements* Book XIII (`G.592`–`G.600`), the Rhind Mathematical Papyrus, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509 woodcuts by Leonardo da Vinci), and Johannes Kepler's 1597 *Epistola ad Mästlinum*, *Strena* (1611), and *Harmonices Mundi* (1619).
@@ -21,7 +21,7 @@ Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry, Golden 
 
 ## 2. Package Architecture (`src/geometor/polyhedra/`)
 
-- [`__init__.py`](src/geometor/polyhedra/__init__.py): Public exports and `__version__ = "0.4.1"`.
+- [`__init__.py`](src/geometor/polyhedra/__init__.py): Public exports and `__version__ = "0.4.2"`.
 - [`platonic.py`](src/geometor/polyhedra/platonic.py): Exact symbolic seed kernel (`RegularSolid`, `PHI`, `PHI_INV`, all 5 regular solids, Leonardo plate concordance, and 3D Rational Trigonometry helpers).
 - [`catalog.py`](src/geometor/polyhedra/catalog.py): Canonical 26-solid, 5-family exact symbolic registry (`PolyhedronFamily`, `PolyhedronEntry`, `get_polyhedra_catalog`, `build_rhombicuboctahedron_solid`, `build_pentagonal_pyramid_solid`).
 - [`model3d/`](src/geometor/polyhedra/model3d/):

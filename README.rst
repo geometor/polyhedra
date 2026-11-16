@@ -93,8 +93,10 @@ Key Capabilities
   6. 2D Kepler–Pacioli Golden Meridian Hexagon and Equatorial Pentagon/Pentagram sections.
 - **Kepler, Squaring the Circle & the Great Pyramid** (``geometor.polyhedra.pyramid``):
   Exact symbolic comparison of the **Kepler Golden Pyramid** ($1, \sqrt{\phi}, \phi$; $A_{\text{face}} = h^2 = \phi$; $Q_{\text{edge}} = \phi + 2 = Q_{\text{out}}(\text{Icosahedron})$), **True Circle-Quadrature Pyramid** ($h = 4/\pi$, $8 = 2\pi h$), **Old Kingdom $14:11$ Seked Pyramid** ($280/220$ Royal Cubits, $\pi \approx 22/7$), and **Earth–Moon $11:3$ Cosmogram** ($r_M / r_E = 3/11 \approx \sqrt{\phi} - 1$).
-- **Multi-Backend Renderers & Interactive 3D Codex** (``geometor.polyhedra.render``):
-  Theme-adaptive ``.euclid-graphic`` SVGs (``render_solid_svg``, ``render_net_svg``, ``render_model2d_svg``), Wavefront ``.obj``/``.mtl`` export, runnable **IngeTrazo 0.6.0** and **Blender 5.x** studio generators, 38 curated 1509 Leonardo da Vinci woodcut plates, and a zero-dependency interactive HTML5 ``<canvas>`` 3D Book Codex viewer (``polyhedra_3d_codex.js``).
+- **26-Solid Exact Symbolic Catalog** (``geometor.polyhedra.catalog``):
+  Unified zero-float registry spanning **5 Platonic**, **8 Archimedean & Abscisa** (including the $\mathbb{Q}(\sqrt{2})$ 26-Base Rhombicuboctahedron and uniform $\mathbb{Q}(\phi)$ Truncated Dodecahedron at $t = (3 - \phi)/5$), **2 Catalan Duals**, **7 Leonardo/Kepler Elevated Solids**, and **4 Canonical Pyramids & Bipyramids** (including the $\mathbb{Q}(\phi)$ Regular Pentagonal Pyramid $J_2$).
+- **Multi-Backend Renderers & Collection-Driven 3D Codex** (``geometor.polyhedra.render``):
+  Theme-adaptive ``.euclid-graphic`` SVGs (``render_solid_svg``, ``render_net_svg``, ``render_model2d_svg``), Wavefront ``.obj``/``.mtl`` export, runnable **IngeTrazo 0.6.0** and **Blender 5.x** studio generators, 44 curated 1509 Leonardo da Vinci woodcut plates, and a one-polyhedron-per-page Book Codex powered by ``photon-platform/publish`` collections and ``polyhedra_3d_codex.js``.
 
 Quickstart
 ----------
@@ -102,21 +104,25 @@ Quickstart
 .. code-block:: python
 
    from geometor.polyhedra import (
-       Solid3D,
+       build_catalog_solid,
        build_dodecahedron_five_cubes,
-       build_octahedron_golden_icosahedron,
-       get_platonic_solid,
+       get_polyhedra_catalog,
        polar_dual,
        rectify,
        vacuate,
    )
 
-   # Reconstruct Leonardo's Dodecahedron Vacuum (Folio 0245, genus g = 11)
-   dodec = Solid3D.from_regular_solid(get_platonic_solid("dodecahedron"))
-   dodec_vac = vacuate(dodec)
-   print(dodec_vac.num_vertices, dodec_vac.num_faces, dodec_vac.genus)  # 160 180 11
+   # Browse all 26 exact symbolic solids across 5 families
+   catalog = get_polyhedra_catalog()
+   print(len(catalog))  # 26
+
+   # Reconstruct Leonardo's 26-Base Body Vacuum (Folio 0261, genus g = 25)
+   rhombi = build_catalog_solid("rhombicuboctahedron")
+   rhombi_vac = vacuate(rhombi)
+   print(rhombi_vac.num_vertices, rhombi_vac.num_faces, rhombi_vac.genus)  # 240 288 25
 
    # Construct Kepler's 30-face Rhombic Triacontahedron via polar duality
+   dodec = build_catalog_solid("dodecahedron")
    triaconta = polar_dual(rectify(dodec))
    print(triaconta.num_vertices, triaconta.num_faces)  # 32 30
 
@@ -129,11 +135,11 @@ CLI & Book Codex
 
 .. code-block:: bash
 
-   # Display summary table of all 5 Platonic solids
+   # Display summary table of all 26 cataloged solids across 5 families
    polyhedra
 
-   # Inspect specific solid details
-   polyhedra dodecahedron
+   # Inspect specific solid details & Leonardo plate concordance
+   polyhedra rhombicuboctahedron
 
    # Build the interactive Sphinx Book Codex into docs/
    publish build

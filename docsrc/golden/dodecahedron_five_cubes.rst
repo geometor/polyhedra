@@ -1,5 +1,12 @@
 :layout: book
+:type: theorem
+:order: 3
 :title: Five Inscribed Cubes in the Dodecahedron
+:featured_image: _static/svg/golden/dodeca_five_cubes.svg
+:featured_image_alt: Five Inscribed Cubes in the Regular Dodecahedron
+:categories: golden-proportions
+:tags: phi, golden-ratio, dodecahedron, cube, euclid, five-cubes
+:excerpt: Euclid's Proposition XIII.17 roof construction erecting hipped wedges on a central cube to generate the 20 vertices of the dodecahedron, partitioning all 60 pentagonal face diagonals into five disjoint cubes.
 
 =========================================
 Five Inscribed Cubes in the Dodecahedron
@@ -13,7 +20,11 @@ Five Inscribed Cubes in the Dodecahedron
 
    *To construct a dodecahedron within a given sphere, and comprehend it by the surface of the sphere, like the preceding bodies; and to show that the side of the dodecahedron is the irrational line called an apotome.*
 
-   — :person:`Euclid of Alexandria`, *Elements* Book XIII, Proposition 17
+   — **Euclid of Alexandria**, *Elements* Book XIII, Proposition 17
+
+.. enunciation::
+
+   In *Elements* Book XIII, Proposition 17, Euclid demonstrates that the twenty vertices of the regular dodecahedron :math:`\{5, 3\}` can be constructed by erecting hipped roof wedges upon the six faces of a central inscribed cube. The sixty diagonals of the twelve pentagonal faces partition into five mutually disjoint sets of twelve edges, defining five inscribed regular cubes whose edge quadrance ratio to the dodecahedron edge is identically :math:`Q_{\text{cube}} / Q_{\text{dod}} = \phi^2`, permuted by the alternating group :math:`A_5`.
 
 Interactive 3D Codex
 --------------------
@@ -155,3 +166,11 @@ Any rotational symmetry of the dodecahedron permutes the five inscribed cubes am
    \text{Rot}(\text{Dodecahedron}) \cong A_5 \subset S_5
 
 This provides the classical geometric representation of the simple group of order 60, directly linking the solubility of quintic polynomials with the divine proportion in 3-space.
+
+Canonical Solid Codex
+---------------------
+
+For interactive 3D models, exact symbolic coordinates over :math:`\mathbb{Q}` and :math:`\mathbb{Q}(\phi)`, face normals, and dihedral angles, consult the canonical solid codices:
+
+- :doc:`Regular Dodecahedron </solids/01-platonic/dodecahedron/index>`
+- :doc:`Regular Hexahedron (Cube) </solids/01-platonic/hexahedron/index>`

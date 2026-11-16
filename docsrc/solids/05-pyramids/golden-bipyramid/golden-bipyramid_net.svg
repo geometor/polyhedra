@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420" class="euclid-graphic" data-graphic-id="golden-bipyramid-net">
+  <style>
+    .euclid-graphic {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .net-face {
+      fill: #fdfbf7;
+      stroke: none;
+    }
+    .net-hinge {
+      stroke: #d97706;
+      stroke-width: 1.5;
+      stroke-dasharray: 5 3.5;
+      stroke-linecap: round;
+      fill: none;
+    }
+    .net-cut {
+      stroke: #1e293b;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .geom-label {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      fill: #1e293b;
+    }
+    @media (prefers-color-scheme: dark) {
+      .net-face { fill: #1c2128; }
+      .net-cut { stroke: #e2d5b8; }
+      .net-hinge { stroke: #fbbf24; }
+      .geom-label { fill: #f1f5f9; }
+    }
+    html[data-theme="dark"] .net-face { fill: #1c2128; }
+    html[data-theme="dark"] .net-cut { stroke: #e2d5b8; }
+    html[data-theme="dark"] .net-hinge { stroke: #fbbf24; }
+    html[data-theme="dark"] .geom-label { fill: #f1f5f9; }
+  </style>
+  <defs />
+  <g id="net-faces">
+    <polygon points="212.90,210.00 307.10,210.00 260.00,133.80" class="net-face" data-face-idx="0" />
+    <polygon points="307.10,210.00 212.90,210.00 260.00,286.20" class="net-face" data-face-idx="4" />
+    <polygon points="307.10,210.00 349.22,125.75 260.00,133.80" class="net-face" data-face-idx="1" />
+    <polygon points="170.78,125.75 212.90,210.00 260.00,133.80" class="net-face" data-face-idx="3" />
+    <polygon points="212.90,210.00 170.78,294.25 260.00,286.20" class="net-face" data-face-idx="7" />
+    <polygon points="349.22,294.25 307.10,210.00 260.00,286.20" class="net-face" data-face-idx="5" />
+    <polygon points="349.22,125.75 292.70,50.40 260.00,133.80" class="net-face" data-face-idx="2" />
+    <polygon points="170.78,294.25 227.30,369.60 260.00,286.20" class="net-face" data-face-idx="6" />
+  </g>
+  <g id="net-hinges">
+    <line x1="212.90" y1="210.00" x2="307.10" y2="210.00" class="net-hinge" />
+    <line x1="307.10" y1="210.00" x2="260.00" y2="133.80" class="net-hinge" />
+    <line x1="260.00" y1="133.80" x2="212.90" y2="210.00" class="net-hinge" />
+    <line x1="212.90" y1="210.00" x2="260.00" y2="286.20" class="net-hinge" />
+    <line x1="260.00" y1="286.20" x2="307.10" y2="210.00" class="net-hinge" />
+    <line x1="349.22" y1="125.75" x2="260.00" y2="133.80" class="net-hinge" />
+    <line x1="170.78" y1="294.25" x2="260.00" y2="286.20" class="net-hinge" />
+  </g>
+  <g id="net-cuts">
+    <line x1="307.10" y1="210.00" x2="349.22" y2="125.75" class="net-cut" />
+    <line x1="170.78" y1="125.75" x2="212.90" y2="210.00" class="net-cut" />
+    <line x1="260.00" y1="133.80" x2="170.78" y2="125.75" class="net-cut" />
+    <line x1="212.90" y1="210.00" x2="170.78" y2="294.25" class="net-cut" />
+    <line x1="349.22" y1="294.25" x2="307.10" y2="210.00" class="net-cut" />
+    <line x1="260.00" y1="286.20" x2="349.22" y2="294.25" class="net-cut" />
+    <line x1="349.22" y1="125.75" x2="292.70" y2="50.40" class="net-cut" />
+    <line x1="292.70" y1="50.40" x2="260.00" y2="133.80" class="net-cut" />
+    <line x1="170.78" y1="294.25" x2="227.30" y2="369.60" class="net-cut" />
+    <line x1="227.30" y1="369.60" x2="260.00" y2="286.20" class="net-cut" />
+  </g>
+  <g id="net-labels">
+    <text x="260.00" y="184.60" text-anchor="middle" dominant-baseline="central" class="geom-label">F1</text>
+    <text x="260.00" y="235.40" text-anchor="middle" dominant-baseline="central" class="geom-label">F5</text>
+    <text x="305.44" y="156.52" text-anchor="middle" dominant-baseline="central" class="geom-label">F2</text>
+    <text x="214.56" y="156.52" text-anchor="middle" dominant-baseline="central" class="geom-label">F4</text>
+    <text x="214.56" y="263.48" text-anchor="middle" dominant-baseline="central" class="geom-label">F8</text>
+    <text x="305.44" y="263.48" text-anchor="middle" dominant-baseline="central" class="geom-label">F6</text>
+    <text x="300.64" y="103.32" text-anchor="middle" dominant-baseline="central" class="geom-label">F3</text>
+    <text x="219.36" y="316.68" text-anchor="middle" dominant-baseline="central" class="geom-label">F7</text>
+  </g>
+</svg>

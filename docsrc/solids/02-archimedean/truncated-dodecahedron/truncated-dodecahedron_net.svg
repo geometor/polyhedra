@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420" class="euclid-graphic" data-graphic-id="truncated-dodecahedron-net">
+  <style>
+    .euclid-graphic {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    }
+    .net-face {
+      fill: #fdfbf7;
+      stroke: none;
+    }
+    .net-hinge {
+      stroke: #d97706;
+      stroke-width: 1.5;
+      stroke-dasharray: 5 3.5;
+      stroke-linecap: round;
+      fill: none;
+    }
+    .net-cut {
+      stroke: #1e293b;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .geom-label {
+      font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      fill: #1e293b;
+    }
+    @media (prefers-color-scheme: dark) {
+      .net-face { fill: #1c2128; }
+      .net-cut { stroke: #e2d5b8; }
+      .net-hinge { stroke: #fbbf24; }
+      .geom-label { fill: #f1f5f9; }
+    }
+    html[data-theme="dark"] .net-face { fill: #1c2128; }
+    html[data-theme="dark"] .net-cut { stroke: #e2d5b8; }
+    html[data-theme="dark"] .net-hinge { stroke: #fbbf24; }
+    html[data-theme="dark"] .geom-label { fill: #f1f5f9; }
+  </style>
+  <defs />
+  <g id="net-faces">
+    <polygon points="235.50,217.61 253.08,217.61 267.30,207.28 272.74,190.56 267.30,173.84 253.08,163.51 235.50,163.51 221.28,173.84 215.84,190.56 221.28,207.28" class="net-face" data-face-idx="0" />
+    <polygon points="221.28,227.95 215.84,244.67 221.28,261.39 235.50,271.72 253.08,271.72 267.30,261.39 272.74,244.67 267.30,227.95 253.08,217.61 235.50,217.61" class="net-face" data-face-idx="2" />
+    <polygon points="267.30,207.28 253.08,217.61 269.14,224.76" class="net-face" data-face-idx="24" />
+    <polygon points="304.54,234.33 318.76,224.00 324.19,207.28 318.76,190.56 304.54,180.23 286.96,180.23 272.74,190.56 267.30,207.28 272.74,224.00 286.96,234.33" class="net-face" data-face-idx="3" />
+    <polygon points="284.50,177.49 267.30,173.84 272.74,190.56" class="net-face" data-face-idx="26" />
+    <polygon points="253.08,163.51 267.30,173.84 284.88,173.84 299.11,163.51 304.54,146.79 299.11,130.07 284.88,119.73 267.30,119.73 253.08,130.07 247.65,146.79" class="net-face" data-face-idx="9" />
+    <polygon points="244.29,148.28 235.50,163.51 253.08,163.51" class="net-face" data-face-idx="16" />
+    <polygon points="240.93,146.79 235.50,130.07 221.28,119.73 203.70,119.73 189.47,130.07 184.04,146.79 189.47,163.51 203.70,173.84 221.28,173.84 235.50,163.51" class="net-face" data-face-idx="8" />
+    <polygon points="221.28,173.84 204.08,177.49 215.84,190.56" class="net-face" data-face-idx="20" />
+    <polygon points="221.28,207.28 215.84,190.56 201.62,180.23 184.04,180.23 169.82,190.56 164.39,207.28 169.82,224.00 184.04,234.33 201.62,234.33 215.84,224.00" class="net-face" data-face-idx="1" />
+    <polygon points="235.50,217.61 221.28,207.28 219.44,224.76" class="net-face" data-face-idx="12" />
+    <polygon points="221.28,261.39 215.84,244.67 204.08,257.73" class="net-face" data-face-idx="28" />
+    <polygon points="184.04,288.44 189.47,305.16 203.70,315.49 221.28,315.49 235.50,305.16 240.93,288.44 235.50,271.72 221.28,261.39 203.70,261.39 189.47,271.72" class="net-face" data-face-idx="6" />
+    <polygon points="244.29,286.94 253.08,271.72 235.50,271.72" class="net-face" data-face-idx="29" />
+    <polygon points="267.30,261.39 253.08,271.72 247.65,288.44 253.08,305.16 267.30,315.49 284.88,315.49 299.11,305.16 304.54,288.44 299.11,271.72 284.88,261.39" class="net-face" data-face-idx="4" />
+    <polygon points="284.50,257.73 272.74,244.67 267.30,261.39" class="net-face" data-face-idx="13" />
+    <polygon points="324.19,207.28 318.76,224.00 335.96,220.34" class="net-face" data-face-idx="21" />
+    <polygon points="318.76,190.56 324.19,207.28 338.42,217.61 356.00,217.61 370.22,207.28 375.65,190.56 370.22,173.84 356.00,163.51 338.42,163.51 324.19,173.84" class="net-face" data-face-idx="10" />
+    <polygon points="320.60,173.07 304.54,180.23 318.76,190.56" class="net-face" data-face-idx="17" />
+    <polygon points="299.11,130.07 300.94,112.58 284.88,119.73" class="net-face" data-face-idx="31" />
+    <polygon points="247.65,92.68 253.08,109.40 267.30,119.73 284.88,119.73 299.11,109.40 304.54,92.68 299.11,75.96 284.88,65.63 267.30,65.63 253.08,75.96" class="net-face" data-face-idx="11" />
+    <polygon points="267.30,119.73 251.24,112.58 253.08,130.07" class="net-face" data-face-idx="30" />
+    <polygon points="152.24,157.12 169.82,157.12 184.04,146.79 189.47,130.07 184.04,113.35 169.82,103.01 152.24,103.01 138.02,113.35 132.58,130.07 138.02,146.79" class="net-face" data-face-idx="5" />
+    <polygon points="203.70,119.73 187.64,112.58 189.47,130.07" class="net-face" data-face-idx="18" />
+    <polygon points="184.04,146.79 172.28,159.85 189.47,163.51" class="net-face" data-face-idx="22" />
+    <polygon points="164.39,207.28 152.62,220.34 169.82,224.00" class="net-face" data-face-idx="14" />
+    <polygon points="187.64,322.64 203.70,315.49 189.47,305.16" class="net-face" data-face-idx="25" />
+    <polygon points="221.28,315.49 203.70,315.49 189.47,325.83 184.04,342.55 189.47,359.27 203.70,369.60 221.28,369.60 235.50,359.27 240.93,342.55 235.50,325.83" class="net-face" data-face-idx="7" />
+    <polygon points="221.28,315.49 237.34,322.64 235.50,305.16" class="net-face" data-face-idx="15" />
+    <polygon points="300.94,322.64 299.11,305.16 284.88,315.49" class="net-face" data-face-idx="23" />
+    <polygon points="370.22,173.84 375.65,190.56 387.42,177.49" class="net-face" data-face-idx="19" />
+    <polygon points="267.30,65.63 284.88,65.63 276.09,50.40" class="net-face" data-face-idx="27" />
+  </g>
+  <g id="net-hinges">
+    <line x1="235.50" y1="217.61" x2="253.08" y2="217.61" class="net-hinge" />
+    <line x1="253.08" y1="217.61" x2="267.30" y2="207.28" class="net-hinge" />
+    <line x1="267.30" y1="207.28" x2="272.74" y2="190.56" class="net-hinge" />
+    <line x1="272.74" y1="190.56" x2="267.30" y2="173.84" class="net-hinge" />
+    <line x1="267.30" y1="173.84" x2="253.08" y2="163.51" class="net-hinge" />
+    <line x1="253.08" y1="163.51" x2="235.50" y2="163.51" class="net-hinge" />
+    <line x1="235.50" y1="163.51" x2="221.28" y2="173.84" class="net-hinge" />
+    <line x1="221.28" y1="173.84" x2="215.84" y2="190.56" class="net-hinge" />
+    <line x1="215.84" y1="190.56" x2="221.28" y2="207.28" class="net-hinge" />
+    <line x1="221.28" y1="207.28" x2="235.50" y2="217.61" class="net-hinge" />
+    <line x1="215.84" y1="244.67" x2="221.28" y2="261.39" class="net-hinge" />
+    <line x1="221.28" y1="261.39" x2="235.50" y2="271.72" class="net-hinge" />
+    <line x1="235.50" y1="271.72" x2="253.08" y2="271.72" class="net-hinge" />
+    <line x1="253.08" y1="271.72" x2="267.30" y2="261.39" class="net-hinge" />
+    <line x1="267.30" y1="261.39" x2="272.74" y2="244.67" class="net-hinge" />
+    <line x1="318.76" y1="224.00" x2="324.19" y2="207.28" class="net-hinge" />
+    <line x1="324.19" y1="207.28" x2="318.76" y2="190.56" class="net-hinge" />
+    <line x1="318.76" y1="190.56" x2="304.54" y2="180.23" class="net-hinge" />
+    <line x1="299.11" y1="130.07" x2="284.88" y2="119.73" class="net-hinge" />
+    <line x1="284.88" y1="119.73" x2="267.30" y2="119.73" class="net-hinge" />
+    <line x1="267.30" y1="119.73" x2="253.08" y2="130.07" class="net-hinge" />
+    <line x1="203.70" y1="119.73" x2="189.47" y2="130.07" class="net-hinge" />
+    <line x1="189.47" y1="130.07" x2="184.04" y2="146.79" class="net-hinge" />
+    <line x1="184.04" y1="146.79" x2="189.47" y2="163.51" class="net-hinge" />
+    <line x1="164.39" y1="207.28" x2="169.82" y2="224.00" class="net-hinge" />
+    <line x1="189.47" y1="305.16" x2="203.70" y2="315.49" class="net-hinge" />
+    <line x1="203.70" y1="315.49" x2="221.28" y2="315.49" class="net-hinge" />
+    <line x1="221.28" y1="315.49" x2="235.50" y2="305.16" class="net-hinge" />
+    <line x1="284.88" y1="315.49" x2="299.11" y2="305.16" class="net-hinge" />
+    <line x1="375.65" y1="190.56" x2="370.22" y2="173.84" class="net-hinge" />
+    <line x1="284.88" y1="65.63" x2="267.30" y2="65.63" class="net-hinge" />
+  </g>
+  <g id="net-cuts">
+    <line x1="221.28" y1="227.95" x2="215.84" y2="244.67" class="net-cut" />
+    <line x1="272.74" y1="244.67" x2="267.30" y2="227.95" class="net-cut" />
+    <line x1="267.30" y1="227.95" x2="253.08" y2="217.61" class="net-cut" />
+    <line x1="235.50" y1="217.61" x2="221.28" y2="227.95" class="net-cut" />
+    <line x1="253.08" y1="217.61" x2="269.14" y2="224.76" class="net-cut" />
+    <line x1="269.14" y1="224.76" x2="267.30" y2="207.28" class="net-cut" />
+    <line x1="304.54" y1="234.33" x2="318.76" y2="224.00" class="net-cut" />
+    <line x1="304.54" y1="180.23" x2="286.96" y2="180.23" class="net-cut" />
+    <line x1="286.96" y1="180.23" x2="272.74" y2="190.56" class="net-cut" />
+    <line x1="267.30" y1="207.28" x2="272.74" y2="224.00" class="net-cut" />
+    <line x1="272.74" y1="224.00" x2="286.96" y2="234.33" class="net-cut" />
+    <line x1="286.96" y1="234.33" x2="304.54" y2="234.33" class="net-cut" />
+    <line x1="284.50" y1="177.49" x2="267.30" y2="173.84" class="net-cut" />
+    <line x1="272.74" y1="190.56" x2="284.50" y2="177.49" class="net-cut" />
+    <line x1="267.30" y1="173.84" x2="284.88" y2="173.84" class="net-cut" />
+    <line x1="284.88" y1="173.84" x2="299.11" y2="163.51" class="net-cut" />
+    <line x1="299.11" y1="163.51" x2="304.54" y2="146.79" class="net-cut" />
+    <line x1="304.54" y1="146.79" x2="299.11" y2="130.07" class="net-cut" />
+    <line x1="253.08" y1="130.07" x2="247.65" y2="146.79" class="net-cut" />
+    <line x1="247.65" y1="146.79" x2="253.08" y2="163.51" class="net-cut" />
+    <line x1="244.29" y1="148.28" x2="235.50" y2="163.51" class="net-cut" />
+    <line x1="253.08" y1="163.51" x2="244.29" y2="148.28" class="net-cut" />
+    <line x1="240.93" y1="146.79" x2="235.50" y2="130.07" class="net-cut" />
+    <line x1="235.50" y1="130.07" x2="221.28" y2="119.73" class="net-cut" />
+    <line x1="221.28" y1="119.73" x2="203.70" y2="119.73" class="net-cut" />
+    <line x1="189.47" y1="163.51" x2="203.70" y2="173.84" class="net-cut" />
+    <line x1="203.70" y1="173.84" x2="221.28" y2="173.84" class="net-cut" />
+    <line x1="235.50" y1="163.51" x2="240.93" y2="146.79" class="net-cut" />
+    <line x1="221.28" y1="173.84" x2="204.08" y2="177.49" class="net-cut" />
+    <line x1="204.08" y1="177.49" x2="215.84" y2="190.56" class="net-cut" />
+    <line x1="215.84" y1="190.56" x2="201.62" y2="180.23" class="net-cut" />
+    <line x1="201.62" y1="180.23" x2="184.04" y2="180.23" class="net-cut" />
+    <line x1="184.04" y1="180.23" x2="169.82" y2="190.56" class="net-cut" />
+    <line x1="169.82" y1="190.56" x2="164.39" y2="207.28" class="net-cut" />
+    <line x1="169.82" y1="224.00" x2="184.04" y2="234.33" class="net-cut" />
+    <line x1="184.04" y1="234.33" x2="201.62" y2="234.33" class="net-cut" />
+    <line x1="201.62" y1="234.33" x2="215.84" y2="224.00" class="net-cut" />
+    <line x1="215.84" y1="224.00" x2="221.28" y2="207.28" class="net-cut" />
+    <line x1="221.28" y1="207.28" x2="219.44" y2="224.76" class="net-cut" />
+    <line x1="219.44" y1="224.76" x2="235.50" y2="217.61" class="net-cut" />
+    <line x1="215.84" y1="244.67" x2="204.08" y2="257.73" class="net-cut" />
+    <line x1="204.08" y1="257.73" x2="221.28" y2="261.39" class="net-cut" />
+    <line x1="184.04" y1="288.44" x2="189.47" y2="305.16" class="net-cut" />
+    <line x1="235.50" y1="305.16" x2="240.93" y2="288.44" class="net-cut" />
+    <line x1="240.93" y1="288.44" x2="235.50" y2="271.72" class="net-cut" />
+    <line x1="221.28" y1="261.39" x2="203.70" y2="261.39" class="net-cut" />
+    <line x1="203.70" y1="261.39" x2="189.47" y2="271.72" class="net-cut" />
+    <line x1="189.47" y1="271.72" x2="184.04" y2="288.44" class="net-cut" />
+    <line x1="244.29" y1="286.94" x2="253.08" y2="271.72" class="net-cut" />
+    <line x1="235.50" y1="271.72" x2="244.29" y2="286.94" class="net-cut" />
+    <line x1="253.08" y1="271.72" x2="247.65" y2="288.44" class="net-cut" />
+    <line x1="247.65" y1="288.44" x2="253.08" y2="305.16" class="net-cut" />
+    <line x1="253.08" y1="305.16" x2="267.30" y2="315.49" class="net-cut" />
+    <line x1="267.30" y1="315.49" x2="284.88" y2="315.49" class="net-cut" />
+    <line x1="299.11" y1="305.16" x2="304.54" y2="288.44" class="net-cut" />
+    <line x1="304.54" y1="288.44" x2="299.11" y2="271.72" class="net-cut" />
+    <line x1="299.11" y1="271.72" x2="284.88" y2="261.39" class="net-cut" />
+    <line x1="284.88" y1="261.39" x2="267.30" y2="261.39" class="net-cut" />
+    <line x1="284.50" y1="257.73" x2="272.74" y2="244.67" class="net-cut" />
+    <line x1="267.30" y1="261.39" x2="284.50" y2="257.73" class="net-cut" />
+    <line x1="318.76" y1="224.00" x2="335.96" y2="220.34" class="net-cut" />
+    <line x1="335.96" y1="220.34" x2="324.19" y2="207.28" class="net-cut" />
+    <line x1="324.19" y1="207.28" x2="338.42" y2="217.61" class="net-cut" />
+    <line x1="338.42" y1="217.61" x2="356.00" y2="217.61" class="net-cut" />
+    <line x1="356.00" y1="217.61" x2="370.22" y2="207.28" class="net-cut" />
+    <line x1="370.22" y1="207.28" x2="375.65" y2="190.56" class="net-cut" />
+    <line x1="370.22" y1="173.84" x2="356.00" y2="163.51" class="net-cut" />
+    <line x1="356.00" y1="163.51" x2="338.42" y2="163.51" class="net-cut" />
+    <line x1="338.42" y1="163.51" x2="324.19" y2="173.84" class="net-cut" />
+    <line x1="324.19" y1="173.84" x2="318.76" y2="190.56" class="net-cut" />
+    <line x1="320.60" y1="173.07" x2="304.54" y2="180.23" class="net-cut" />
+    <line x1="318.76" y1="190.56" x2="320.60" y2="173.07" class="net-cut" />
+    <line x1="299.11" y1="130.07" x2="300.94" y2="112.58" class="net-cut" />
+    <line x1="300.94" y1="112.58" x2="284.88" y2="119.73" class="net-cut" />
+    <line x1="247.65" y1="92.68" x2="253.08" y2="109.40" class="net-cut" />
+    <line x1="253.08" y1="109.40" x2="267.30" y2="119.73" class="net-cut" />
+    <line x1="284.88" y1="119.73" x2="299.11" y2="109.40" class="net-cut" />
+    <line x1="299.11" y1="109.40" x2="304.54" y2="92.68" class="net-cut" />
+    <line x1="304.54" y1="92.68" x2="299.11" y2="75.96" class="net-cut" />
+    <line x1="299.11" y1="75.96" x2="284.88" y2="65.63" class="net-cut" />
+    <line x1="267.30" y1="65.63" x2="253.08" y2="75.96" class="net-cut" />
+    <line x1="253.08" y1="75.96" x2="247.65" y2="92.68" class="net-cut" />
+    <line x1="267.30" y1="119.73" x2="251.24" y2="112.58" class="net-cut" />
+    <line x1="251.24" y1="112.58" x2="253.08" y2="130.07" class="net-cut" />
+    <line x1="152.24" y1="157.12" x2="169.82" y2="157.12" class="net-cut" />
+    <line x1="169.82" y1="157.12" x2="184.04" y2="146.79" class="net-cut" />
+    <line x1="189.47" y1="130.07" x2="184.04" y2="113.35" class="net-cut" />
+    <line x1="184.04" y1="113.35" x2="169.82" y2="103.01" class="net-cut" />
+    <line x1="169.82" y1="103.01" x2="152.24" y2="103.01" class="net-cut" />
+    <line x1="152.24" y1="103.01" x2="138.02" y2="113.35" class="net-cut" />
+    <line x1="138.02" y1="113.35" x2="132.58" y2="130.07" class="net-cut" />
+    <line x1="132.58" y1="130.07" x2="138.02" y2="146.79" class="net-cut" />
+    <line x1="138.02" y1="146.79" x2="152.24" y2="157.12" class="net-cut" />
+    <line x1="203.70" y1="119.73" x2="187.64" y2="112.58" class="net-cut" />
+    <line x1="187.64" y1="112.58" x2="189.47" y2="130.07" class="net-cut" />
+    <line x1="184.04" y1="146.79" x2="172.28" y2="159.85" class="net-cut" />
+    <line x1="172.28" y1="159.85" x2="189.47" y2="163.51" class="net-cut" />
+    <line x1="164.39" y1="207.28" x2="152.62" y2="220.34" class="net-cut" />
+    <line x1="152.62" y1="220.34" x2="169.82" y2="224.00" class="net-cut" />
+    <line x1="187.64" y1="322.64" x2="203.70" y2="315.49" class="net-cut" />
+    <line x1="189.47" y1="305.16" x2="187.64" y2="322.64" class="net-cut" />
+    <line x1="203.70" y1="315.49" x2="189.47" y2="325.83" class="net-cut" />
+    <line x1="189.47" y1="325.83" x2="184.04" y2="342.55" class="net-cut" />
+    <line x1="184.04" y1="342.55" x2="189.47" y2="359.27" class="net-cut" />
+    <line x1="189.47" y1="359.27" x2="203.70" y2="369.60" class="net-cut" />
+    <line x1="203.70" y1="369.60" x2="221.28" y2="369.60" class="net-cut" />
+    <line x1="221.28" y1="369.60" x2="235.50" y2="359.27" class="net-cut" />
+    <line x1="235.50" y1="359.27" x2="240.93" y2="342.55" class="net-cut" />
+    <line x1="240.93" y1="342.55" x2="235.50" y2="325.83" class="net-cut" />
+    <line x1="235.50" y1="325.83" x2="221.28" y2="315.49" class="net-cut" />
+    <line x1="221.28" y1="315.49" x2="237.34" y2="322.64" class="net-cut" />
+    <line x1="237.34" y1="322.64" x2="235.50" y2="305.16" class="net-cut" />
+    <line x1="300.94" y1="322.64" x2="299.11" y2="305.16" class="net-cut" />
+    <line x1="284.88" y1="315.49" x2="300.94" y2="322.64" class="net-cut" />
+    <line x1="375.65" y1="190.56" x2="387.42" y2="177.49" class="net-cut" />
+    <line x1="387.42" y1="177.49" x2="370.22" y2="173.84" class="net-cut" />
+    <line x1="284.88" y1="65.63" x2="276.09" y2="50.40" class="net-cut" />
+    <line x1="276.09" y1="50.40" x2="267.30" y2="65.63" class="net-cut" />
+  </g>
+  <g id="net-labels">
+    <text x="244.29" y="190.56" text-anchor="middle" dominant-baseline="central" class="geom-label">F1</text>
+    <text x="244.29" y="244.67" text-anchor="middle" dominant-baseline="central" class="geom-label">F3</text>
+    <text x="263.18" y="216.55" text-anchor="middle" dominant-baseline="central" class="geom-label">F25</text>
+    <text x="295.75" y="207.28" text-anchor="middle" dominant-baseline="central" class="geom-label">F4</text>
+    <text x="274.85" y="180.63" text-anchor="middle" dominant-baseline="central" class="geom-label">F27</text>
+    <text x="276.09" y="146.79" text-anchor="middle" dominant-baseline="central" class="geom-label">F10</text>
+    <text x="244.29" y="158.43" text-anchor="middle" dominant-baseline="central" class="geom-label">F17</text>
+    <text x="212.49" y="146.79" text-anchor="middle" dominant-baseline="central" class="geom-label">F9</text>
+    <text x="213.73" y="180.63" text-anchor="middle" dominant-baseline="central" class="geom-label">F21</text>
+    <text x="192.83" y="207.28" text-anchor="middle" dominant-baseline="central" class="geom-label">F2</text>
+    <text x="225.41" y="216.55" text-anchor="middle" dominant-baseline="central" class="geom-label">F13</text>
+    <text x="213.73" y="254.59" text-anchor="middle" dominant-baseline="central" class="geom-label">F29</text>
+    <text x="212.49" y="288.44" text-anchor="middle" dominant-baseline="central" class="geom-label">F7</text>
+    <text x="244.29" y="276.79" text-anchor="middle" dominant-baseline="central" class="geom-label">F30</text>
+    <text x="276.09" y="288.44" text-anchor="middle" dominant-baseline="central" class="geom-label">F5</text>
+    <text x="274.85" y="254.59" text-anchor="middle" dominant-baseline="central" class="geom-label">F14</text>
+    <text x="326.31" y="217.21" text-anchor="middle" dominant-baseline="central" class="geom-label">F22</text>
+    <text x="347.21" y="190.56" text-anchor="middle" dominant-baseline="central" class="geom-label">F11</text>
+    <text x="314.63" y="181.29" text-anchor="middle" dominant-baseline="central" class="geom-label">F18</text>
+    <text x="294.98" y="120.79" text-anchor="middle" dominant-baseline="central" class="geom-label">F32</text>
+    <text x="276.09" y="92.68" text-anchor="middle" dominant-baseline="central" class="geom-label">F12</text>
+    <text x="257.21" y="120.79" text-anchor="middle" dominant-baseline="central" class="geom-label">F31</text>
+    <text x="161.03" y="130.07" text-anchor="middle" dominant-baseline="central" class="geom-label">F6</text>
+    <text x="193.60" y="120.79" text-anchor="middle" dominant-baseline="central" class="geom-label">F19</text>
+    <text x="181.93" y="156.71" text-anchor="middle" dominant-baseline="central" class="geom-label">F23</text>
+    <text x="162.28" y="217.21" text-anchor="middle" dominant-baseline="central" class="geom-label">F15</text>
+    <text x="193.60" y="314.43" text-anchor="middle" dominant-baseline="central" class="geom-label">F26</text>
+    <text x="212.49" y="342.55" text-anchor="middle" dominant-baseline="central" class="geom-label">F8</text>
+    <text x="231.37" y="314.43" text-anchor="middle" dominant-baseline="central" class="geom-label">F16</text>
+    <text x="294.98" y="314.43" text-anchor="middle" dominant-baseline="central" class="geom-label">F24</text>
+    <text x="377.76" y="180.63" text-anchor="middle" dominant-baseline="central" class="geom-label">F20</text>
+    <text x="276.09" y="60.55" text-anchor="middle" dominant-baseline="central" class="geom-label">F28</text>
+  </g>
+</svg>

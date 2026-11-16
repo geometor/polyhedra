@@ -17,11 +17,12 @@
 - **Symbolic Great Pyramid & Circle-Quadrature Suite** (`geometor.polyhedra.pyramid`): Exact models over $\mathbb{Q}(\sqrt{\phi})$, $\mathbb{Q}(\pi)$, and $\mathbb{Q}$ for the 1597 Kepler Right Triangle $(1, \sqrt{\phi}, \phi)$, Herodotus area law ($A_{\text{face}} = h^2 = \phi$), continuous golden area progression ($1 : \phi : \phi^2$), Icosahedron circumradius edge bridge ($Q_{\text{edge}} = \phi + 2$), Perimeter & Area Circle Quadrature ($\pi_{\phi} = 4/\sqrt{\phi}$, $\pi_{22/7} = 22/7$), Earth–Moon $11:3$ Cosmogram, and Old Kingdom $14:11$ Seked mensuration.
 - **Interactive 3D Studio & Book Codex** (`docsrc/pyramid/`): Live `great_pyramid_kepler` 3D viewer, 6 `.euclid-graphic` SVGs, and 4 dedicated `:layout: book` chapters.
 
-## v0.4.0 — Complete 13 Archimedean & 13 Catalan Solids Registry
-- Complete registry of all 13 Archimedean solids over $\mathbb{Q}(\sqrt{2}, \sqrt{3}, \phi)$ and cubic snub extensions (including chiral Snub Cube and Snub Dodecahedron via tribonacci / golden-tribonacci constants).
-- Full Catalan duals and Leonardo's remaining *De Divina Proportione* plates (`Tabulae XXXVII–LX`, including the 72-base elevated bodies and Pacioli's architectural *Mazzocchio* / columns).
+## v0.4.0 — One Polyhedron Per Page & 26-Solid Collection Catalog (Completed)
+- **26-Solid Exact Symbolic Catalog** (`geometor.polyhedra.catalog`): Unified registry across 5 families (`01-platonic`, `02-archimedean`, `03-catalan`, `04-elevated`, `05-pyramids`), including the $\mathbb{Q}(\sqrt{2})$ 26-Base Rhombicuboctahedron, uniform $\mathbb{Q}(\phi)$ Truncated Dodecahedron, and $\mathbb{Q}(\phi)$ Regular Pentagonal Pyramid ($J_2$).
+- **Collection-Driven Book Codex** (`docsrc/solids/`, `docsrc/leonardo/`, `docsrc/golden/`, `docsrc/pyramid/`): Dedicated one-polyhedron-per-page directories (`solids/<family>/<slug>/`) with inline `.euclid-graphic` SVG cards, universal 26-solid interactive 3D *Solidum*/*Vacuum* viewports, and 20 atomized Leonardo Tabula-Pair folio pages.
 
-## v0.5.0 — Kepler–Poinsot Regular Star Polyhedra & `publish` Native 3D Directive Promotion
+## v0.5.0 — Chiral Snub Solids, Kepler–Poinsot Star Polyhedra & Native `.. model3d::` Directive
+- Complete remaining chiral Archimedean & Catalan snub solids (Snub Cube, Snub Dodecahedron, Rhombicosidodecahedron, Truncated Cuboctahedron, Truncated Icosidodecahedron) over cubic tribonacci / golden-tribonacci extensions.
 - Implement the 4 regular star polyhedra ($\{5/2, 5\}$, $\{5/2, 3\}$, $\{5, 5/2\}$, $\{3, 5/2\}$) and self-intersecting stellation plane lattices from Kepler's *Harmonices Mundi* (1619) and Poinsot (1810).
 - Promote `polyhedra_3d_codex.js` into a native `.. model3d::` Sphinx directive in `photon-platform/publish` and factor `geometor.polyhedra.model3d` into standalone `geometor/model3d` once downstream consumers (`kepler`, `pacioli`, `walter-russell`) converge on its API.
 - Native `2560x1440` QHD slide and motion choreography for `photon-platform/studio`.

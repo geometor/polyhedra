@@ -174,9 +174,6 @@ This monograph develops the geometry of the Great Pyramid across three rigorous 
 3. **Egyptian Seked Mensuration, 3D Spreads & Polyhedral Relatives**:
    The Old Kingdom Royal Cubit and Rhind Papyrus Seked :math:`14:11`, exact 3D Rational Trigonometry dihedral and apex spreads, the 2D star net, Leonardo's *pyramis vacua*, and the Golden Square Bipyramid.
 
-.. toctree::
-   :maxdepth: 2
-
-   kepler_triangle
-   squaring_the_circle
-   seked_and_octahedron
+.. collection::
+   :type: treatise
+   :sort: order

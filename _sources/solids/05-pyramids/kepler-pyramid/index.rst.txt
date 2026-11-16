@@ -22,8 +22,8 @@ P-05.01 · Kepler Golden Pyramid
 .. picture:: kepler-pyramid.svg
    :alt: Kepler Golden Pyramid
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

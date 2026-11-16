@@ -28,8 +28,8 @@ P-01.02 · Hexahedron (Cube)
 .. picture:: hexahedron.svg
    :alt: Regular Hexahedron (Cube)
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 
@@ -37,13 +37,11 @@ Interactive 3D Solid & Vacuum Studio
 
 .. note::
 
-   **Interactive Codex Controls**:
-   
-   - **Orbit & Inspect**: Click and drag to orbit in three dimensions. Scroll or pinch to zoom.
-   - **Variant Toggle**: Switch between *Vacuum* (open wooden framework), *Solidum* (opaque square facets), and *Abscisum* (truncated cube / cuboctahedron).
-   - **Aperture Slider**: Scrub the wooden beam aperture :math:`\mu \in [0.10, 0.45]` to inspect Leonardo's internal square joinery.
-   - **Structural Overlays**: Toggle the **Golden Ratio** hipped roofs (Euclid XIII.17) and **Polar Dual** (regular octahedron connecting face centroids).
-   - **Perspective Snap**: Snap directly to Leonardo da Vinci's canonical 1509 woodcut angle.
+   **Interactive Studio Controls**:
+
+   - **Display Modes**: Switch between **Surfaces** (studio-lit polygonal facets), **Wireframe** (depth-cued structural edges), and **Frame** (mitered hollow beam manifold).
+   - **Opacity & Aperture Sliders**: Adjust surface transparency from ``0%`` to ``100%`` in **Surfaces** and **Frame** modes, and tune the window **Aperture** in **Frame** mode.
+   - **Vertices & Overlays**: Toggle **Vertices** to display 3D points at all polyhedral corners, along with structural overlays and camera presets (**Perspective**, **Isometric**, **Front**, **Top**).
 
 Machine-Verified Symbolic Certificate
 -------------------------------------

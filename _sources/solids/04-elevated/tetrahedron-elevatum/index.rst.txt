@@ -22,8 +22,8 @@ P-04.01 · Tetrahedron Elevatum
 .. picture:: tetrahedron-elevatum.svg
    :alt: Tetrahedron Elevatum
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

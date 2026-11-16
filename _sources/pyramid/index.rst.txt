@@ -64,7 +64,7 @@ The interactive studio below mounts the exact symbolic engine of ``geometor.poly
    - **Kepler Meridian Triangle (1, √φ, φ)**: Toggles the luminous gold interior right triangle spanning the base center, baseline midpoint, and apex.
    - **Squaring the Circle (2πh = 8)**: Renders the horizontal base quadrature circle and vertical meridian quadrature circle (:math:`R = h`).
    - **Earth & Moon Cosmogram**: Mounts the inscribed Earth sphere (:math:`r_E = 1`) and tangent polar Moon sphere (:math:`r_M = h - 1 \approx 3/11`).
-   - **Vacuum Frame**: Generates Leonardo da Vinci's hollow wooden timber frame (*Pyramis Quadrata Vacua*, genus :math:`g = 4`).
+   - **Hollow Frame**: Generates the mitered hollow frame manifold (genus :math:`g = 4`) so interior triangles and quadrature circles remain visible inside the beams.
    - **Golden Bipyramid**: Reflects the pyramid downward across the square base :math:`z = 0` to produce the 8-faced golden octahedroid.
    - **Live Telemetry**: Real-time readout of face slope angle :math:`\alpha`, apothem :math:`s`, perimeter discrepancy, and face area vs. :math:`h^2`.
 

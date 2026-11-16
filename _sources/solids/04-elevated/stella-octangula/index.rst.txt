@@ -22,8 +22,8 @@ P-04.03 · Stella Octangula (Octahedron Elevatum)
 .. picture:: stella-octangula.svg
    :alt: Stella Octangula (Octahedron Elevatum)
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

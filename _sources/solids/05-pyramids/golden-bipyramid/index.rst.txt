@@ -22,8 +22,8 @@ P-05.03 · Golden Square Bipyramid
 .. picture:: golden-bipyramid.svg
    :alt: Golden Square Bipyramid
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 
@@ -74,8 +74,8 @@ It consists of 6 vertices and 8 congruent Kepler golden triangles with full octa
 
 The 12 edges have uniform slant quadrance :math:`Q_e = 2 + \phi = \frac{5 + \sqrt{5}}{2}`, and every edge shares the exact dihedral spread :math:`S = 3\phi - 4`. Its hollow vacuate framework has topological genus :math:`g = 8 - 1 = 7`.
 
-Leonardo da Vinci's Woodcuts & Corpus Vacuum Reconstruction
------------------------------------------------------------
+Hollow Frame Manifold
+---------------------
 
 .. figure:: golden-bipyramid_vacuum.svg
    :align: center

@@ -30,8 +30,8 @@ P-02.01 · Truncated Tetrahedron
 .. picture:: truncated-tetrahedron.svg
    :alt: Truncated Tetrahedron
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 
@@ -39,12 +39,11 @@ Interactive 3D Solid & Vacuum Studio
 
 .. note::
 
-   **Interactive Codex Controls**:
-   
-   - **Orbit & Inspect**: Click and drag to orbit in three dimensions. Scroll or pinch to zoom.
-   - **Variant Toggle**: Switch between Leonardo da Vinci's *Vacuum* (open wooden beam lattice), *Solidum* (opaque planar facets), and *Platonic Origin* (regular tetrahedron).
-   - **Aperture Slider**: Scrub the wooden beam aperture parameter :math:`\mu \in [0.10, 0.45]` to inspect Leonardo's interior hexagonal joinery.
-   - **Perspective Snap**: Reset camera to Leonardo da Vinci's canonical 1509 woodcut vantage point.
+   **Interactive Studio Controls**:
+
+   - **Display Modes**: Switch between **Surfaces** (studio-lit polygonal facets), **Wireframe** (depth-cued structural edges), and **Frame** (mitered hollow beam manifold).
+   - **Opacity & Aperture Sliders**: Adjust surface transparency from ``0%`` to ``100%`` in **Surfaces** and **Frame** modes, and tune the window **Aperture** in **Frame** mode.
+   - **Vertices & Overlays**: Toggle **Vertices** to display 3D points at all polyhedral corners, along with structural overlays and camera presets (**Perspective**, **Isometric**, **Front**, **Top**).
 
 Machine-Verified Symbolic Certificate
 -------------------------------------

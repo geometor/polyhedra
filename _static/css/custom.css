@@ -230,7 +230,7 @@ html[data-theme="dark"] {
 }
 
 .polyhedra-slider {
-  width: 130px;
+  width: 108px;
   accent-color: var(--polyhedra-gold);
   cursor: pointer;
 }

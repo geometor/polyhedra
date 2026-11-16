@@ -22,8 +22,8 @@ P-05.04 · Regular Pentagonal Pyramid (Johnson J2)
 .. picture:: pentagonal-pyramid.svg
    :alt: Regular Pentagonal Pyramid (Johnson J2)
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

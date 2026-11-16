@@ -22,8 +22,8 @@ P-05.02 · Seked 14:11 Pyramid
 .. picture:: seked-pyramid.svg
    :alt: Seked 14:11 Pyramid
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

@@ -22,8 +22,8 @@ P-04.05 · Dodecahedron Elevatum
 .. picture:: dodecahedron-elevatum.svg
    :alt: Dodecahedron Elevatum
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

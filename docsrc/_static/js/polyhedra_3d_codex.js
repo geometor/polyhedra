@@ -1051,121 +1051,400 @@
     };
   }
 
-  // --- Golden Structure Overlays & Duals ---
-  function getGoldenOverlay(solidName, base) {
-    const lines = [];
-    const pols = [];
-    const labels = [];
+  // --- Exact Face-Center Dual & Golden Sections / Golden Rectangles ---
 
-    if (solidName === 'icosahedron') {
-      // 3 Mutually Orthogonal Golden Rectangles
-      const s = 0.88;
-      const rXY = [[ s,  s*PHI, 0], [-s,  s*PHI, 0], [-s, -s*PHI, 0], [ s, -s*PHI, 0]];
-      const rYZ = [[0,  s,  s*PHI], [0, -s,  s*PHI], [0, -s, -s*PHI], [0,  s, -s*PHI]];
-      const rZX = [[ s*PHI, 0,  s], [ s*PHI, 0, -s], [-s*PHI, 0, -s], [-s*PHI, 0,  s]];
-
-      pols.push({ pts: rXY, color: 'rgba(245, 158, 11, 0.22)', stroke: '#f59e0b', width: 2.2 });
-      pols.push({ pts: rYZ, color: 'rgba(251, 146, 60, 0.22)', stroke: '#fb923c', width: 2.2 });
-      pols.push({ pts: rZX, color: 'rgba(56, 189, 248, 0.22)', stroke: '#38bdf8', width: 2.2 });
-
-      labels.push({ pos: [0, s * PHI * 1.08, 0], text: 'XY (1:φ)' });
-      labels.push({ pos: [0, 0, s * PHI * 1.08], text: 'YZ (1:φ)' });
-      labels.push({ pos: [s * PHI * 1.08, 0, 0], text: 'ZX (1:φ)' });
-    } else if (solidName === 'dodecahedron') {
-      // Canonical Inscribed Cube (Euclid XIII.17)
-      const s = 0.82;
-      const cv = [
-        [ s,  s,  s], [ s, -s,  s], [-s, -s,  s], [-s,  s,  s],
-        [ s,  s, -s], [ s, -s, -s], [-s, -s, -s], [-s,  s, -s]
-      ];
-      const cubeEdges = [
-        [0,1],[1,2],[2,3],[3,0],
-        [4,5],[5,6],[6,7],[7,4],
-        [0,4],[1,5],[2,6],[3,7]
-      ];
-      cubeEdges.forEach(([a, b]) => {
-        lines.push({ pts: [cv[a], cv[b]], color: '#f59e0b', width: 2.5, dashed: false });
-      });
-      // 3 Axial Rectangles
-      const rx = [[0, s*PHI, s*INV_PHI], [0, -s*PHI, s*INV_PHI], [0, -s*PHI, -s*INV_PHI], [0, s*PHI, -s*INV_PHI]];
-      pols.push({ pts: rx, color: 'rgba(245, 158, 11, 0.15)', stroke: '#f59e0b', width: 1.5 });
-    } else if (solidName === 'octahedron') {
-      // 12 Golden Section Points on Edges
-      const s = 1.45;
-      const ox = [[ s,0,0],[-s,0,0],[0, s,0],[0,-s,0],[0,0, s],[0,0,-s]];
-      const tau = INV_PHI;
-      const pts = [
-        vLerp(ox[2], ox[4], tau), vLerp(ox[3], ox[4], tau),
-        vLerp(ox[2], ox[5], tau), vLerp(ox[3], ox[5], tau),
-        vLerp(ox[4], ox[0], tau), vLerp(ox[4], ox[1], tau),
-        vLerp(ox[5], ox[0], tau), vLerp(ox[5], ox[1], tau),
-        vLerp(ox[0], ox[2], tau), vLerp(ox[1], ox[2], tau),
-        vLerp(ox[0], ox[3], tau), vLerp(ox[1], ox[3], tau)
-      ];
-      pts.forEach(p => labels.push({ pos: p, text: '• φ⁻¹', color: '#f59e0b' }));
-    } else if (solidName === 'hexahedron') {
-      // Inscribed Stella Octangula / Two Tetrahedra
-      const s = 1.0;
-      const t1 = [[s,s,s], [s,-s,-s], [-s,s,-s], [-s,-s,s]];
-      const tEdges = [[0,1],[0,2],[0,3],[1,2],[2,3],[3,1]];
-      tEdges.forEach(([a, b]) => {
-        lines.push({ pts: [t1[a], t1[b]], color: '#ef4444', width: 2.2 });
-      });
-    } else if (solidName === 'tetrahedron') {
-      // Circumscribing Cube Wireframe
-      const s = 1.25;
-      const cv = [
-        [ s,  s,  s], [ s, -s,  s], [-s, -s,  s], [-s,  s,  s],
-        [ s,  s, -s], [ s, -s, -s], [-s, -s, -s], [-s,  s, -s]
-      ];
-      const cubeEdges = [
-        [0,1],[1,2],[2,3],[3,0],
-        [4,5],[5,6],[6,7],[7,4],
-        [0,4],[1,5],[2,6],[3,7]
-      ];
-      cubeEdges.forEach(([a, b]) => {
-        lines.push({ pts: [cv[a], cv[b]], color: '#64748b', width: 1.5, dashed: true });
-      });
+  function orderQuadInPlane(pts4) {
+    const c = pts4.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
+    const u = vNorm(vSub(pts4[0], c));
+    let n = [0, 0, 0];
+    for (let i = 1; i < pts4.length; i++) {
+      const cand = vCross(u, vSub(pts4[i], c));
+      if (vMag(cand) > 1e-5) {
+        n = vNorm(cand);
+        break;
+      }
     }
-
-    return { lines, pols, labels };
+    const v = vNorm(vCross(n, u));
+    return pts4.slice().sort((a, b) => {
+      const da = vSub(a, c);
+      const db = vSub(b, c);
+      return Math.atan2(vDot(da, v), vDot(da, u)) - Math.atan2(vDot(db, v), vDot(db, u));
+    });
   }
 
-  function getPolarDualWireframe(solidNameOrBase, maybeBase) {
+  function extractCoordPlaneGoldenRects(verts12) {
+    const rects = [];
+    const xy = verts12.filter(p => Math.abs(p[2]) < 1e-3);
+    const yz = verts12.filter(p => Math.abs(p[0]) < 1e-3);
+    const zx = verts12.filter(p => Math.abs(p[1]) < 1e-3);
+    if (xy.length === 4) {
+      rects.push({ pts: orderQuadInPlane(xy), fill: 'rgba(251, 191, 36, 0.20)', stroke: '#fbbf24', label: 'XY (1:φ)' });
+    }
+    if (yz.length === 4) {
+      rects.push({ pts: orderQuadInPlane(yz), fill: 'rgba(251, 146, 60, 0.20)', stroke: '#fb923c', label: 'YZ (1:φ)' });
+    }
+    if (zx.length === 4) {
+      rects.push({ pts: orderQuadInPlane(zx), fill: 'rgba(192, 132, 252, 0.20)', stroke: '#c084fc', label: 'ZX (1:φ)' });
+    }
+    return rects;
+  }
+
+  function addPentagonGoldenSections(pentPts, sections, allFive = false) {
+    if (pentPts.length !== 5) return;
+    if (allFive) {
+      for (let i = 0; i < 5; i++) {
+        const pA = pentPts[i];
+        const pB = pentPts[(i + 2) % 5];
+        sections.push({ a: pA, g: vLerp(pA, pB, INV_PHI), b: pB });
+      }
+    } else {
+      const p0 = pentPts[0], p1 = pentPts[1], p2 = pentPts[2], p3 = pentPts[3];
+      const g = vLerp(p0, p2, INV_PHI); // Exact intersection of diagonals p0-p2 and p3-p1
+      sections.push({ a: p0, g, b: p2 });
+      sections.push({ a: p3, g, b: p1 });
+    }
+  }
+
+  // Face-Center Dual: vertices are the exact centers (centroids) of every side
+  function buildFaceCenterDual(solidNameOrBase, maybeBase) {
     const base = maybeBase || (typeof solidNameOrBase === 'object' ? solidNameOrBase : getSolid(solidNameOrBase));
-    const lines = [];
     const { vertices, faces } = base;
     const { edges } = getEdgesFromFaces(faces);
 
-    // Dynamic midsphere radius squared from edge midpoints
-    let rMidSqSum = 0;
-    edges.forEach(e => {
-      const mid = vScale(vAdd(vertices[e.a], vertices[e.b]), 0.5);
-      rMidSqSum += vDot(mid, mid);
-    });
-    const rMidSq = edges.length > 0 ? (rMidSqSum / edges.length) : 1.5;
-
-    // Face centers become dual vertices
-    const dualVerts = faces.map(f => {
+    const dualVertices = faces.map(f => {
       const pts = f.map(idx => vertices[idx]);
-      const c = pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / pts.length)), [0, 0, 0]);
-      const cSq = vDot(c, c);
-      return cSq > 1e-6 ? vScale(c, rMidSq / cSq) : [0, 0, 0];
+      return pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / pts.length)), [0, 0, 0]);
     });
 
-    // Dual edges connect adjacent face centroids
+    const dualEdges = [];
     edges.forEach(e => {
       if (e.faces.length === 2) {
-        lines.push({
-          pts: [dualVerts[e.faces[0]], dualVerts[e.faces[1]]],
-          color: '#38bdf8',
-          width: 2.0,
-          dashed: true
-        });
+        dualEdges.push([e.faces[0], e.faces[1]]);
       }
     });
 
-    return lines;
+    return {
+      vertices: dualVertices,
+      edges: dualEdges
+    };
+  }
+
+  function getPolarDualWireframe(solidNameOrBase, maybeBase) {
+    const dual = buildFaceCenterDual(solidNameOrBase, maybeBase);
+    return dual.edges.map(([f0, f1]) => ({
+      pts: [dual.vertices[f0], dual.vertices[f1]],
+      color: '#38bdf8',
+      width: 2.0,
+      dashed: false
+    }));
+  }
+
+  function buildGoldenOverlay(rawSlug, base) {
+    const slug = (rawSlug || base.name || '').trim().toLowerCase().replace(/_/g, '-');
+    const rects = [];     // Exact 1:φ Golden Rectangles: { pts: [P0,P1,P2,P3], fill, stroke, label }
+    const sections = [];  // Exact φ:1 Golden Sections: { a, g, b } where |a-g| / |g-b| = φ
+    const circles = [];   // 3D Circles: { center, u, v, r, color }
+    const pols = [];      // Auxiliary polygons (e.g. Kepler meridian triangle)
+    const lines = [];     // Auxiliary reference segments
+    const labels = [];
+
+    const V = base.vertices;
+    const F = base.faces;
+
+    // 1. Icosahedron & Triakis Icosahedron
+    if (slug === 'icosahedron' || slug === 'icosahedron-elevatum') {
+      const icoVerts = V.slice(0, 12);
+      extractCoordPlaneGoldenRects(icoVerts).forEach(r => rects.push(r));
+
+      // Equatorial pentagon around top-most vertex -> exact pentagram Golden Section
+      let topIdx = 0;
+      for (let i = 1; i < 12; i++) {
+        if (icoVerts[i][1] > icoVerts[topIdx][1]) topIdx = i;
+      }
+      const srcFaces = (slug === 'icosahedron-elevatum' && base.parentSolid) ? base.parentSolid.faces : F;
+      const nbrSet = new Set();
+      srcFaces.forEach(f => {
+        if (f.includes(topIdx)) f.forEach(vi => { if (vi !== topIdx && vi < 12) nbrSet.add(vi); });
+      });
+      const nbrs = Array.from(nbrSet).map(i => icoVerts[i]);
+      if (nbrs.length === 5) {
+        const cPent = nbrs.reduce((acc, p) => vAdd(acc, vScale(p, 0.2)), [0, 0, 0]);
+        const axis = vNorm(icoVerts[topIdx]);
+        const uAxis = vNorm(vSub(nbrs[0], cPent));
+        const vAxis = vNorm(vCross(axis, uAxis));
+        nbrs.sort((a, b) => Math.atan2(vDot(vSub(a, cPent), vAxis), vDot(vSub(a, cPent), uAxis)) -
+                            Math.atan2(vDot(vSub(b, cPent), vAxis), vDot(vSub(b, cPent), uAxis)));
+        addPentagonGoldenSections(nbrs, sections, false);
+      }
+    }
+    // 2. Rhombic Triacontahedron (Kepler's 30 Golden Rhombi)
+    else if (slug === 'rhombic-triacontahedron') {
+      const deg = new Array(V.length).fill(0);
+      F.forEach(f => f.forEach(vi => { deg[vi]++; }));
+      const ico12 = V.filter((_, vi) => deg[vi] === 5);
+      extractCoordPlaneGoldenRects(ico12).forEach(r => rects.push(r));
+
+      // Highlight Golden Rhombus diagonals (L : S = φ : 1) and φ:1 Golden Section on front rhombi
+      F.forEach((f, fi) => {
+        if (f.length === 4) {
+          const p0 = V[f[0]], p1 = V[f[1]], p2 = V[f[2]], p3 = V[f[3]];
+          const d02 = vMag(vSub(p2, p0));
+          const d13 = vMag(vSub(p3, p1));
+          const longD = d02 > d13 ? [p0, p2] : [p1, p3];
+          const shortD = d02 > d13 ? [p1, p3] : [p0, p2];
+          if (fi < 2) {
+            sections.push({ a: longD[0], g: vLerp(longD[0], longD[1], INV_PHI), b: longD[1] });
+            lines.push({ pts: shortD, color: 'rgba(251, 191, 36, 0.65)', width: 1.6, dashed: true });
+          }
+        }
+      });
+    }
+    // 3. Pentagonal-Face Icosahedral Solids (Dodecahedron, Icosidodecahedron, Truncated Icosa/Dodeca, & Elevata)
+    else if (
+      slug === 'dodecahedron' || slug === 'dodecahedron-elevatum' ||
+      slug === 'icosidodecahedron' || slug === 'icosidodecahedron-elevatum' ||
+      slug === 'truncated-icosahedron' || slug === 'truncated-dodecahedron'
+    ) {
+      const srcSolid = (base.parentSolid && (slug === 'dodecahedron-elevatum' || slug === 'icosidodecahedron-elevatum'))
+        ? base.parentSolid
+        : base;
+      const pentFaces = srcSolid.faces.filter(f => f.length === 5 || f.length === 10);
+
+      // For truncated-dodecahedron, 10-gon centroids are the 12 icosahedral axes; otherwise 5-gon centroids!
+      const fiveGons = srcSolid.faces.filter(f => f.length === 5);
+      const axisFaces = fiveGons.length === 12 ? fiveGons : pentFaces.filter(f => f.length === 10);
+      if (axisFaces.length === 12) {
+        const centers12 = axisFaces.map(f => {
+          const pts = f.map(idx => srcSolid.vertices[idx]);
+          return pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / pts.length)), [0, 0, 0]);
+        });
+        extractCoordPlaneGoldenRects(centers12).forEach(r => rects.push(r));
+      }
+
+      if (fiveGons.length > 0) {
+        // Add exact pentagram Golden Sections on 2 opposite pentagonal faces
+        const pPts0 = fiveGons[0].map(idx => srcSolid.vertices[idx]);
+        addPentagonGoldenSections(pPts0, sections, false);
+        const c0 = pPts0.reduce((acc, p) => vAdd(acc, vScale(p, 0.2)), [0, 0, 0]);
+        let oppIdx = -1, minDot = 1e9;
+        fiveGons.forEach((f, idx) => {
+          const cf = f.map(vi => srcSolid.vertices[vi]).reduce((acc, p) => vAdd(acc, vScale(p, 0.2)), [0, 0, 0]);
+          const d = vDot(c0, cf);
+          if (d < minDot) { minDot = d; oppIdx = idx; }
+        });
+        if (oppIdx > 0) {
+          addPentagonGoldenSections(fiveGons[oppIdx].map(idx => srcSolid.vertices[idx]), sections, false);
+        }
+      } else {
+        // Truncated dodecahedron (decagonal faces): divide 2 prominent edges in exact Golden Section
+        const { edges } = getEdgesFromFaces(srcSolid.faces);
+        edges.slice(0, 2).forEach(e => {
+          const a = srcSolid.vertices[e.a], b = srcSolid.vertices[e.b];
+          sections.push({ a, g: vLerp(a, b, INV_PHI), b });
+        });
+      }
+    }
+    // 4. Octahedron & Stella Octangula (12 Edge Golden Sections -> 3 Orthogonal Golden Rectangles!)
+    else if (slug === 'octahedron' || slug === 'stella-octangula') {
+      const ox = V.slice(0, 6); // [+R,0,0], [-R,0,0], [0,+R,0], [0,-R,0], [0,0,+R], [0,0,-R]
+      const pairs = [
+        [0, 2], [0, 3], [1, 2], [1, 3], // ±X -> ±Y (lies in XY)
+        [2, 4], [2, 5], [3, 4], [3, 5], // ±Y -> ±Z (lies in YZ)
+        [4, 0], [4, 1], [5, 0], [5, 1]  // ±Z -> ±X (lies in ZX)
+      ];
+      const gPts12 = [];
+      pairs.forEach(([uIdx, vIdx]) => {
+        const u = ox[uIdx];
+        const v = ox[vIdx];
+        const g = vLerp(u, v, INV_PHI); // |u - g| = φ⁻¹ |v - u| (major), |g - v| = φ⁻² |v - u| (minor) => |u-g|/|g-v| = φ!
+        sections.push({ a: u, g, b: v });
+        gPts12.push(g);
+      });
+      extractCoordPlaneGoldenRects(gPts12).forEach(r => rects.push(r));
+    }
+    // 5. Hexahedron (Cube) & Tetrakis Hexahedron (3 Orthogonal Golden Rectangles Flush on 6 Cube Faces!)
+    else if (slug === 'hexahedron' || slug === 'cube' || slug === 'hexahedron-elevatum') {
+      const a = Math.abs(V[0][0]);
+      const b = a * INV_PHI;
+      rects.push({
+        pts: [[ b,  a, 0], [-b,  a, 0], [-b, -a, 0], [ b, -a, 0]],
+        fill: 'rgba(251, 191, 36, 0.20)', stroke: '#fbbf24', label: 'XY (1:φ)'
+      });
+      rects.push({
+        pts: [[0,  b,  a], [0, -b,  a], [0, -b, -a], [0,  b, -a]],
+        fill: 'rgba(251, 146, 60, 0.20)', stroke: '#fb923c', label: 'YZ (1:φ)'
+      });
+      rects.push({
+        pts: [[ a, 0,  b], [ a, 0, -b], [-a, 0, -b], [-a, 0,  b]],
+        fill: 'rgba(192, 132, 252, 0.20)', stroke: '#c084fc', label: 'ZX (1:φ)'
+      });
+      // Face midline Golden Sections
+      const mTopA = [-a, a, 0], mTopB = [a, a, 0];
+      sections.push({ a: mTopA, g: vLerp(mTopA, mTopB, INV_PHI), b: mTopB });
+      const mFrontA = [0, -a, a], mFrontB = [0, a, a];
+      sections.push({ a: mFrontA, g: vLerp(mFrontA, mFrontB, INV_PHI), b: mFrontB });
+    }
+    // 6. Tetrahedron, Triakis Tetrahedron & Truncated Tetrahedron (George Odom's 1983 Golden Section + 1:φ Rect)
+    else if (slug === 'tetrahedron' || slug === 'tetrahedron-elevatum' || slug === 'truncated-tetrahedron') {
+      const srcSolid = (slug === 'tetrahedron-elevatum' && base.parentSolid) ? base.parentSolid : base;
+      const triFaces = srcSolid.faces.filter(f => f.length === 3);
+      let triFace = triFaces[0] || srcSolid.faces[0];
+      let bestScore = -1e9;
+      triFaces.forEach(f => {
+        const p0 = srcSolid.vertices[f[0]], p1 = srcSolid.vertices[f[1]], p2 = srcSolid.vertices[f[2]];
+        const cf = vScale(vAdd(vAdd(p0, p1), p2), 1 / 3);
+        let nf = vNorm(vCross(vSub(p1, p0), vSub(p2, p0)));
+        if (vDot(nf, cf) < 0) nf = vScale(nf, -1);
+        const score = vDot(nf, [-0.42, -0.33, -0.85]);
+        if (score > bestScore) { bestScore = score; triFace = f; }
+      });
+      const A = srcSolid.vertices[triFace[0]];
+      const B = srcSolid.vertices[triFace[1]];
+      const C = srcSolid.vertices[triFace[2]];
+      const Of = vScale(vAdd(vAdd(A, B), C), 1 / 3);
+      const Rf = vMag(vSub(A, Of));
+      let nf = vNorm(vCross(vSub(B, A), vSub(C, A)));
+      if (vDot(nf, Of) < 0) nf = vScale(nf, -1);
+      const uCirc = vNorm(vSub(A, Of));
+      const vCirc = vNorm(vCross(nf, uCirc));
+
+      circles.push({ center: Of, u: uCirc, v: vCirc, r: Rf, color: 'rgba(56, 189, 248, 0.72)' });
+
+      const M1 = vScale(vAdd(A, B), 0.5);
+      const M2 = vScale(vAdd(A, C), 0.5);
+      const halfSide = vMag(vSub(M2, M1));
+      const uDir = vNorm(vSub(M2, M1));
+      const G2 = vAdd(M2, vScale(uDir, halfSide * INV_PHI));
+      const G1 = vSub(M1, vScale(uDir, halfSide * INV_PHI));
+
+      lines.push({ pts: [G1, M1], color: 'rgba(251, 191, 36, 0.50)', width: 1.5, dashed: true });
+      sections.push({ a: M1, g: M2, b: G2 });
+
+      // Exact 1:φ Golden Rectangle erected on Odom chord M1-G2 (length = halfSide * φ, height = halfSide)
+      const vPerp = vNorm(vCross(nf, uDir));
+      const R2 = vAdd(G2, vScale(vPerp, -halfSide));
+      const R3 = vAdd(M1, vScale(vPerp, -halfSide));
+      rects.push({
+        pts: [M1, G2, R2, R3],
+        fill: 'rgba(251, 191, 36, 0.20)',
+        stroke: '#fbbf24',
+        label: 'Odom (1:φ)'
+      });
+    }
+    // 7. Pyramids & Golden Bipyramid
+    else if (slug === 'kepler-pyramid' || slug === 'seked-pyramid' || slug === 'golden-bipyramid') {
+      const O = vScale(vAdd(vAdd(V[0], V[1]), vAdd(V[2], V[3])), 0.25);
+      const ME = vScale(vAdd(V[0], V[3]), 0.5);
+      const MW = vScale(vAdd(V[1], V[2]), 0.5);
+      const A = V[4];
+      const a = vMag(vSub(ME, O));
+      const b = a * INV_PHI;
+
+      // Meridian right triangle / lozenge
+      if (slug === 'golden-bipyramid') {
+        pols.push({
+          pts: [ME, A, MW, V[5]],
+          color: 'rgba(251, 191, 36, 0.16)',
+          stroke: 'rgba(251, 191, 36, 0.65)',
+          width: 1.8
+        });
+      } else {
+        pols.push({
+          pts: [O, ME, A],
+          color: 'rgba(251, 191, 36, 0.18)',
+          stroke: 'rgba(251, 191, 36, 0.70)',
+          width: 2.0
+        });
+      }
+
+      // Base / Equatorial 1:φ Golden Rectangle
+      rects.push({
+        pts: [
+          [O[0] + b, O[1], O[2] + a],
+          [O[0] - b, O[1], O[2] + a],
+          [O[0] - b, O[1], O[2] - a],
+          [O[0] + b, O[1], O[2] - a]
+        ],
+        fill: 'rgba(192, 132, 252, 0.18)',
+        stroke: '#c084fc',
+        label: 'Base (1:φ)'
+      });
+
+      // On Kepler Pyramid & Golden Bipyramid, half-edge ME->V[0] (a) and apothem ME->A (a·φ) form an exact 1:φ Slant Golden Rectangle!
+      if (slug === 'kepler-pyramid' || slug === 'golden-bipyramid') {
+        const zVec = vSub(V[0], ME);
+        rects.push({
+          pts: [ME, V[0], vAdd(A, zVec), A],
+          fill: 'rgba(251, 191, 36, 0.22)',
+          stroke: '#fbbf24',
+          label: 'Apothem (1:φ)'
+        });
+      }
+
+      // Exact φ:1 Golden Section on slant apothem A -> ME (for Kepler, H is the exact perpendicular foot from O!)
+      const H = vLerp(A, ME, INV_PHI);
+      sections.push({ a: A, g: H, b: ME });
+      if (slug === 'kepler-pyramid' || slug === 'golden-bipyramid') {
+        lines.push({ pts: [O, H], color: 'rgba(251, 191, 36, 0.65)', width: 1.6, dashed: true });
+      }
+    }
+    // 8. Pentagonal Pyramid (J2 — Icosahedral Cap)
+    else if (slug === 'pentagonal-pyramid') {
+      const pent = [V[0], V[1], V[2], V[3], V[4]];
+      addPentagonGoldenSections(pent, sections, true);
+
+      const s = vMag(vSub(pent[1], pent[0]));
+      const cb = pent.reduce((acc, p) => vAdd(acc, vScale(p, 0.2)), [0, 0, 0]);
+      const nb = vNorm(vCross(vSub(pent[1], pent[0]), vSub(pent[2], pent[0])));
+      const u = vNorm(vSub(pent[1], pent[0]));
+      const v = vNorm(vCross(nb, u));
+      const hw = s * 0.5;
+      const hl = s * PHI * 0.5;
+      rects.push({
+        pts: [
+          vAdd(cb, vAdd(vScale(u,  hw), vScale(v,  hl))),
+          vAdd(cb, vAdd(vScale(u, -hw), vScale(v,  hl))),
+          vAdd(cb, vAdd(vScale(u, -hw), vScale(v, -hl))),
+          vAdd(cb, vAdd(vScale(u,  hw), vScale(v, -hl)))
+        ],
+        fill: 'rgba(251, 191, 36, 0.20)',
+        stroke: '#fbbf24',
+        label: 'Pentagon (1:φ)'
+      });
+    }
+    // 9. Remaining Octahedral Archimedean, Catalan & Elevated Solids
+    else {
+      let maxCoord = 0;
+      V.forEach(p => {
+        maxCoord = Math.max(maxCoord, Math.abs(p[0]), Math.abs(p[1]), Math.abs(p[2]));
+      });
+      const b = maxCoord * INV_PHI;
+      const L = b * PHI;
+      rects.push({
+        pts: [[ b,  L, 0], [-b,  L, 0], [-b, -L, 0], [ b, -L, 0]],
+        fill: 'rgba(251, 191, 36, 0.18)', stroke: '#fbbf24', label: 'XY (1:φ)'
+      });
+      rects.push({
+        pts: [[0,  b,  L], [0, -b,  L], [0, -b, -L], [0,  b, -L]],
+        fill: 'rgba(251, 146, 60, 0.18)', stroke: '#fb923c', label: 'YZ (1:φ)'
+      });
+      rects.push({
+        pts: [[ L, 0,  b], [ L, 0, -b], [-L, 0, -b], [-L, 0,  b]],
+        fill: 'rgba(192, 132, 252, 0.18)', stroke: '#c084fc', label: 'ZX (1:φ)'
+      });
+
+      const { edges } = getEdgesFromFaces(F);
+      edges.slice(0, 2).forEach(e => {
+        const pA = V[e.a], pB = V[e.b];
+        sections.push({ a: pA, g: vLerp(pA, pB, INV_PHI), b: pB });
+      });
+    }
+
+    return { rects, sections, circles, pols, lines, labels };
+  }
+
+  function getGoldenOverlay(solidName, base) {
+    return buildGoldenOverlay(solidName, base || getSolid(solidName));
   }
 
   function getParentCoreWireframe(elevatedSolid) {
@@ -1182,69 +1461,6 @@
       });
     });
     return lines;
-  }
-
-  function getPyramidGoldenOverlay(solid) {
-    const lines = [];
-    const pols = [];
-    const labels = [];
-    const slug = solid.name;
-
-    if (slug === 'kepler-pyramid' || slug === 'seked-pyramid') {
-      const V = solid.vertices;
-      const O = vScale(vAdd(vAdd(V[0], V[1]), vAdd(V[2], V[3])), 0.25);
-      const ME = vScale(vAdd(V[0], V[3]), 0.5);
-      const MW = vScale(vAdd(V[1], V[2]), 0.5);
-      const A = V[4];
-      const isKepler = slug === 'kepler-pyramid';
-      const col = isKepler ? '#f59e0b' : '#10b981';
-      const fillCol = isKepler ? 'rgba(245, 158, 11, 0.35)' : 'rgba(16, 185, 129, 0.30)';
-      const dashCol = isKepler ? 'rgba(245, 158, 11, 0.45)' : 'rgba(16, 185, 129, 0.45)';
-
-      pols.push({
-        pts: [O, ME, A],
-        color: fillCol,
-        stroke: col,
-        width: 2.5
-      });
-      lines.push({ pts: [MW, A], color: dashCol, width: 1.4, dashed: true });
-      lines.push({ pts: [MW, O], color: dashCol, width: 1.4, dashed: true });
-
-      const d = vMag(vSub(ME, O)) * 0.12;
-      lines.push({ pts: [[O[0] + d, O[1], O[2]], [O[0] + d, O[1] + d, O[2]]], color: col, width: 1.6 });
-      lines.push({ pts: [[O[0] + d, O[1] + d, O[2]], [O[0], O[1] + d, O[2]]], color: col, width: 1.6 });
-
-      if (isKepler) {
-        labels.push({ pos: vAdd(vScale(vAdd(O, ME), 0.5), [0, -0.18, 0]), text: 'a = 1.000', color: '#f59e0b' });
-        labels.push({ pos: vAdd(vScale(vAdd(O, A), 0.5), [-0.28, 0, 0]), text: 'h = √φ ≈ 1.272', color: '#f59e0b' });
-        labels.push({ pos: vAdd(vScale(vAdd(ME, A), 0.5), [0.22, 0.08, 0]), text: 's = φ ≈ 1.618', color: '#fbbf24' });
-      } else {
-        labels.push({ pos: vAdd(vScale(vAdd(O, ME), 0.5), [0, -0.18, 0]), text: 'Run = 220', color: '#10b981' });
-        labels.push({ pos: vAdd(vScale(vAdd(O, A), 0.5), [-0.28, 0, 0]), text: 'Rise = 280 (14:11)', color: '#10b981' });
-      }
-    } else if (slug === 'golden-bipyramid') {
-      const V = solid.vertices;
-      const ME = vScale(vAdd(V[0], V[3]), 0.5);
-      const MW = vScale(vAdd(V[1], V[2]), 0.5);
-      const AN = V[4];
-      const AS = V[5];
-      pols.push({
-        pts: [ME, AN, MW, AS],
-        color: 'rgba(245, 158, 11, 0.28)',
-        stroke: '#f59e0b',
-        width: 2.4
-      });
-      labels.push({ pos: [AN[0], AN[1] + 0.18, AN[2]], text: 'Apex +√φ', color: '#f59e0b' });
-      labels.push({ pos: [AS[0], AS[1] - 0.18, AS[2]], text: 'Apex -√φ', color: '#f59e0b' });
-    } else if (slug === 'pentagonal-pyramid') {
-      const baseVerts = [0, 1, 2, 3, 4].map(idx => solid.vertices[idx]);
-      [[0, 2], [0, 3], [1, 3], [1, 4], [2, 4]].forEach(([a, b]) => {
-        lines.push({ pts: [baseVerts[a], baseVerts[b]], color: '#f59e0b', width: 1.8, dashed: true });
-      });
-      labels.push({ pos: [0, solid.vertices[5][1] + 0.18, 0], text: 'Apex J₂', color: '#38bdf8' });
-    }
-
-    return { lines, pols, labels };
   }
 
   // --- Dedicated Scene Generators ---
@@ -1674,16 +1890,29 @@
     };
   }
 
-  function drawVertexSphere(ctx, px, py, radius, isFront, isDark) {
+  function drawVertexSphere(ctx, px, py, radius, isFront, isDark, palette = 'gold') {
     ctx.save();
     const alpha = isFront ? 1.0 : 0.45;
     ctx.globalAlpha = alpha;
 
+    let halo = 'rgba(251, 191, 36, 0.22)';
+    let mid = '#fde68a';
+    let rim = '#d97706';
+    if (palette === 'cyan') {
+      halo = 'rgba(56, 189, 248, 0.28)';
+      mid = '#bae6fd';
+      rim = '#0284c7';
+    } else if (palette === 'rose') {
+      halo = 'rgba(251, 113, 133, 0.32)';
+      mid = '#fecdd3';
+      rim = '#e11d48';
+    }
+
     // Subtle outer halo on front vertices in dark mode
     if (isFront && isDark) {
       ctx.beginPath();
-      ctx.arc(px, py, radius + 2.2, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(251, 191, 36, 0.22)';
+      ctx.arc(px, py, radius + 2.4, 0, Math.PI * 2);
+      ctx.fillStyle = halo;
       ctx.fill();
     }
 
@@ -1694,11 +1923,11 @@
     );
     if (isFront) {
       grad.addColorStop(0, '#ffffff');
-      grad.addColorStop(0.45, '#fde68a');
-      grad.addColorStop(1, '#d97706');
+      grad.addColorStop(0.45, mid);
+      grad.addColorStop(1, rim);
     } else {
-      grad.addColorStop(0, '#cbd5e1');
-      grad.addColorStop(1, '#64748b');
+      grad.addColorStop(0, palette === 'cyan' ? '#bae6fd' : '#cbd5e1');
+      grad.addColorStop(1, palette === 'cyan' ? '#0369a1' : '#64748b');
     }
 
     ctx.beginPath();
@@ -1737,10 +1966,10 @@
       this.mu = 0.62;                  // Frame aperture ratio
       this.tau = INV_PHI;              // Octa to Icosa division ratio
       this.shellOpacity = 0.38;        // Icosa shell opacity
-      this.showGoldenOverlay = false;
-      this.showDual = false;
-      this.showParentCore = true;      // Parent Core Wireframe for augmented solids
-      this.showDiagonals = true;       // φ Rhombus Diagonals for rhombic-triacontahedron
+      this.showGoldenOverlay = container.getAttribute('data-golden') === 'true';
+      this.showDual = container.getAttribute('data-dual') === 'true';
+      this.showParentCore = false;     // Parent Core Wireframe for augmented solids
+      this.showDiagonals = false;
       this.autoOrbit = true;
       this.activeCubes = [true, true, true, true, true];
       this.showRoofWedge = false;
@@ -1894,7 +2123,7 @@
           varGroup.appendChild(btn);
         });
 
-        // Vertex Points Toggle (available on all 26 solids in any display mode)
+        // 1. Vertex Points Toggle (default ON)
         const togVerts = document.createElement('button');
         togVerts.className = `polyhedra-btn ${this.showVertices ? 'active' : ''}`;
         togVerts.textContent = 'Vertices';
@@ -1905,81 +2134,39 @@
         });
         togGroup.appendChild(togVerts);
 
-        // Category-specific geometric overlays
-        if (cat === 'platonic') {
-          const togGold = document.createElement('button');
-          togGold.className = `polyhedra-btn ${this.showGoldenOverlay ? 'active' : ''}`;
-          togGold.textContent = 'φ Structure';
-          togGold.addEventListener('click', () => {
-            this.showGoldenOverlay = !this.showGoldenOverlay;
-            togGold.classList.toggle('active', this.showGoldenOverlay);
-          });
-          togGroup.appendChild(togGold);
+        // 2. Face-Center Dual Toggle (vertices at exact centers of the sides — universal on all 26 solids)
+        const togDual = document.createElement('button');
+        togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
+        togDual.textContent = 'Dual';
+        togDual.title = 'Show Face-Center Dual (Vertices at Centers of the Sides)';
+        togDual.addEventListener('click', () => {
+          this.showDual = !this.showDual;
+          togDual.classList.toggle('active', this.showDual);
+        });
+        togGroup.appendChild(togDual);
 
-          const togDual = document.createElement('button');
-          togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
-          togDual.textContent = 'Polar Dual';
-          togDual.addEventListener('click', () => {
-            this.showDual = !this.showDual;
-            togDual.classList.toggle('active', this.showDual);
-          });
-          togGroup.appendChild(togDual);
-        } else if (cat === 'archimedean') {
-          const togDual = document.createElement('button');
-          togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
-          togDual.textContent = 'Polar Dual';
-          togDual.addEventListener('click', () => {
-            this.showDual = !this.showDual;
-            togDual.classList.toggle('active', this.showDual);
-          });
-          togGroup.appendChild(togDual);
-        } else if (cat === 'catalan') {
-          const togDual = document.createElement('button');
-          togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
-          togDual.textContent = 'Polar Dual';
-          togDual.addEventListener('click', () => {
-            this.showDual = !this.showDual;
-            togDual.classList.toggle('active', this.showDual);
-          });
-          togGroup.appendChild(togDual);
+        // 3. Golden Sections & Golden Rectangles Toggle (universal on all 26 solids)
+        const togGold = document.createElement('button');
+        togGold.className = `polyhedra-btn ${this.showGoldenOverlay ? 'active' : ''}`;
+        togGold.textContent = 'Golden φ';
+        togGold.title = 'Show Golden Sections (φ:1) & Golden Rectangles (1:φ)';
+        togGold.addEventListener('click', () => {
+          this.showGoldenOverlay = !this.showGoldenOverlay;
+          togGold.classList.toggle('active', this.showGoldenOverlay);
+        });
+        togGroup.appendChild(togGold);
 
-          if (this.solidName === 'rhombic-triacontahedron') {
-            const togDiags = document.createElement('button');
-            togDiags.className = `polyhedra-btn ${this.showDiagonals ? 'active' : ''}`;
-            togDiags.textContent = 'φ Diagonals';
-            togDiags.addEventListener('click', () => {
-              this.showDiagonals = !this.showDiagonals;
-              togDiags.classList.toggle('active', this.showDiagonals);
-            });
-            togGroup.appendChild(togDiags);
-          }
-        } else if (cat === 'elevated') {
+        // Optional Parent Core toggle on augmented solids
+        if (cat === 'elevated') {
           const togCore = document.createElement('button');
           togCore.className = `polyhedra-btn ${this.showParentCore ? 'active' : ''}`;
-          togCore.textContent = 'Core Wireframe';
+          togCore.textContent = 'Core';
+          togCore.title = 'Show Parent Polyhedron Core Edges';
           togCore.addEventListener('click', () => {
             this.showParentCore = !this.showParentCore;
             togCore.classList.toggle('active', this.showParentCore);
           });
           togGroup.appendChild(togCore);
-        } else if (cat === 'pyramid') {
-          const togDual = document.createElement('button');
-          togDual.className = `polyhedra-btn ${this.showDual ? 'active' : ''}`;
-          togDual.textContent = 'Polar Dual';
-          togDual.addEventListener('click', () => {
-            this.showDual = !this.showDual;
-            togDual.classList.toggle('active', this.showDual);
-          });
-          togGroup.appendChild(togDual);
-
-          const togGold = document.createElement('button');
-          togGold.className = `polyhedra-btn ${this.showGoldenOverlay ? 'active' : ''}`;
-          togGold.textContent = 'φ Meridian';
-          togGold.addEventListener('click', () => {
-            this.showGoldenOverlay = !this.showGoldenOverlay;
-            togGold.classList.toggle('active', this.showGoldenOverlay);
-          });
-          togGroup.appendChild(togGold);
         }
 
         const togSpin = document.createElement('button');
@@ -2677,129 +2864,181 @@
         });
       }
 
-      // Overlays
+      // Universal Golden Sections (φ:1) & Golden Rectangles (1:φ)
       if (this.showGoldenOverlay) {
-        if (cat === 'platonic') {
-          const overlay = getGoldenOverlay(this.solidName, base);
-          overlay.pols.forEach(p => {
-            const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
-            const avgZ = projPts.reduce((acc, pt) => acc + pt[2], 0) / projPts.length;
-            q.push({
-              z: avgZ - 0.05,
-              draw: ctx => {
-                ctx.beginPath();
-                projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
-                ctx.closePath();
-                ctx.fillStyle = p.color;
-                ctx.fill();
-                ctx.strokeStyle = p.stroke;
-                ctx.lineWidth = p.width;
-                ctx.stroke();
-              }
-            });
-          });
+        const overlay = buildGoldenOverlay(this.solidName, base);
 
-          overlay.lines.forEach(l => {
-            const p1 = this.cam.project(l.pts[0], w, h, sc);
-            const p2 = this.cam.project(l.pts[1], w, h, sc);
-            q.push({
-              z: (p1[2] + p2[2]) * 0.5 - 0.08,
-              draw: ctx => {
-                ctx.beginPath();
-                if (l.dashed) ctx.setLineDash([5, 4]);
-                ctx.moveTo(p1[0], p1[1]);
-                ctx.lineTo(p2[0], p2[1]);
-                ctx.strokeStyle = l.color;
-                ctx.lineWidth = l.width;
-                ctx.stroke();
-                if (l.dashed) ctx.setLineDash([]);
-              }
-            });
+        // 1. 1:φ Golden Rectangles
+        overlay.rects.forEach(r => {
+          const projPts = r.pts.map(v => this.cam.project(v, w, h, sc));
+          const avgZ = projPts.reduce((acc, pt) => acc + pt[2], 0) / projPts.length;
+          q.push({
+            z: avgZ - 0.02,
+            draw: ctx => {
+              ctx.beginPath();
+              projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
+              ctx.closePath();
+              ctx.fillStyle = r.fill;
+              ctx.fill();
+              ctx.strokeStyle = r.stroke;
+              ctx.lineWidth = 2.1;
+              ctx.stroke();
+            }
           });
+        });
 
-          overlay.labels.forEach(lb => {
-            const p = this.cam.project(lb.pos, w, h, sc);
-            q.push({
-              z: p[2] - 0.15,
-              draw: ctx => {
-                ctx.font = '700 12px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillStyle = lb.color || '#f59e0b';
-                ctx.fillText(lb.text, p[0], p[1]);
-              }
-            });
+        // 2. Auxiliary Polygons (e.g. Kepler Meridian)
+        overlay.pols.forEach(p => {
+          const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
+          const avgZ = projPts.reduce((acc, pt) => acc + pt[2], 0) / projPts.length;
+          q.push({
+            z: avgZ - 0.03,
+            draw: ctx => {
+              ctx.beginPath();
+              projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
+              ctx.closePath();
+              ctx.fillStyle = p.color;
+              ctx.fill();
+              ctx.strokeStyle = p.stroke;
+              ctx.lineWidth = p.width || 1.8;
+              ctx.stroke();
+            }
           });
-        } else if (cat === 'pyramid') {
-          const overlay = getPyramidGoldenOverlay(base);
-          overlay.pols.forEach(p => {
-            const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
-            const avgZ = projPts.reduce((acc, pt) => acc + pt[2], 0) / projPts.length;
-            q.push({
-              z: avgZ - 0.05,
-              draw: ctx => {
-                ctx.beginPath();
-                projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
-                ctx.closePath();
-                ctx.fillStyle = p.color;
-                ctx.fill();
-                ctx.strokeStyle = p.stroke;
-                ctx.lineWidth = p.width;
-                ctx.stroke();
-              }
-            });
-          });
+        });
 
-          overlay.lines.forEach(l => {
-            const p1 = this.cam.project(l.pts[0], w, h, sc);
-            const p2 = this.cam.project(l.pts[1], w, h, sc);
-            q.push({
-              z: (p1[2] + p2[2]) * 0.5 - 0.08,
-              draw: ctx => {
-                ctx.beginPath();
-                if (l.dashed) ctx.setLineDash([5, 4]);
-                ctx.moveTo(p1[0], p1[1]);
-                ctx.lineTo(p2[0], p2[1]);
-                ctx.strokeStyle = l.color;
-                ctx.lineWidth = l.width;
-                ctx.stroke();
-                if (l.dashed) ctx.setLineDash([]);
-              }
-            });
+        // 3. 3D Circles (e.g. Odom Face Circumcircle)
+        overlay.circles.forEach(c => {
+          const steps = 64;
+          const pts2d = [];
+          let sumZ = 0;
+          for (let i = 0; i <= steps; i++) {
+            const ang = (i / steps) * Math.PI * 2;
+            const p3 = vAdd(
+              c.center,
+              vAdd(vScale(c.u, Math.cos(ang) * c.r), vScale(c.v, Math.sin(ang) * c.r))
+            );
+            const pr = this.cam.project(p3, w, h, sc);
+            pts2d.push(pr);
+            sumZ += pr[2];
+          }
+          q.push({
+            z: (sumZ / (steps + 1)) - 0.04,
+            draw: ctx => {
+              ctx.beginPath();
+              pts2d.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
+              ctx.strokeStyle = c.color || 'rgba(56, 189, 248, 0.72)';
+              ctx.lineWidth = 1.8;
+              ctx.stroke();
+            }
           });
+        });
 
-          overlay.labels.forEach(lb => {
-            const p = this.cam.project(lb.pos, w, h, sc);
-            q.push({
-              z: p[2] - 0.15,
-              draw: ctx => {
-                ctx.font = '700 12px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillStyle = lb.color || '#f59e0b';
-                ctx.fillText(lb.text, p[0], p[1]);
-              }
-            });
-          });
-        }
-      }
-
-      // Polar dual wireframe (convex solids only)
-      if (this.showDual && cat !== 'elevated') {
-        const dualLines = getPolarDualWireframe(base);
-        dualLines.forEach(l => {
+        // 4. Auxiliary Reference Lines
+        overlay.lines.forEach(l => {
           const p1 = this.cam.project(l.pts[0], w, h, sc);
           const p2 = this.cam.project(l.pts[1], w, h, sc);
           q.push({
-            z: (p1[2] + p2[2]) * 0.5 - 0.06,
+            z: (p1[2] + p2[2]) * 0.5 - 0.05,
             draw: ctx => {
               ctx.beginPath();
-              ctx.setLineDash([5, 4]);
+              if (l.dashed) ctx.setLineDash([5, 4]);
               ctx.moveTo(p1[0], p1[1]);
               ctx.lineTo(p2[0], p2[1]);
               ctx.strokeStyle = l.color;
-              ctx.lineWidth = l.width;
+              ctx.lineWidth = l.width || 1.6;
               ctx.stroke();
-              ctx.setLineDash([]);
+              if (l.dashed) ctx.setLineDash([]);
             }
+          });
+        });
+
+        // 5. Exact φ:1 Golden Sections (Gold major a->g + Coral-Rose minor g->b + Rose-Gold pearl at g)
+        overlay.sections.forEach(sec => {
+          const pA = this.cam.project(sec.a, w, h, sc);
+          const pG = this.cam.project(sec.g, w, h, sc);
+          const pB = this.cam.project(sec.b, w, h, sc);
+
+          q.push({
+            z: (pA[2] + pG[2]) * 0.5 - 0.065,
+            draw: ctx => {
+              ctx.beginPath();
+              ctx.moveTo(pA[0], pA[1]);
+              ctx.lineTo(pG[0], pG[1]);
+              ctx.strokeStyle = isDark ? '#fde047' : '#d97706';
+              ctx.lineWidth = 3.2;
+              ctx.lineCap = 'round';
+              ctx.stroke();
+            }
+          });
+
+          q.push({
+            z: (pG[2] + pB[2]) * 0.5 - 0.065,
+            draw: ctx => {
+              ctx.beginPath();
+              ctx.moveTo(pG[0], pG[1]);
+              ctx.lineTo(pB[0], pB[1]);
+              ctx.strokeStyle = isDark ? '#fb7185' : '#e11d48';
+              ctx.lineWidth = 3.2;
+              ctx.lineCap = 'round';
+              ctx.stroke();
+            }
+          });
+
+          const rG = 4.6 * Math.max(0.8, Math.min(1.2, pG[3] || 1.0));
+          q.push({
+            z: pG[2] - 0.08,
+            draw: ctx => drawVertexSphere(ctx, pG[0], pG[1], rG, true, isDark, 'rose')
+          });
+        });
+
+        overlay.labels.forEach(lb => {
+          const p = this.cam.project(lb.pos, w, h, sc);
+          q.push({
+            z: p[2] - 0.12,
+            draw: ctx => {
+              ctx.font = '700 12px sans-serif';
+              ctx.textAlign = 'center';
+              ctx.fillStyle = lb.color || '#fbbf24';
+              ctx.fillText(lb.text, p[0], p[1]);
+            }
+          });
+        });
+      }
+
+      // Universal Face-Center Dual (vertices are exact centers of the sides; Tetrahedron -> Tetrahedron)
+      if (this.showDual) {
+        const dual = buildFaceCenterDual(base);
+        const dualFrontCol = isDark ? 'rgba(56, 189, 248, 0.94)' : 'rgba(2, 132, 199, 0.92)';
+        const dualBackCol = isDark ? 'rgba(56, 189, 248, 0.35)' : 'rgba(2, 132, 199, 0.32)';
+
+        dual.edges.forEach(([f0, f1]) => {
+          const p1 = this.cam.project(dual.vertices[f0], w, h, sc);
+          const p2 = this.cam.project(dual.vertices[f1], w, h, sc);
+          const isFrontDualEdge = faceFront[f0] || faceFront[f1];
+          q.push({
+            z: (p1[2] + p2[2]) * 0.5 - (isFrontDualEdge ? 0.03 : 0.0),
+            draw: ctx => {
+              ctx.beginPath();
+              if (!isFrontDualEdge) ctx.setLineDash([4, 4]);
+              ctx.moveTo(p1[0], p1[1]);
+              ctx.lineTo(p2[0], p2[1]);
+              ctx.strokeStyle = isFrontDualEdge ? dualFrontCol : dualBackCol;
+              ctx.lineWidth = isFrontDualEdge ? 2.2 : 1.25;
+              ctx.lineCap = 'round';
+              ctx.stroke();
+              if (!isFrontDualEdge) ctx.setLineDash([]);
+            }
+          });
+        });
+
+        const dualBaseRad = dual.vertices.length > 32 ? 3.6 : (dual.vertices.length > 16 ? 4.3 : 5.1);
+        dual.vertices.forEach((dv, fi) => {
+          const proj = this.cam.project(dv, w, h, sc);
+          const isFrontD = faceFront[fi];
+          const r = dualBaseRad * Math.max(0.75, Math.min(1.25, proj[3] || 1.0)) * (isFrontD ? 1.0 : 0.80);
+          q.push({
+            z: proj[2] - (isFrontD ? 0.038 : 0.008),
+            draw: ctx => drawVertexSphere(ctx, proj[0], proj[1], r, isFrontD, isDark, 'cyan')
           });
         });
       }
@@ -2821,52 +3060,6 @@
               ctx.stroke();
             }
           });
-        });
-      }
-
-      // Rhombus Diagonals (for rhombic-triacontahedron)
-      if (this.showDiagonals && (this.solidName === 'rhombic-triacontahedron' || base.name === 'rhombic-triacontahedron')) {
-        base.faces.forEach(f => {
-          if (f.length === 4) {
-            const v0 = base.vertices[f[0]];
-            const v1 = base.vertices[f[1]];
-            const v2 = base.vertices[f[2]];
-            const v3 = base.vertices[f[3]];
-            const d02 = vMag(vSub(v2, v0));
-            const d13 = vMag(vSub(v3, v1));
-            const longPts = d02 > d13 ? [v0, v2] : [v1, v3];
-            const shortPts = d02 > d13 ? [v1, v3] : [v0, v2];
-
-            const pL1 = this.cam.project(longPts[0], w, h, sc);
-            const pL2 = this.cam.project(longPts[1], w, h, sc);
-            q.push({
-              z: (pL1[2] + pL2[2]) * 0.5 - 0.05,
-              draw: ctx => {
-                ctx.beginPath();
-                ctx.moveTo(pL1[0], pL1[1]);
-                ctx.lineTo(pL2[0], pL2[1]);
-                ctx.strokeStyle = '#f59e0b';
-                ctx.lineWidth = 2.0;
-                ctx.stroke();
-              }
-            });
-
-            const pS1 = this.cam.project(shortPts[0], w, h, sc);
-            const pS2 = this.cam.project(shortPts[1], w, h, sc);
-            q.push({
-              z: (pS1[2] + pS2[2]) * 0.5 - 0.05,
-              draw: ctx => {
-                ctx.beginPath();
-                ctx.setLineDash([4, 4]);
-                ctx.moveTo(pS1[0], pS1[1]);
-                ctx.lineTo(pS2[0], pS2[1]);
-                ctx.strokeStyle = '#38bdf8';
-                ctx.lineWidth = 1.6;
-                ctx.stroke();
-                ctx.setLineDash([]);
-              }
-            });
-          }
         });
       }
     }
@@ -3486,7 +3679,9 @@
       buildSolidumMesh,
       buildVacuumMesh,
       buildAbscisumMesh,
-      buildElevatumMesh
+      buildElevatumMesh,
+      buildFaceCenterDual,
+      buildGoldenOverlay
     };
   }
 

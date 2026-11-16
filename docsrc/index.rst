@@ -26,7 +26,7 @@ Interactive 3D Polyhedra Explorer
 
 .. raw:: html
 
-   <div class="polyhedra-3d-mount" data-solid="dodecahedron" data-mode="frame"></div>
+   <div class="polyhedra-3d-mount" data-solid="dodecahedron"></div>
 
 The Five Polyhedral Families (26 Canonical Solids)
 --------------------------------------------------

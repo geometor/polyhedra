@@ -1,3 +1,11 @@
+0.4.1 (2026-11-15)
+------------------
+
+- Overhauled the interactive 3D HTML5 ``<canvas>`` studio (``polyhedra_3d_codex.js``) across all 26 polyhedra and 5 geometric scenes:
+  - Replaced legacy Renaissance/Latin UI labels with modern geometric controls (**Surfaces**, **Wireframe**, and **Frame** display modes, plus **Perspective**, **Isometric**, **Front**, and **Top** camera presets).
+  - Implemented camera-locked **3-point studio lighting** (warm key light, cool sky fill, rim highlight, Fresnel edge sheen, Blinn–Phong specular highlights, radial studio stage backdrop, and luminous theme-aware crease strokes) eliminating back-lit dark facets during 3D orbit.
+  - Added a continuous **Opacity** (surface transparency) slider (``0%``–``100%``) with exact back-to-front painter's sorting of rear and front facets, alongside a **Vertices** toggle rendering depth-sorted 3D vertex spheres across all display modes.
+
 0.4.0 (2026-11-15)
 ------------------
 

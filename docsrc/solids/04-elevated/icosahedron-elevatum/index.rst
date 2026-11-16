@@ -22,8 +22,8 @@ P-04.04 · Icosahedron Elevatum
 .. picture:: icosahedron-elevatum.svg
    :alt: Icosahedron Elevatum
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

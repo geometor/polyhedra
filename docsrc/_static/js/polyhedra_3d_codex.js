@@ -1,6 +1,6 @@
 /* =========================================================================
-   GEOMETOR • polyhedra — Interactive 3D Codex Engine
-   Exact symbolic geometry & Renaissance chiaroscuro rendering for Book Codices
+   GEOMETOR • polyhedra — Interactive 3D Studio Engine
+   Exact symbolic geometry, 3-point studio lighting, wireframe, opacity & vertex nodes
    Auto-mounts onto every <div class="polyhedra-3d-mount" ...>
    ========================================================================= */
 
@@ -12,7 +12,7 @@
   const INV_PHI = PHI - 1;                 // ~0.618033988749895 (1 / PHI)
   const PHI_SQ = PHI + 1;                  // ~2.618033988749895 (PHI^2)
 
-  // --- Chiaroscuro & Renaissance Woodcut Palettes ---
+  // --- Luminous Studio & Mineral Palettes ---
   const PAL = {
     // Theme backgrounds & surfaces
     bgDark: '#0d1117',
@@ -27,17 +27,17 @@
     textLight: '#1f2328',
     subtextLight: '#656d76',
 
-    // Renaissance Boxwood & Walnut tones for Vacuum frames
-    boxwood: [224, 185, 130],     // Sunlit warm Italian boxwood (outer frame)
-    walnut: [74, 52, 38],          // Deep shaded Italian walnut (inner frame)
-    pearwood: [168, 128, 92],      // Mid-tone carved pearwood (window reveals)
+    // Studio Beveled Frame Materials (Outer, Reveal Jamb, Inner Cavity)
+    frameOuter: [238, 214, 168],   // Warm brushed champagne-gold outer frame
+    frameReveal: [164, 184, 212],  // Crisp cool titanium-slate window reveal
+    frameInner: [118, 138, 168],   // Sculpted architectural slate inner cavity
 
-    // Solidum Elemental Tones (Empedoclean / Platonic)
-    fire: [239, 68, 68],           // Tetrahedron (Fire)
-    earth: [202, 138, 4],          // Hexahedron (Earth)
-    air: [56, 189, 248],           // Octahedron (Air)
-    water: [59, 130, 246],         // Icosahedron (Water)
-    aether: [168, 85, 247],        // Dodecahedron (Aether / Quintessence)
+    // Luminous Elemental & Mineral Base Tones
+    fire: [248, 113, 113],         // Tetrahedron (Coral / Ruby)
+    earth: [251, 191, 36],         // Hexahedron (Radiant Gold)
+    air: [56, 189, 248],           // Octahedron (Cerulean Sky)
+    water: [96, 165, 250],         // Icosahedron (Sapphire)
+    aether: [192, 132, 252],       // Dodecahedron (Amethyst)
 
     // Golden Ratio accents
     gold: '#f59e0b',
@@ -46,11 +46,11 @@
 
     // Five Cubes Jewel Palette (Euclid XIII.17)
     cubeColors: [
-      { name: 'Cube 1', hex: '#f59e0b', rgb: [245, 158, 11] }, // Gold
-      { name: 'Cube 2', hex: '#10b981', rgb: [16, 185, 129] }, // Emerald
-      { name: 'Cube 3', hex: '#06b6d4', rgb: [6, 182, 212] },  // Cyan
-      { name: 'Cube 4', hex: '#8b5cf6', rgb: [139, 92, 246] }, // Violet
-      { name: 'Cube 5', hex: '#f43f5e', rgb: [244, 63, 94] }   // Crimson
+      { name: 'Cube 1', hex: '#fbbf24', rgb: [251, 191, 36] }, // Gold
+      { name: 'Cube 2', hex: '#34d399', rgb: [52, 211, 153] }, // Emerald
+      { name: 'Cube 3', hex: '#22d3ee', rgb: [34, 211, 238] }, // Cyan
+      { name: 'Cube 4', hex: '#a78bfa', rgb: [167, 139, 250] }, // Violet
+      { name: 'Cube 5', hex: '#fb7185', rgb: [251, 113, 133] }  // Rose
     ]
   };
 
@@ -597,13 +597,13 @@
     });
 
     return {
-      name: name || ('elevated-' + base.name),
-      title: title || (base.title + ' Elevatum'),
+      name: name || ('augmented-' + base.name),
+      title: title || ('Augmented ' + base.title),
       vertices: newVertices,
       faces: newFaces,
       faceRoles,
       parentSolid: base,
-      color: [217, 119, 6] // Amber bronze for elevated stellation pyramids
+      color: [251, 165, 48] // Luminous amber-gold for augmented stellation pyramids
     };
   }
 
@@ -631,7 +631,7 @@
       vertices,
       faces,
       h,
-      color: [234, 214, 184] // Sunlit Giza limestone
+      color: [244, 224, 186] // Luminous alabaster-gold
     };
   }
 
@@ -651,11 +651,11 @@
     ];
     return {
       name: 'golden-bipyramid',
-      title: 'Golden Bipyramid',
+      title: 'Golden Square Bipyramid',
       vertices,
       faces,
       h,
-      color: [245, 158, 11] // Radiant gold
+      color: [251, 191, 36] // Luminous 24k gold
     };
   }
 
@@ -689,7 +689,7 @@
       h,
       s,
       R5,
-      color: [168, 85, 247] // Aether / violet
+      color: [192, 132, 252] // Luminous amethyst
     };
   }
 
@@ -741,7 +741,7 @@
         solid = getDodecahedron();
         break;
 
-      // 2. Archimedean & Abscisa Solids
+      // 2. Archimedean Solids
       case 'truncated-tetrahedron':
         solid = truncateSolid(getTetrahedron(), 1/3, 'truncated-tetrahedron', 'Truncated Tetrahedron');
         break;
@@ -775,32 +775,32 @@
         solid = polarDualSolid(rectifySolid(getDodecahedron()), 'rhombic-triacontahedron', 'Rhombic Triacontahedron');
         break;
 
-      // 4. Leonardo & Kepler Elevated Solids
+      // 4. Augmented & Stellated Solids
       case 'tetrahedron-elevatum':
-        solid = elevateSolid(getTetrahedron(), 'tetrahedron-elevatum', 'Tetrahedron Elevatum');
+        solid = elevateSolid(getTetrahedron(), 'tetrahedron-elevatum', 'Triakis Tetrahedron');
         break;
       case 'hexahedron-elevatum':
-        solid = elevateSolid(getHexahedron(), 'hexahedron-elevatum', 'Hexahedron Elevatum');
+        solid = elevateSolid(getHexahedron(), 'hexahedron-elevatum', 'Tetrakis Hexahedron');
         break;
       case 'stella-octangula':
         solid = elevateSolid(getOctahedron(), 'stella-octangula', 'Stella Octangula');
         break;
       case 'icosahedron-elevatum':
-        solid = elevateSolid(getIcosahedron(), 'icosahedron-elevatum', 'Icosahedron Elevatum');
+        solid = elevateSolid(getIcosahedron(), 'icosahedron-elevatum', 'Triakis Icosahedron');
         break;
       case 'dodecahedron-elevatum':
-        solid = elevateSolid(getDodecahedron(), 'dodecahedron-elevatum', 'Dodecahedron Elevatum');
+        solid = elevateSolid(getDodecahedron(), 'dodecahedron-elevatum', 'Pentakis Dodecahedron');
         break;
       case 'cuboctahedron-elevatum':
-        solid = elevateSolid(rectifySolid(getHexahedron()), 'cuboctahedron-elevatum', 'Cuboctahedron Elevatum');
+        solid = elevateSolid(rectifySolid(getHexahedron()), 'cuboctahedron-elevatum', 'Augmented Cuboctahedron');
         break;
       case 'icosidodecahedron-elevatum':
-        solid = elevateSolid(rectifySolid(getDodecahedron()), 'icosidodecahedron-elevatum', 'Icosidodecahedron Elevatum');
+        solid = elevateSolid(rectifySolid(getDodecahedron()), 'icosidodecahedron-elevatum', 'Augmented Icosidodecahedron');
         break;
 
       // 5. Canonical Pyramids & Bipyramids
       case 'kepler-pyramid':
-        solid = getPyramid(Math.sqrt(PHI), 'kepler-pyramid', 'Kepler Pyramid');
+        solid = getPyramid(Math.sqrt(PHI), 'kepler-pyramid', 'Kepler Golden Pyramid');
         break;
       case 'seked-pyramid':
         solid = getPyramid(14 / 11, 'seked-pyramid', 'Seked 14:11 Pyramid');
@@ -824,9 +824,9 @@
   }
 
 
-  // --- Procedural Polyhedral Variants ---
+  // --- Procedural Polyhedral Mesh Builders ---
 
-  // 1. Solidum (Opaque planar faces)
+  // 1. Planar Surface Mesh
   function buildSolidumMesh(base) {
     const { vertices, faces, color } = base;
     const polygons = faces.map(f => {
@@ -838,13 +838,13 @@
       let faceCol = color;
       if (!faceCol) {
         const k = f.length;
-        if (k === 3) faceCol = [56, 189, 248];       // Air / Sky (Triangles)
-        else if (k === 4) faceCol = [245, 158, 11];  // Gold / Earth (Squares)
-        else if (k === 5) faceCol = [168, 85, 247];  // Aether / Violet (Pentagons)
-        else if (k === 6) faceCol = [37, 99, 235];   // Sapphire / Lapis (Hexagons)
-        else if (k === 8) faceCol = [16, 185, 129];  // Emerald (Octagons)
-        else if (k === 10) faceCol = [225, 29, 72];  // Ruby (Decagons)
-        else faceCol = [217, 119, 6];                // Amber Bronze
+        if (k === 3) faceCol = [72, 198, 250];       // Cerulean (Triangles)
+        else if (k === 4) faceCol = [251, 191, 36];  // Radiant Gold (Squares)
+        else if (k === 5) faceCol = [192, 132, 252]; // Amethyst (Pentagons)
+        else if (k === 6) faceCol = [96, 165, 250];  // Sapphire (Hexagons)
+        else if (k === 8) faceCol = [52, 211, 153];  // Emerald (Octagons)
+        else if (k === 10) faceCol = [251, 113, 133];// Rose (Decagons)
+        else faceCol = [245, 172, 56];               // Amber
       }
 
       return {
@@ -862,12 +862,11 @@
       E: getEdgesFromFaces(faces).edges.length,
       F: faces.length,
       genus: 0,
-      label: `${base.title} in Solidum`
+      label: `${base.title} • Faceted Surfaces`
     };
   }
 
-  // 2. Vacuum (Leonardo da Vinci Mitered Wooden Frame)
-  // Generates 6 * E quads: outer_frame, inner_frame, window_reveal
+  // 2. Beveled Hollow Frame (6 * E mitered quads: outer, inner, window jamb)
   function buildVacuumMesh(base, mu, frameThickness) {
     const { vertices, faces } = base;
     const { edges } = getEdgesFromFaces(faces);
@@ -878,7 +877,6 @@
 
     const polygons = [];
 
-    // For each face, generate outer and inner aperture vertices
     faces.forEach(f => {
       const k = f.length;
       const faceVerts = f.map(idx => vertices[idx]);
@@ -886,38 +884,33 @@
       let faceNorm = vNorm(vCross(vSub(faceVerts[1], faceVerts[0]), vSub(faceVerts[2], faceVerts[0])));
       if (vDot(faceNorm, cFace) < 0) faceNorm = vScale(faceNorm, -1);
 
-      // Outer aperture vertices
       const wOut = faceVerts.map(v => vLerp(v, cFace, mu));
-      // Inner shell vertices
       const vIn = faceVerts.map(v => vScale(v, R_in));
       const wIn = wOut.map(w => vScale(w, R_in));
 
       for (let i = 0; i < k; i++) {
         const next = (i + 1) % k;
 
-        // 1. Outer frame quad (warm sunlit boxwood)
         const outerQuad = [faceVerts[i], faceVerts[next], wOut[next], wOut[i]];
         const cOuter = outerQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
         polygons.push({
           pts: outerQuad,
           centroid: cOuter,
           norm: faceNorm,
-          baseColor: PAL.boxwood,
-          type: 'vacuum_outer'
+          baseColor: PAL.frameOuter,
+          type: 'frame_outer'
         });
 
-        // 2. Inner frame quad (deep shaded walnut)
         const innerQuad = [vIn[next], vIn[i], wIn[i], wIn[next]];
         const cInner = innerQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
         polygons.push({
           pts: innerQuad,
           centroid: cInner,
           norm: vScale(faceNorm, -1),
-          baseColor: PAL.walnut,
-          type: 'vacuum_inner'
+          baseColor: PAL.frameInner,
+          type: 'frame_inner'
         });
 
-        // 3. Window reveal / jamb quad (mid-tone carved pearwood)
         const revealQuad = [wOut[i], wOut[next], wIn[next], wIn[i]];
         const cReveal = revealQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
         const revealNorm = vNorm(vCross(vSub(wOut[next], wOut[i]), vSub(wIn[next], wOut[next])));
@@ -925,8 +918,8 @@
           pts: revealQuad,
           centroid: cReveal,
           norm: revealNorm,
-          baseColor: PAL.pearwood,
-          type: 'vacuum_reveal'
+          baseColor: PAL.frameReveal,
+          type: 'frame_reveal'
         });
       }
     });
@@ -937,7 +930,7 @@
       E_vac: 12 * E,
       F_vac: 6 * E,
       genus: F - 1,
-      label: `Vacuum (Leonardo Frame • μ = ${mu.toFixed(2)})`
+      label: `${base.title} • Hollow Frame (Aperture ${mu.toFixed(2)})`
     };
   }
 
@@ -1197,59 +1190,52 @@
     const labels = [];
     const slug = solid.name;
 
-    if (slug === 'kepler-pyramid') {
-      const h = solid.h || Math.sqrt(PHI);
-      const yBase = -h * 0.25;
-      const yApex = h * 0.75;
-      const O = [0, yBase, 0];
-      const ME = [1, yBase, 0];
-      const A = [0, yApex, 0];
-      const MW = [-1, yBase, 0];
+    if (slug === 'kepler-pyramid' || slug === 'seked-pyramid') {
+      const V = solid.vertices;
+      const O = vScale(vAdd(vAdd(V[0], V[1]), vAdd(V[2], V[3])), 0.25);
+      const ME = vScale(vAdd(V[0], V[3]), 0.5);
+      const MW = vScale(vAdd(V[1], V[2]), 0.5);
+      const A = V[4];
+      const isKepler = slug === 'kepler-pyramid';
+      const col = isKepler ? '#f59e0b' : '#10b981';
+      const fillCol = isKepler ? 'rgba(245, 158, 11, 0.35)' : 'rgba(16, 185, 129, 0.30)';
+      const dashCol = isKepler ? 'rgba(245, 158, 11, 0.45)' : 'rgba(16, 185, 129, 0.45)';
 
       pols.push({
         pts: [O, ME, A],
-        color: 'rgba(245, 158, 11, 0.35)',
-        stroke: '#f59e0b',
-        width: 2.6
+        color: fillCol,
+        stroke: col,
+        width: 2.5
       });
-      lines.push({ pts: [MW, A], color: 'rgba(245, 158, 11, 0.45)', width: 1.4, dashed: true });
-      lines.push({ pts: [MW, O], color: 'rgba(245, 158, 11, 0.45)', width: 1.4, dashed: true });
+      lines.push({ pts: [MW, A], color: dashCol, width: 1.4, dashed: true });
+      lines.push({ pts: [MW, O], color: dashCol, width: 1.4, dashed: true });
 
-      const d = 0.12;
-      lines.push({ pts: [[d, yBase, 0], [d, yBase + d, 0]], color: '#f59e0b', width: 1.6 });
-      lines.push({ pts: [[d, yBase + d, 0], [0, yBase + d, 0]], color: '#f59e0b', width: 1.6 });
+      const d = vMag(vSub(ME, O)) * 0.12;
+      lines.push({ pts: [[O[0] + d, O[1], O[2]], [O[0] + d, O[1] + d, O[2]]], color: col, width: 1.6 });
+      lines.push({ pts: [[O[0] + d, O[1] + d, O[2]], [O[0], O[1] + d, O[2]]], color: col, width: 1.6 });
 
-      labels.push({ pos: [0.5, yBase - 0.15, 0], text: 'a = 1.000', color: '#f59e0b' });
-      labels.push({ pos: [-0.25, (yBase + yApex) * 0.5, 0], text: 'h = √φ ≈ 1.272', color: '#f59e0b' });
-      labels.push({ pos: [0.65, (yBase + yApex) * 0.5, 0], text: 's = φ ≈ 1.618 ✨', color: '#fbbf24' });
-    } else if (slug === 'seked-pyramid') {
-      const h = solid.h || (14 / 11);
-      const yBase = -h * 0.25;
-      const yApex = h * 0.75;
-      const O = [0, yBase, 0];
-      const ME = [1, yBase, 0];
-      const A = [0, yApex, 0];
-      const MW = [-1, yBase, 0];
-
-      pols.push({
-        pts: [O, ME, A],
-        color: 'rgba(16, 185, 129, 0.30)',
-        stroke: '#10b981',
-        width: 2.4
-      });
-      lines.push({ pts: [MW, A], color: 'rgba(16, 185, 129, 0.45)', width: 1.4, dashed: true });
-      labels.push({ pos: [0.5, yBase - 0.15, 0], text: 'Run = 220', color: '#10b981' });
-      labels.push({ pos: [-0.25, (yBase + yApex) * 0.5, 0], text: 'Rise = 280 (14:11)', color: '#10b981' });
+      if (isKepler) {
+        labels.push({ pos: vAdd(vScale(vAdd(O, ME), 0.5), [0, -0.18, 0]), text: 'a = 1.000', color: '#f59e0b' });
+        labels.push({ pos: vAdd(vScale(vAdd(O, A), 0.5), [-0.28, 0, 0]), text: 'h = √φ ≈ 1.272', color: '#f59e0b' });
+        labels.push({ pos: vAdd(vScale(vAdd(ME, A), 0.5), [0.22, 0.08, 0]), text: 's = φ ≈ 1.618', color: '#fbbf24' });
+      } else {
+        labels.push({ pos: vAdd(vScale(vAdd(O, ME), 0.5), [0, -0.18, 0]), text: 'Run = 220', color: '#10b981' });
+        labels.push({ pos: vAdd(vScale(vAdd(O, A), 0.5), [-0.28, 0, 0]), text: 'Rise = 280 (14:11)', color: '#10b981' });
+      }
     } else if (slug === 'golden-bipyramid') {
-      const h = solid.h || Math.sqrt(PHI);
+      const V = solid.vertices;
+      const ME = vScale(vAdd(V[0], V[3]), 0.5);
+      const MW = vScale(vAdd(V[1], V[2]), 0.5);
+      const AN = V[4];
+      const AS = V[5];
       pols.push({
-        pts: [[1, 0, 0], [0, h, 0], [-1, 0, 0], [0, -h, 0]],
+        pts: [ME, AN, MW, AS],
         color: 'rgba(245, 158, 11, 0.28)',
         stroke: '#f59e0b',
         width: 2.4
       });
-      labels.push({ pos: [0, h + 0.18, 0], text: 'Apex +√φ', color: '#f59e0b' });
-      labels.push({ pos: [0, -h - 0.18, 0], text: 'Apex -√φ', color: '#f59e0b' });
+      labels.push({ pos: [AN[0], AN[1] + 0.18, AN[2]], text: 'Apex +√φ', color: '#f59e0b' });
+      labels.push({ pos: [AS[0], AS[1] - 0.18, AS[2]], text: 'Apex -√φ', color: '#f59e0b' });
     } else if (slug === 'pentagonal-pyramid') {
       const baseVerts = [0, 1, 2, 3, 4].map(idx => solid.vertices[idx]);
       [[0, 2], [0, 3], [1, 3], [1, 4], [2, 4]].forEach(([a, b]) => {
@@ -1543,29 +1529,26 @@
       for (let i = 0; i < k; i++) {
         const next = (i + 1) % k;
 
-        // 1. Outer frame quad (warm sunlit Italian boxwood)
         const outerQuad = [facePts[i], facePts[next], wOut[next], wOut[i]];
         const cOuter = outerQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
         polygons.push({
           pts: outerQuad,
           centroid: cOuter,
           norm: faceNorm,
-          baseColor: PAL.boxwood,
-          type: 'vacuum_outer'
+          baseColor: PAL.frameOuter,
+          type: 'frame_outer'
         });
 
-        // 2. Inner frame quad (deep shaded Italian walnut)
         const innerQuad = [vIn[next], vIn[i], wIn[i], wIn[next]];
         const cInner = innerQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
         polygons.push({
           pts: innerQuad,
           centroid: cInner,
           norm: vScale(faceNorm, -1),
-          baseColor: PAL.walnut,
-          type: 'vacuum_inner'
+          baseColor: PAL.frameInner,
+          type: 'frame_inner'
         });
 
-        // 3. Window reveal quad (mid-tone carved pearwood)
         const revealQuad = [wOut[i], wOut[next], wIn[next], wIn[i]];
         const cReveal = revealQuad.reduce((acc, p) => vAdd(acc, vScale(p, 0.25)), [0, 0, 0]);
         const revealNorm = vNorm(vCross(vSub(wOut[next], wOut[i]), vSub(wIn[next], wOut[next])));
@@ -1573,8 +1556,8 @@
           pts: revealQuad,
           centroid: cReveal,
           norm: revealNorm,
-          baseColor: PAL.pearwood,
-          type: 'vacuum_reveal'
+          baseColor: PAL.frameReveal,
+          type: 'frame_reveal'
         });
       }
     }
@@ -1598,8 +1581,8 @@
   // --- Projection & 3D Camera Engine ---
   class Camera3D {
     constructor(preset) {
-      this.yaw = preset ? preset.yaw : 0.42;
-      this.pitch = preset ? preset.pitch : 0.32;
+      this.yaw = preset ? preset.yaw : 0.44;
+      this.pitch = preset ? preset.pitch : 0.34;
       this.zoom = preset ? preset.zoom : 1.0;
       this.persp = preset ? preset.persp : 0.30;
       this.target = { yaw: this.yaw, pitch: this.pitch, zoom: this.zoom, persp: this.persp };
@@ -1612,45 +1595,127 @@
       this.persp += (this.target.persp - this.persp) * 0.12;
     }
 
-    project(pt, w, h, baseScale) {
+    rotateVec(v) {
       const cy = Math.cos(this.yaw), sy = Math.sin(this.yaw);
       const cp = Math.cos(this.pitch), sp = Math.sin(this.pitch);
+      const x1 = v[0] * cy - v[2] * sy;
+      const z1 = v[0] * sy + v[2] * cy;
+      const y2 = v[1] * cp - z1 * sp;
+      const z2 = v[1] * sp + z1 * cp;
+      return [x1, y2, z2];
+    }
 
-      // Rotate around Y (yaw)
-      const x1 = pt[0] * cy - pt[2] * sy;
-      const z1 = pt[0] * sy + pt[2] * cy;
+    eyeDirectionFrom(camPt) {
+      if (this.persp > 0.01) {
+        const zEye = -1.0 / (this.persp * 0.28);
+        return vNorm([-camPt[0], -camPt[1], zEye - camPt[2]]);
+      }
+      return [0, 0, -1];
+    }
 
-      // Rotate around X (pitch)
-      const y2 = pt[1] * cp - z1 * sp;
-      const z2 = pt[1] * sp + z1 * cp;
+    classifyFace(worldNorm, worldCentroid) {
+      const nCam = this.rotateVec(worldNorm);
+      const cCam = this.rotateVec(worldCentroid);
+      const toEye = this.eyeDirectionFrom(cCam);
+      const isFront = vDot(nCam, toEye) > 0;
+      return { nCam, cCam, toEye, isFront };
+    }
 
-      // Perspective transformation
+    project(pt, w, h, baseScale) {
+      const [x1, y2, z2] = this.rotateVec(pt);
       const fov = 1.0 / Math.max(0.25, 1.0 + this.persp * z2 * 0.28);
       const s = baseScale * this.zoom * fov;
 
       return [
         w * 0.5 + x1 * s,
         h * 0.52 - y2 * s,
-        z2
+        z2,
+        fov
       ];
     }
   }
 
-  // --- Chiaroscuro Shading Helpers ---
-  const LIGHT_DIR = vNorm([0.52, 0.78, 0.45]);
+  // --- Camera-Locked 3-Point Studio Lighting + Specular + Rim ---
+  // In camera space: +X right, +Y up, -Z toward the viewer.
+  const STUDIO_KEY  = vNorm([-0.50,  0.62, -0.60]); // Warm upper-left-front key light
+  const STUDIO_FILL = vNorm([ 0.64, -0.36, -0.68]); // Cool lower-right-front sculptural fill
+  const STUDIO_RIM  = vNorm([ 0.14,  0.86,  0.49]); // Top-back rim separation light
 
-  function shadeColor(baseRgb, normal, isBackface, opacity) {
-    const dot = vDot(normal, LIGHT_DIR);
-    let intensity;
-    if (!isBackface) {
-      intensity = 0.35 + 0.65 * Math.max(0, dot);
-    } else {
-      intensity = 0.24 + 0.32 * Math.max(0, -dot);
+  function shadeStudioFacet(cam, baseRgb, worldNorm, worldCentroid, opacity) {
+    const { nCam, toEye, isFront } = cam.classifyFace(worldNorm, worldCentroid);
+    const N = isFront ? nCam : vScale(nCam, -1);
+
+    const dKey  = Math.max(0, vDot(N, STUDIO_KEY));
+    const dFill = Math.max(0, vDot(N, STUDIO_FILL));
+    const dRim  = Math.max(0, vDot(N, STUDIO_RIM));
+    const ndotv = Math.max(0, vDot(N, toEye));
+    const fresnel = Math.pow(1.0 - ndotv, 2.3);
+
+    const halfVec = vNorm(vAdd(STUDIO_KEY, toEye));
+    const spec = isFront ? Math.pow(Math.max(0, vDot(N, halfVec)), 26) : 0.0;
+
+    // Bright, high-clarity diffuse range so shadow facets never turn muddy brown/black
+    const diff = isFront
+      ? (0.48 + 0.50 * dKey + 0.24 * dFill + 0.12 * dRim)
+      : (0.38 + 0.28 * dKey + 0.22 * dFill);
+
+    // Subtle cool sky tint in non-key-lit shadow facets for crisp facet separation
+    const coolTint = (1.0 - dKey) * (isFront ? 0.14 : 0.18);
+    const sheen = isFront ? (255 * (0.28 * spec + 0.11 * fresnel)) : (255 * 0.04 * fresnel);
+
+    const r = Math.min(255, Math.round(baseRgb[0] * diff * (1 - coolTint) + 150 * coolTint + sheen));
+    const g = Math.min(255, Math.round(baseRgb[1] * diff * (1 - coolTint) + 190 * coolTint + sheen * 0.97));
+    const b = Math.min(255, Math.round(baseRgb[2] * diff * (1 - coolTint) + 245 * coolTint + sheen * 0.92));
+
+    const alpha = opacity !== undefined ? opacity : 1.0;
+    return {
+      fill: `rgba(${r},${g},${b},${alpha.toFixed(3)})`,
+      isFront
+    };
+  }
+
+  function drawVertexSphere(ctx, px, py, radius, isFront, isDark) {
+    ctx.save();
+    const alpha = isFront ? 1.0 : 0.45;
+    ctx.globalAlpha = alpha;
+
+    // Subtle outer halo on front vertices in dark mode
+    if (isFront && isDark) {
+      ctx.beginPath();
+      ctx.arc(px, py, radius + 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(251, 191, 36, 0.22)';
+      ctx.fill();
     }
-    const r = Math.min(255, Math.floor(baseRgb[0] * intensity));
-    const g = Math.min(255, Math.floor(baseRgb[1] * intensity));
-    const b = Math.min(255, Math.floor(baseRgb[2] * intensity));
-    return opacity !== undefined ? `rgba(${r},${g},${b},${opacity})` : `rgb(${r},${g},${b})`;
+
+    // 3D radial gradient sphere
+    const grad = ctx.createRadialGradient(
+      px - radius * 0.32, py - radius * 0.32, radius * 0.12,
+      px, py, radius
+    );
+    if (isFront) {
+      grad.addColorStop(0, '#ffffff');
+      grad.addColorStop(0.45, '#fde68a');
+      grad.addColorStop(1, '#d97706');
+    } else {
+      grad.addColorStop(0, '#cbd5e1');
+      grad.addColorStop(1, '#64748b');
+    }
+
+    ctx.beginPath();
+    ctx.arc(px, py, radius, 0, Math.PI * 2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.strokeStyle = isDark ? 'rgba(15, 23, 42, 0.90)' : 'rgba(15, 23, 42, 0.75)';
+    ctx.lineWidth = 1.1;
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function normalizeDisplayMode(raw) {
+    const v = (raw || 'surfaces').trim().toLowerCase();
+    if (v === 'frame' || v === 'vacuum') return 'frame';
+    if (v === 'wireframe' || v === 'wire' || v === 'edges') return 'wireframe';
+    return 'surfaces';
   }
 
   // --- Main Polyhedra 3D Widget Controller ---
@@ -1659,15 +1724,21 @@
       this.container = container;
       this.solidName = (container.getAttribute('data-solid') || '').trim().toLowerCase();
       this.sceneName = (container.getAttribute('data-scene') || '').trim();
-      this.variant = (container.getAttribute('data-initial-variant') || 'solidum').trim().toLowerCase();
+      this.variant = normalizeDisplayMode(
+        container.getAttribute('data-mode') || container.getAttribute('data-initial-variant') || 'surfaces'
+      );
+
+      const rawOp = parseFloat(container.getAttribute('data-opacity') || '');
+      this.surfaceOpacity = !isNaN(rawOp) ? Math.max(0, Math.min(1, rawOp)) : 0.86;
+      this.showVertices = container.getAttribute('data-vertices') === 'true';
 
       // State
-      this.mu = 0.62;                  // Vacuum aperture ratio
+      this.mu = 0.62;                  // Frame aperture ratio
       this.tau = INV_PHI;              // Octa to Icosa division ratio
-      this.shellOpacity = 0.35;        // Icosa shell opacity
+      this.shellOpacity = 0.38;        // Icosa shell opacity
       this.showGoldenOverlay = false;
       this.showDual = false;
-      this.showParentCore = true;      // Parent Core Wireframe for elevated solids
+      this.showParentCore = true;      // Parent Core Wireframe for augmented solids
       this.showDiagonals = true;       // φ Rhombus Diagonals for rhombic-triacontahedron
       this.autoOrbit = true;
       this.activeCubes = [true, true, true, true, true];
@@ -1682,18 +1753,18 @@
       this.showKeplerTriangle = true;  // Kepler Right Triangle (1 : √φ : φ)
       this.showQuadrature = true;      // Squaring the Circle (2πh = 8)
       this.showCosmogram = false;      // Earth & Moon Cosmogram
-      this.pyramidVacuum = false;      // Leonardo Vacuum Frame (genus 4)
+      this.pyramidVacuum = false;      // Hollow Frame (genus 4)
       this.showBipyramid = false;      // Reflected Golden Bipyramid
 
       // Camera presets
       this.presets = {
-        leonardo: { yaw: 0.42, pitch: 0.32, zoom: 1.0, persp: 0.32 },
-        isometric: { yaw: 0.615, pitch: 0.46, zoom: 1.0, persp: 0.0 },
-        front: { yaw: 0.0, pitch: 0.0, zoom: 1.05, persp: 0.15 },
-        top: { yaw: 0.0, pitch: 1.54, zoom: 1.05, persp: 0.0 }
+        perspective: { yaw: 0.46, pitch: 0.34, zoom: 1.0, persp: 0.30 },
+        isometric:   { yaw: 0.615, pitch: 0.46, zoom: 1.0, persp: 0.0 },
+        front:       { yaw: 0.0, pitch: 0.0, zoom: 1.05, persp: 0.15 },
+        top:         { yaw: 0.0, pitch: 1.54, zoom: 1.05, persp: 0.0 }
       };
 
-      this.cam = new Camera3D(this.presets.leonardo);
+      this.cam = new Camera3D(this.presets.perspective);
 
       this.initDOM();
       this.bindEvents();
@@ -1703,37 +1774,37 @@
     initDOM() {
       this.container.classList.add('polyhedra-mounted');
 
-      let title = 'GEOMETOR • 3D Regular Polyhedra Codex';
-      let subtitle = 'Drag to orbit • Scroll to zoom • Interactive Platonic & Golden Structure';
+      let title = 'GEOMETOR • 3D Polyhedra Studio';
+      let subtitle = 'Drag to orbit • Scroll to zoom • Exact Symbolic Geometry';
 
       if (this.solidName) {
         const solid = getSolid(this.solidName);
         const cat = getSolidCategory(this.solidName);
         if (cat === 'platonic') {
-          title = `REGULAR ${solid.title.toUpperCase()} • ELEMENT OF ${(solid.element || 'FIRE').toUpperCase()}`;
-          subtitle = 'Leonardo da Vinci 1509 Codex • Exact Symbolic Geometry';
+          title = `REGULAR ${solid.title.toUpperCase()}`;
+          subtitle = 'Platonic Regular Polyhedron • Exact Symbolic Geometry';
         } else if (cat === 'archimedean') {
-          title = `ARCHIMEDEAN ${solid.title.toUpperCase()}`;
-          subtitle = 'Archimedean Semi-Regular Solid • Leonardo da Vinci 1509 Codex • Exact Symbolic Geometry';
+          title = `${solid.title.toUpperCase()}`;
+          subtitle = 'Archimedean Semi-Regular Polyhedron • Exact Symbolic Geometry';
         } else if (cat === 'catalan') {
-          title = `CATALAN ${solid.title.toUpperCase()}`;
-          subtitle = `Dual of Archimedean ${solid.dualOf || 'Solid'} • Exact Symbolic Geometry`;
+          title = `${solid.title.toUpperCase()}`;
+          subtitle = `Catalan Face-Transitive Dual (${solid.dualOf || 'Archimedean'}) • Exact Symbolic Geometry`;
         } else if (cat === 'elevated') {
           title = `${solid.title.toUpperCase()}`;
-          subtitle = 'Leonardo da Vinci 1509 Elevatum • Luca Pacioli De Divina Proportione';
+          subtitle = 'Equilateral Pyramidal Stellation • Exact Symbolic Geometry';
         } else if (cat === 'pyramid') {
-          title = `CANONICAL ${solid.title.toUpperCase()}`;
-          subtitle = 'Golden Proportions & Classical Geometry • Exact Symbolic Modeling';
+          title = `${solid.title.toUpperCase()}`;
+          subtitle = 'Canonical Pyramid & Bipyramid Geometry • Exact Symbolic Modeling';
         } else {
           title = solid.title.toUpperCase();
-          subtitle = 'Polyhedral Model • Exact Symbolic Geometry';
+          subtitle = 'Polyhedral Manifold • Exact Symbolic Geometry';
         }
       } else if (this.sceneName === 'icosa_golden_rects') {
-        title = 'INTERACTIVE 3D • THREE ORTHOGONAL GOLDEN RECTANGLES (1:φ)';
+        title = 'THREE ORTHOGONAL GOLDEN RECTANGLES (1:φ)';
         subtitle = 'Euclid XIII.16 • 3 Intersecting Rectangles Generating the 12 Vertices of the Regular Icosahedron';
       } else if (this.sceneName === 'octa_to_icosa') {
         title = 'CONTINUOUS MORPHISM • REGULAR OCTAHEDRON TO REGULAR ICOSAHEDRON';
-        subtitle = 'Edge Division τ: Midpoint (1/2 → Cuboctahedron) ↔ Golden Section (1/φ → Icosahedron!)';
+        subtitle = 'Edge Division τ: Midpoint (1/2 → Cuboctahedron) ↔ Golden Section (1/φ → Icosahedron)';
       } else if (this.sceneName === 'dodeca_five_cubes') {
         title = 'EUCLID XIII.17 • ALL FIVE INSCRIBED CUBES IN REGULAR DODECAHEDRON';
         subtitle = '20 Vertices Partitioned into 5 Inscribed Cubes • Face Diagonals Form Cube Edges of Length 2';
@@ -1752,7 +1823,7 @@
             <div class="polyhedra-subtitle">${subtitle}</div>
           </div>
           <div class="polyhedra-presets">
-            <button class="polyhedra-btn btn-preset" data-preset="leonardo">Leonardo 1509</button>
+            <button class="polyhedra-btn btn-preset" data-preset="perspective">Perspective</button>
             <button class="polyhedra-btn btn-preset" data-preset="isometric">Isometric</button>
             <button class="polyhedra-btn btn-preset" data-preset="front">Front</button>
             <button class="polyhedra-btn btn-preset" data-preset="top">Top</button>
@@ -1798,30 +1869,23 @@
       if (this.solidName) {
         const cat = getSolidCategory(this.solidName);
 
-        // Variant Switchers
-        const variants = cat === 'platonic'
-          ? [
-              ['solidum', 'Solidum'],
-              ['vacuum', 'Vacuum (Leonardo)'],
-              ['abscisum', 'Abscisum'],
-              ['elevatum', 'Elevatum']
-            ]
-          : [
-              ['solidum', 'Solidum'],
-              ['vacuum', 'Vacuum (Leonardo)']
-            ];
+        // Clean Geometric Display Modes (unified across all 26 solids)
+        const modes = [
+          ['surfaces',  'Surfaces'],
+          ['wireframe', 'Wireframe'],
+          ['frame',     'Frame']
+        ];
 
-        // Ensure this.variant is valid for this solid
-        if (!variants.some(([k]) => k === this.variant)) {
-          this.variant = 'solidum';
+        if (!modes.some(([k]) => k === this.variant)) {
+          this.variant = 'surfaces';
         }
 
-        variants.forEach(([vKey, vLabel]) => {
+        modes.forEach(([mKey, mLabel]) => {
           const btn = document.createElement('button');
-          btn.className = `polyhedra-btn ${this.variant === vKey ? 'active' : ''}`;
-          btn.textContent = vLabel;
+          btn.className = `polyhedra-btn ${this.variant === mKey ? 'active' : ''}`;
+          btn.textContent = mLabel;
           btn.addEventListener('click', () => {
-            this.variant = vKey;
+            this.variant = mKey;
             varGroup.querySelectorAll('.polyhedra-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             this.updateSliderVisibility();
@@ -1829,11 +1893,22 @@
           varGroup.appendChild(btn);
         });
 
-        // Overlay Toggles
+        // Vertex Points Toggle (available on all 26 solids in any display mode)
+        const togVerts = document.createElement('button');
+        togVerts.className = `polyhedra-btn ${this.showVertices ? 'active' : ''}`;
+        togVerts.textContent = 'Vertices';
+        togVerts.title = 'Show 3D Vertex Points';
+        togVerts.addEventListener('click', () => {
+          this.showVertices = !this.showVertices;
+          togVerts.classList.toggle('active', this.showVertices);
+        });
+        togGroup.appendChild(togVerts);
+
+        // Category-specific geometric overlays
         if (cat === 'platonic') {
           const togGold = document.createElement('button');
           togGold.className = `polyhedra-btn ${this.showGoldenOverlay ? 'active' : ''}`;
-          togGold.textContent = 'φ Golden Structure';
+          togGold.textContent = 'φ Structure';
           togGold.addEventListener('click', () => {
             this.showGoldenOverlay = !this.showGoldenOverlay;
             togGold.classList.toggle('active', this.showGoldenOverlay);
@@ -1870,7 +1945,7 @@
           if (this.solidName === 'rhombic-triacontahedron') {
             const togDiags = document.createElement('button');
             togDiags.className = `polyhedra-btn ${this.showDiagonals ? 'active' : ''}`;
-            togDiags.textContent = 'φ Rhombus Diagonals';
+            togDiags.textContent = 'φ Diagonals';
             togDiags.addEventListener('click', () => {
               this.showDiagonals = !this.showDiagonals;
               togDiags.classList.toggle('active', this.showDiagonals);
@@ -1880,7 +1955,7 @@
         } else if (cat === 'elevated') {
           const togCore = document.createElement('button');
           togCore.className = `polyhedra-btn ${this.showParentCore ? 'active' : ''}`;
-          togCore.textContent = 'Parent Core Wireframe';
+          togCore.textContent = 'Core Wireframe';
           togCore.addEventListener('click', () => {
             this.showParentCore = !this.showParentCore;
             togCore.classList.toggle('active', this.showParentCore);
@@ -1898,7 +1973,7 @@
 
           const togGold = document.createElement('button');
           togGold.className = `polyhedra-btn ${this.showGoldenOverlay ? 'active' : ''}`;
-          togGold.textContent = 'φ Meridian / Golden Overlay';
+          togGold.textContent = 'φ Meridian';
           togGold.addEventListener('click', () => {
             this.showGoldenOverlay = !this.showGoldenOverlay;
             togGold.classList.toggle('active', this.showGoldenOverlay);
@@ -1915,14 +1990,27 @@
         });
         togGroup.appendChild(togSpin);
 
-        // Aperture Slider for Vacuum
+        // Surface Opacity + Frame Aperture Sliders
         sliderWrap.innerHTML = `
-          <div class="polyhedra-slider-row vacuum-slider-row" style="${this.variant === 'vacuum' ? 'display:flex;' : 'display:none;'}">
-            <span class="polyhedra-label">Aperture (μ):</span>
+          <div class="polyhedra-slider-row surface-opacity-row" style="${this.variant !== 'wireframe' ? 'display:flex;' : 'display:none;'}">
+            <span class="polyhedra-label">Opacity:</span>
+            <input type="range" class="polyhedra-slider surf-op-slider" min="0" max="100" step="1" value="${Math.round(this.surfaceOpacity * 100)}" />
+            <span class="polyhedra-val surf-op-val">${Math.round(this.surfaceOpacity * 100)}%</span>
+          </div>
+          <div class="polyhedra-slider-row frame-slider-row" style="${this.variant === 'frame' ? 'display:flex;' : 'display:none;'}">
+            <span class="polyhedra-label">Aperture:</span>
             <input type="range" class="polyhedra-slider ap-slider" min="0.25" max="0.85" step="0.01" value="${this.mu}" />
             <span class="polyhedra-val ap-val">${this.mu.toFixed(2)}</span>
           </div>
         `;
+        const surfOpSlider = sliderWrap.querySelector('.surf-op-slider');
+        const surfOpVal = sliderWrap.querySelector('.surf-op-val');
+        if (surfOpSlider) {
+          surfOpSlider.addEventListener('input', e => {
+            this.surfaceOpacity = parseInt(e.target.value, 10) / 100;
+            surfOpVal.textContent = `${e.target.value}%`;
+          });
+        }
         const apSlider = sliderWrap.querySelector('.ap-slider');
         const apVal = sliderWrap.querySelector('.ap-val');
         if (apSlider) {
@@ -1934,7 +2022,7 @@
       } else if (this.sceneName === 'icosa_golden_rects') {
         sliderWrap.innerHTML = `
           <div class="polyhedra-slider-row">
-            <span class="polyhedra-label">Icosahedron Shell Opacity:</span>
+            <span class="polyhedra-label">Shell Opacity:</span>
             <input type="range" class="polyhedra-slider opacity-slider" min="0" max="100" step="1" value="${Math.round(this.shellOpacity * 100)}" />
             <span class="polyhedra-val opacity-val">${Math.round(this.shellOpacity * 100)}%</span>
           </div>
@@ -1960,7 +2048,7 @@
 
         const btnGold = document.createElement('button');
         btnGold.className = 'polyhedra-btn active';
-        btnGold.textContent = 'Golden Section (1/φ → Icosahedron!)';
+        btnGold.textContent = 'Golden Section (1/φ → Icosahedron)';
         btnGold.addEventListener('click', () => {
           this.tau = INV_PHI;
           const sl = sliderWrap.querySelector('.tau-slider');
@@ -2046,7 +2134,7 @@
 
         const btnSolid = document.createElement('button');
         btnSolid.className = `polyhedra-btn ${this.rtSolid ? 'active' : ''}`;
-        btnSolid.textContent = 'Solid / Translucent';
+        btnSolid.textContent = 'Opaque / Translucent';
         btnSolid.addEventListener('click', () => {
           this.rtSolid = !this.rtSolid;
           btnSolid.classList.toggle('active', this.rtSolid);
@@ -2057,7 +2145,6 @@
           this.telemetryBar.style.display = 'flex';
         }
 
-        // 1. Preset Model Buttons (snapping live h parameter and highlighting active preset)
         const presets = [
           { id: 'kepler', label: 'Kepler φ (h = √φ ≈ 1.2720)', h: Math.sqrt(PHI) },
           { id: 'seked', label: 'Seked 14:11 (Khufu 280/220 ≈ 1.2727)', h: 14 / 11 },
@@ -2084,19 +2171,16 @@
           presetBtns.push(btn);
         });
 
-        // 2. Interactive Visual Layer Checkboxes / Toggles
-        // a) Kepler Meridian Triangle (1, √φ, φ) - default ON
         const btnKepler = document.createElement('button');
         btnKepler.className = `polyhedra-btn ${this.showKeplerTriangle ? 'active' : ''}`;
         btnKepler.textContent = 'Kepler (1, √φ, φ)';
-        btnKepler.title = 'Luminous Gold Interior Right Triangle from Base Center to East Edge Midpoint to Apex';
+        btnKepler.title = 'Interior Right Triangle from Base Center to East Edge Midpoint to Apex';
         btnKepler.addEventListener('click', () => {
           this.showKeplerTriangle = !this.showKeplerTriangle;
           btnKepler.classList.toggle('active', this.showKeplerTriangle);
         });
         togGroup.appendChild(btnKepler);
 
-        // b) Squaring the Circle (2πh = 8) - default ON
         const btnQuad = document.createElement('button');
         btnQuad.className = `polyhedra-btn ${this.showQuadrature ? 'active' : ''}`;
         btnQuad.textContent = 'Squaring the Circle (2πh = 8)';
@@ -2107,29 +2191,26 @@
         });
         togGroup.appendChild(btnQuad);
 
-        // c) Earth & Moon Cosmogram - default OFF
         const btnCosmo = document.createElement('button');
         btnCosmo.className = `polyhedra-btn ${this.showCosmogram ? 'active' : ''}`;
         btnCosmo.textContent = 'Earth & Moon';
-        btnCosmo.title = 'Translucent Earth Wireframe Sphere (r=1) and Tangent Moon Sphere (r=h-1)';
+        btnCosmo.title = 'Inscribed Earth Sphere (r=1) and Tangent Moon Sphere (r=h-1)';
         btnCosmo.addEventListener('click', () => {
           this.showCosmogram = !this.showCosmogram;
           btnCosmo.classList.toggle('active', this.showCosmogram);
         });
         togGroup.appendChild(btnCosmo);
 
-        // d) Leonardo Vacuum Frame - default OFF
         const btnVac = document.createElement('button');
         btnVac.className = `polyhedra-btn ${this.pyramidVacuum ? 'active' : ''}`;
-        btnVac.textContent = 'Vacuum Frame';
-        btnVac.title = 'Hollow Mitered Boxwood Wooden Frame (Pyramis Quadrata Vacua, genus g = 4)';
+        btnVac.textContent = 'Hollow Frame';
+        btnVac.title = 'Beveled Hollow Frame (genus g = 4)';
         btnVac.addEventListener('click', () => {
           this.pyramidVacuum = !this.pyramidVacuum;
           btnVac.classList.toggle('active', this.pyramidVacuum);
         });
         togGroup.appendChild(btnVac);
 
-        // e) Reflected Golden Bipyramid - default OFF
         const btnBi = document.createElement('button');
         btnBi.className = `polyhedra-btn ${this.showBipyramid ? 'active' : ''}`;
         btnBi.textContent = 'Golden Bipyramid';
@@ -2140,7 +2221,6 @@
         });
         togGroup.appendChild(btnBi);
 
-        // f) Auto-Spin
         const btnSpin = document.createElement('button');
         btnSpin.className = `polyhedra-btn ${this.autoOrbit ? 'active' : ''}`;
         btnSpin.textContent = 'Auto-Spin';
@@ -2150,7 +2230,6 @@
         });
         togGroup.appendChild(btnSpin);
 
-        // 3. Continuous Apex Height Slider (0.75 to 1.60, step 0.001)
         sliderWrap.innerHTML = `
           <div class="polyhedra-slider-row pyramid-slider-row">
             <span class="polyhedra-label">Apex Height (h):</span>
@@ -2263,9 +2342,13 @@
     }
 
     updateSliderVisibility() {
-      const vRow = this.container.querySelector('.vacuum-slider-row');
-      if (vRow) {
-        vRow.style.display = this.variant === 'vacuum' ? 'flex' : 'none';
+      const opRow = this.container.querySelector('.surface-opacity-row');
+      if (opRow) {
+        opRow.style.display = this.variant !== 'wireframe' ? 'flex' : 'none';
+      }
+      const fRow = this.container.querySelector('.frame-slider-row');
+      if (fRow) {
+        fRow.style.display = this.variant === 'frame' ? 'flex' : 'none';
       }
     }
 
@@ -2352,6 +2435,13 @@
       requestAnimationFrame(renderFrame);
     }
 
+    isDarkTheme() {
+      const attr = document.documentElement.getAttribute('data-theme');
+      if (attr === 'light') return false;
+      if (attr === 'dark') return true;
+      return !window.matchMedia || !window.matchMedia('(prefers-color-scheme: light)').matches;
+    }
+
     render() {
       const ctx = this.ctx;
       const dpr = this.scaleDpr || 1;
@@ -2362,29 +2452,44 @@
       ctx.scale(dpr, dpr);
       ctx.clearRect(0, 0, w, h);
 
-      // Determine theme background
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
-        (!document.documentElement.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const isDark = this.isDarkTheme();
+
+      // Subtle radial studio stage backdrop
+      const bgGrad = ctx.createRadialGradient(
+        w * 0.5, h * 0.48, Math.min(w, h) * 0.04,
+        w * 0.5, h * 0.52, Math.max(w, h) * 0.68
+      );
+      if (isDark) {
+        bgGrad.addColorStop(0, '#172236');
+        bgGrad.addColorStop(0.58, '#0d1320');
+        bgGrad.addColorStop(1, '#080b12');
+      } else {
+        bgGrad.addColorStop(0, '#ffffff');
+        bgGrad.addColorStop(0.65, '#f4f7fb');
+        bgGrad.addColorStop(1, '#e8eef5');
+      }
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
 
       // Render items queue for depth sorting
       const renderQueue = [];
-      const baseScale = Math.min(w, h) * 0.38;
+      const baseScale = Math.min(w, h) * (this.solidName ? 0.215 : 0.35);
 
       if (this.solidName) {
-        this.renderSolid(renderQueue, w, h, baseScale);
+        this.renderSolid(renderQueue, w, h, baseScale, isDark);
       } else if (this.sceneName === 'icosa_golden_rects') {
-        this.renderSceneIcosaGoldenRects(renderQueue, w, h, baseScale);
+        this.renderSceneIcosaGoldenRects(renderQueue, w, h, baseScale, isDark);
       } else if (this.sceneName === 'octa_to_icosa') {
-        this.renderSceneOctaToIcosa(renderQueue, w, h, baseScale);
+        this.renderSceneOctaToIcosa(renderQueue, w, h, baseScale, isDark);
       } else if (this.sceneName === 'dodeca_five_cubes') {
-        this.renderSceneDodecaFiveCubes(renderQueue, w, h, baseScale);
+        this.renderSceneDodecaFiveCubes(renderQueue, w, h, baseScale, isDark);
       } else if (this.sceneName === 'rhombic_triacontahedron') {
-        this.renderSceneRhombicTriacontahedron(renderQueue, w, h, baseScale);
+        this.renderSceneRhombicTriacontahedron(renderQueue, w, h, baseScale, isDark);
       } else if (this.sceneName === 'great_pyramid_kepler') {
-        this.renderSceneGreatPyramidKepler(renderQueue, w, h, baseScale);
+        this.renderSceneGreatPyramidKepler(renderQueue, w, h, baseScale, isDark);
       }
 
-      // Sort by camera depth Z (Painter's algorithm: farthest first)
+      // Sort by camera depth Z (Painter's algorithm: farthest +Z first, closest -Z last)
       renderQueue.sort((a, b) => b.z - a.z);
 
       // Draw all items
@@ -2395,118 +2500,178 @@
 
     // --- Scene Renderers ---
 
-    renderSolid(q, w, h, sc) {
+    renderSolid(q, w, h, sc, isDark) {
       const base = getSolid(this.solidName);
       const cat = getSolidCategory(this.solidName);
+      const { edges } = getEdgesFromFaces(base.faces);
 
-      if (this.variant === 'solidum') {
+      // Classify front/back status of base faces for depth-cued wireframes & vertex points
+      const faceFront = base.faces.map(f => {
+        const pts = f.map(idx => base.vertices[idx]);
+        const c = pts.reduce((acc, p) => vAdd(acc, vScale(p, 1 / pts.length)), [0, 0, 0]);
+        let norm = vNorm(vCross(vSub(pts[1], pts[0]), vSub(pts[2], pts[0])));
+        if (vDot(norm, c) < 0) norm = vScale(norm, -1);
+        return this.cam.classifyFace(norm, c).isFront;
+      });
+
+      const vertFront = new Array(base.vertices.length).fill(false);
+      base.faces.forEach((f, fi) => {
+        if (faceFront[fi]) {
+          f.forEach(vi => { vertFront[vi] = true; });
+        }
+      });
+
+      const op = this.surfaceOpacity;
+      const frontStroke = isDark ? 'rgba(248, 250, 252, 0.76)' : 'rgba(15, 23, 42, 0.74)';
+      const backStroke  = isDark ? 'rgba(148, 163, 184, 0.28)' : 'rgba(71, 85, 105, 0.26)';
+
+      if (this.variant === 'surfaces') {
         const mesh = buildSolidumMesh(base);
         this.eulerEl.textContent = `V = ${mesh.V} • E = ${mesh.E} • F = ${mesh.F} • χ = 2`;
-        this.statusEl.textContent = `${base.title} in Solidum — Opaque Faceted Renaissance Geometry`;
+        this.statusEl.textContent = `${base.title} • Surface Opacity ${Math.round(op * 100)}%${this.showVertices ? ' • Vertex Points' : ''}`;
 
         mesh.polygons.forEach(p => {
           const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
           const pCentroid = this.cam.project(p.centroid, w, h, sc);
 
-          // Normal in camera space
-          const v1 = [projPts[1][0] - projPts[0][0], projPts[1][1] - projPts[0][1]];
-          const v2 = [projPts[2][0] - projPts[0][0], projPts[2][1] - projPts[0][1]];
-          const cross2D = v1[0] * v2[1] - v1[1] * v2[0];
-          const isFacingCamera = cross2D > 0;
+          const faceAlpha = op >= 0.995 ? 1.0 : op;
+          const shaded = shadeStudioFacet(
+            this.cam,
+            p.baseColor,
+            p.norm,
+            p.centroid,
+            faceAlpha
+          );
 
-          const color = shadeColor(p.baseColor, p.norm, !isFacingCamera, 0.94);
+          // Skip invisible backfaces when 100% opaque on convex solids
+          if (op >= 0.995 && !shaded.isFront && cat !== 'elevated') {
+            return;
+          }
+
+          const effectiveFillAlpha = shaded.isFront ? faceAlpha : (faceAlpha * 0.50);
+          const rearShaded = !shaded.isFront
+            ? shadeStudioFacet(this.cam, p.baseColor, p.norm, p.centroid, effectiveFillAlpha)
+            : shaded;
 
           q.push({
-            z: pCentroid[2],
+            z: pCentroid[2] + (shaded.isFront ? 0 : 0.02),
             draw: ctx => {
+              ctx.save();
+              ctx.lineJoin = 'round';
+              ctx.lineCap = 'round';
               ctx.beginPath();
               projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
               ctx.closePath();
-              ctx.fillStyle = color;
-              ctx.fill();
-              ctx.strokeStyle = isFacingCamera ? 'rgba(15, 23, 42, 0.75)' : 'rgba(15, 23, 42, 0.25)';
-              ctx.lineWidth = 1.2;
+              if (effectiveFillAlpha > 0.005) {
+                ctx.fillStyle = rearShaded.fill;
+                ctx.fill();
+              }
+              ctx.strokeStyle = shaded.isFront ? frontStroke : backStroke;
+              ctx.lineWidth = shaded.isFront ? 1.35 : 0.95;
               ctx.stroke();
+              ctx.restore();
             }
           });
         });
-      } else if (this.variant === 'vacuum') {
+      } else if (this.variant === 'wireframe') {
+        const V = base.vertices.length;
+        const E = edges.length;
+        const F = base.faces.length;
+        this.eulerEl.textContent = `V = ${V} • E = ${E} • F = ${F} • χ = 2`;
+        this.statusEl.textContent = `${base.title} • Depth-Cued 3D Wireframe (${E} Edges)${this.showVertices ? ' • Vertex Points' : ''}`;
+
+        const wireRgb = base.color || [96, 165, 250];
+        const frontWireHex = isDark
+          ? `rgba(${Math.min(255, wireRgb[0] + 35)}, ${Math.min(255, wireRgb[1] + 35)}, ${Math.min(255, wireRgb[2] + 35)}, 0.96)`
+          : `rgba(${Math.round(wireRgb[0] * 0.72)}, ${Math.round(wireRgb[1] * 0.72)}, ${Math.round(wireRgb[2] * 0.72)}, 0.95)`;
+        const backWireCol = isDark ? 'rgba(148, 163, 184, 0.32)' : 'rgba(100, 116, 139, 0.34)';
+
+        edges.forEach(e => {
+          const p1 = this.cam.project(base.vertices[e.a], w, h, sc);
+          const p2 = this.cam.project(base.vertices[e.b], w, h, sc);
+          const isFrontEdge = e.faces.some(fi => faceFront[fi]);
+          const midZ = (p1[2] + p2[2]) * 0.5;
+
+          q.push({
+            z: midZ + (isFrontEdge ? -0.01 : 0.02),
+            draw: ctx => {
+              ctx.save();
+              ctx.lineCap = 'round';
+              ctx.beginPath();
+              if (!isFrontEdge) {
+                ctx.setLineDash([4, 4]);
+              } else if (isDark) {
+                ctx.shadowColor = frontWireHex;
+                ctx.shadowBlur = 5;
+              }
+              ctx.moveTo(p1[0], p1[1]);
+              ctx.lineTo(p2[0], p2[1]);
+              ctx.strokeStyle = isFrontEdge ? frontWireHex : backWireCol;
+              ctx.lineWidth = isFrontEdge ? 2.15 : 1.15;
+              ctx.stroke();
+              ctx.restore();
+            }
+          });
+        });
+      } else if (this.variant === 'frame') {
         const mesh = buildVacuumMesh(base, this.mu);
-        this.eulerEl.textContent = `V_vac = ${mesh.V_vac} • E_vac = ${mesh.E_vac} • F_vac = ${mesh.F_vac} • genus g = ${mesh.genus}`;
-        this.statusEl.textContent = `Leonardo 1509 Vacuum Frame • μ = ${this.mu.toFixed(2)} • 6E = ${mesh.F_vac} Mitered Quads`;
+        this.eulerEl.textContent = `V = ${mesh.V_vac} • E = ${mesh.E_vac} • F = ${mesh.F_vac} • genus g = ${mesh.genus}`;
+        this.statusEl.textContent = `${base.title} • Beveled Hollow Frame (Aperture ${this.mu.toFixed(2)} • Opacity ${Math.round(op * 100)}%)`;
+
+        const frameStrokeFront = isDark ? 'rgba(15, 23, 42, 0.72)' : 'rgba(15, 23, 42, 0.65)';
+        const frameStrokeBack  = isDark ? 'rgba(148, 163, 184, 0.20)' : 'rgba(100, 116, 139, 0.20)';
 
         mesh.polygons.forEach(p => {
           const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
           const pCentroid = this.cam.project(p.centroid, w, h, sc);
+          const shaded = shadeStudioFacet(this.cam, p.baseColor, p.norm, p.centroid, op);
 
-          const v1 = [projPts[1][0] - projPts[0][0], projPts[1][1] - projPts[0][1]];
-          const v2 = [projPts[2][0] - projPts[0][0], projPts[2][1] - projPts[0][1]];
-          const isFacingCamera = (v1[0] * v2[1] - v1[1] * v2[0]) > 0;
+          // Cull interior solid-wall backfaces when nearly opaque so hollow bevels stay razor-clean
+          if (op > 0.92 && !shaded.isFront) {
+            return;
+          }
 
-          const color = shadeColor(p.baseColor, p.norm, !isFacingCamera, 0.96);
+          const alpha = shaded.isFront ? op : op * 0.38;
+          const finalShade = shaded.isFront
+            ? shaded
+            : shadeStudioFacet(this.cam, p.baseColor, p.norm, p.centroid, alpha);
 
           q.push({
             z: pCentroid[2],
             draw: ctx => {
+              ctx.save();
+              ctx.lineJoin = 'round';
               ctx.beginPath();
               projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
               ctx.closePath();
-              ctx.fillStyle = color;
-              ctx.fill();
-              ctx.strokeStyle = 'rgba(30, 20, 10, 0.70)';
-              ctx.lineWidth = 1.1;
+              if (alpha > 0.005) {
+                ctx.fillStyle = finalShade.fill;
+                ctx.fill();
+              }
+              ctx.strokeStyle = shaded.isFront ? frameStrokeFront : frameStrokeBack;
+              ctx.lineWidth = shaded.isFront ? 0.95 : 0.65;
               ctx.stroke();
+              ctx.restore();
             }
           });
         });
-      } else if (this.variant === 'abscisum') {
-        const mesh = buildAbscisumMesh(base);
-        this.eulerEl.textContent = `V = ${mesh.V} • E = ${mesh.E} • F = ${mesh.F} • χ = 2`;
-        this.statusEl.textContent = `${base.title} Abscisum — Archimedean Rectification at Edge Midpoints`;
+      }
 
-        mesh.polygons.forEach(p => {
-          const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
-          const pCentroid = this.cam.project(p.centroid, w, h, sc);
-          const color = shadeColor(p.baseColor, p.norm, false, 0.90);
-
+      // 3D Vertex Points Option (depth-interleaved sphere nodes)
+      if (this.showVertices) {
+        const vCount = base.vertices.length;
+        const baseRad = vCount > 45 ? 3.3 : (vCount > 20 ? 4.0 : 4.7);
+        base.vertices.forEach((v, vIdx) => {
+          const proj = this.cam.project(v, w, h, sc);
+          const isFrontV = vertFront[vIdx];
+          // Hide occluded back vertices only when Surfaces mode is completely opaque
+          if (this.variant === 'surfaces' && op >= 0.98 && !isFrontV && cat !== 'elevated') {
+            return;
+          }
+          const r = baseRad * Math.max(0.75, Math.min(1.25, proj[3] || 1.0)) * (isFrontV ? 1.0 : 0.80);
           q.push({
-            z: pCentroid[2],
-            draw: ctx => {
-              ctx.beginPath();
-              projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
-              ctx.closePath();
-              ctx.fillStyle = color;
-              ctx.fill();
-              ctx.strokeStyle = 'rgba(15, 23, 42, 0.85)';
-              ctx.lineWidth = 1.2;
-              ctx.stroke();
-            }
-          });
-        });
-      } else if (this.variant === 'elevatum') {
-        const elevSolid = elevateSolid(base);
-        normalizeSolid(elevSolid, 1.80);
-        const mesh = buildSolidumMesh(elevSolid);
-        this.eulerEl.textContent = `V = ${mesh.V} • E = ${mesh.E} • F = ${mesh.F} • χ = 2`;
-        this.statusEl.textContent = `${base.title} Elevatum — Outward Pyramidal Stellation on All Faces`;
-
-        mesh.polygons.forEach(p => {
-          const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
-          const pCentroid = this.cam.project(p.centroid, w, h, sc);
-          const color = shadeColor(p.baseColor, p.norm, false, 0.92);
-
-          q.push({
-            z: pCentroid[2],
-            draw: ctx => {
-              ctx.beginPath();
-              projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
-              ctx.closePath();
-              ctx.fillStyle = color;
-              ctx.fill();
-              ctx.strokeStyle = 'rgba(15, 23, 42, 0.8)';
-              ctx.lineWidth = 1.0;
-              ctx.stroke();
-            }
+            z: proj[2] - (isFrontV ? 0.045 : 0.01),
+            draw: ctx => drawVertexSphere(ctx, proj[0], proj[1], r, isFrontV, isDark)
           });
         });
       }
@@ -2638,7 +2803,7 @@
         });
       }
 
-      // Parent core wireframe (for elevated solids)
+      // Parent core wireframe (for augmented solids)
       if (this.showParentCore && cat === 'elevated' && base.parentSolid) {
         const coreLines = getParentCoreWireframe(base);
         coreLines.forEach(l => {
@@ -2705,16 +2870,15 @@
       }
     }
 
-    renderPlatonicSolid(q, w, h, sc) {
-      this.renderSolid(q, w, h, sc);
+    renderPlatonicSolid(q, w, h, sc, isDark) {
+      this.renderSolid(q, w, h, sc, isDark);
     }
 
-    renderSceneIcosaGoldenRects(q, w, h, sc) {
+    renderSceneIcosaGoldenRects(q, w, h, sc, isDark) {
       const data = buildSceneIcosaGoldenRects(this.shellOpacity);
       this.eulerEl.textContent = 'V = 12 • 3 Golden Rectangles • Ratio = 1 : φ';
       this.statusEl.textContent = `Three Orthogonal Golden Rectangles (1:φ) inside Regular Icosahedron (Shell Opacity: ${Math.round(this.shellOpacity * 100)}%)`;
 
-      // 3 Golden Rectangles
       data.rects.forEach(r => {
         const projPts = r.pts.map(v => this.cam.project(v, w, h, sc));
         const avgZ = projPts.reduce((acc, pt) => acc + pt[2], 0) / projPts.length;
@@ -2733,7 +2897,6 @@
           }
         });
 
-        // Rectangle side length labels
         const midShort = vScale(vAdd(r.pts[0], r.pts[1]), 0.5);
         const midLong = vScale(vAdd(r.pts[1], r.pts[2]), 0.5);
         const pShort = this.cam.project(midShort, w, h, sc);
@@ -2757,12 +2920,11 @@
         });
       });
 
-      // 20 Icosahedron Shell Faces
       if (this.shellOpacity > 0.01) {
         data.icoMesh.polygons.forEach(p => {
           const projPts = p.pts.map(v => this.cam.project(v, w, h, sc));
           const pCentroid = this.cam.project(p.centroid, w, h, sc);
-          const color = shadeColor([59, 130, 246], p.norm, false, this.shellOpacity);
+          const shaded = shadeStudioFacet(this.cam, [96, 165, 250], p.norm, p.centroid, this.shellOpacity);
 
           q.push({
             z: pCentroid[2] + 0.05,
@@ -2770,10 +2932,10 @@
               ctx.beginPath();
               projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
               ctx.closePath();
-              ctx.fillStyle = color;
+              ctx.fillStyle = shaded.fill;
               ctx.fill();
-              ctx.strokeStyle = `rgba(56, 189, 248, ${Math.min(1.0, this.shellOpacity * 1.5)})`;
-              ctx.lineWidth = 1.2;
+              ctx.strokeStyle = `rgba(125, 211, 252, ${Math.min(0.95, this.shellOpacity * 1.6)})`;
+              ctx.lineWidth = 1.25;
               ctx.stroke();
             }
           });
@@ -2781,24 +2943,23 @@
       }
     }
 
-    renderSceneOctaToIcosa(q, w, h, sc) {
+    renderSceneOctaToIcosa(q, w, h, sc, isDark) {
       const data = buildSceneOctaToIcosa(this.tau);
       const isGolden = Math.abs(this.tau - INV_PHI) < 0.015;
       const isMid = Math.abs(this.tau - 0.5) < 0.015;
 
       if (isGolden) {
-        this.eulerEl.textContent = `✨ GOLDEN SECTION ACHIEVED • τ = ${INV_PHI.toFixed(4)} (1/φ)`;
+        this.eulerEl.textContent = `GOLDEN SECTION • τ = ${INV_PHI.toFixed(4)} (1/φ)`;
         this.eulerEl.style.borderColor = '#f59e0b';
-        this.statusEl.textContent = '✨ 12 Edge Points Form a 100% Exact Regular Icosahedron (20 Congruent Equilateral Triangles)!';
+        this.statusEl.textContent = '12 Edge Points Form an Exact Regular Icosahedron (20 Congruent Equilateral Triangles)';
       } else if (isMid) {
-        this.eulerEl.textContent = '⚖️ MIDPOINT DIVISION • τ = 0.500 (Archimedean Cuboctahedron)';
-        this.statusEl.textContent = '8 Triangles + 6 Squares form Archimedean Cuboctahedron!';
+        this.eulerEl.textContent = 'MIDPOINT DIVISION • τ = 0.500 (Cuboctahedron)';
+        this.statusEl.textContent = '8 Triangles + 6 Squares form Archimedean Cuboctahedron';
       } else {
         this.eulerEl.textContent = `τ = ${this.tau.toFixed(3)} • Morphing Polyhedron`;
         this.statusEl.textContent = 'Continuous Morphism between Regular Octahedron and Regular Icosahedron';
       }
 
-      // Octahedron Wireframe
       data.octaEdges.forEach(([a, b]) => {
         const p1 = this.cam.project(data.ox[a], w, h, sc);
         const p2 = this.cam.project(data.ox[b], w, h, sc);
@@ -2817,11 +2978,10 @@
         });
       });
 
-      // 20 Inscribed Triangles
       data.triangles.forEach(t => {
         const projPts = t.pts.map(v => this.cam.project(v, w, h, sc));
         const pCentroid = this.cam.project(t.centroid, w, h, sc);
-        const color = shadeColor(t.baseColor, t.norm, false, isGolden ? 0.88 : 0.65);
+        const shaded = shadeStudioFacet(this.cam, t.baseColor, t.norm, t.centroid, isGolden ? 0.88 : 0.72);
 
         q.push({
           z: pCentroid[2],
@@ -2829,40 +2989,30 @@
             ctx.beginPath();
             projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
             ctx.closePath();
-            ctx.fillStyle = color;
+            ctx.fillStyle = shaded.fill;
             ctx.fill();
-            ctx.strokeStyle = t.stroke;
-            ctx.lineWidth = isGolden ? 1.6 : 1.1;
+            ctx.strokeStyle = isGolden ? 'rgba(254, 243, 199, 0.85)' : (isDark ? 'rgba(226, 232, 240, 0.65)' : 'rgba(15, 23, 42, 0.65)');
+            ctx.lineWidth = isGolden ? 1.5 : 1.15;
             ctx.stroke();
           }
         });
       });
 
-      // 12 Sliding Edge Nodes
       data.pts.forEach(p => {
         const proj = this.cam.project(p, w, h, sc);
         q.push({
           z: proj[2] - 0.08,
-          draw: ctx => {
-            ctx.beginPath();
-            ctx.arc(proj[0], proj[1], isGolden ? 4.5 : 3.5, 0, Math.PI * 2);
-            ctx.fillStyle = isGolden ? '#f59e0b' : '#38bdf8';
-            ctx.fill();
-            ctx.strokeStyle = '#ffffff';
-            ctx.lineWidth = 1.0;
-            ctx.stroke();
-          }
+          draw: ctx => drawVertexSphere(ctx, proj[0], proj[1], isGolden ? 4.8 : 3.8, true, isDark)
         });
       });
     }
 
-    renderSceneDodecaFiveCubes(q, w, h, sc) {
+    renderSceneDodecaFiveCubes(q, w, h, sc, isDark) {
       const data = buildSceneDodecaFiveCubes(this.activeCubes, this.showRoofWedge);
       const activeCount = this.activeCubes.filter(x => x).length;
       this.eulerEl.textContent = `Euclid XIII.17 • ${activeCount} Active Cubes • V = 20`;
       this.statusEl.textContent = 'Each Cube Edge of Length 2 is a Pentagonal Diagonal (φ × 2φ⁻¹) of the Dodecahedron';
 
-      // Subtle Dodecahedron Cage
       data.dodecaEdges.forEach(e => {
         const p1 = this.cam.project(data.vertices[e.a], w, h, sc);
         const p2 = this.cam.project(data.vertices[e.b], w, h, sc);
@@ -2872,14 +3022,13 @@
             ctx.beginPath();
             ctx.moveTo(p1[0], p1[1]);
             ctx.lineTo(p2[0], p2[1]);
-            ctx.strokeStyle = 'rgba(148, 163, 184, 0.28)';
-            ctx.lineWidth = 1.2;
+            ctx.strokeStyle = isDark ? 'rgba(148, 163, 184, 0.34)' : 'rgba(100, 116, 139, 0.36)';
+            ctx.lineWidth = 1.25;
             ctx.stroke();
           }
         });
       });
 
-      // Active Cubes Wireframes
       data.cubes.forEach(cube => {
         if (!cube.active) return;
         cube.edges.forEach(([a, b]) => {
@@ -2899,7 +3048,6 @@
         });
       });
 
-      // Roof Wedge (Euclid XIII.17)
       if (data.showRoofWedge) {
         data.roof.forEach(rf => {
           const projPts = rf.pts.map(v => this.cam.project(v, w, h, sc));
@@ -2921,16 +3069,17 @@
       }
     }
 
-    renderSceneRhombicTriacontahedron(q, w, h, sc) {
+    renderSceneRhombicTriacontahedron(q, w, h, sc, isDark) {
       const data = buildSceneRhombicTriacontahedron(this.rtShowDodeca, this.rtShowIcosa, this.rtShowDiagonals, this.rtSolid);
       this.eulerEl.textContent = 'V = 32 • E = 60 • F = 30 • χ = 2';
-      this.statusEl.textContent = 'Kepler 1619 • 30 Golden Rhombi with Long:Short Diagonal Ratio = φ (1.618034)';
+      this.statusEl.textContent = 'Kepler 1611 • 30 Golden Rhombi with Long:Short Diagonal Ratio = φ (1.618034)';
 
-      // 30 Golden Rhombi
+      const edgeCol = isDark ? 'rgba(248, 250, 252, 0.72)' : 'rgba(15, 23, 42, 0.72)';
+
       data.rhombi.forEach(r => {
         const projPts = r.pts.map(v => this.cam.project(v, w, h, sc));
         const pCentroid = this.cam.project(r.centroid, w, h, sc);
-        const color = shadeColor(r.baseColor, r.norm, false, r.opacity);
+        const shaded = shadeStudioFacet(this.cam, [251, 191, 36], r.norm, r.centroid, r.opacity);
 
         q.push({
           z: pCentroid[2],
@@ -2938,16 +3087,15 @@
             ctx.beginPath();
             projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
             ctx.closePath();
-            ctx.fillStyle = color;
+            ctx.fillStyle = shaded.fill;
             ctx.fill();
-            ctx.strokeStyle = 'rgba(15, 23, 42, 0.75)';
-            ctx.lineWidth = 1.1;
+            ctx.strokeStyle = shaded.isFront ? edgeCol : 'rgba(148, 163, 184, 0.25)';
+            ctx.lineWidth = shaded.isFront ? 1.25 : 0.9;
             ctx.stroke();
           }
         });
       });
 
-      // Diagonals (Long = phi, Short = 1)
       if (this.rtShowDiagonals) {
         data.diagLines.forEach(l => {
           const p1 = this.cam.project(l.pts[0], w, h, sc);
@@ -2968,7 +3116,6 @@
         });
       }
 
-      // 20 Obtuse Vertices (Dodecahedron)
       if (this.rtShowDodeca) {
         data.obtuseVerts.forEach(v => {
           const p = this.cam.project(v, w, h, sc);
@@ -2977,7 +3124,7 @@
             draw: ctx => {
               ctx.beginPath();
               ctx.arc(p[0], p[1], 4.5, 0, Math.PI * 2);
-              ctx.fillStyle = '#10b981'; // Emerald
+              ctx.fillStyle = '#34d399';
               ctx.fill();
               ctx.strokeStyle = '#ffffff';
               ctx.lineWidth = 1.2;
@@ -2987,7 +3134,6 @@
         });
       }
 
-      // 12 Acute Vertices (Icosahedron)
       if (this.rtShowIcosa) {
         data.acuteVerts.forEach(v => {
           const p = this.cam.project(v, w, h, sc);
@@ -2996,7 +3142,7 @@
             draw: ctx => {
               ctx.beginPath();
               ctx.arc(p[0], p[1], 4.5, 0, Math.PI * 2);
-              ctx.fillStyle = '#06b6d4'; // Cyan
+              ctx.fillStyle = '#38bdf8';
               ctx.fill();
               ctx.strokeStyle = '#ffffff';
               ctx.lineWidth = 1.2;
@@ -3007,26 +3153,23 @@
       }
     }
 
-    renderSceneGreatPyramidKepler(q, w, h, sc) {
+    renderSceneGreatPyramidKepler(q, w, h, sc, isDark) {
       const H = this.pyramidH;
       const a = 1.0;
       const s = Math.hypot(a, H);
       const isKepler = Math.abs(H - Math.sqrt(PHI)) < 0.01;
       const yOffset = this.showBipyramid ? 0 : -0.42;
 
-      // Projection helper with vertical center offset
       const pr = pt => this.cam.project([pt[0], pt[1] + yOffset, pt[2]], w, h, sc);
 
-      // Base vertices (Square 2x2 in plane y = 0)
-      const C0 = [ 1, 0,  1]; // SE
-      const C1 = [-1, 0,  1]; // SW
-      const C2 = [-1, 0, -1]; // NW
-      const C3 = [ 1, 0, -1]; // NE
-      const O  = [ 0, 0,  0]; // Base center
-      const A_top = [0,  H, 0]; // Apex
-      const A_bot = [0, -H, 0]; // Lower Apex (for bipyramid)
+      const C0 = [ 1, 0,  1];
+      const C1 = [-1, 0,  1];
+      const C2 = [-1, 0, -1];
+      const C3 = [ 1, 0, -1];
+      const O  = [ 0, 0,  0];
+      const A_top = [0,  H, 0];
+      const A_bot = [0, -H, 0];
 
-      // 3D Line Helper
       function addLine3D(p1_3d, p2_3d, strokeStyle, lineWidth, isDashed, extraZ) {
         const p1 = pr(p1_3d);
         const p2 = pr(p2_3d);
@@ -3047,7 +3190,6 @@
         });
       }
 
-      // 3D Circle Helper
       function addCircle3D(center, normal, radius, strokeStyle, lineWidth, isDashed, fillStyle, extraZ) {
         const segs = 64;
         let u, v;
@@ -3095,7 +3237,6 @@
         });
       }
 
-      // 3D Point Marker Helper
       function addPointMarker3D(pt3d, radius, fillStyle, strokeStyle, extraZ) {
         const p = pr(pt3d);
         q.push({
@@ -3116,7 +3257,6 @@
         });
       }
 
-      // 3D Callout Label Helper
       function addCallout3D(pt3d, text, color, isHighlight, extraZ) {
         const p = pr(pt3d);
         q.push({
@@ -3136,7 +3276,6 @@
         });
       }
 
-      // --- Ground / Base Reference Grid ---
       addLine3D(C0, C1, 'rgba(180, 160, 130, 0.45)', 1.2, true, 0.05);
       addLine3D(C1, C2, 'rgba(180, 160, 130, 0.45)', 1.2, true, 0.05);
       addLine3D(C2, C3, 'rgba(180, 160, 130, 0.45)', 1.2, true, 0.05);
@@ -3144,18 +3283,13 @@
       addLine3D([-1.4, 0, 0], [1.4, 0, 0], 'rgba(148, 163, 184, 0.28)', 1.0, true, 0.06);
       addLine3D([0, 0, -1.4], [0, 0, 1.4], 'rgba(148, 163, 184, 0.28)', 1.0, true, 0.06);
 
-      // --- 1. Pyramid Solid Faces / Leonardo Vacuum Frame ---
       if (this.pyramidVacuum) {
         const vacPolys = buildPyramidVacuumMesh(H, this.showBipyramid, this.mu, 0.12);
         vacPolys.forEach(poly => {
           const projPts = poly.pts.map(pr);
           const pC = pr(poly.centroid);
-
-          const v1 = [projPts[1][0] - projPts[0][0], projPts[1][1] - projPts[0][1]];
-          const v2 = [projPts[2][0] - projPts[0][0], projPts[2][1] - projPts[0][1]];
-          const isFacing = (v1[0] * v2[1] - v1[1] * v2[0]) > 0;
-
-          const color = shadeColor(poly.baseColor, poly.norm, !isFacing, 0.96);
+          const shiftedC = [poly.centroid[0], poly.centroid[1] + yOffset, poly.centroid[2]];
+          const shaded = shadeStudioFacet(this.cam, poly.baseColor, poly.norm, shiftedC, 0.94);
 
           q.push({
             z: pC[2],
@@ -3163,16 +3297,15 @@
               ctx.beginPath();
               projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
               ctx.closePath();
-              ctx.fillStyle = color;
+              ctx.fillStyle = shaded.fill;
               ctx.fill();
-              ctx.strokeStyle = 'rgba(30, 20, 10, 0.65)';
-              ctx.lineWidth = 1.0;
+              ctx.strokeStyle = isDark ? 'rgba(15, 23, 42, 0.70)' : 'rgba(15, 23, 42, 0.55)';
+              ctx.lineWidth = 0.95;
               ctx.stroke();
             }
           });
         });
       } else {
-        // Translucent Sunlit Limestone / Alabaster Faces
         const faces = [
           { name: 'south', pts: [C1, C0, A_top] },
           { name: 'east',  pts: [C0, C3, A_top] },
@@ -3199,12 +3332,8 @@
 
           const projPts = f.pts.map(pr);
           const pCentroid = pr(cFace);
-
-          const v1 = [projPts[1][0] - projPts[0][0], projPts[1][1] - projPts[0][1]];
-          const v2 = [projPts[2][0] - projPts[0][0], projPts[2][1] - projPts[0][1]];
-          const isFacing = (v1[0] * v2[1] - v1[1] * v2[0]) > 0;
-
-          const color = shadeColor([238, 228, 206], faceNorm, !isFacing, 0.35);
+          const shiftedC = [cFace[0], cFace[1] + yOffset, cFace[2]];
+          const shaded = shadeStudioFacet(this.cam, [244, 228, 196], faceNorm, shiftedC, 0.36);
 
           q.push({
             z: pCentroid[2],
@@ -3212,10 +3341,10 @@
               ctx.beginPath();
               projPts.forEach((pt, i) => i === 0 ? ctx.moveTo(pt[0], pt[1]) : ctx.lineTo(pt[0], pt[1]));
               ctx.closePath();
-              ctx.fillStyle = color;
+              ctx.fillStyle = shaded.fill;
               ctx.fill();
-              ctx.strokeStyle = isFacing ? 'rgba(180, 155, 110, 0.85)' : 'rgba(180, 155, 110, 0.35)';
-              ctx.lineWidth = 1.3;
+              ctx.strokeStyle = shaded.isFront ? 'rgba(248, 250, 252, 0.72)' : 'rgba(148, 163, 184, 0.32)';
+              ctx.lineWidth = shaded.isFront ? 1.35 : 1.0;
               ctx.stroke();
             }
           });

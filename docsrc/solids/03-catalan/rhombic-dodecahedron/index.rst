@@ -22,8 +22,8 @@ P-03.01 · Rhombic Dodecahedron
 .. picture:: rhombic-dodecahedron.svg
    :alt: Rhombic Dodecahedron
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 
@@ -79,8 +79,8 @@ Each of the 12 faces is a congruent rhombus whose diagonal lengths satisfy:
 
 Because :math:`\sqrt{2}` is the ratio of face diagonals, the rhombic dodecahedron packs three-dimensional Euclidean space :math:`\mathbb{R}^3` without voids as the Voronoi cell of the face-centered cubic lattice. All vertex coordinates and edge quadrances lie strictly in the rational field :math:`\mathbb{Q}`.
 
-Leonardo da Vinci's Woodcuts & Corpus Vacuum Reconstruction
------------------------------------------------------------
+Hollow Frame Manifold
+---------------------
 
 .. figure:: rhombic-dodecahedron_vacuum.svg
    :align: center

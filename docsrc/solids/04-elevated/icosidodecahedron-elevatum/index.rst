@@ -22,8 +22,8 @@ P-04.07 · Icosidodecahedron Elevatum
 .. picture:: icosidodecahedron-elevatum.svg
    :alt: Icosidodecahedron Elevatum
 
-Interactive 3D Solid & Vacuum Studio
-------------------------------------
+Interactive 3D Studio
+---------------------
 
 .. raw:: html
 

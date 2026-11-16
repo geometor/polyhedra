@@ -1712,10 +1712,10 @@
   }
 
   function normalizeDisplayMode(raw) {
-    const v = (raw || 'surfaces').trim().toLowerCase();
+    const v = (raw || 'wireframe').trim().toLowerCase();
+    if (v === 'surfaces' || v === 'surface' || v === 'solid' || v === 'solidum') return 'surfaces';
     if (v === 'frame' || v === 'vacuum') return 'frame';
-    if (v === 'wireframe' || v === 'wire' || v === 'edges') return 'wireframe';
-    return 'surfaces';
+    return 'wireframe';
   }
 
   // --- Main Polyhedra 3D Widget Controller ---
@@ -1725,12 +1725,13 @@
       this.solidName = (container.getAttribute('data-solid') || '').trim().toLowerCase();
       this.sceneName = (container.getAttribute('data-scene') || '').trim();
       this.variant = normalizeDisplayMode(
-        container.getAttribute('data-mode') || container.getAttribute('data-initial-variant') || 'surfaces'
+        container.getAttribute('data-mode') || container.getAttribute('data-initial-variant') || 'wireframe'
       );
 
       const rawOp = parseFloat(container.getAttribute('data-opacity') || '');
       this.surfaceOpacity = !isNaN(rawOp) ? Math.max(0, Math.min(1, rawOp)) : 0.86;
-      this.showVertices = container.getAttribute('data-vertices') === 'true';
+      const rawVerts = (container.getAttribute('data-vertices') || '').trim().toLowerCase();
+      this.showVertices = rawVerts === '' ? true : rawVerts !== 'false';
 
       // State
       this.mu = 0.62;                  // Frame aperture ratio
@@ -1871,13 +1872,13 @@
 
         // Clean Geometric Display Modes (unified across all 26 solids)
         const modes = [
-          ['surfaces',  'Surfaces'],
           ['wireframe', 'Wireframe'],
+          ['surfaces',  'Surfaces'],
           ['frame',     'Frame']
         ];
 
         if (!modes.some(([k]) => k === this.variant)) {
-          this.variant = 'surfaces';
+          this.variant = 'wireframe';
         }
 
         modes.forEach(([mKey, mLabel]) => {

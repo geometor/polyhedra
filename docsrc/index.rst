@@ -1,10 +1,12 @@
-:title: GEOMETOR • polyhedra
+:site_title: Polyhedra
+
+.. container:: author-overline
+
+   semantic digital archive • mathematical catalog
 
 =========
-polyhedra
+Polyhedra
 =========
-
-*Exact Symbolic Polyhedra Catalog, Golden Proportions, 3D Rational Trigonometry, and Leonardo da Vinci's 1509 Woodcuts*
 
 .. epigraph::
 
@@ -17,9 +19,7 @@ polyhedra
 Overview
 --------
 
-**GEOMETOR Polyhedra** (``geometor-polyhedra``) models three-dimensional constructive geometry and canonical polyhedra in **100% exact symbolic algebra** (zero floating-point approximations) using `SymPy <https://www.sympy.org/>`_ and ``geometor.model``.
-
-Grounding its algebraic foundations in Euclid's *Elements* Book XIII, Plato's *Timaeus*, Luca Pacioli's *De Divina Proportione* (1509), Johannes Kepler's *Strena* (1611), and Norman Wildberger's Rational Trigonometry, this edition catalogs **26 exact symbolic solids across 5 geometric families**—each on its own dedicated monograph page powered by interactive 3D HTML5 ``<canvas>`` viewports, theme-adaptive ``.euclid-graphic`` SVGs, and ``photon-platform/publish`` collections.
+The mathematical catalog models three-dimensional constructive geometry, regular and semi-regular polyhedra, and spatial proportion in 100% exact symbolic algebra using SymPy, Rational Trigonometry dihedral spreads, and exact number fields. Within the interconnected `GEOMETOR <https://geometor.com/books/>`_ semantic digital archive, classical treatises—from Euclid's *Elements* Book XIII and Plato's *Timaeus* to Luca Pacioli's *De Divina Proportione* and Johannes Kepler's *Harmonices Mundi*—are liberated into 26 exact symbolic solids, interactive 3D HTML5 viewports, theme-adaptive vector diagrams, and Leonardo da Vinci woodcut folios speaking one shared geometric language.
 
 Interactive 3D Polyhedra Explorer
 ---------------------------------

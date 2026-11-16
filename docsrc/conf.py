@@ -35,7 +35,9 @@ repo_name = "polyhedra"
 
 setup_globals(org, org_name, repo, repo_name)  # noqa: F405
 
-project = "GEOMETOR • polyhedra"
+site_title = "Polyhedra"
+project = site_title
+html_title = f"{site_title} • {org_name}"
 author = "phi ARCHITECT • GEOMETOR"
 copyright = "2026 · GEOMETOR"
 

@@ -88,6 +88,24 @@ All five regular solids :math:`\{p, q\}` are modeled symbolically over :math:`\m
      - :math:`4/5`
      - :math:`(4\phi+3)/15`
 
+Python Package & Modules
+------------------------
+
+The ``geometor-polyhedra`` Python package (``import geometor.polyhedra``) provides the executable symbolic geometry, construction, and compilation modules powering this archive:
+
+- ``catalog.py`` — Exact symbolic catalog and registry of the 26 canonical polyhedra.
+- ``golden.py`` — Exact symbolic golden proportions and Keplerian compounds in polyhedra.
+- ``model3d/bridge.py`` — Bridge module connecting 3D polyhedra to 2D GEOMETOR symbolic models.
+- ``model3d/primitives.py`` — Exact symbolic 3D geometric primitives and polyhedral models.
+- ``operators.py`` — Exact symbolic polyhedral operators over algebraic number fields.
+- ``platonic.py`` — Exact symbolic Platonic solids registry and 3D Rational Trigonometry.
+- ``pyramid.py`` — Exact symbolic geometry of the Great Pyramid, Kepler triangle, and circle quadrature.
+- ``render/exporters.py`` — Export pipelines for 3D polyhedra into Wavefront CAD, IngeTrazo, and Blender.
+- ``render/svg3d.py`` — SVG 3D projection and publication-grade geometric renderers.
+- ``cli.py`` — Command-line interface for geometor.polyhedra.
+
+See the `API Reference <https://geometor.github.io/polyhedra/modules/>`_ for full module documentation.
+
 Repository Contents
 -------------------
 

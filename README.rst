@@ -18,11 +18,11 @@ Mission
 Catalogs in This Archive
 ------------------------
 
-- **`Catalog of Polyhedra <https://geometor.github.io/polyhedra/solids/>`_** — Twenty-six exact symbolic solids across five geometric families (Platonic, Archimedean, Catalan, Elevated, and Pyramids) with interactive 3D viewports and comparative metrics.
-- **`Leonardo da Vinci's Polyhedral Plates (1509) <https://geometor.github.io/polyhedra/leonardo/>`_** — Twenty paired woodcut folio studies from Luca Pacioli's *De Divina Proportione* paired with exact genus :math:`g = F - 1` *Corpora Vacua* proofs.
-- **`Golden Proportions in Polyhedra <https://geometor.github.io/polyhedra/golden/>`_** — Certified golden ratio (:math:`\phi`) theorems across 3D solids and 2D cross-sections.
-- **`Kepler, Squaring the Circle & the Great Pyramid <https://geometor.github.io/polyhedra/pyramid/>`_** — Exact symbolic investigations of the 1597 Kepler right triangle, circle quadrature, and 14:11 Seked geometry.
-- **`3D Symbolic Infrastructure & Multi-Engine Pipeline <https://geometor.github.io/polyhedra/pipeline/>`_** — Exact 3D modeling kernel, Conway/Pacioli operators, and multi-target export architecture to SVG, OBJ, IngeTrazo, and Blender.
+- `Catalog of Polyhedra <https://geometor.github.io/polyhedra/solids/>`_ — Twenty-six exact symbolic solids across five geometric families (Platonic, Archimedean, Catalan, Elevated, and Pyramids) with interactive 3D viewports and comparative metrics.
+- `Leonardo da Vinci's Polyhedral Plates (1509) <https://geometor.github.io/polyhedra/leonardo/>`_ — Twenty paired woodcut folio studies from Luca Pacioli's *De Divina Proportione* paired with exact genus :math:`g = F - 1` *Corpora Vacua* proofs.
+- `Golden Proportions in Polyhedra <https://geometor.github.io/polyhedra/golden/>`_ — Certified golden ratio (:math:`\phi`) theorems across 3D solids and 2D cross-sections.
+- `Kepler, Squaring the Circle & the Great Pyramid <https://geometor.github.io/polyhedra/pyramid/>`_ — Exact symbolic investigations of the 1597 Kepler right triangle, circle quadrature, and 14:11 Seked geometry.
+- `3D Symbolic Infrastructure & Multi-Engine Pipeline <https://geometor.github.io/polyhedra/pipeline/>`_ — Exact 3D modeling kernel, Conway/Pacioli operators, and multi-target export architecture to SVG, OBJ, IngeTrazo, and Blender.
 
 The Five Platonic Solids
 ------------------------

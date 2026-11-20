@@ -9,7 +9,7 @@ authors = [
   { name = "geometor", email = "github@geometor.com" },
 ]
 description = "Exact symbolic Platonic, Archimedean, and Keplerian polyhedral geometry in SymPy and the GEOMETOR Digital Scriptorium."
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.13"
 license = { text = "MIT" }
 classifiers = [

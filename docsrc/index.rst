@@ -8,6 +8,10 @@
 Polyhedra
 =========
 
+.. image:: _static/medallion.svg
+   :alt: Polyhedra Medallion
+   :class: repo-medallion-hero
+
 .. epigraph::
 
    *Quinque corpora regularia sunt: tetraedron, exaedron sive cubus, octaedron, icosaedron, et dodecaedron. Quorum quodlibet intra sphaeram comprehendi potest.*

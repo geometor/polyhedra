@@ -3,6 +3,12 @@ GEOMETOR • polyhedra
 
 **Visit the Online Archive:** https://geometor.github.io/polyhedra/
 
+.. image:: docsrc/_static/logo.png
+   :alt: GEOMETOR • polyhedra Medallion
+   :target: https://geometor.github.io/polyhedra/
+   :width: 180px
+   :align: center
+
 .. image:: docsrc/_static/svg/golden/dodeca_five_cubes.svg
    :alt: GEOMETOR • polyhedra featured geometric construction
    :target: https://geometor.github.io/polyhedra/
